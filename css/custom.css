@@ -1,0 +1,397 @@
+.about-icons
+{
+    font-size: 50px;
+    border: 5px solid #E6007E;
+    color: #E6007E;
+    padding: 25px;
+    border-radius: 50%;
+}
+.icon-container
+{
+	margin-bottom: 10px;
+}
+.no-padding
+{
+	padding: 0;
+}
+.action
+{
+	background-image: url(../html/images/home/tour-bg.png);
+    background-color: #fbfafa;
+    background-repeat: repeat-x;
+    height: 130px;
+    background-position: center;
+    display: table;
+    position: static;
+    width: 100%;
+  	position: relative;
+
+}
+.owl-nav
+{
+	text-align: center;
+}
+.owl-prev, .owl-next
+{
+    color: #fff;
+    font-size: 14px;
+    margin: 5px;
+    padding: 4px 7px;
+    background: #d6d6d6;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    -webkit-border-radius: 3px;
+}
+.owl-next:hover, .owl-prev:hover
+{
+	background: #459C35;
+}
+.contLoading
+{
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: white;
+    display: block;
+}
+.contLoading.active
+{
+	display: none;
+}
+.contLoading img
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+       -moz-transform: translate(-50%,-50%);
+        -ms-transform: translate(-50%,-50%);
+         -o-transform: translate(-50%,-50%);
+            transform: translate(-50%,-50%);
+}
+#header .navbar-nav li ul.sub-menu li a:hover, #header .navbar-nav li ul.sub-menu li a:focus
+{
+	background-color: #AFCB08;
+}
+.single-service img
+{
+    height: auto;
+}
+.no-pointer
+{
+    cursor: default;
+}
+.post-content .post-author p {
+    font-weight: 300;
+    font-size: 14px;
+    color: #2A8490;
+}
+.cont-twitter iframe
+{
+    max-height: 300px;
+    margin-top: -65px;
+}
+.info-contact
+{
+    background-color: #333;
+    color: white;
+    margin-top: 50px;
+}
+.info-contact a
+{
+    color: white;
+}
+#home-slider
+{
+    background-image: none;
+}
+.fadeInLeft,.fadeInRight
+{
+    text-align: justify;
+}
+#home-slider .owl-carousel .owl-item img
+{
+    height: auto;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 1021px;
+}
+.allies-slider.owl-carousel .owl-item img
+{
+    width: auto;
+}
+#home-slider .main-slider
+{
+    height: auto;
+}
+.portfolio-thumb
+{
+    max-height: 200px;
+    overflow: hidden;
+}
+.portfolio-thumb img
+{
+    padding: 10px;
+}
+.single-service img
+{
+    max-height: 150px;
+}
+#footer
+{
+    padding-top: 50px;
+}
+.single-features .col-sm-6
+{
+    margin-top: 0;
+}
+.image-right
+{
+    text-align: right;
+}
+.image-right img
+{
+    display: inline-block;
+}
+@media(min-width: 991px){
+    .footer-colum
+    {
+        display: table-cell;
+        vertical-align: middle;
+        float: none;
+        text-align: center;
+    }
+    
+}
+.valign-wrapper
+{
+    display: table;
+}
+.no-float
+{
+    float: none;
+}
+.full-leght
+{
+    width: 100%;
+}
+.post-bottom.overflow.col-xs-12
+{
+    margin-top: 0;
+    margin-bottom: 20px;
+    margin-left: 0;
+    margin-right: 0;
+    border-top: 0;
+}
+.post-content
+{
+    margin-bottom: 0;
+}
+.post-thumb.index
+{
+    padding-left: 0;
+    max-height: 265px;
+}
+.index img
+{
+    margin: 0 auto;
+}
+.blog-sidebar.fixed
+{
+    position: fixed;
+    top: 20px;
+    max-width: 25%;
+}
+.blog-sidebar.fixed.absolute
+{
+    position: absolute;
+    -webkit-transform: translateY(200%);
+       -moz-transform: translateY(200%);
+        -ms-transform: translateY(200%);
+         -o-transform: translateY(200%);
+            transform: translateY(200%);
+    max-width: 100%;
+}
+.new-no-image
+{
+    margin-top: 20px;
+}
+.single-features .col-sm-6.news-text-index
+{
+    margin-top: 50px;
+}
+
+.btn-loader
+{
+    max-width: 15px;
+    display: none;
+}
+.btn-loader.active
+{
+    display: block;
+}
+.slider-nav img
+{
+    max-width: 200px;
+    padding: 0 0.5em;
+}
+.allies-slider .owl-item img
+{
+    max-height: 200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+       -moz-transform: translate(-50%,-50%);
+        -ms-transform: translate(-50%,-50%);
+         -o-transform: translate(-50%,-50%);
+            transform: translate(-50%,-50%);
+}
+.allies-slider .owl-item
+{
+    position: relative;
+    min-height: 200px;
+}
+svg
+{
+    width: 100%;
+}
+.formulario
+{
+    margin-bottom: 1em;
+}
+
+.states
+{
+    position: absolute;
+    opacity: 0;
+    background-color: #AFCB08;
+    color: white;
+    border-radius: 8px;
+    padding: 3px 7px 0 7px;
+    -webkit-transition: opacity .25s linear;
+       -moz-transition: opacity .25s linear;
+        -ms-transition: opacity .25s linear;
+         -o-transition: opacity .25s linear;
+            transition: opacity .25s linear;
+}
+.states.active
+{
+    opacity: 1;
+}
+.states.merida.first
+{
+    top: 250px;
+    left: 260px;    
+}
+.states.merida.second
+{
+    top: 345px;
+    left: 135px;
+}
+.states.maturin
+{
+    top: 215px;
+    left: 610px;
+}
+
+.states.caracas.first
+{
+    top: 120px;
+    left: 400px;
+}
+.states.caracas.second
+{
+    top: 235px;
+    left: 275px;
+}
+.allies-slider
+{
+    margin-top: 50px;
+}
+
+.responseAjax, .response-danger
+{
+    display: none;
+}
+.responseAjax.active, .response-danger.active
+{
+    display: block;
+}
+
+.miniLoader
+{
+    display: none;
+    width: 15px;
+}
+.miniLoader.active
+{
+    display: inline-block;
+}
+.btn-contact > p
+{
+    display: inline-block;
+}
+small.response-danger
+{
+    padding-left: 10px;
+    padding-top: 5px;
+    color: rgb(255,0,0);
+}
+@media(max-width: 990px){
+    #map-section
+    {
+        display: none;
+    }
+    .row
+    {
+        padding: 0;
+    }
+    .contact-info.bottom
+    {
+        padding: 0;
+        text-align: center;
+    }
+    .localization-panel > .panel-default > .panel-heading
+    {
+        background-color: #AFCB08;
+        border-top: 1px solid #FFFFFF;
+        color: white;
+        border: 1px solid #fff;
+    }
+    .navbar-brand img
+    {
+        width: 65%;
+    }
+    .single-features .col-sm-6.news-text-index
+    {
+        margin-top: 5px;
+    }
+    ol, ul
+    {
+        padding: 20px;
+    }
+    .single-service p
+    {
+        padding: 0 20px;
+    }
+
+}
+@media(max-width: 520px){
+    .isotope .isotope-item
+    {
+        left: 25% !important;   
+    }
+}
+.over-popover
+{
+    height: 50px;
+}
+.popover
+{
+    min-width: 200px; 
+}
