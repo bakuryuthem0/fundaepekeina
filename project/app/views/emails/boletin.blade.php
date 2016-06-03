@@ -10,6 +10,7 @@
     <link href="{{ asset('html/css/font-awesome.min.css') }}" rel="stylesheet"> 
     <link href="{{ asset('html/css/main.css') }}" rel="stylesheet">
     <link href="{{ asset('html/css/responsive.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
 
     <!--[if lt IE 9]>
         <script src="js/html5shiv.js"></script>
