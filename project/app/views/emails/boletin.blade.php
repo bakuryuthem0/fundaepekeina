@@ -33,7 +33,7 @@
                     <h1>Boletín oficial</h1>
                 </div>
                 @foreach($article as $a)
-                <div class="col-sm-12 col-md-6">
+                <div class="col-sm-12 col-md-6 fixedheight">
                     <div class="panel panel-success">
                         <div class="panel-heading">
                             <h3 class="panel-title">{{ $a->title }}</h3>
