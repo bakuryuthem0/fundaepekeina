@@ -395,3 +395,7 @@ small.response-danger
 {
     min-width: 200px; 
 }
+.fixedheight
+{
+    min-height: 225px;
+}
