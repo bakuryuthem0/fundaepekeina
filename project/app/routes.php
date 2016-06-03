@@ -47,6 +47,7 @@ Route::group(array('before' => 'no_auth'),function()
 	});
 });
 
+Route::get('generar-boletin','BoletinController@getBoletin');
 Route::get('agregar-love','HomeController@getLike');
 
 Route::group(array('before' => 'auth'),function() 
