@@ -94,12 +94,12 @@
                         <li class="@if($active == 'galeria') active @endif"><a href="{{ URL::to('galeria') }}">Galeria</a>
                         </li>
                         <li class="@if($active == 'contacto') active @endif dropdown">
-                            <a href="{{ URL::to('contacto') }}" class="visible-md-block visible-lg-block">Contactenos <i class="fa fa-angle-down"></i></a>
-                            <a href="#!" class="hidden-md hidden-lg">Contactenos <i class="fa fa-angle-down"></i></a>
+                            <a href="{{ URL::to('contacto/apoyenos') }}" class="visible-md-block visible-lg-block">Apoyenos <i class="fa fa-angle-down"></i></a>
+                            <a href="#!" class="hidden-md hidden-lg">Apoyenos <i class="fa fa-angle-down"></i></a>
 
                              <ul role="menu" class="sub-menu">
-                                <li><a href="{{ URL::to('contacto') }}" class="hidden-md hidden-lg">Ir al formulario</a></li>
-                                <li><a href="{{ URL::to('contacto/apoyenos') }}">Apoyenos</a></li>
+                                <li><a href="{{ URL::to('contacto') }}">Contactenos</a></li>
+                                <li><a href="{{ URL::to('contacto/apoyenos') }}" class="hidden-md hidden-lg">Apoyenos</a></li>
                                 <li><a href="{{ URL::to('contacto/donaciones') }}">Donaciones</a></li>
                             </ul>
                         </li>                    

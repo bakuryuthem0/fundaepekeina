@@ -7692,40 +7692,40 @@ vdv9H/jXXv8AJv8Aq3f+tb37u/pf8Z692/0f+NdOH+Tfbf8ALv8A+Lf/ANXW1v4r/t7X/wBjf/D2
         <div class="merida first states">
         	<p>Mérida - Ciudad de Mérida</p>
         	<ul>
-				<li>Coordinado</li>
-				<li>Coordinado</li>
+				<li>Contacto</li>
+				<li>Contacto</li>
 			</ul>
         </div>
         <div class="merida second states">
         	<p>Canaguá – Mérida</p>
         	<ul>
-				<li>Coordinado</li>
-				<li>Coordinado</li>
+				<li>Contacto</li>
+				<li>Contacto</li>
 			</ul>
         </div>
         <div class="maturin states">
         	<p>Maturín – Monagas</p>
         	<ul>
-				<li>Coordinado</li>
-				<li>Coordinado</li>
+				<li>Contacto</li>
+				<li>Contacto</li>
 			</ul>
         </div>
         <div class="caracas first states">
         	<p>Las Acacias – Caracas</p>
         	<ul>
-				<li>Coordinado</li>
-				<li>Coordinado</li>
+				<li>Contacto</li>
+				<li>Contacto</li>
 			</ul>
         </div>
         <div class="caracas second states">
 			<p>La Boyera - Caracas</p>
 			<ul>
-				<li>Coordinado</li>
-				<li>Coordinado</li>
+				<li>Contacto</li>
+				<li>Contacto</li>
 			</ul>
 			<ul>
-				<li>Coordinado</li>
-				<li>Coordinado</li>
+				<li>Contacto</li>
+				<li>Contacto</li>
 			</ul>
         </div>
     </section> <!--/#map-section-->     
@@ -7742,8 +7742,8 @@ vdv9H/jXXv8AJv8Aq3f+tb37u/pf8Z692/0f+NdOH+Tfbf8ALv8A+Lf/ANXW1v4r/t7X/wBjf/D2
 			    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
 			      <div class="panel-body">
 			        <ul>
-						<li>Coordinado</li>
-						<li>Coordinado</li>
+						<li>Contacto</li>
+						<li>Contacto</li>
 					</ul>
 			      </div>
 			    </div>
@@ -7759,8 +7759,8 @@ vdv9H/jXXv8AJv8Aq3f+tb37u/pf8Z692/0f+NdOH+Tfbf8ALv8A+Lf/ANXW1v4r/t7X/wBjf/D2
 			    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
 			      <div class="panel-body">
 			        <ul>
-						<li>Coordinado</li>
-						<li>Coordinado</li>
+						<li>Contacto</li>
+						<li>Contacto</li>
 					</ul>
 			      </div>
 			    </div>
@@ -7776,8 +7776,8 @@ vdv9H/jXXv8AJv8Aq3f+tb37u/pf8Z692/0f+NdOH+Tfbf8ALv8A+Lf/ANXW1v4r/t7X/wBjf/D2
 			    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
 			      <div class="panel-body">
 			        <ul>
-						<li>Coordinado</li>
-						<li>Coordinado</li>
+						<li>Contacto</li>
+						<li>Contacto</li>
 					</ul>
 			      </div>
 			    </div>
@@ -7793,8 +7793,8 @@ vdv9H/jXXv8AJv8Aq3f+tb37u/pf8Z692/0f+NdOH+Tfbf8ALv8A+Lf/ANXW1v4r/t7X/wBjf/D2
 			    <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFout">
 			      <div class="panel-body">
 			        <ul>
-						<li>Coordinado</li>
-						<li>Coordinado</li>
+						<li>Contacto</li>
+						<li>Contacto</li>
 					</ul>
 			      </div>
 			    </div>
@@ -7810,8 +7810,8 @@ vdv9H/jXXv8AJv8Aq3f+tb37u/pf8Z692/0f+NdOH+Tfbf8ALv8A+Lf/ANXW1v4r/t7X/wBjf/D2
 			    <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
 			      <div class="panel-body">
 			        <ul>
-						<li>Coordinado</li>
-						<li>Coordinado</li>
+						<li>Contacto</li>
+						<li>Contacto</li>
 					</ul>
 			      </div>
 			    </div>

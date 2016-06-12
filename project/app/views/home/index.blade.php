@@ -41,16 +41,19 @@
    <section id="">
         <div class="container">
             <div class="row">
+
+                <!--
                 <div class="col-xs-12 col-sm-6 text-center padding wow fadeIn" data-wow-duration="1000ms" data-wow-delay="300ms">
                     <div class="single-service">
                         <div class="wow scaleIn" data-wow-duration="500ms" data-wow-delay="300ms">
-                            <img src="{{ asset('images/projects/redjoven.png') }}" alt="">
+                            <img src="images/projects/redjoven.png" alt="">
                         </div>
                         <h2>Red Joven Venezuela</h2>
                         <p class="text-justify">Ground round tenderloin flank shank ribeye. Hamkevin meatball swine. Cow shankle beef sirloin chicken ground round.</p>
                     </div>
                 </div>
-                <div class="col-xs-12 col-sm-6 text-center padding wow fadeIn" data-wow-duration="1000ms" data-wow-delay="900ms">
+                -->
+                <div class="col-xs-12 col-sm-6 center-block text-center padding wow fadeIn" data-wow-duration="1000ms" data-wow-delay="900ms">
                     <div class="single-service">
                         <div class="wow scaleIn" data-wow-duration="500ms" data-wow-delay="900ms">
                             <img src="{{ asset('images/projects/laguna.png') }}" alt="">
@@ -77,42 +80,24 @@
         </div>
    </section>
     <!--/#action-->
-
-    <section id="features">
+    <section>
         <div class="container">
             <div class="row">
-                <?php $i = 0;?>
+                <div class="news-slider owl-carousel">
                 @foreach($article as $a)
-                    @if($i%2 == 0)
-                        <div class="single-features post-content">
-                            <div class="col-sm-6 wow fadeInLeft" data-wow-duration="500ms" data-wow-delay="300ms">
-                                <a href="{{ URL::to('noticias/'.$a->id) }}"><img src="{{ asset('images/news/'.$a->imagenes->first()['image']) }}" class="img-responsive" alt=""></a>
-                            </div>
-                            <div class="col-sm-6 wow fadeInRight news-text-index" data-wow-duration="500ms" data-wow-delay="300ms">
-                                <h2>{{ $a->title }}</h2>
-                                <h3 class="post-author"><p class="text-justify no-pointer">{{ substr(strip_tags($a->descripcion), 0, 300) }} [...]</p></h3>
-                                <a href="{{ URL::to('noticias/'.$a->id) }}" class="read-more">Leer mas</a>
-                            </div>
+                    <div class="single-features post-content">
+                        <div class="col-sm-12 col-md-6 wow fadeInLeft" data-wow-duration="500ms" data-wow-delay="300ms">
+                            <a href="{{ URL::to('noticias/'.$a->id) }}"><img src="{{ asset('images/news/'.$a->imagenes->first()['image']) }}" class="img-responsive" alt=""></a>
                         </div>
-                    @else
-                        <div class="single-features post-content">
-                            <div class="col-sm-6 wow fadeInLeft hidden-md hidden-lg" data-wow-duration="500ms" data-wow-delay="300ms">
-                                <a href="{{ URL::to('noticias/'.$a->id) }}"><img src="{{ asset('images/news/'.$a->imagenes->first()['image']) }}" class="img-responsive" alt=""></a>
-                            </div>
-                            <div class="col-sm-6 wow fadeInLeft news-text-index" data-wow-duration="500ms" data-wow-delay="300ms">
-                                <h2>{{ $a->title }}</h2>
-                                <h3 class="post-author"><p class="text-justify no-pointer">{{ substr(strip_tags($a->descripcion), 0, 300) }} [...]</p></h3>
-                                <a href="{{ URL::to('noticias/'.$a->id) }}" class="read-more">Leer mas</a>
-                            </div>
-                            <div class="col-sm-6 image-right wow fadeInRight visible-md-block visible-lg-block" data-wow-duration="500ms" data-wow-delay="300ms">
-                                <a href="{{ URL::to('noticias/'.$a->id) }}"><img src="{{ asset('images/news/'.$a->imagenes->first()['image']) }}" class="img-responsive" alt=""></a>
-                            </div>
+                        <div class="col-sm-12 col-md-6 wow fadeInRight news-text-index" data-wow-duration="500ms" data-wow-delay="300ms">
+                            <h2>{{ $a->title }}</h2>
+                            <h3 class="post-author"><p class="text-justify no-pointer">{{ substr(strip_tags($a->descripcion), 0, 300) }} [...]</p></h3>
+                            <a href="{{ URL::to('noticias/'.$a->id) }}" class="read-more">Leer mas</a>
                         </div>
-                    @endif
-                    <hr>
-                    <?php $i++; ?>
+                    </div>
                 @endforeach
-                <div class="text-center" style="margin-bottom:50px;"><a href="{{ URL::to('noticias') }}" class="btn btn-lg btn-info">Ver todas</a></div>
+                </div>
+                <div class="text-center" style="margin-bottom:50px;margin-top:50px;"><a href="{{ URL::to('noticias') }}" class="btn btn-lg btn-info">Ver todas</a></div>
             </div>
         </div>
     </section>
@@ -158,11 +143,25 @@
         $('.main-slider').owlCarousel({
             loop: true,
             margin: 10,
-            dots: true,
+            nav:true,
+            navText: [ 'Anterior', 'Siguiente' ],
             autoplay: true,
             autoplayTimeout: 5000,
             autoplayHoverPause: false,
-            nav: true,
+            responsive:{
+                0:{
+                    items:1
+                },
+            }
+        });
+        $('.news-slider').owlCarousel({
+            loop: true,
+            margin: 10,
+            nav:true,
+            navText: [ 'Anterior', 'Siguiente' ],
+            autoplay: true,
+            autoplayTimeout: 5000,
+            autoplayHoverPause: false,
             responsive:{
                 0:{
                     items:1

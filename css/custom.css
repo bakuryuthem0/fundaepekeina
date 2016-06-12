@@ -399,3 +399,7 @@ small.response-danger
 {
     min-height: 225px;
 }
+.center-block
+{
+    float: none;
+}
