@@ -21,14 +21,97 @@
             <div class="row">
                 <div class="col-xs-12">
                     <div class="row">
-                        <ul class="portfolio-filter text-center">
-                            <li><a class="btn btn-default active" href="#" data-filter="*">Todo</a></li>
-                            <li><a class="btn btn-default" href="#" data-filter=".sacerdotal">Sacerdotal</a></li>
-                            <li><a class="btn btn-default" href="#" data-filter=".joven">Jovenes que Inspiran</a></li>
-                            <li><a class="btn btn-default" href="#" data-filter=".juvenil">Juvenil</a></li>
-                            <li><a class="btn btn-default" href="#" data-filter=".laguna">La laguna</a></li>
-                        </ul><!--/#portfolio-filter-->
-                        
+                       
+                        <div class="col-xs-6 col-sm-6 col-md-3 album-container">
+                            <div class="portfolio-album">
+                                <div class="portfolio-wrapper">
+                                    <div class="">
+                                        <div class="portfolio-thumb">
+                                            
+                                        </div>
+                                        <div class="portfolio-view">
+                                            <ul class="nav nav-pills">
+                                                <li>
+                                                    <h2>Sacerdotal</h2>
+                                                </li>
+                                                <li>
+                                                    <a href="#!" rel="album" class="album" data-target=".sacerdotal"><i class="fa fa-eye"></i></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-6 col-md-3 album-container">
+                            <div class="portfolio-album">
+                                <div class="portfolio-wrapper">
+                                    <div class="">
+                                        <div class="portfolio-thumb">
+                                            
+                                        </div>
+                                        <div class="portfolio-view">
+                                            <ul class="nav nav-pills">
+                                                <li>
+                                                    <h2>Jovenes que inspiran</h2>
+                                                </li>
+                                                <li>
+                                                    <a href="#!" rel="album" class="album" data-parent="" data-target=".joven">
+                                                    <i class="fa fa-eye"></i></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-6 col-md-3 album-container">
+                            <div class="portfolio-album">
+                                <div class="portfolio-wrapper">
+                                    <div class="">
+                                        <div class="portfolio-thumb">
+                                            
+                                        </div>
+                                        <div class="portfolio-view">
+                                            <ul class="nav nav-pills">
+                                                <li>
+                                                    <h2>La laguna</h2>
+                                                </li>
+                                                <li>
+                                                    <a href="#!" rel="album" class="album" data-target=".laguna">
+                                                    <i class="fa fa-eye"></i></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-6 col-md-3 album-container">
+                            <div class="portfolio-album">
+                                <div class="portfolio-wrapper">
+                                    <div class="">
+                                        <div class="portfolio-thumb">
+                                            
+                                        </div>
+                                        <div class="portfolio-view">
+                                            <ul class="nav nav-pills">
+                                                <li>
+                                                    <h2>Juvenil</h2>
+                                                </li>
+                                                <li>
+                                                    <a href="#!" rel="album" class="album" data-target=".juvenil">
+                                                    <i class="fa fa-eye"></i></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <a href="#!" class="back-link">Volver atras</a>
+                        </div>
                         <div class="portfolio-items">
                             <div class="col-xs-6 col-sm-6 col-md-4 portfolio-item sacerdotal logos">
                                 <div class="portfolio-wrapper">
@@ -921,7 +1004,6 @@
 @stop
 
 @section('postscript')
-    <script type="text/javascript" src="{{ asset('html/js/jquery.isotope.min.js') }}"></script>
 
     <script type="text/javascript">
     $(document).ready(function() {

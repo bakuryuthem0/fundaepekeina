@@ -162,11 +162,25 @@ jQuery(document).ready(function($) {
 					$('.love').attr('data-title','Ups!')
 					$('.love').attr('data-content','Hubo un error.');
 					$('.love').popover('show');
-					setTimeout(hidePopover, 3000)
+					setTimeout(hidePopover, 3000);
 					$('.like-span').removeClass('hidden');
 					$('.miniLoader').removeClass('active');
 				}
 			})
 		}
+	});
+	$('.album').on('click', function(event) {
+		var btn = $(this);
+		$('.album-container').fadeOut('fast',function(){
+			$(btn.data('target')).fadeIn('fast');
+			$('.back-link').fadeIn('fast');
+		});
+	});
+	$('.back-link').on('click', function(event) {
+		$('.back-link').fadeOut('fast');
+		$('.portfolio-item').fadeOut('fast',function(){
+			$('.album-container').fadeIn('fast');
+		});
+
 	});
 });

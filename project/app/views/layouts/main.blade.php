@@ -106,10 +106,10 @@
                     </ul>
                 </div>
                 <div class="search">
-                    <form role="form">
+                    <form role="form" method="GET" action="{{ URL::to('buscar') }}">
                         <i class="fa fa-search"></i>
                         <div class="field-toggle">
-                            <input type="text" class="search-form" autocomplete="off" placeholder="Search">
+                            <input type="text" class="search-form" autocomplete="off" name="busq" placeholder="Buscar">
                         </div>
                     </form>
                 </div>

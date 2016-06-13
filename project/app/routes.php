@@ -39,6 +39,7 @@ Route::get('contacto/apoyenos','HomeController@getSupport');
 
 Route::post('suscribir-nuevo','HomeController@getNewSubscriber');
 
+Route::get('buscar','HomeController@getSearch');
 Route::group(array('before' => 'no_auth'),function() 
 {
 	Route::get('administrador/login', 'AdminController@getLogin');

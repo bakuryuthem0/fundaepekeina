@@ -217,9 +217,28 @@ class HomeController extends BaseController {
 		}
 
 	}
+	public function getSearch()
+	{
+		$busq = Input::get('busq');
+		$article = Articulo::with('imagenes')->where(function($query) use ($busq)
+		{
+			$query->whereRaw('LOWER(title)  LIKE "%'.$busq.'%"')
+			->orWhereRaw('LOWER(descripcion) LIKE "%'.$busq.'%"');
+		})
+		->paginate(6);
+		$title = "Busqueda por: ".$busq." | Fundaepekeina";
+		$view = View::make('home.articles.busq')
+		->with('title',$title)
+		->with('article',$article);
+		return $view->with('menu','all')
+		->with('active','home')
+		->with('subtitle','Busqueda por: '.$busq)
+		->with('type','que-hacemos')
+		->with('busq',$busq);
+	}
 	public function getGallery()
 	{
-		$title = "galleria";
+		$title = "Galleria | Fundaepekeina";
 		return View::make('home.gallery')
 		->with('title',$title)
 		->with('active','galeria');
