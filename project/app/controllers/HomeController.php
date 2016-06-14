@@ -238,7 +238,7 @@ class HomeController extends BaseController {
 	}
 	public function getGallery()
 	{
-		$title = "Galleria | Fundaepekeina";
+		$title = "Galería | Fundaepekeina";
 		return View::make('home.gallery')
 		->with('title',$title)
 		->with('active','galeria');

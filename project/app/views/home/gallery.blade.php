@@ -7,7 +7,7 @@
                 <div class="row">
                     <div class="">
                         <div class="col-sm-12">
-                            <h1 class="title">Galeria</h1>
+                            <h1 class="title">Galería</h1>
                         </div>
                     </div>
                 </div>
