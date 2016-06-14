@@ -4,7 +4,7 @@ class BoletinController extends BaseController {
 
 	public function getBoletin()
 	{
-		$article = Articulo::orderBy('created_at','DESC')->take(10)->get();
+		$article = Articulo::with('imagenes')->orderBy('created_at','DESC')->take(6)->get();
 		return View::make('emails.boletin')
 		->with('article',$article);
 	}

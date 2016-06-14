@@ -40,6 +40,7 @@
                             <h3 class="panel-title">{{ $a->title }}</h3>
                         </div>
                         <div class="panel-body">
+                            <img src="{{ asset('images/news/'.$a->imagenes->first()['image']) }}" class="img-responsive">
                             <p>{{ substr(strip_tags($a->descripcion), 0, 300) }} [...]</p>
                             <a href="{{ URL::to('fundaepekeina.org/noticias/'.$a->id) }}" class="btn btn-primary">Leer mas</a>
                         </div>
