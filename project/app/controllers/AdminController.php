@@ -228,14 +228,12 @@ class AdminController extends BaseController {
 			'sede'			=> 'required',
 			'title'    		=> 'required|max:100',
 			'desc' 	   		=> 'required',
-			'file'	   	 	=> 'required|min:1',
 		);
 		$msg 	= array(
 		);
 		$attr 	= array(
 			'sede'			=> 'sede',
 			'desc'	   		=> 'descripción',
-			'file'	   		=> 'imagen',
 
 		); 
 		$validator = Validator::make($data, $rules, $msg, $attr);
@@ -249,20 +247,22 @@ class AdminController extends BaseController {
 		$art->descripcion = $data['desc'];
 		$art->modified_by = Auth::id();
 		$art->save();
-		$file = Input::file();
-		foreach($file['file'] as $id => $i)
-		{
-			if (!is_null($i)) {
-				$img = NewsImages::find($id);
-				if (empty($img)) {
-					$img = new NewsImages;
-					$img->articulo_id = $data['id'];
-				}else
-				{
-					File::delete('images/news/'.$img->image);
+		if (Input::has('file')) {
+			$file = Input::file();
+			foreach($file['file'] as $id => $i)
+			{
+				if (!is_null($i)) {
+					$img = NewsImages::find($id);
+					if (empty($img)) {
+						$img = new NewsImages;
+						$img->articulo_id = $data['id'];
+					}else
+					{
+						File::delete('images/news/'.$img->image);
+					}
+					$img->image   = $this->upload_image($i);
+					$img->save();
 				}
-				$img->image   = $this->upload_image($i);
-				$img->save();
 			}
 		}
 		Session::flash('success','Articulo modificado satisfactoriamente.');
