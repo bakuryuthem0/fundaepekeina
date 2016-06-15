@@ -247,7 +247,7 @@ class AdminController extends BaseController {
 		$art->descripcion = $data['desc'];
 		$art->modified_by = Auth::id();
 		$art->save();
-		if (Input::has('file')) {
+		if (Input::hasFile('file')) {
 			$file = Input::file();
 			foreach($file['file'] as $id => $i)
 			{
