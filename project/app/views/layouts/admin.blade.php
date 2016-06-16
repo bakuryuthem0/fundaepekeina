@@ -84,7 +84,7 @@
     {{ HTML::script("html/js/bootstrap.min.js") }}
     {{ HTML::script("plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js") }}
 
-    {{ HTML::script("js/custom-admin.js") }}
+    {{ HTML::script("js/custom-admin.js?v=0.1") }}
     @yield('postscript')
   </body>
 </html>
