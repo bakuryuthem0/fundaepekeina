@@ -198,7 +198,10 @@ html, body
 .post-thumb.index
 {
     padding-left: 0;
+    height: 265px;
     max-height: 265px;
+    background-image: url('../images/ajax-loader.gif');
+    background-position: 50%;
 }
 .index img
 {
