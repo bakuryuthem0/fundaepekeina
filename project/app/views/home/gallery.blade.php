@@ -1011,6 +1011,8 @@
             $('.lazy').lazyload(
             {
                 effect : "fadeIn",
+                failure_limit : 10,
+                skip_invisible : true
             });
             $(".fancybox").fancybox();
         });
