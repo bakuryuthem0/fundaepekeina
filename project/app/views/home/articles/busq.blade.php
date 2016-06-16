@@ -36,9 +36,9 @@
                                     <a href="{{ URL::to('noticias/'.$a->id) }}">
                                     @endif
                                         @if(!is_null($a->imagenes->first()['image']))
-                                            <img src="{{ asset('images/news/'.$a->imagenes->first()['image']) }}" class="img-responsive" alt="{{ $a->title }}">
+                                            <img data-original="{{ asset('images/news/'.$a->imagenes->first()['image']) }}" class="lazy img-responsive" alt="{{ $a->title }}">
                                         @else
-                                            <img src="{{ asset('images/logo.png') }}" class="center-block new-no-image img-responsive" alt="{{ $a->title }}">
+                                            <img data-original="{{ asset('images/logo.png') }}" class="center-block new-no-image lazy img-responsive" alt="{{ $a->title }}">
                                         @endif
                                     </a>
                                     <div class="post-overlay">
@@ -162,4 +162,17 @@
     </div>
 </section>
 <!--/#blog-->
+@stop
+
+@section('postscript')
+    <script type="text/javascript" src="{{ asset('plugins/lazyload/jquery.lazyload.min.js') }}">
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.lazy').lazyload(
+            {
+                effect : "fadeIn",
+            });
+        });
+    </script>
 @stop

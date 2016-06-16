@@ -268,6 +268,23 @@ class AdminController extends BaseController {
 		Session::flash('success','Articulo modificado satisfactoriamente.');
 		return Redirect::back();
 	}
+	public function changeStatus()
+	{
+		$id = Input::get('id');
+		$art = Articulo::find($id);
+		if ($art->state == 0) {
+			$art->state = 1;
+		}else
+		{
+			$art->state = 0;
+		}
+		$art->save();
+		return Response::json(array(
+			'type' => 'success',
+			'msg'  => 'Estado cambiado',
+			'state'=> $art->state,
+		));
+	}
 	public function elimImg()
 	{
 		$id = Input::get('img_id');

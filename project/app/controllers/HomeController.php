@@ -18,7 +18,7 @@ class HomeController extends BaseController {
 	public function getIndex()
 	{
 		$title = "Inicio | Fundaepekeina";
-		$article = Articulo::with('imagenes')->orderBy('created_at','DESC')->take(6)->get();
+		$article = Articulo::with('imagenes')->where('state','=',1)->orderBy('created_at','DESC')->take(6)->get();
 		$active = "inicio";
 		return View::make('home.index')
 		->with('active',$active)
@@ -41,6 +41,7 @@ class HomeController extends BaseController {
 		}
 		$article = Articulo::leftJoin('categorias','categorias.id','=','articulos.cat_id')
 		->where('articulos.id','=',$id)
+		->where('articulos.state','=',1)
 		->with('imagenes')
 		->first(array(
 			'articulos.id',
@@ -91,6 +92,7 @@ class HomeController extends BaseController {
 		$title = "Noticias por proyectos | Fundaepekeina";
 
 		$article = Articulo::with('imagenes')->with('likeCount')
+		->where('state','=',1)
 		->orderBy('articulos.created_at','DESC')
 		->paginate(6,array(
 			'articulos.id',
@@ -116,6 +118,7 @@ class HomeController extends BaseController {
 		if ($type == 'proyectos') {
 			$article = $article->leftJoin('categorias','categorias.id','=','cat_id')
 			->where('categorias.tipo','=','2')
+			->where('articulos.state','=',1)
 			->orderBy('articulos.created_at','DESC')
 			->paginate(6,array(
 				'articulos.id',
@@ -125,7 +128,8 @@ class HomeController extends BaseController {
 			));
 		}elseif($type == 'sedes')
 		{
-			$article = $article->orderBy('articulos.created_at','DESC')
+			$article = $article->where('articullos.state','=',1)
+			->orderBy('articulos.created_at','DESC')
 			->paginate(6,array(
 				'articulos.id',
 				'articulos.title',
@@ -134,7 +138,7 @@ class HomeController extends BaseController {
 			));
 		}elseif($type == "que-hacemos")
 		{
-			$article = Articulo::where('cat_id','=','4')->orderBy('created_at','DESC')->paginate(6);
+			$article = Articulo::where('cat_id','=','4')->where('state','=',1)->orderBy('created_at','DESC')->paginate(6);
 		}
 
 		$title = "Noticias por ".$type." | Fundaepekeina";
@@ -169,6 +173,7 @@ class HomeController extends BaseController {
 		$article = Articulo::with('imagenes');
 		if ($type == 'proyectos') {
 			$article = $article->leftJoin('categorias','categorias.id','=','cat_id')
+			->where('articulos.state','=',1)
 			->where('categorias.tipo','=','2')
 			->where('articulos.cat_id','=',$id)
 			->orderBy('articulos.created_at','DESC')
@@ -181,6 +186,7 @@ class HomeController extends BaseController {
 		}elseif($type == 'sedes')
 		{
 			$article = $article
+			->where('articulos.state','=',1)
 			->where('articulos.cat_id','=',$id)
 			->orderBy('articulos.created_at','DESC')
 			->paginate(6,array(
@@ -220,7 +226,7 @@ class HomeController extends BaseController {
 	public function getSearch()
 	{
 		$busq = Input::get('busq');
-		$article = Articulo::with('imagenes')->where(function($query) use ($busq)
+		$article = Articulo::with('imagenes')->where('state','=',1)->where(function($query) use ($busq)
 		{
 			$query->whereRaw('LOWER(title)  LIKE "%'.$busq.'%"')
 			->orWhereRaw('LOWER(descripcion) LIKE "%'.$busq.'%"');

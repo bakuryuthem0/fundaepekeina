@@ -129,6 +129,9 @@
                     <div class="">
                         <img src="{{ asset('images/allies/corpoula.jpg') }}">
                     </div>
+                    <div class="">
+                        <img src="{{ asset('images/allies/mision.jpg') }}">
+                    </div>
                     
                 </div>
 
@@ -179,8 +182,18 @@
             autoplayHoverPause: false,
             responsive:{
                 0:{
-                    items:3
+                    items:1
                 },
+                650:{
+                    items:2
+                },
+                850:
+                {
+                    items: 2
+                },
+                1200:{
+                    items:4
+                }
             }
         });
     });

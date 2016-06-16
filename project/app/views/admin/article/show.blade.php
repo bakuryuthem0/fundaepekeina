@@ -20,6 +20,7 @@
               <th class="text-center">Nombre</th>
               <th class="text-center">Ver</th>
               <th class="text-center">Editar</th>
+              <th class="text-center">Activar/Desactivar</th>
               <th class="text-center">Eliminar</th>
             </tr>
           </thead>
@@ -29,7 +30,15 @@
               <td>{{ $a->id }}</td>
               <td>{{ $a->title }}</td>
               <td><a target="_blank" href="{{ URL::to('administrador/ver-articulo/'.$a->id) }}" class="btn btn-xs btn-primary">Ver</a></td>
-              <td><a href="{{ URL::to('administrador/editar-articulo/'.$a->id) }}" class="btn btn-warning btn-xs">Editar</a></td>
+              <td><a target="_blank" href="{{ URL::to('administrador/editar-articulo/'.$a->id) }}" class="btn btn-warning btn-xs">Editar</a></td>
+              <td class="text-center">
+                @if($a->state == 0)
+                  <button value="{{ $a->id }}" class="btn btn-default btn-xs btn-activate">Activar</button>
+                @else
+                  <button value="{{ $a->id }}" class="btn btn-default dark btn-xs btn-activate">Desactivar</button>
+                @endif
+                <img src="{{ asset('images/ajax-loader.gif') }}" class="miniLoader">
+              </td>
               <td><button value="{{ $a->id }}" class="btn btn-danger btn-xs btn-elim-art" data-toggle="modal" data-target="#elimArt">Eliminar</button></td>
             </tr>
             @endforeach

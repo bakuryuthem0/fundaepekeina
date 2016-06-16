@@ -172,8 +172,11 @@ jQuery(document).ready(function($) {
 	$('.album').on('click', function(event) {
 		var btn = $(this);
 		$('.album-container').fadeOut('fast',function(){
-			$(btn.data('target')).fadeIn('fast');
+			$(btn.data('target')).fadeIn('fast',function(){
+				$(window).scrollTop($(window).scrollTop() + 1);
+			});
 			$('.back-link').fadeIn('fast');
+
 		});
 	});
 	$('.back-link').on('click', function(event) {

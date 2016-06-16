@@ -117,7 +117,7 @@
                                 <div class="portfolio-wrapper">
                                     <div class="portfolio-single">
                                         <div class="portfolio-thumb">
-                                            <img src="{{ asset('images/gallery/sacerdotal/sacerdotal.jpg') }}" class="img-responsive" alt="">
+                                            <img data-original="{{ asset('images/gallery/sacerdotal/sacerdotal.jpg') }}" class="lazy img-responsive" alt="">
                                         </div>
                                         <div class="portfolio-view">
                                             <ul class="nav nav-pills">
@@ -131,7 +131,7 @@
                                 <div class="portfolio-wrapper">
                                     <div class="portfolio-single">
                                         <div class="portfolio-thumb">
-                                            <img src="{{ asset('images/gallery/sacerdotal/sacerdotal_2.jpg') }}" class="img-responsive" alt="">
+                                            <img data-original="{{ asset('images/gallery/sacerdotal/sacerdotal_2.jpg') }}" class="lazy img-responsive" alt="">
                                         </div>
                                         <div class="portfolio-view">
                                             <ul class="nav nav-pills">
@@ -145,7 +145,7 @@
                                 <div class="portfolio-wrapper">
                                     <div class="portfolio-single">
                                         <div class="portfolio-thumb">
-                                            <img src="{{ asset('images/gallery/sacerdotal/sacerdotal_3.jpg') }}" class="img-responsive" alt="">
+                                            <img data-original="{{ asset('images/gallery/sacerdotal/sacerdotal_3.jpg') }}" class="lazy img-responsive" alt="">
                                         </div>
                                         <div class="portfolio-view">
                                             <ul class="nav nav-pills">
@@ -159,7 +159,7 @@
                                 <div class="portfolio-wrapper">
                                     <div class="portfolio-single">
                                         <div class="portfolio-thumb">
-                                            <img src="{{ asset('images/gallery/sacerdotal/sacerdotal_4.jpg') }}" class="img-responsive" alt="">
+                                            <img data-original="{{ asset('images/gallery/sacerdotal/sacerdotal_4.jpg') }}" class="lazy img-responsive" alt="">
                                         </div>
                                         <div class="portfolio-view">
                                             <ul class="nav nav-pills">
@@ -172,7 +172,7 @@
                                 <div class="portfolio-wrapper">
                                     <div class="portfolio-single">
                                         <div class="portfolio-thumb">
-                                            <img src="{{ asset('images/gallery/sacerdotal/sacerdotal_5.jpg') }}" class="img-responsive" alt="">
+                                            <img data-original="{{ asset('images/gallery/sacerdotal/sacerdotal_5.jpg') }}" class="lazy img-responsive" alt="">
                                         </div>
                                         <div class="portfolio-view">
                                             <ul class="nav nav-pills">
@@ -186,7 +186,7 @@
                                 <div class="portfolio-wrapper">
                                     <div class="portfolio-single">
                                         <div class="portfolio-thumb">
-                                            <img src="{{ asset('images/gallery/sacerdotal/sacerdotal_6.jpg') }}" class="img-responsive" alt="">
+                                            <img data-original="{{ asset('images/gallery/sacerdotal/sacerdotal_6.jpg') }}" class="lazy img-responsive" alt="">
                                         </div>
                                         <div class="portfolio-view">
                                             <ul class="nav nav-pills">
@@ -200,7 +200,7 @@
                                 <div class="portfolio-wrapper">
                                     <div class="portfolio-single">
                                         <div class="portfolio-thumb">
-                                            <img src="{{ asset('images/gallery/sacerdotal/sacerdotal_7.jpg') }}" class="img-responsive" alt="">
+                                            <img data-original="{{ asset('images/gallery/sacerdotal/sacerdotal_7.jpg') }}" class="lazy img-responsive" alt="">
                                         </div>
                                         <div class="portfolio-view">
                                             <ul class="nav nav-pills">
@@ -214,7 +214,7 @@
                                 <div class="portfolio-wrapper">
                                     <div class="portfolio-single">
                                         <div class="portfolio-thumb">
-                                            <img src="{{ asset('images/gallery/sacerdotal/sacerdotal_8.jpg') }}" class="img-responsive" alt="">
+                                            <img data-original="{{ asset('images/gallery/sacerdotal/sacerdotal_8.jpg') }}" class="lazy img-responsive" alt="">
                                         </div>
                                         <div class="portfolio-view">
                                             <ul class="nav nav-pills">
@@ -228,7 +228,7 @@
                                 <div class="portfolio-wrapper">
                                     <div class="portfolio-single">
                                         <div class="portfolio-thumb">
-                                            <img src="{{ asset('images/gallery/sacerdotal/sacerdotal_9.jpg') }}" class="img-responsive" alt="">
+                                            <img data-original="{{ asset('images/gallery/sacerdotal/sacerdotal_9.jpg') }}" class="lazy img-responsive" alt="">
                                         </div>
                                         <div class="portfolio-view">
                                             <ul class="nav nav-pills">
@@ -242,7 +242,7 @@
                                 <div class="portfolio-wrapper">
                                     <div class="portfolio-single">
                                         <div class="portfolio-thumb">
-                                            <img src="{{ asset('images/gallery/sacerdotal/sacerdotal_10.jpg') }}" class="img-responsive" alt="">
+                                            <img data-original="{{ asset('images/gallery/sacerdotal/sacerdotal_10.jpg') }}" class="lazy img-responsive" alt="">
                                         </div>
                                         <div class="portfolio-view">
                                             <ul class="nav nav-pills">
@@ -256,7 +256,7 @@
                                 <div class="portfolio-wrapper">
                                     <div class="portfolio-single">
                                         <div class="portfolio-thumb">
-                                            <img src="{{ asset('images/gallery/sacerdotal/sacerdotal_11.jpg') }}" class="img-responsive" alt="">
+                                            <img data-original="{{ asset('images/gallery/sacerdotal/sacerdotal_11.jpg') }}" class="lazy img-responsive" alt="">
                                         </div>
                                         <div class="portfolio-view">
                                             <ul class="nav nav-pills">
@@ -270,7 +270,7 @@
                                 <div class="portfolio-wrapper">
                                     <div class="portfolio-single">
                                         <div class="portfolio-thumb">
-                                            <img src="{{ asset('images/gallery/jovenes-que-inspiran/jovenes-que-inspiran-1.png') }}" class="img-responsive" alt="">
+                                            <img data-original="{{ asset('images/gallery/jovenes-que-inspiran/jovenes-que-inspiran-1.png') }}" class="img-responsive lazy" alt="">
                                         </div>
                                         <div class="portfolio-view">
                                             <ul class="nav nav-pills">
@@ -284,7 +284,7 @@
                                 <div class="portfolio-wrapper">
                                     <div class="portfolio-single">
                                         <div class="portfolio-thumb">
-                                            <img src="{{ asset('images/gallery/jovenes-que-inspiran/jovenes-que-inspiran-2.png') }}" class="img-responsive" alt="">
+                                            <img data-original="{{ asset('images/gallery/jovenes-que-inspiran/jovenes-que-inspiran-2.png') }}" class="img-responsive lazy" alt="">
                                         </div>
                                         <div class="portfolio-view">
                                             <ul class="nav nav-pills">
@@ -298,7 +298,7 @@
                                 <div class="portfolio-wrapper">
                                     <div class="portfolio-single">
                                         <div class="portfolio-thumb">
-                                            <img src="{{ asset('images/gallery/jovenes-que-inspiran/jovenes-que-inspiran-3.png') }}" class="img-responsive" alt="">
+                                            <img data-original="{{ asset('images/gallery/jovenes-que-inspiran/jovenes-que-inspiran-3.png') }}" class="img-responsive lazy" alt="">
                                         </div>
                                         <div class="portfolio-view">
                                             <ul class="nav nav-pills">
@@ -312,7 +312,7 @@
                                 <div class="portfolio-wrapper">
                                     <div class="portfolio-single">
                                         <div class="portfolio-thumb">
-                                            <img src="{{ asset('images/gallery/jovenes-que-inspiran/jovenes-que-inspiran-4.png') }}" class="img-responsive" alt="">
+                                            <img data-original="{{ asset('images/gallery/jovenes-que-inspiran/jovenes-que-inspiran-4.png') }}" class="img-responsive lazy" alt="">
                                         </div>
                                         <div class="portfolio-view">
                                             <ul class="nav nav-pills">
@@ -326,7 +326,7 @@
                                 <div class="portfolio-wrapper">
                                     <div class="portfolio-single">
                                         <div class="portfolio-thumb">
-                                            <img src="{{ asset('images/gallery/jovenes-que-inspiran/jovenes-que-inspiran-5.png') }}" class="img-responsive" alt="">
+                                            <img data-original="{{ asset('images/gallery/jovenes-que-inspiran/jovenes-que-inspiran-5.png') }}" class="img-responsive lazy" alt="">
                                         </div>
                                         <div class="portfolio-view">
                                             <ul class="nav nav-pills">
@@ -340,7 +340,7 @@
                                 <div class="portfolio-wrapper">
                                     <div class="portfolio-single">
                                         <div class="portfolio-thumb">
-                                            <img src="{{ asset('images/gallery/jovenes-que-inspiran/jovenes-que-inspiran-6.png') }}" class="img-responsive" alt="">
+                                            <img data-original="{{ asset('images/gallery/jovenes-que-inspiran/jovenes-que-inspiran-6.png') }}" class="img-responsive lazy" alt="">
                                         </div>
                                         <div class="portfolio-view">
                                             <ul class="nav nav-pills">
@@ -354,7 +354,7 @@
                                 <div class="portfolio-wrapper">
                                     <div class="portfolio-single">
                                         <div class="portfolio-thumb">
-                                            <img src="{{ asset('images/gallery/jovenes-que-inspiran/jovenes-que-inspiran-7.png') }}" class="img-responsive" alt="">
+                                            <img data-original="{{ asset('images/gallery/jovenes-que-inspiran/jovenes-que-inspiran-7.png') }}" class="img-responsive lazy" alt="">
                                         </div>
                                         <div class="portfolio-view">
                                             <ul class="nav nav-pills">
@@ -368,7 +368,7 @@
                                 <div class="portfolio-wrapper">
                                     <div class="portfolio-single">
                                         <div class="portfolio-thumb">
-                                            <img src="{{ asset('images/gallery/jovenes-que-inspiran/jovenes-que-inspiran-8.png') }}" class="img-responsive" alt="">
+                                            <img data-original="{{ asset('images/gallery/jovenes-que-inspiran/jovenes-que-inspiran-8.png') }}" class="img-responsive lazy" alt="">
                                         </div>
                                         <div class="portfolio-view">
                                             <ul class="nav nav-pills">
@@ -382,7 +382,7 @@
                                 <div class="portfolio-wrapper">
                                     <div class="portfolio-single">
                                         <div class="portfolio-thumb">
-                                            <img src="{{ asset('images/gallery/jovenes-que-inspiran/jovenes-que-inspiran-9.png') }}" class="img-responsive" alt="">
+                                            <img data-original="{{ asset('images/gallery/jovenes-que-inspiran/jovenes-que-inspiran-9.png') }}" class="img-responsive lazy" alt="">
                                         </div>
                                         <div class="portfolio-view">
                                             <ul class="nav nav-pills">
@@ -396,7 +396,7 @@
                                 <div class="portfolio-wrapper">
                                     <div class="portfolio-single">
                                         <div class="portfolio-thumb">
-                                            <img src="{{ asset('images/gallery/jovenes-que-inspiran/jovenes-que-inspiran-10.png') }}" class="img-responsive" alt="">
+                                            <img data-original="{{ asset('images/gallery/jovenes-que-inspiran/jovenes-que-inspiran-10.png') }}" class="img-responsive lazy" alt="">
                                         </div>
                                         <div class="portfolio-view">
                                             <ul class="nav nav-pills">
@@ -410,7 +410,7 @@
                                 <div class="portfolio-wrapper">
                                     <div class="portfolio-single">
                                         <div class="portfolio-thumb">
-                                            <img src="{{ asset('images/gallery/jovenes-que-inspiran/jovenes-que-inspiran-11.png') }}" class="img-responsive" alt="">
+                                            <img data-original="{{ asset('images/gallery/jovenes-que-inspiran/jovenes-que-inspiran-11.png') }}" class="img-responsive lazy" alt="">
                                         </div>
                                         <div class="portfolio-view">
                                             <ul class="nav nav-pills">
@@ -424,7 +424,7 @@
                                 <div class="portfolio-wrapper">
                                     <div class="portfolio-single">
                                         <div class="portfolio-thumb">
-                                            <img src="{{ asset('images/gallery/jovenes-que-inspiran/jovenes-que-inspiran-12.png') }}" class="img-responsive" alt="">
+                                            <img data-original="{{ asset('images/gallery/jovenes-que-inspiran/jovenes-que-inspiran-12.png') }}" class="img-responsive lazy" alt="">
                                         </div>
                                         <div class="portfolio-view">
                                             <ul class="nav nav-pills">
@@ -438,7 +438,7 @@
                                 <div class="portfolio-wrapper">
                                     <div class="portfolio-single">
                                         <div class="portfolio-thumb">
-                                            <img src="{{ asset('images/gallery/recreacion/recreacion_1.jpg') }}" class="img-responsive" alt="">
+                                            <img data-original="{{ asset('images/gallery/recreacion/recreacion_1.jpg') }}" class="lazy img-responsive" alt="">
                                         </div>
                                         <div class="portfolio-view">
                                             <ul class="nav nav-pills">
@@ -452,7 +452,7 @@
                                 <div class="portfolio-wrapper">
                                     <div class="portfolio-single">
                                         <div class="portfolio-thumb">
-                                            <img src="{{ asset('images/gallery/recreacion/recreacion_2.jpg') }}" class="img-responsive" alt="">
+                                            <img data-original="{{ asset('images/gallery/recreacion/recreacion_2.jpg') }}" class="lazy img-responsive" alt="">
                                         </div>
                                         <div class="portfolio-view">
                                             <ul class="nav nav-pills">
@@ -466,7 +466,7 @@
                                 <div class="portfolio-wrapper">
                                     <div class="portfolio-single">
                                         <div class="portfolio-thumb">
-                                            <img src="{{ asset('images/gallery/recreacion/recreacion_3.jpg') }}" class="img-responsive" alt="">
+                                            <img data-original="{{ asset('images/gallery/recreacion/recreacion_3.jpg') }}" class="lazy img-responsive" alt="">
                                         </div>
                                         <div class="portfolio-view">
                                             <ul class="nav nav-pills">
@@ -480,7 +480,7 @@
                                 <div class="portfolio-wrapper">
                                     <div class="portfolio-single">
                                         <div class="portfolio-thumb">
-                                            <img src="{{ asset('images/gallery/recreacion/recreacion_4.jpg') }}" class="img-responsive" alt="">
+                                            <img data-original="{{ asset('images/gallery/recreacion/recreacion_4.jpg') }}" class="lazy img-responsive" alt="">
                                         </div>
                                         <div class="portfolio-view">
                                             <ul class="nav nav-pills">
@@ -494,7 +494,7 @@
                                 <div class="portfolio-wrapper">
                                     <div class="portfolio-single">
                                         <div class="portfolio-thumb">
-                                            <img src="{{ asset('images/gallery/recreacion/recreacion_5.jpg') }}" class="img-responsive" alt="">
+                                            <img data-original="{{ asset('images/gallery/recreacion/recreacion_5.jpg') }}" class="lazy img-responsive" alt="">
                                         </div>
                                         <div class="portfolio-view">
                                             <ul class="nav nav-pills">
@@ -508,7 +508,7 @@
                                 <div class="portfolio-wrapper">
                                     <div class="portfolio-single">
                                         <div class="portfolio-thumb">
-                                            <img src="{{ asset('images/gallery/recreacion/recreacion_6.jpg') }}" class="img-responsive" alt="">
+                                            <img data-original="{{ asset('images/gallery/recreacion/recreacion_6.jpg') }}" class="lazy img-responsive" alt="">
                                         </div>
                                         <div class="portfolio-view">
                                             <ul class="nav nav-pills">
@@ -522,7 +522,7 @@
                                 <div class="portfolio-wrapper">
                                     <div class="portfolio-single">
                                         <div class="portfolio-thumb">
-                                            <img src="{{ asset('images/gallery/recreacion/recreacion_7.jpg') }}" class="img-responsive" alt="">
+                                            <img data-original="{{ asset('images/gallery/recreacion/recreacion_7.jpg') }}" class="lazy img-responsive" alt="">
                                         </div>
                                         <div class="portfolio-view">
                                             <ul class="nav nav-pills">
@@ -536,7 +536,7 @@
                                 <div class="portfolio-wrapper">
                                     <div class="portfolio-single">
                                         <div class="portfolio-thumb">
-                                            <img src="{{ asset('images/gallery/recreacion/recreacion_8.jpg') }}" class="img-responsive" alt="">
+                                            <img data-original="{{ asset('images/gallery/recreacion/recreacion_8.jpg') }}" class="lazy img-responsive" alt="">
                                         </div>
                                         <div class="portfolio-view">
                                             <ul class="nav nav-pills">
@@ -550,7 +550,7 @@
                                 <div class="portfolio-wrapper">
                                     <div class="portfolio-single">
                                         <div class="portfolio-thumb">
-                                            <img src="{{ asset('images/gallery/recreacion/recreacion_9.jpg') }}" class="img-responsive" alt="">
+                                            <img data-original="{{ asset('images/gallery/recreacion/recreacion_9.jpg') }}" class="lazy img-responsive" alt="">
                                         </div>
                                         <div class="portfolio-view">
                                             <ul class="nav nav-pills">
@@ -564,7 +564,7 @@
                                 <div class="portfolio-wrapper">
                                     <div class="portfolio-single">
                                         <div class="portfolio-thumb">
-                                            <img src="{{ asset('images/gallery/recreacion/recreacion_10.jpg') }}" class="img-responsive" alt="">
+                                            <img data-original="{{ asset('images/gallery/recreacion/recreacion_10.jpg') }}" class="lazy img-responsive" alt="">
                                         </div>
                                         <div class="portfolio-view">
                                             <ul class="nav nav-pills">
@@ -578,7 +578,7 @@
                                 <div class="portfolio-wrapper">
                                     <div class="portfolio-single">
                                         <div class="portfolio-thumb">
-                                            <img src="{{ asset('images/gallery/recreacion/recreacion_11.jpg') }}" class="img-responsive" alt="">
+                                            <img data-original="{{ asset('images/gallery/recreacion/recreacion_11.jpg') }}" class="lazy img-responsive" alt="">
                                         </div>
                                         <div class="portfolio-view">
                                             <ul class="nav nav-pills">
@@ -592,7 +592,7 @@
                                 <div class="portfolio-wrapper">
                                     <div class="portfolio-single">
                                         <div class="portfolio-thumb">
-                                            <img src="{{ asset('images/gallery/recreacion/recreacion_12.jpg') }}" class="img-responsive" alt="">
+                                            <img data-original="{{ asset('images/gallery/recreacion/recreacion_12.jpg') }}" class="lazy img-responsive" alt="">
                                         </div>
                                         <div class="portfolio-view">
                                             <ul class="nav nav-pills">
@@ -606,7 +606,7 @@
                                 <div class="portfolio-wrapper">
                                     <div class="portfolio-single">
                                         <div class="portfolio-thumb">
-                                            <img src="{{ asset('images/gallery/recreacion/recreacion_13.jpg') }}" class="img-responsive" alt="">
+                                            <img data-original="{{ asset('images/gallery/recreacion/recreacion_13.jpg') }}" class="lazy img-responsive" alt="">
                                         </div>
                                         <div class="portfolio-view">
                                             <ul class="nav nav-pills">
@@ -620,7 +620,7 @@
                                 <div class="portfolio-wrapper">
                                     <div class="portfolio-single">
                                         <div class="portfolio-thumb">
-                                            <img src="{{ asset('images/gallery/recreacion/recreacion_14.jpg') }}" class="img-responsive" alt="">
+                                            <img data-original="{{ asset('images/gallery/recreacion/recreacion_14.jpg') }}" class="lazy img-responsive" alt="">
                                         </div>
                                         <div class="portfolio-view">
                                             <ul class="nav nav-pills">
@@ -634,7 +634,7 @@
                                 <div class="portfolio-wrapper">
                                     <div class="portfolio-single">
                                         <div class="portfolio-thumb">
-                                            <img src="{{ asset('images/gallery/recreacion/recreacion_15.jpg') }}" class="img-responsive" alt="">
+                                            <img data-original="{{ asset('images/gallery/recreacion/recreacion_15.jpg') }}" class="lazy img-responsive" alt="">
                                         </div>
                                         <div class="portfolio-view">
                                             <ul class="nav nav-pills">
@@ -648,7 +648,7 @@
                                 <div class="portfolio-wrapper">
                                     <div class="portfolio-single">
                                         <div class="portfolio-thumb">
-                                            <img src="{{ asset('images/gallery/recreacion/recreacion_16.jpg') }}" class="img-responsive" alt="">
+                                            <img data-original="{{ asset('images/gallery/recreacion/recreacion_16.jpg') }}" class="lazy img-responsive" alt="">
                                         </div>
                                         <div class="portfolio-view">
                                             <ul class="nav nav-pills">
@@ -662,7 +662,7 @@
                                 <div class="portfolio-wrapper">
                                     <div class="portfolio-single">
                                         <div class="portfolio-thumb">
-                                            <img src="{{ asset('images/gallery/recreacion/recreacion_17.jpg') }}" class="img-responsive" alt="">
+                                            <img data-original="{{ asset('images/gallery/recreacion/recreacion_17.jpg') }}" class="lazy img-responsive" alt="">
                                         </div>
                                         <div class="portfolio-view">
                                             <ul class="nav nav-pills">
@@ -676,7 +676,7 @@
                                 <div class="portfolio-wrapper">
                                     <div class="portfolio-single">
                                         <div class="portfolio-thumb">
-                                            <img src="{{ asset('images/gallery/recreacion/recreacion_18.jpg') }}" class="img-responsive" alt="">
+                                            <img data-original="{{ asset('images/gallery/recreacion/recreacion_18.jpg') }}" class="lazy img-responsive" alt="">
                                         </div>
                                         <div class="portfolio-view">
                                             <ul class="nav nav-pills">
@@ -690,7 +690,7 @@
                                 <div class="portfolio-wrapper">
                                     <div class="portfolio-single">
                                         <div class="portfolio-thumb">
-                                            <img src="{{ asset('images/gallery/recreacion/recreacion_19.jpg') }}" class="img-responsive" alt="">
+                                            <img data-original="{{ asset('images/gallery/recreacion/recreacion_19.jpg') }}" class="lazy img-responsive" alt="">
                                         </div>
                                         <div class="portfolio-view">
                                             <ul class="nav nav-pills">
@@ -704,7 +704,7 @@
                                 <div class="portfolio-wrapper">
                                     <div class="portfolio-single">
                                         <div class="portfolio-thumb">
-                                            <img src="{{ asset('images/gallery/recreacion/recreacion_20.jpg') }}" class="img-responsive" alt="">
+                                            <img data-original="{{ asset('images/gallery/recreacion/recreacion_20.jpg') }}" class="lazy img-responsive" alt="">
                                         </div>
                                         <div class="portfolio-view">
                                             <ul class="nav nav-pills">
@@ -718,7 +718,7 @@
                                 <div class="portfolio-wrapper">
                                     <div class="portfolio-single">
                                         <div class="portfolio-thumb">
-                                            <img src="{{ asset('images/gallery/recreacion/recreacion_21.jpg') }}" class="img-responsive" alt="">
+                                            <img data-original="{{ asset('images/gallery/recreacion/recreacion_21.jpg') }}" class="lazy img-responsive" alt="">
                                         </div>
                                         <div class="portfolio-view">
                                             <ul class="nav nav-pills">
@@ -732,7 +732,7 @@
                                 <div class="portfolio-wrapper">
                                     <div class="portfolio-single">
                                         <div class="portfolio-thumb">
-                                            <img src="{{ asset('images/gallery/recreacion/recreacion_22.jpg') }}" class="img-responsive" alt="">
+                                            <img data-original="{{ asset('images/gallery/recreacion/recreacion_22.jpg') }}" class="lazy img-responsive" alt="">
                                         </div>
                                         <div class="portfolio-view">
                                             <ul class="nav nav-pills">
@@ -746,7 +746,7 @@
                                 <div class="portfolio-wrapper">
                                     <div class="portfolio-single">
                                         <div class="portfolio-thumb">
-                                            <img src="{{ asset('images/gallery/recreacion/recreacion_23.jpg') }}" class="img-responsive" alt="">
+                                            <img data-original="{{ asset('images/gallery/recreacion/recreacion_23.jpg') }}" class="lazy img-responsive" alt="">
                                         </div>
                                         <div class="portfolio-view">
                                             <ul class="nav nav-pills">
@@ -760,7 +760,7 @@
                                 <div class="portfolio-wrapper">
                                     <div class="portfolio-single">
                                         <div class="portfolio-thumb">
-                                            <img src="{{ asset('images/gallery/recreacion/recreacion_24.jpg') }}" class="img-responsive" alt="">
+                                            <img data-original="{{ asset('images/gallery/recreacion/recreacion_24.jpg') }}" class="lazy img-responsive" alt="">
                                         </div>
                                         <div class="portfolio-view">
                                             <ul class="nav nav-pills">
@@ -774,7 +774,7 @@
                                 <div class="portfolio-wrapper">
                                     <div class="portfolio-single">
                                         <div class="portfolio-thumb">
-                                            <img src="{{ asset('images/gallery/recreacion/recreacion_25.jpg') }}" class="img-responsive" alt="">
+                                            <img data-original="{{ asset('images/gallery/recreacion/recreacion_25.jpg') }}" class="lazy img-responsive" alt="">
                                         </div>
                                         <div class="portfolio-view">
                                             <ul class="nav nav-pills">
@@ -788,7 +788,7 @@
                                 <div class="portfolio-wrapper">
                                     <div class="portfolio-single">
                                         <div class="portfolio-thumb">
-                                            <img src="{{ asset('images/gallery/recreacion/recreacion_26.jpg') }}" class="img-responsive" alt="">
+                                            <img data-original="{{ asset('images/gallery/recreacion/recreacion_26.jpg') }}" class="lazy img-responsive" alt="">
                                         </div>
                                         <div class="portfolio-view">
                                             <ul class="nav nav-pills">
@@ -802,7 +802,7 @@
                                 <div class="portfolio-wrapper">
                                     <div class="portfolio-single">
                                         <div class="portfolio-thumb">
-                                            <img src="{{ asset('images/gallery/recreacion/recreacion_27.jpg') }}" class="img-responsive" alt="">
+                                            <img data-original="{{ asset('images/gallery/recreacion/recreacion_27.jpg') }}" class="lazy img-responsive" alt="">
                                         </div>
                                         <div class="portfolio-view">
                                             <ul class="nav nav-pills">
@@ -816,7 +816,7 @@
                                 <div class="portfolio-wrapper">
                                     <div class="portfolio-single">
                                         <div class="portfolio-thumb">
-                                            <img src="{{ asset('images/gallery/recreacion/recreacion_28.jpg') }}" class="img-responsive" alt="">
+                                            <img data-original="{{ asset('images/gallery/recreacion/recreacion_28.jpg') }}" class="lazy img-responsive" alt="">
                                         </div>
                                         <div class="portfolio-view">
                                             <ul class="nav nav-pills">
@@ -830,7 +830,7 @@
                                 <div class="portfolio-wrapper">
                                     <div class="portfolio-single">
                                         <div class="portfolio-thumb">
-                                            <img src="{{ asset('images/gallery/recreacion/recreacion_29.jpg') }}" class="img-responsive" alt="">
+                                            <img data-original="{{ asset('images/gallery/recreacion/recreacion_29.jpg') }}" class="lazy img-responsive" alt="">
                                         </div>
                                         <div class="portfolio-view">
                                             <ul class="nav nav-pills">
@@ -844,7 +844,7 @@
                                 <div class="portfolio-wrapper">
                                     <div class="portfolio-single">
                                         <div class="portfolio-thumb">
-                                            <img src="{{ asset('images/gallery/recreacion/recreacion_30.jpg') }}" class="img-responsive" alt="">
+                                            <img data-original="{{ asset('images/gallery/recreacion/recreacion_30.jpg') }}" class="lazy img-responsive" alt="">
                                         </div>
                                         <div class="portfolio-view">
                                             <ul class="nav nav-pills">
@@ -858,7 +858,7 @@
                                 <div class="portfolio-wrapper">
                                     <div class="portfolio-single">
                                         <div class="portfolio-thumb">
-                                            <img src="{{ asset('images/gallery/recreacion/recreacion_31.jpg') }}" class="img-responsive" alt="">
+                                            <img data-original="{{ asset('images/gallery/recreacion/recreacion_31.jpg') }}" class="lazy img-responsive" alt="">
                                         </div>
                                         <div class="portfolio-view">
                                             <ul class="nav nav-pills">
@@ -872,7 +872,7 @@
                                 <div class="portfolio-wrapper">
                                     <div class="portfolio-single">
                                         <div class="portfolio-thumb">
-                                            <img src="{{ asset('images/gallery/recreacion/recreacion_32.jpg') }}" class="img-responsive" alt="">
+                                            <img data-original="{{ asset('images/gallery/recreacion/recreacion_32.jpg') }}" class="lazy img-responsive" alt="">
                                         </div>
                                         <div class="portfolio-view">
                                             <ul class="nav nav-pills">
@@ -886,7 +886,7 @@
                                 <div class="portfolio-wrapper">
                                     <div class="portfolio-single">
                                         <div class="portfolio-thumb">
-                                            <img src="{{ asset('images/gallery/recreacion/recreacion_33.jpg') }}" class="img-responsive" alt="">
+                                            <img data-original="{{ asset('images/gallery/recreacion/recreacion_33.jpg') }}" class="lazy img-responsive" alt="">
                                         </div>
                                         <div class="portfolio-view">
                                             <ul class="nav nav-pills">
@@ -900,7 +900,7 @@
                                 <div class="portfolio-wrapper">
                                     <div class="portfolio-single">
                                         <div class="portfolio-thumb">
-                                            <img src="{{ asset('images/gallery/laguna/laguna1.jpg') }}" class="img-responsive" alt="">
+                                            <img data-original="{{ asset('images/gallery/laguna/laguna1.jpg') }}" class="lazy img-responsive" alt="">
                                         </div>
                                         <div class="portfolio-view">
                                             <ul class="nav nav-pills">
@@ -914,7 +914,7 @@
                                 <div class="portfolio-wrapper">
                                     <div class="portfolio-single">
                                         <div class="portfolio-thumb">
-                                            <img src="{{ asset('images/gallery/laguna/laguna2.jpg') }}" class="img-responsive" alt="">
+                                            <img data-original="{{ asset('images/gallery/laguna/laguna2.jpg') }}" class="lazy img-responsive" alt="">
                                         </div>
                                         <div class="portfolio-view">
                                             <ul class="nav nav-pills">
@@ -928,7 +928,7 @@
                                 <div class="portfolio-wrapper">
                                     <div class="portfolio-single">
                                         <div class="portfolio-thumb">
-                                            <img src="{{ asset('images/gallery/laguna/laguna3.jpg') }}" class="img-responsive" alt="">
+                                            <img data-original="{{ asset('images/gallery/laguna/laguna3.jpg') }}" class="lazy img-responsive" alt="">
                                         </div>
                                         <div class="portfolio-view">
                                             <ul class="nav nav-pills">
@@ -942,7 +942,7 @@
                                 <div class="portfolio-wrapper">
                                     <div class="portfolio-single">
                                         <div class="portfolio-thumb">
-                                            <img src="{{ asset('images/gallery/laguna/laguna4.jpg') }}" class="img-responsive" alt="">
+                                            <img data-original="{{ asset('images/gallery/laguna/laguna4.jpg') }}" class="lazy img-responsive" alt="">
                                         </div>
                                         <div class="portfolio-view">
                                             <ul class="nav nav-pills">
@@ -956,7 +956,7 @@
                                 <div class="portfolio-wrapper">
                                     <div class="portfolio-single">
                                         <div class="portfolio-thumb">
-                                            <img src="{{ asset('images/gallery/laguna/laguna5.jpg') }}" class="img-responsive" alt="">
+                                            <img data-original="{{ asset('images/gallery/laguna/laguna5.jpg') }}" class="lazy img-responsive" alt="">
                                         </div>
                                         <div class="portfolio-view">
                                             <ul class="nav nav-pills">
@@ -970,7 +970,7 @@
                                 <div class="portfolio-wrapper">
                                     <div class="portfolio-single">
                                         <div class="portfolio-thumb">
-                                            <img src="{{ asset('images/gallery/laguna/laguna6.jpg') }}" class="img-responsive" alt="">
+                                            <img data-original="{{ asset('images/gallery/laguna/laguna6.jpg') }}" class="lazy img-responsive" alt="">
                                         </div>
                                         <div class="portfolio-view">
                                             <ul class="nav nav-pills">
@@ -984,7 +984,7 @@
                                 <div class="portfolio-wrapper">
                                     <div class="portfolio-single">
                                         <div class="portfolio-thumb">
-                                            <img src="{{ asset('images/gallery/laguna/laguna7.jpg') }}" class="img-responsive" alt="">
+                                            <img data-original="{{ asset('images/gallery/laguna/laguna7.jpg') }}" class="lazy img-responsive" alt="">
                                         </div>
                                         <div class="portfolio-view">
                                             <ul class="nav nav-pills">
@@ -1004,10 +1004,15 @@
 @stop
 
 @section('postscript')
-
+    <script type="text/javascript" src="{{ asset('plugins/lazyload/jquery.lazyload.min.js') }}">
+    </script>
     <script type="text/javascript">
-    $(document).ready(function() {
-        $(".fancybox").fancybox();
-    });
-</script> 
+        $(document).ready(function() {
+            $('.lazy').lazyload(
+            {
+                effect : "fadeIn",
+            });
+            $(".fancybox").fancybox();
+        });
+    </script> 
 @stop

@@ -101,3 +101,8 @@
 {
 	padding-left: 0;
 }
+.btn-default.dark 
+{
+    background-color: #333;
+    color: #fff;
+}

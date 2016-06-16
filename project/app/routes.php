@@ -72,7 +72,7 @@ Route::group(array('before' => 'auth'),function()
 	Route::post('administrador/ver-articulo/enviar','AdminController@postMdfArt');
 	Route::post('administrador/ver-articulos/eliminar-imagen','AdminController@elimImg');
 	Route::post('administrador/mostrar-articulos/eliminar','AdminController@elimArticulo');
-
+	Route::post('administrador/cambiar-estado','AdminController@changeStatus');
 	//usuarios
 	Route::get('administrador/nuevo-usuario','AdminController@newUser');
 	Route::post('administrador/nuevo-usuario/enviar','AdminController@postNewUser');

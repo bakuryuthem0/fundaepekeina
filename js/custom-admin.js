@@ -149,4 +149,42 @@ jQuery(document).ready(function($) {
 	$(document).on('click','.dimiss-cloned', function(event) {
 		removeCloned($(this));
 	});
+	$('.btn-activate').on('click', function(event) {
+		var btn = $(this);
+
+		$.ajax({
+			url: base+'/administrador/cambiar-estado',
+			type: 'POST',
+			dataType: 'json',
+			data: {
+				id: btn.val()
+			},
+			beforeSend:function(){
+				btn.next('.miniLoader').addClass('active');
+				btn.addClass('hidden');
+			},
+			success:function(response)
+			{
+				btn.next('.miniLoader').removeClass('active');
+				btn.removeClass('hidden');
+				$('.responseAjax').addClass('alert-'+response.type).addClass('active').children('p').html(response.msg);
+				if (response.type == "success") {
+					if (response.state == 1) {
+						btn.addClass('dark').html('Desactivar');
+					}else
+					{
+						btn.removeClass('dark').html('Activar');
+					}
+				};
+			},
+			error:function()
+			{
+				btn.next('.miniLoader').removeClass('active');
+				btn.removeClass('hidden');
+				$('.responseAjax').addClass('alert-danger').addClass('active').children('p').html('Ups, ocurrio un error.');
+
+			}
+		});
+		
+	});
 });
