@@ -165,7 +165,7 @@
 @stop
 
 @section('postscript')
- <script type="text/javascript" src="{{ asset('plugins/lazyload/jquery.lazyload.min.js') }}">
+    <script type="text/javascript" src="{{ asset('plugins/lazyload/jquery.lazyload.min.js') }}">
     </script>
     <script type="text/javascript">
         $(document).ready(function() {
