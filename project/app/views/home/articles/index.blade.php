@@ -172,6 +172,7 @@
             $('.lazy').lazyload(
             {
                 effect : "fadeIn",
+                failure_limit: 6,
             });
         });
     </script>
