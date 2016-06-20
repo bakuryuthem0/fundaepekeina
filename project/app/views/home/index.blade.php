@@ -124,7 +124,7 @@
                         <img src="{{ asset('images/allies/pnud.png') }}">
                     </div>
                     <div class="">
-                        <img src="{{ asset('images/allies/ula.jpg') }}">
+                        <img src="{{ asset('images/allies/ulalogo.jpg') }}">
                     </div>
                     <div class="">
                         <img src="{{ asset('images/allies/corpoula.jpg') }}">
