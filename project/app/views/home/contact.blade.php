@@ -21,7 +21,7 @@
             <div class="col-sm-12 col-md-6 info-contact">
                 <h2>Contactos</h2>
                 <address>
-                <i class="fa fa-envelope-o"></i> E-mail: <a href="mailto:someone@example.com">fundaepekeina@gmail.com</a> <br> 
+                <i class="fa fa-envelope-o"></i> E-mail: <a href="mailto:fundaepekeina@gmail.com">fundaepekeina@gmail.com</a> <br> 
                 <i class="fa fa-phone"></i> Telefono: +58 0212-3077281<br> 
                 </address>
 
