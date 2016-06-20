@@ -80,7 +80,7 @@
                                         </li>
                                         <!--<li><a href="#"><i class="fa fa-tag"></i>Creative</a></li>-->
                                         @if($a->likeCount->first()['aggregate'])
-                                        <li><a href="#!"><i class="fa fa-heart"></i></i>{{ $a->likeCount->first()['aggregate'] }} Hearth</a></li>
+                                        <li><a href="#!"><i class="fa fa-heart"></i></i>{{ $a->likeCount->first()['aggregate'] }} Heart</a></li>
                                         @endif
                                     </ul>
                                     <div class="pull-right visible-md-block visible-lg-block">Creado: {{ date('d-m-Y',strtotime($a->created_at)) }}</div>

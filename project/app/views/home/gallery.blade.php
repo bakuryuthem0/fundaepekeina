@@ -994,6 +994,160 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="col-xs-6 col-sm-6 col-md-4 portfolio-item laguna logos">
+                                <div class="portfolio-wrapper">
+                                    <div class="portfolio-single">
+                                        <div class="portfolio-thumb">
+                                            <img src="{{ asset('images/gallery/laguna/laguna8.jpg') }}" class="img-responsive" alt="">
+                                        </div>
+                                        <div class="portfolio-view">
+                                            <ul class="nav nav-pills">
+                                                <li><a href="#!" rel="gallery-laguna" class="fancybox" data-fancybox-href="{{ asset('images/gallery/laguna/laguna8.jpg') }}"><i class="fa fa-eye"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-4 portfolio-item laguna logos">
+                                <div class="portfolio-wrapper">
+                                    <div class="portfolio-single">
+                                        <div class="portfolio-thumb">
+                                            <img src="{{ asset('images/gallery/laguna/laguna9.jpg') }}" class="img-responsive" alt="">
+                                        </div>
+                                        <div class="portfolio-view">
+                                            <ul class="nav nav-pills">
+                                                <li><a href="#!" rel="gallery-laguna" class="fancybox" data-fancybox-href="{{ asset('images/gallery/laguna/laguna9.jpg') }}"><i class="fa fa-eye"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-4 portfolio-item laguna logos">
+                                <div class="portfolio-wrapper">
+                                    <div class="portfolio-single">
+                                        <div class="portfolio-thumb">
+                                            <img src="{{ asset('images/gallery/laguna/laguna10.jpg') }}" class="img-responsive" alt="">
+                                        </div>
+                                        <div class="portfolio-view">
+                                            <ul class="nav nav-pills">
+                                                <li><a href="#!" rel="gallery-laguna" class="fancybox" data-fancybox-href="{{ asset('images/gallery/laguna/laguna10.jpg') }}"><i class="fa fa-eye"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-4 portfolio-item laguna logos">
+                                <div class="portfolio-wrapper">
+                                    <div class="portfolio-single">
+                                        <div class="portfolio-thumb">
+                                            <img src="{{ asset('images/gallery/laguna/laguna11.jpg') }}" class="img-responsive" alt="">
+                                        </div>
+                                        <div class="portfolio-view">
+                                            <ul class="nav nav-pills">
+                                                <li><a href="#!" rel="gallery-laguna" class="fancybox" data-fancybox-href="{{ asset('images/gallery/laguna/laguna11.jpg') }}"><i class="fa fa-eye"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-4 portfolio-item laguna logos">
+                                <div class="portfolio-wrapper">
+                                    <div class="portfolio-single">
+                                        <div class="portfolio-thumb">
+                                            <img src="{{ asset('images/gallery/laguna/laguna12.jpg') }}" class="img-responsive" alt="">
+                                        </div>
+                                        <div class="portfolio-view">
+                                            <ul class="nav nav-pills">
+                                                <li><a href="#!" rel="gallery-laguna" class="fancybox" data-fancybox-href="{{ asset('images/gallery/laguna/laguna12.jpg') }}"><i class="fa fa-eye"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-4 portfolio-item laguna logos">
+                                <div class="portfolio-wrapper">
+                                    <div class="portfolio-single">
+                                        <div class="portfolio-thumb">
+                                            <img src="{{ asset('images/gallery/laguna/laguna13.jpg') }}" class="img-responsive" alt="">
+                                        </div>
+                                        <div class="portfolio-view">
+                                            <ul class="nav nav-pills">
+                                                <li><a href="#!" rel="gallery-laguna" class="fancybox" data-fancybox-href="{{ asset('images/gallery/laguna/laguna13.jpg') }}"><i class="fa fa-eye"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-4 portfolio-item laguna logos">
+                                <div class="portfolio-wrapper">
+                                    <div class="portfolio-single">
+                                        <div class="portfolio-thumb">
+                                            <img src="{{ asset('images/gallery/laguna/laguna14.jpg') }}" class="img-responsive" alt="">
+                                        </div>
+                                        <div class="portfolio-view">
+                                            <ul class="nav nav-pills">
+                                                <li><a href="#!" rel="gallery-laguna" class="fancybox" data-fancybox-href="{{ asset('images/gallery/laguna/laguna14.jpg') }}"><i class="fa fa-eye"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-4 portfolio-item laguna logos">
+                                <div class="portfolio-wrapper">
+                                    <div class="portfolio-single">
+                                        <div class="portfolio-thumb">
+                                            <img src="{{ asset('images/gallery/laguna/laguna15.jpg') }}" class="img-responsive" alt="">
+                                        </div>
+                                        <div class="portfolio-view">
+                                            <ul class="nav nav-pills">
+                                                <li><a href="#!" rel="gallery-laguna" class="fancybox" data-fancybox-href="{{ asset('images/gallery/laguna/laguna15.jpg') }}"><i class="fa fa-eye"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-4 portfolio-item laguna logos">
+                                <div class="portfolio-wrapper">
+                                    <div class="portfolio-single">
+                                        <div class="portfolio-thumb">
+                                            <img src="{{ asset('images/gallery/laguna/laguna16.jpg') }}" class="img-responsive" alt="">
+                                        </div>
+                                        <div class="portfolio-view">
+                                            <ul class="nav nav-pills">
+                                                <li><a href="#!" rel="gallery-laguna" class="fancybox" data-fancybox-href="{{ asset('images/gallery/laguna/laguna16.jpg') }}"><i class="fa fa-eye"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-4 portfolio-item laguna logos">
+                                <div class="portfolio-wrapper">
+                                    <div class="portfolio-single">
+                                        <div class="portfolio-thumb">
+                                            <img src="{{ asset('images/gallery/laguna/laguna17.jpg') }}" class="img-responsive" alt="">
+                                        </div>
+                                        <div class="portfolio-view">
+                                            <ul class="nav nav-pills">
+                                                <li><a href="#!" rel="gallery-laguna" class="fancybox" data-fancybox-href="{{ asset('images/gallery/laguna/laguna17.jpg') }}"><i class="fa fa-eye"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-4 portfolio-item laguna logos">
+                                <div class="portfolio-wrapper">
+                                    <div class="portfolio-single">
+                                        <div class="portfolio-thumb">
+                                            <img src="{{ asset('images/gallery/laguna/laguna18.jpg') }}" class="img-responsive" alt="">
+                                        </div>
+                                        <div class="portfolio-view">
+                                            <ul class="nav nav-pills">
+                                                <li><a href="#!" rel="gallery-laguna" class="fancybox" data-fancybox-href="{{ asset('images/gallery/laguna/laguna18.jpg') }}"><i class="fa fa-eye"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

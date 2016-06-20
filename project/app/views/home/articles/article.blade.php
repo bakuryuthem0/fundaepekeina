@@ -67,7 +67,7 @@
                                             <li>
                                                 <a href="#!" class="love" data-id="{{ $article->id }}" data-toggle="popover" data-placement="top" data-title="" data-content="">
                                                     <span class="like-span">
-                                                        <i class="fa {{ $fa }} fa-add-love"></i> Hearth
+                                                        <i class="fa {{ $fa }} fa-add-love"></i> Heart
                                                     </span>
                                                 </a>
                                                     <img src="{{ asset('images/ajax-loader.gif') }}" class="miniLoader"></li>
