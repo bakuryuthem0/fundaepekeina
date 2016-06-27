@@ -6,16 +6,16 @@
             <div class="row">
                 <div class="main-slider owl-carousel">
                     <div class="">
-                        <img src="{{ asset('images/slides/1.jpg') }}">
+                        <a href="{{ URL::to('noticias/que-hacemos/18') }}"><img src="{{ asset('images/slides/1.jpg') }}"></a>
                     </div>
                     <div class="">
-                        <img src="{{ asset('images/slides/2.jpg') }}">
+                        <a href="{{ URL::to('noticias/que-hacemos/19') }}"><img src="{{ asset('images/slides/2.jpg') }}"></a>
                     </div>
                     <div class="">
-                        <img src="{{ asset('images/slides/3.jpg') }}">
+                        <a href="{{ URL::to('noticias/que-hacemos/187') }}"><img src="{{ asset('images/slides/3.jpg') }}"></a>
                     </div>
                     <div class="">
-                        <img src="{{ asset('images/slides/4.jpg') }}">
+                        <a href="{{ URL::to('noticias/que-hacemos/21') }}"><img src="{{ asset('images/slides/4.jpg') }}"></a>
                     </div>
 
                 </div>
@@ -83,7 +83,7 @@
     <section>
         <div class="container">
             <div class="row">
-                <div class="news-slider owl-carousel">
+                <div class="news-slider owl-carousel formulario-top">
                 @foreach($article as $a)
                     <div class="single-features post-content">
                         <div class="col-sm-12 col-md-6 wow fadeInLeft" data-wow-duration="500ms" data-wow-delay="300ms">
@@ -130,7 +130,13 @@
                         <img src="{{ asset('images/allies/corpoula.jpg') }}">
                     </div>
                     <div class="">
-                        <img src="{{ asset('images/allies/mision.jpg') }}">
+                        <img src="{{ asset('images/allies/eu.jpg') }}">
+                    </div>
+                     <div class="">
+                        <img src="{{ asset('images/allies/fmam.png') }}">
+                    </div>
+                     <div class="">
+                        <img src="{{ asset('images/allies/sgp.png') }}">
                     </div>
                     
                 </div>

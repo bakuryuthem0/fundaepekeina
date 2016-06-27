@@ -11,7 +11,13 @@
     <link href="{{ asset('html/css/main.css') }}" rel="stylesheet">
     <link href="{{ asset('html/css/responsive.css') }}" rel="stylesheet">
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
+    <style type="text/css">
+        .img-boletin
+        {
+            max-height: 312px;
+        }
 
+    </style>
     <!--[if lt IE 9]>
         <script src="js/html5shiv.js"></script>
         <script src="js/respond.min.js"></script>
@@ -25,7 +31,7 @@
 
 <body>
    <div class="logo-image" style="margin-bottom: 50px;">                                
-       <a href="index.html"><img class="img-responsive" src="images/logo.png" alt=""> </a> 
+       <a href="index.html"><img class="img-responsive" src="{{ asset('images/logo.png') }}" alt=""> </a> 
     </div>
      <section id="">        
          <div class="container">
@@ -40,7 +46,7 @@
                             <h3 class="panel-title">{{ $a->title }}</h3>
                         </div>
                         <div class="panel-body">
-                            <img src="{{ asset('images/news/'.$a->imagenes->first()['image']) }}" class="img-responsive">
+                            <img src="{{ asset('images/news/'.$a->imagenes->first()['image']) }}" class="img-responsive center-block img-boletin">
                             <p>{{ substr(strip_tags($a->descripcion), 0, 300) }} [...]</p>
                             <a href="{{ URL::to('fundaepekeina.org/noticias/'.$a->id) }}" class="btn btn-primary">Leer mas</a>
                         </div>
@@ -65,21 +71,6 @@
     </section>
     
 
-    <script type="text/javascript" src="{{ ('html/js/jquery.js') }}"></script>
-    <script type="text/javascript" src="{{ ('html/js/bootstrap.min.js') }}"></script>
-    <script type="text/javascript" src="{{ ('html/js/coundown-timer.js') }}"></script>
-    <script type="text/javascript" src="{{ ('html/js/wow.min.js') }}"></script>
-    <script type="text/javascript" src="{{ ('html/js/main.js') }}"></script>
-    <script type="text/javascript">
-            //Countdown js
-         $("#countdown").countdown({
-                date: "10 march 2015 12:00:00",
-                format: "on"
-            },      
-            function() {
-                // callback function
-        });
-    </script>
     
 </body>
 </html>

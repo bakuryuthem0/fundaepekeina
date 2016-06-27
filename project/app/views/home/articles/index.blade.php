@@ -41,6 +41,7 @@
                                             <img data-original="{{ asset('images/logo.png') }}" class="lazy center-block new-no-image img-responsive" alt="{{ $a->title }}">
                                         @endif
                                     </a>
+                                    @if($type != "que-hacemos")
                                     <div class="post-overlay">
                                        <span class="uppercase">
                                         @if($type != 'sedes/proyectos')
@@ -56,6 +57,7 @@
                                             </a>
                                         </span>
                                    </div>
+                                   @endif
                                 </div>
                                 <div class="post-content overflow col-xs-12 col-sm-6">
                                     @if($type != 'sedes/proyectos')
@@ -83,8 +85,12 @@
                                         <li><a href="#!"><i class="fa fa-heart"></i></i>{{ $a->likeCount->first()['aggregate'] }} Heart</a></li>
                                         @endif
                                     </ul>
+                                    @if($type != "que-hacemos")
+
                                     <div class="pull-right visible-md-block visible-lg-block">Creado: {{ date('d-m-Y',strtotime($a->created_at)) }}</div>
+
                                     <div class="pull-left hidden-md hidden-lg">Creado: {{ date('d-m-Y',strtotime($a->created_at)) }}</div>
+                                    @endif
                                 </div>
                             </div>
                         </div>

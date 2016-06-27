@@ -44,6 +44,40 @@ function clonar(target, name) {
 function removeCloned(esto) {
 	esto.parent().remove();
 }
+function descargarArchivo(contenidoEnBlob, nombreArchivo,callBackFunction) {
+    var reader = new FileReader();
+    reader.onload = function (event) {
+        var save = document.createElement('a');
+        save.href = event.target.result;
+        save.target = '_blank';
+        save.download = nombreArchivo || 'archivo.dat';
+        var clicEvent = new MouseEvent('click', {
+            'view': window,
+                'bubbles': true,
+                'cancelable': true
+        });
+        save.dispatchEvent(clicEvent);
+        (window.URL || window.webkitURL).revokeObjectURL(save.href);
+    };
+    reader.readAsDataURL(contenidoEnBlob);
+    callBackFunction();
+}
+
+function getData() {
+	var txt = $('.btn-download').val();
+	return txt;
+}
+function generarHtml(datos) {
+    var texto = [];
+    texto.push(datos);
+    //No olvidemos especificar el tipo MIME correcto :)
+    return new Blob(texto, {
+        type: 'text/html'
+    });
+}
+function llamadaPatras() {
+	$('.btn-download').removeClass('disabled').attr('disabled', false);
+}
 jQuery(document).ready(function($) {
 	hideResponseAjax();
 	var base = $('.baseUrl').val();
@@ -186,5 +220,10 @@ jQuery(document).ready(function($) {
 			}
 		});
 		
+	});
+	$('.btn-download').on('click', function(event) {
+		$('.btn-download').addClass('disabled').attr('disabled', true);
+		var fecha = (new Date()).toLocaleDateString();
+		descargarArchivo(generarHtml(getData()),'boletin'+fecha+'.html',llamadaPatras);
 	});
 });

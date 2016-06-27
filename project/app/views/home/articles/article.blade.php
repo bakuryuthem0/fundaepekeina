@@ -28,6 +28,7 @@
                                     @if(count($article->imagenes) < 2)
                                     <div class="post-thumb">
                                         <a href="#"><img src="{{ asset('images/news/'.$article->imagenes->first()['image']) }}" class="center-block img-responsive" alt="{{ $article->title }}"></a>
+                                        @if($type != "que-hacemos")
                                         <div class="post-overlay">
                                             <span class="uppercase"><a href="#">
                                                 <?php 
@@ -37,6 +38,7 @@
                                                 {{ $aux[2] }} <br><small>{{ date('M',strtotime($aux2[0])); }}</small>
                                             </a></span>
                                         </div>
+                                        @endif
                                     </div>
                                     @else
                                     <div class="slider-for">
@@ -74,7 +76,9 @@
                                             <li><a href="#"><i class="fa fa-tag"></i>Creative</a></li>
                                         </ul>
                                         <div class="pull-right visible-md-block visible-lg-block">Creado: {{ date('d-m-Y',strtotime($article->created_at)) }}</div>
+                                        @if($type != "que-hacemos")
                                         <div class="pull-left hidden-md hidden-lg">Creado: {{ date('d-m-Y',strtotime($article->created_at)) }}</div>
+                                        @endif
                                     </div>
                                 </div>
                             </div>

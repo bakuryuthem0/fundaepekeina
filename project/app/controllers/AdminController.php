@@ -17,7 +17,7 @@ class AdminController extends BaseController {
 	}
 	public function getLogin()
 	{
-		$title = "Inicio de sesión | fundaepekeina.org";
+		$title = "Inicio de sesión | Funda Epékeina";
 		return View::make('admin.login')
 		->with('title',$title);
 	}
@@ -57,7 +57,7 @@ class AdminController extends BaseController {
 	}
 	public function getIndex()
 	{
-		$title = "Inicio | Administrador Romoinca";
+		$title = "Inicio | Administrador Funda Epékeina";
 		return View::make('admin.index')
 		->with('title',$title);
 	}
@@ -103,7 +103,7 @@ class AdminController extends BaseController {
 	}
 	public function getNewArticulo($value='')
 	{
-		$title = "Nuevo Artículo | Fundaepekeina";
+		$title = "Nuevo Artículo | Funda Epékeina";
 		$sede = Tipo::get();
 		return View::make('admin.article.new')
 		->with('title',$title)
@@ -154,7 +154,7 @@ class AdminController extends BaseController {
 	}
 	public function showArticulos()
 	{
-		$title = "Ver articulos | fundaepekeina";
+		$title = "Ver articulos | Funda Epékeina";
 		$article = Articulo::orderBy('id','DESC')->get();
 		return View::make('admin.article.show')
 		->with('title',$title)
@@ -164,7 +164,7 @@ class AdminController extends BaseController {
 	public function showArt($id)
 	{
 		$articulo = Articulo::with('imagenes')->find($id);
-		$title = "Ver artículo: ".$articulo->title." | fundaepekeina";
+		$title = "Ver artículo: ".$articulo->title." | Funda Epékeina";
 		return View::make('admin.article.view')
 		->with('title',$title)
 		->with('articulo',$articulo);
@@ -298,7 +298,7 @@ class AdminController extends BaseController {
 	}
 	public function newUser()
 	{
-		$title = "Nuevo Usuario | Fundaepekeina";
+		$title = "Nuevo Usuario | Funda Epékeina";
 		$roles = Role::get();
 		return View::make('admin.users.new')
 		->with('title',$title)
@@ -335,7 +335,7 @@ class AdminController extends BaseController {
 	}
 	public function getUsers()
 	{
-		$title = "Ver usuarios | Fundaepekeina";
+		$title = "Ver usuarios | Funda Epékeina";
 		$users = User::where('role','!=',1)->get(); 
 		return View::make('admin.users.show')
 		->with('title',$title)
@@ -343,7 +343,7 @@ class AdminController extends BaseController {
 	}
 	public function chageUserPass($id)
 	{
-		$title = "Cambiar contraseña | Fundaepekeina";
+		$title = "Cambiar contraseña | Funda Epékeina";
 		$user = User::find($id);
 		return View::make('admin.users.changePass')
 		->with('title',$title)

@@ -58,6 +58,7 @@
                 <li><a href="{{ URL::to('administrador/ver-usuarios') }}"><i class="fa fa-list"></i> Ver Usuarios</a></li>
               </ul>
             </li>
+            <li><a href="{{ URL::to('generar-boletin') }}">Generar Boletin</a></li>
             @endif
           </ul>
           <ul class="nav navbar-nav navbar-right">

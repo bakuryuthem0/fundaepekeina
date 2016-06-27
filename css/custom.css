@@ -41,7 +41,7 @@ html, body
     font-size: 14px;
     margin: 5px;
     padding: 4px 7px;
-    background: #d6d6d6;
+    background: #86cfe4;
     display: inline-block;
     text-align: center;
     cursor: pointer;
@@ -49,7 +49,7 @@ html, body
 }
 .owl-next:hover, .owl-prev:hover
 {
-	background: #459C35;
+	background: #e6007e;
 }
 .contLoading
 {
@@ -456,4 +456,8 @@ small.response-danger
     font-size: 24px;
     padding: 10px;
     display: none;
+}
+.formulario-top
+{
+    margin-top: 1em;
 }

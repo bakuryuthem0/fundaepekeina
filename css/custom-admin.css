@@ -106,3 +106,12 @@
     background-color: #333;
     color: #fff;
 }
+.boletin pre
+{
+	width: 100%;
+}
+.center-block
+{
+	float: none;
+	margin: 0 auto;
+}

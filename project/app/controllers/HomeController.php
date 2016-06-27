@@ -17,7 +17,7 @@ class HomeController extends BaseController {
 
 	public function getIndex()
 	{
-		$title = "Inicio | Fundaepekeina";
+		$title = "Inicio | Funda Epékeina";
 		$article = Articulo::with('imagenes')->where('state','=',1)->orderBy('created_at','DESC')->take(6)->get();
 		$active = "inicio";
 		return View::make('home.index')
@@ -27,7 +27,7 @@ class HomeController extends BaseController {
 	}
 	public function getAbout()
 	{
-		$title = "Quienes Somos | Fundaepekeina";
+		$title = "Quienes Somos | Funda Epékeina";
 		$active = "about";
 		return View::make('home.about')
 		->with('active',$active)
@@ -62,7 +62,7 @@ class HomeController extends BaseController {
 			$fa = 'fa-heart-o';
 		}
 
-		$title   = "Noticia: ".$article->title." | Fundaepekeina";
+		$title   = "Noticia: ".$article->title." | Funda Epékeina";
 		$view = View::make('home.articles.article')
 		->with('article',$article)
 		->with('type',$type)
@@ -89,7 +89,7 @@ class HomeController extends BaseController {
 	}
 	public function getNews()
 	{
-		$title = "Noticias por proyectos | Fundaepekeina";
+		$title = "Noticias por proyectos | Funda Epékeina";
 
 		$article = Articulo::with('imagenes')->with('likeCount')
 		->where('state','=',1)
@@ -140,8 +140,7 @@ class HomeController extends BaseController {
 		{
 			$article = Articulo::where('cat_id','=','4')->where('state','=',1)->orderBy('created_at','DESC')->paginate(6);
 		}
-
-		$title = "Noticias por ".$type." | Fundaepekeina";
+		$title = "Noticias por ".$type." | Funda Epékeina";
 		$view = View::make('home.articles.index')
 		->with('title',$title)
 		->with('article',$article)
@@ -196,7 +195,7 @@ class HomeController extends BaseController {
 				'articulos.created_at',
 			));
 		}
-		$title = "Noticias por ".$type." | Fundaepekeina";
+		$title = "Noticias por ".$type." | Funda Epékeina";
 		$view = View::make('home.articles.index')
 		->with('title',$title)
 		->with('article',$article)
@@ -232,7 +231,7 @@ class HomeController extends BaseController {
 			->orWhereRaw('LOWER(descripcion) LIKE "%'.$busq.'%"');
 		})
 		->paginate(6);
-		$title = "Busqueda por: ".$busq." | Fundaepekeina";
+		$title = "Busqueda por: ".$busq." | Funda Epékeina";
 		$view = View::make('home.articles.busq')
 		->with('title',$title)
 		->with('article',$article);
@@ -244,14 +243,14 @@ class HomeController extends BaseController {
 	}
 	public function getGallery()
 	{
-		$title = "Galería | Fundaepekeina";
+		$title = "Galería | Funda Epékeina";
 		return View::make('home.gallery')
 		->with('title',$title)
 		->with('active','galeria');
 	}
 	public function getContact()
 	{
-		$title = "Contactenos | Fundaepekeina";
+		$title = "Contactenos | Funda Epékeina";
 		return View::make('home.contact')
 		->with('active','contacto')
 		->with('title',$title);
@@ -290,7 +289,7 @@ class HomeController extends BaseController {
 
 		Mail::send('emails.envia', $datos, function($message) use ($data)
 		{
-			$message->to('fundaepekeina@gmail.com')->from($data['email'])->subject($data['subject']);
+			$message->to('Funda Epékeina@gmail.com')->from($data['email'])->subject($data['subject']);
 		});
 
 		return Response::json(array(
@@ -300,7 +299,7 @@ class HomeController extends BaseController {
 	}
 	public function getOrg()
 	{
-		$title = "Organigrama | Fundaepekeina";
+		$title = "Organigrama | Funda Epékeina";
 		return View::make('home.organigrama')
 		->with('active','about')
 		->with('title',$title);
@@ -341,21 +340,21 @@ class HomeController extends BaseController {
 	}
 	public function getDonation()
 	{
-		$title = "Donaciones | Fundaepekeina";
+		$title = "Donaciones | Funda Epékeina";
 		return View::make('home.donations')
 		->with('title',$title)
 		->with('active','contacto');
 	}
 	public function getSupport()
 	{
-		$title = "Apoyenos | Fundaepekeina";
+		$title = "Apoyenos | Funda Epékeina";
 		return View::make('home.support')
 		->with('title',$title)
 		->with('active','contacto');
 	}
 	public function getMap()
 	{
-		$title = "Localización | Fundaepekeina";
+		$title = "Localización | Funda Epékeina";
 		return View::make('home.map')
 		->with('title',$title)
 		->with('active','about');

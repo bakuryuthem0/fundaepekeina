@@ -80,11 +80,11 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li class="@if($active == 'inicio') active @endif"><a href="{{ URL::to('/') }}">Inicio</a></li>
                         <li class="@if($active == 'about') active @endif dropdown">
-                            <a href="{{ URL::to('quienes-somos') }}" class="visible-md-block visible-lg-block">Conócenos <i class="fa fa-angle-down"></i></a>
+                            <a href="{{ URL::to('quienes-somos') }}" class="visible-md-block visible-lg-block">Quiénes somos <i class="fa fa-angle-down"></i></a>
                             <a href="#!" class="hidden-md hidden-lg">Conócenos <i class="fa fa-angle-down"></i></a>
                             <ul role="menu" class="sub-menu">
                                 
-                                <li><a href="{{ URL::to('quienes-somos') }}" class="hidden-md hidden-lg">Quienes Somos</a></li>
+                                <li><a href="{{ URL::to('quienes-somos') }}" class="hidden-md hidden-lg">Quiénes Somos</a></li>
                                 <li><a href="{{ URL::to('noticias/que-hacemos') }}">¿Que hacemos?</a></li>
                                 <!--<li><a href="localizacion">¿Donde estamos?</a></li>-->
                                 <li><a href="{{ URL::to('organigrama') }}">Organigrama</a></li>
@@ -104,12 +104,12 @@
                         <li class="@if($active == 'galeria') active @endif"><a href="{{ URL::to('galeria') }}">Galeria</a>
                         </li>
                         <li class="@if($active == 'contacto') active @endif dropdown">
-                            <a href="{{ URL::to('contacto/apoyenos') }}" class="visible-md-block visible-lg-block">Apoyenos <i class="fa fa-angle-down"></i></a>
-                            <a href="#!" class="hidden-md hidden-lg">Apoyenos <i class="fa fa-angle-down"></i></a>
+                            <a href="{{ URL::to('contacto/apoyenos') }}" class="visible-md-block visible-lg-block">Qué puedes hacer tú <i class="fa fa-angle-down"></i></a>
+                            <a href="#!" class="hidden-md hidden-lg">Qué puedes hacer tú <i class="fa fa-angle-down"></i></a>
 
                              <ul role="menu" class="sub-menu">
                                 <li><a href="{{ URL::to('contacto') }}">Contactenos</a></li>
-                                <li><a href="{{ URL::to('contacto/apoyenos') }}" class="hidden-md hidden-lg">Apoyenos</a></li>
+                                <li><a href="{{ URL::to('contacto/apoyenos') }}" class="hidden-md hidden-lg">Qué puedes hacer tú</a></li>
                                 <li><a href="{{ URL::to('contacto/donaciones') }}">Donaciones</a></li>
                             </ul>
                         </li>                    
