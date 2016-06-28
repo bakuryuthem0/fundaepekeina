@@ -130,6 +130,9 @@
                         <img src="{{ asset('images/allies/corpoula.jpg') }}">
                     </div>
                     <div class="">
+                        <img src="{{ asset('images/allies/mision.jpg') }}">
+                    </div>
+                    <div class="">
                         <img src="{{ asset('images/allies/eu.jpg') }}">
                     </div>
                      <div class="">

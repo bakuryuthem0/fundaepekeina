@@ -461,3 +461,43 @@ small.response-danger
 {
     margin-top: 1em;
 }
+.action h1
+{
+    text-shadow: -2px -1px #fff;
+}
+.navbar-nav
+{
+    background-image: url(../images/borde.png);
+    background-repeat-y: no-repeat;
+    background-position: 0 100%;
+    -webkit-animation: slide-navigation 20s linear infinite;
+       -moz-animation: slide-navigation 20s linear infinite;
+        -ms-animation: slide-navigation 20s linear infinite;
+         -o-animation: slide-navigation 20s linear infinite;
+            animation: slide-navigation 20s linear infinite;
+}
+.navbar-nav:hover
+{
+    background-position: 655px 100%;
+}
+@-webkit-keyframes slide-navigation {
+     0% { 
+        background-position: 0 100%;
+     } 
+     100% {
+        background-position: 655px 100%;
+    }
+}
+
+@keyframes slide-navigation {
+  0% { 
+        background-position: 0 100%;
+     } 
+     100% {
+        background-position: 655px 100%;
+    }
+}
+#header .navbar-nav.navbar-right >li:last-child
+{
+    margin-right: 0;
+}
