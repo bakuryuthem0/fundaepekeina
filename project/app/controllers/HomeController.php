@@ -128,7 +128,7 @@ class HomeController extends BaseController {
 			));
 		}elseif($type == 'sedes')
 		{
-			$article = $article->where('articullos.state','=',1)
+			$article = $article->where('articulos.state','=',1)
 			->orderBy('articulos.created_at','DESC')
 			->paginate(6,array(
 				'articulos.id',
