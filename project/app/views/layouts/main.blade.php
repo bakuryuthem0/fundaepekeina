@@ -71,7 +71,7 @@
                         <span class="icon-bar"></span>
                     </button>
 
-                    <a class="navbar-brand" href="index.html">
+                    <a class="navbar-brand" href="{{ URL::to('/') }}">
                     	<h1><img src="{{ asset('images/logo.png') }}" alt="logo"></h1>
                     </a>
                     

@@ -465,7 +465,7 @@ small.response-danger
 {
     text-shadow: -2px -1px #fff;
 }
-.navbar-nav
+.navbar-menu
 {
     background-image: url(../images/borde.png);
     background-repeat-y: no-repeat;
@@ -476,7 +476,7 @@ small.response-danger
          -o-animation: slide-navigation 20s linear infinite;
             animation: slide-navigation 20s linear infinite;
 }
-.navbar-nav:hover
+.navbar-menu:hover
 {
     background-position: 655px 100%;
 }
