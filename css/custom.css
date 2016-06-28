@@ -469,6 +469,9 @@ small.response-danger
 {
     background-image: url(../images/borde.png);
     background-repeat-y: no-repeat;
+    -webkit-background-position: 0 100%;
+    -moz-background-position: 0 100%;
+    -ms-background-position: 0 100%;
     background-position: 0 100%;
     -webkit-animation: slide-navigation 20s linear infinite;
        -moz-animation: slide-navigation 20s linear infinite;
@@ -478,22 +481,37 @@ small.response-danger
 }
 .navbar-menu:hover
 {
+    -webkit-background-position: 655px 100%;
+    -moz-background-position: 655px 100%;
+    -ms-background-position: 655px 100%;
     background-position: 655px 100%;
 }
 @-webkit-keyframes slide-navigation {
      0% { 
+        -webkit-background-position: 0 100%;
+        -moz-background-position: 0 100%;
+        -ms-background-position: 0 100%;
         background-position: 0 100%;
      } 
      100% {
+        -webkit-background-position: 655px 100%;
+        -moz-background-position: 655px 100%;
+        -ms-background-position: 655px 100%;
         background-position: 655px 100%;
     }
 }
 
 @keyframes slide-navigation {
   0% { 
+        -webkit-background-position: 0 100%;
+        -moz-background-position: 0 100%;
+        -ms-background-position: 0 100%;
         background-position: 0 100%;
      } 
      100% {
+        -webkit-background-position: 655px 100%;
+        -moz-background-position: 655px 100%;
+        -ms-background-position: 655px 100%;
         background-position: 655px 100%;
     }
 }
