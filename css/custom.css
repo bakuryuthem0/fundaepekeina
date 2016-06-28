@@ -468,10 +468,7 @@ small.response-danger
 .navbar-menu
 {
     background-image: url(../images/borde.png);
-    background-repeat-y: no-repeat;
-    -webkit-background-repeat-y: no-repeat;
-       -moz-background-repeat-y: no-repeat;
-        -ms-background-repeat-y: no-repeat;
+    background-repeat: repeat-x;
     background-position: 0 100%;
     -webkit-animation: slide-navigation 20s linear infinite;
        -moz-animation: slide-navigation 20s linear infinite;
