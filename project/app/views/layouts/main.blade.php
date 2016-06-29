@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="{{ asset('plugins/fancybox/source/jquery.fancybox.css?v=2.1.5') }}" type="text/css" media="screen" />
     <link rel="stylesheet" href="{{ asset('plugins/fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5') }}" type="text/css" media="screen" />
     <link rel="stylesheet" href="{{ asset('plugins/fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7') }}" type="text/css" media="screen" />
-    <link href="{{ asset('css/custom.css?v=0.1') }}" rel="stylesheet">
+    <link href="{{ asset('css/custom.css?v=0.2') }}" rel="stylesheet">
 
 
     <!--[if lt IE 9]>

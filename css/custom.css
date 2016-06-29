@@ -119,10 +119,12 @@ html, body
 }
 #home-slider .owl-carousel .owl-item img
 {
-    height: auto;
-    width: 100%;
+    /* height: auto; */
+    /* width: 100%;*/
+    width: auto;
     margin: 0 auto;
-    max-width: 1021px;
+    /* max-width: 1021px; */
+    max-height: 450px
 }
 .allies-slider.owl-carousel .owl-item img
 {
