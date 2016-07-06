@@ -90,8 +90,10 @@
                 <div class="news-slider owl-carousel formulario-top">
                 @foreach($article as $a)
                     <div class="single-features post-content">
-                        <div class="col-sm-12 col-md-6 wow fadeInLeft" data-wow-duration="500ms" data-wow-delay="300ms">
-                            <a href="{{ URL::to('noticias/'.$a->id) }}"><img src="{{ asset('images/news/'.$a->imagenes->first()['image']) }}" class="img-responsive" alt=""></a>
+                        <div class="col-sm-12 col-md-6 wow fadeInLeft image-container" data-wow-duration="500ms" data-wow-delay="300ms">
+                            <a href="{{ URL::to('noticias/'.$a->id) }}">
+                                <img src="{{ asset('images/news/'.$a->imagenes->first()['image']) }}" class="img-responsive" alt="">
+                            </a>
                         </div>
                         <div class="col-sm-12 col-md-6 wow fadeInRight news-text-index" data-wow-duration="500ms" data-wow-delay="300ms">
                             <h2>{{ $a->title }}</h2>
