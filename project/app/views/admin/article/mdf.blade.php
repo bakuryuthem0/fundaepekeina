@@ -83,7 +83,7 @@
           <div class="col-xs-12 no-padding">
             @foreach($article->imagenes as $i)
             <div class="col-xs-12 col-md-6 formulario no-padding-half">
-              <button type="button" class="close btn-elim-image" data-toggle="modal" data-target="#elimItems" data-id="{{ $i->id }}" data-url="{{ URL::to('administrador/ver-articulos/eliminar-imagen') }}" data-what-to-elim="imagen">&times;</button>
+              <div><button type="button" class="close btn-elim-image" data-toggle="modal" data-target="#elimItems" data-id="{{ $i->id }}" data-url="{{ URL::to('administrador/ver-articulos/eliminar-imagen') }}" data-what-to-elim="imagen">&times;</button></div>
               <input type="file" name="file[{{ $i->id }}]">
               <div class="col-xs-12 no-padding item-img"><img src="{{ asset('images/news/'.$i->image) }}"></div>
             </div>
