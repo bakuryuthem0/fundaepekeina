@@ -39,22 +39,51 @@
                 <div class="text-center" style="margin-bottom:50px;">
                     <h1>Boletín oficial</h1>
                 </div>
-                @foreach($article as $a)
-                <div class="col-sm-12 col-md-6 fixedheight">
+                <?php $j = 1; ?>
+                <div class="col-sm-12 fixedheight">
                     <div class="panel panel-success">
                         <div class="panel-heading">
-                            <h3 class="panel-title">{{ $a->title }}</h3>
+                            <h3 class="panel-title">{{ $principal->title }}</h3>
                         </div>
                         <div class="panel-body">
-                            <img src="{{ asset('images/news/'.$a->imagenes->first()['image']) }}" class="img-responsive center-block img-boletin">
-                            <p>{{ substr(strip_tags($a->descripcion), 0, 300) }} [...]</p>
-                            <a href="{{ URL::to('fundaepekeina.org/noticias/'.$a->id) }}" class="btn btn-primary">Leer mas</a>
+                                @if(!is_null($principal->imagenes->first()['image']))
+                                    <img src="{{ asset('images/news/'.$principal->imagenes->first()['image']) }}" class="img-responsive center-block img-boletin">
+                                @else
+                                    <img src="{{ asset('images/logo.png') }}" class="img-responsive center-block img-boletin" alt="{{ $principal->title }}">
+                                @endif
+                            <p>{{ substr(strip_tags($principal->descripcion), 0, 300) }} [...]</p>
+                            <a href="{{ URL::to('fundaepekeina.org/noticias/'.$principal->id) }}" class="btn btn-primary">Leer mas</a>
                         </div>
                     </div>
                 </div>
+                @foreach($article as $a)
+                    @if($a->id != $principal->id)
+                    <div class="col-sm-12 col-md-6 fixedheight">
+                        <div class="panel panel-success">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">{{ $a->title }}</h3>
+                            </div>
+                            <div class="panel-body">
+                                    @if(!is_null($a->imagenes->first()['image']))
+                                        <img src="{{ asset('images/news/'.$a->imagenes->first()['image']) }}" class="img-responsive center-block img-boletin">
+                                    @else
+                                        <img src="{{ asset('images/logo.png') }}" class="img-responsive center-block img-boletin" alt="{{ $a->title }}">
+                                    @endif
+                                <p>{{ substr(strip_tags($a->descripcion), 0, 300) }} [...]</p>
+                                <a href="{{ URL::to('fundaepekeina.org/noticias/'.$a->id) }}" class="btn btn-primary">Leer mas</a>
+                            </div>
+                        </div>
+                    </div>
+                    @if($j%2 == 0)
+                        <div class="clearfix"></div>
+                    @endif
+                    <?php $j++; ?>
+                    @endif
                 @endforeach
-                <div class="text-center">
-                    Estén atentos a nuestra próxima entrega. Gracias.
+                <div class="col-xs-12">
+                    <div class="text-center">
+                        Estén atentos a nuestra próxima entrega. Gracias.
+                    </div>
                 </div>
             </div>
         </div>       

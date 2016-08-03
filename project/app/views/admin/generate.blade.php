@@ -2,7 +2,7 @@
 
 @section('content')
 	<?php 
-		$html = View::make('emails.boletin')->with('article',$article);
+		$html = View::make('emails.boletin')->with('article',$article)->with('principal',$principal);
 	?>
 	<div class="col-xs-12 col-md-8 center-block boletin">
 		{{ '<pre class="html-code">'.htmlspecialchars($html).'</pre>' }}

@@ -47,13 +47,15 @@ Route::group(array('before' => 'no_auth'),function()
 		Route::post('administrador/login/enviar','AdminController@postLogin');
 	});
 });
-
-Route::get('generar-boletin','BoletinController@getBoletinAdmin');
-Route::get('generar-boletin-html','BoletinController@getBoletin');
 Route::get('agregar-love','HomeController@getLike');
 
 Route::group(array('before' => 'auth'),function() 
 {
+
+	Route::get('generar-boletin','BoletinController@selectNews');
+	Route::post('generar-boletin/enviar','BoletinController@getBoletinAdmin');
+	Route::get('generar-boletin-html','BoletinController@getBoletin');
+
 	Route::get('administrador/', 'AdminController@getIndex');
 	Route::get('administrador/change-password','AdminController@getChangePass');
 	Route::post('administrador/change-password/send','AdminController@postUserNewPass');
