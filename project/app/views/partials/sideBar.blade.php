@@ -8,7 +8,9 @@
             @endif
             <ul class="nav navbar-stacked">
                 @foreach(SideBarController::getCategories($menu) as $c)
-                    <li><a href="{{ URL::to('noticias/'.$c->tipos->descripcion.'/categoria/'.$c->id) }}">{{ ucwords($c->title) }}</a></li>
+                    @if($c->id != 4)
+                        <li><a href="{{ URL::to('noticias/'.$c->tipos->descripcion.'/categoria/'.$c->id) }}">{{ ucwords($c->title) }}</a></li>
+                    @endif
                 @endforeach
             </ul>
         </div>
