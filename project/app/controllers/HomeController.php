@@ -42,7 +42,6 @@ class HomeController extends BaseController {
 		$article = Articulo::leftJoin('categorias','categorias.id','=','articulos.cat_id')
 		->where('articulos.id','=',$id)
 		->where('articulos.state','=',1)
-		->where('articulos.cat_id','!=',4)
 		->with('imagenes')
 		->first(array(
 			'articulos.id',
