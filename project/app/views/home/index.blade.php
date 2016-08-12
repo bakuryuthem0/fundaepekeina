@@ -141,11 +141,14 @@
                     <div class="">
                         <img src="{{ asset('images/allies/eu.jpg') }}">
                     </div>
-                     <div class="">
+                    <div class="">
                         <img src="{{ asset('images/allies/fmam.png') }}">
                     </div>
-                     <div class="">
+                    <div class="">
                         <img src="{{ asset('images/allies/sgp.png') }}">
+                    </div>
+                    <div class="">
+                        <a href="{{ URL::to('http://uba.edu.ve') }}"><img src="{{ asset('images/allies/uba.png') }}"></a>
                     </div>
                     
                 </div>
