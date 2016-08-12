@@ -18,7 +18,7 @@ class HomeController extends BaseController {
 	public function getIndex()
 	{
 		$title = "Inicio | Funda Epékeina";
-		$article = Articulo::with('imagenes')->where('state','=',1)->orderBy('created_at','DESC')->take(6)->get();
+		$article = Articulo::with('imagenes')->where('state','=',1)->where('articulos.cat_id','!=',4)->orderBy('created_at','DESC')->take(6)->get();
 		$active = "inicio";
 		return View::make('home.index')
 		->with('active',$active)
