@@ -85,7 +85,7 @@
                             <ul role="menu" class="sub-menu">
                                 
                                 <li><a href="{{ URL::to('quienes-somos') }}" class="hidden-md hidden-lg">Quiénes Somos</a></li>
-                                <li><a href="{{ URL::to('noticias/que-hacemos') }}">¿Que hacemos?</a></li>
+                                <li><a href="{{ URL::to('noticias/que-hacemos') }}">¿Qué hacemos?</a></li>
                                 <!--<li><a href="localizacion">¿Donde estamos?</a></li>-->
                                 <li><a href="{{ URL::to('organigrama') }}">Organigrama</a></li>
                             </ul>

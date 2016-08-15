@@ -537,3 +537,70 @@ small.response-danger
          -o-transform: translate(-50%,-50%);
             transform: translate(-50%,-50%);
 }
+.main-slider
+{
+    height: 500px !important;
+}
+.main-slider a
+{
+    height: 100%;
+}
+.main-slider img
+{
+    width: auto;
+    max-height: 100%;
+
+}
+.miniImg
+{
+    height: 120px !important;
+    border-left: 1px solid #333;
+    border-right: 1px solid #333;
+}
+.miniImg img
+{
+    max-height: 100%;
+    width: auto;
+}
+.main-slider, .miniImg
+{
+    position: relative
+}
+.main-slider img, .miniImg img
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+       -moz-transform: translate(-50%,-50%);
+        -ms-transform: translate(-50%,-50%);
+         -o-transform: translate(-50%,-50%);
+            transform: translate(-50%,-50%);
+}
+
+/* the slides */
+.slick-slide {
+margin: 0 27px;
+}
+/* the parent */
+.slick-list {
+margin: 0 -27px;
+}
+.fancybox
+{
+    display: block !important;
+}
+.fancybox-inner
+{
+    overflow: hidden;
+}
+.fancybox-inner .fancybox
+{
+    height: 100%;
+}
+.fancybox-inner .fancybox img
+{
+    height: 100%;
+    width: auto;
+    margin: 0 auto;
+}

@@ -43,12 +43,12 @@
                                     @else
                                     <div class="slider-for">
                                         @foreach($article->imagenes as $i)
-                                            <div><img src="{{ asset('images/news/'.$i->image) }}" class="center-block img-responsive"></div>
+                                            <div class="main-slider"><a class="fancybox" data-fancybox-group="gallery"><img src="{{ asset('images/news/'.$i->image) }}" class="center-block img-responsive"></a></div>
                                         @endforeach
                                     </div>
                                     <div class="slider-nav">
                                         @foreach($article->imagenes as $i)
-                                            <div><img src="{{ asset('images/news/'.$i->image) }}" class="center-block img-responsive"></div>
+                                            <div class="miniImg"><img src="{{ asset('images/news/'.$i->image) }}" class="center-block img-responsive"></div>
                                         @endforeach
                                     </div>
                                     @endif
@@ -97,6 +97,20 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('plugins/slick/slick-theme.css') }}"/>
     <script type="text/javascript" src="{{ asset('plugins/slick/slick.min.js') }}"></script>
 
+    <link rel="stylesheet" type="text/css" href="{{ asset('plugins/fancybox/source/jquery.fancybox.css?v=2.1.5') }}" media="screen" />
+
+    <link rel="stylesheet" type="text/css" href="{{ asset('plugins/fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5') }}" />
+
+    <link rel="stylesheet" type="text/css" href="{{ asset('plugins/fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7') }}" />
+
+    <script type="text/javascript" src="{{ asset('plugins/fancybox/source/jquery.fancybox.js?v=2.1.5') }}"></script>
+
+
+    <script type="text/javascript" src="{{ asset('plugins/fancybox/source/helpers/jquery.fancybox-buttons.js?v=1.0.5') }}"></script>
+
+    <script type="text/javascript" src="{{ asset('plugins/fancybox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7') }}"></script>
+
+    <script type="text/javascript" src="{{ asset('plugins/fancybox/source/helpers/jquery.fancybox-media.js?v=1.0.6') }}"></script>
     <script type="text/javascript">
 
         $(document).ready(function(){
@@ -118,6 +132,7 @@
               stagePadding: 0,
 
             });
+            $('.fancybox').fancybox();
         });
     </script>
 @stop
