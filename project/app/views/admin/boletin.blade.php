@@ -57,14 +57,7 @@
   {{ HTML::script('plugins/datatables/dataTables.bootstrap.min.js') }}
   <script>
     $(function () {
-      $('#example1').DataTable({
-        "paging": true,
-        "lengthChange": true,
-        "searching": true,
-        "ordering": true,
-        "info": true,
-        "autoWidth": true
-      });
+      
     });
   </script>
 
