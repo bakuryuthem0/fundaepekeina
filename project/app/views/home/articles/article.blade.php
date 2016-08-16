@@ -43,7 +43,7 @@
                                     @else
                                     <div class="slider-for">
                                         @foreach($article->imagenes as $i)
-                                            <div class="main-slider"><a class="fancybox" data-fancybox-group="gallery"><img src="{{ asset('images/news/'.$i->image) }}" class="center-block img-responsive"></a></div>
+                                            <div class="main-slider-news"><a class="fancybox" data-fancybox-group="gallery"><img src="{{ asset('images/news/'.$i->image) }}" class="center-block img-responsive"></a></div>
                                         @endforeach
                                     </div>
                                     <div class="slider-nav">
