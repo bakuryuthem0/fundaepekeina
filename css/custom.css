@@ -537,15 +537,15 @@ small.response-danger
          -o-transform: translate(-50%,-50%);
             transform: translate(-50%,-50%);
 }
-.main-slider
+.main-slider-news
 {
     height: 500px !important;
 }
-.main-slider a
+.main-slider-news a
 {
     height: 100%;
 }
-.main-slider img
+.main-slider-news img
 {
     width: auto;
     max-height: 100%;
@@ -562,11 +562,11 @@ small.response-danger
     max-height: 100%;
     width: auto;
 }
-.main-slider, .miniImg
+.main-slider-news, .miniImg
 {
     position: relative
 }
-.main-slider img, .miniImg img
+.main-slider-news img, .miniImg img
 {
     position: absolute;
     top: 50%;
