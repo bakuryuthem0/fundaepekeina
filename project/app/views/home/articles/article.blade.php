@@ -24,8 +24,7 @@
                     <div class="row">
                          <div class="col-md-12 col-sm-12">
                             <div class="single-blog blog-details two-column">
-                                @if(!is_null($article->imagenes->first()['image']))
-                                    @if(count($article->imagenes) < 2)
+                                @if(count($article->imagenes) < 2)
                                     <div class="post-thumb">
                                         <a href="#"><img src="{{ asset('images/news/'.$article->imagenes->first()['image']) }}" class="center-block img-responsive" alt="{{ $article->title }}"></a>
                                         @if($type != "que-hacemos")
@@ -40,15 +39,14 @@
                                         </div>
                                         @endif
                                     </div>
-                                    @else
-                                        <ul class="pgwSlideshow">
+                                @else
+                                    <ul class="pgwSlideshow">
                                         @foreach($article->imagenes as $i)
                                             <li>
                                                 <img src="{{ asset('images/news/'.$i->image) }}" class="center-block img-responsive news-images fancybox" data-fancybox-gallery="gallery">
                                             </li>
                                         @endforeach
-                                        </ul>
-                                    @endif
+                                    </ul>
                                 @endif
                                 <div class="post-content ">
                                     <h2 class="post-title bold"><a href="#"><strong>{{ $article->title }}</strong></a></h2>
@@ -90,9 +88,8 @@
 @stop
 
 @section('postscript')
-    <link rel="stylesheet" type="text/css" href="{{ asset('plugins/slick/slick.css') }}"/>
-    <link rel="stylesheet" type="text/css" href="{{ asset('plugins/slick/slick-theme.css') }}"/>
-    <script type="text/javascript" src="{{ asset('plugins/slick/slick.min.js') }}"></script>
+    <link rel="stylesheet" type="text/css" href="{{ asset('plugins/pgwslide/pgwslideshow.min.css') }}"/>
+    <script type="text/javascript" src="{{ asset('plugins/pgwslide/pgwslideshow.min.js') }}"></script>
 
     <link rel="stylesheet" type="text/css" href="{{ asset('plugins/fancybox/source/jquery.fancybox.css?v=2.1.5') }}" media="screen" />
 
@@ -111,23 +108,8 @@
     <script type="text/javascript">
 
         $(document).ready(function(){
-             $('.slider-for').slick({
-              slidesToShow: 1,
-              slidesToScroll: 1,
-              arrows: false,
-              fade: true,
-              asNavFor: '.slider-nav'
-            });
-            $('.slider-nav').slick({
-              slidesToShow: 3,
-              slidesToScroll: 1,
-              asNavFor: '.slider-for',
-              dots: true,
-              centerMode: true,
-              focusOnSelect: true,
-              margin:30,
-              stagePadding: 0,
-
+            $('.pgwSlideshow').pgwSlideshow({
+                maxHeight: 500,
             });
             $('.fancybox').fancybox();
         });
