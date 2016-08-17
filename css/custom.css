@@ -604,3 +604,15 @@ margin: 0 -27px;
     width: auto;
     margin: 0 auto;
 }
+.ps-list ul
+{
+    left: initial !important;
+    text-align: center;
+    width: 100% !important;
+    margin-left: 0 !important;
+}
+.ps-list ul li
+{
+    float: none !important;
+    display: inline-block;
+}

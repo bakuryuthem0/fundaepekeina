@@ -41,16 +41,13 @@
                                         @endif
                                     </div>
                                     @else
-                                    <div class="slider-for">
+                                        <ul class="pgwSlideshow">
                                         @foreach($article->imagenes as $i)
-                                            <div class="main-slider-news"><a class="fancybox" data-fancybox-group="gallery"><img src="{{ asset('images/news/'.$i->image) }}" class="center-block img-responsive"></a></div>
+                                            <li>
+                                                <img src="{{ asset('images/news/'.$i->image) }}" class="center-block img-responsive news-images fancybox" data-fancybox-gallery="gallery">
+                                            </li>
                                         @endforeach
-                                    </div>
-                                    <div class="slider-nav">
-                                        @foreach($article->imagenes as $i)
-                                            <div class="miniImg"><img src="{{ asset('images/news/'.$i->image) }}" class="center-block img-responsive"></div>
-                                        @endforeach
-                                    </div>
+                                        </ul>
                                     @endif
                                 @endif
                                 <div class="post-content ">
