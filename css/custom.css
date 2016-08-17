@@ -616,3 +616,7 @@ margin: 0 -27px;
     float: none !important;
     display: inline-block;
 }
+.pgwSlideshow .ps-list li img
+{
+    width: auto !important;
+}
