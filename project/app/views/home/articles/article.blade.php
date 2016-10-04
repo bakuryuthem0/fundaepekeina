@@ -48,7 +48,7 @@
                                         @endforeach
                                     </ul>
                                 @endif
-                                <div class="post-content ">
+                                <div class="post-content text-justify">
                                     <h2 class="post-title bold"><a href="#"><strong>{{ $article->title }}</strong></a></h2>
                                     <p>
                                         {{ $article->descripcion }}
