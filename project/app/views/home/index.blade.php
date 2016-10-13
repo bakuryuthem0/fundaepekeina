@@ -6,9 +6,6 @@
             <div class="row">
                 <div class="main-slider owl-carousel">
                     <div class="">
-                        <a href="{{ URL::to('noticias/que-hacemos/211') }}"><img src="{{ asset('images/slides/banner2.jpg') }}"></a>
-                    </div>
-                    <div class="">
                         <a href="{{ URL::to('noticias/que-hacemos/18') }}"><img src="{{ asset('images/slides/1.jpg') }}"></a>
                     </div>
                     <div class="">
