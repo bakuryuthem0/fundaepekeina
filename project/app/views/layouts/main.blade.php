@@ -55,7 +55,7 @@
                             <li><a target="_blank" href="https://www.facebook.com/funda.epekeina"><i class="fa fa-facebook"></i></a></li>
                             <li><a target="_blank" href="https://plus.google.com/117070883489363053262/posts"><i class="fa fa-google-plus"></i></a></li>
                             <li><a target="_blank" href="https://www.youtube.com/user/fundaepekeina"><i class="fa fa-youtube"></i></a></li>
-                            <li><a target="_blank" href="mailto:fundaepekeina@gmail.com"><i class="fa fa-envelope"></i></a></li>
+                            <li><a href="mailto:fundaepekeina@gmail.com"><i class="fa fa-envelope"></i></a></li>
                         </ul>
                     </div> 
                 </div>
