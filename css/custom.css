@@ -620,3 +620,7 @@ margin: 0 -27px;
 {
     width: auto !important;
 }
+.ui-widget.ui-widget-content
+{
+    z-index: 10000 !important;
+}

@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="{{ asset('plugins/fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5') }}" type="text/css" media="screen" />
     <link rel="stylesheet" href="{{ asset('plugins/fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7') }}" type="text/css" media="screen" />
     <link href="{{ asset('css/custom.css?v=0.2') }}" rel="stylesheet">
-
+    <link rel="stylesheet" type="text/css" href="{{ asset('plugins/jquery-ui/jquery-ui.min.css') }}">
 
     <!--[if lt IE 9]>
 	    <script src="js/html5shiv.js"></script>
@@ -140,6 +140,7 @@
                         E-mail: <a href="mailto:fundaepekeina@gmail.com">fundaepekeina@gmail.com</a> <br> 
                         Phone: +58 0212-3077281 <br> 
                         </address>
+                        <button class="btn btn-info" data-toggle="modal" data-target="#donation">Donar</button>
                     </div>
                 </div>
                 <div class="col-xs-8 center-block col-md-4 footer-colum cont-twitter">
@@ -179,7 +180,95 @@
         </div>
     </footer>
     <!--/#footer-->
+    <div class="modal fade" id="donation">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Enviar donación</h4>
+                </div>
+                <div class="modal-body">
+                    <p><small>Si usted ha realizado una donación en algunas de nuestras cuentas, ingrese los datos en el siguiente formulario. Si usted desea realizar una donación, puede ver nuestros planes <a href="{{ URL::to('contacto/apoyenos') }}">aquí</a> y cuentas bancarias <a href="{{ URL::to('contacto/donaciones') }}">aquí</a></small></p>
+                    <div class="formulario">
+                        <div class="alert responseAjax">
+                            <p></p>
+                        </div>
+                        <div class="input-group center-block">
+                            <div class="formulario">
+                                <label>Numero de referecia</label>
+                                <input type="text" class="form-control donation-input reference_number" name="reference_number" value="{{ Input::old('reference_number') }}">
+                            </div>
+                            <div class="formulario">
+                                <label>Tipo de Transacción</label>
+                                <select class="form-control donation-input transaction_type" name="transaction_type">
+                                    <option value="deposito" @if(Input::old('transaction_type') && Input::old('transaction_type') == "deposito") selected @endif>Deposito</option>
+                                    <option value="transferencia" @if(Input::old('transaction_type') && Input::old('transaction_type') == 'transferencia') selected @endif>Transferencia</option>
+                                </select>
+                            </div>
+                            <div class="formulario transaction_type_container @if(!Input::old('transaction_type')) hidden @endif">
+                                <label>Banco</label>
+                                <select class="form-control emisor donation-input disabled user_bank" name="user_bank" @if(!Input::old('transaction_type')) disabled @endif>
+                                    <option value="">Seleccione una opción...</option>
+                                    <option value="Banco Central de Venezuela" @if(Input::old('user_bank') && Input::old('user_bank') == "Banco Central de Venezuela") selected @endif>Banco Central de Venezuela</option>
+                                    <option value="Banco Industrial de Venezuela, C.A. Banco Universal" @if(Input::old('user_bank') && Input::old('user_bank') == "Banco Industrial de Venezuela, C.A. Banco Universal") selected @endif>Banco Industrial de Venezuela, C.A. Banco Universal</option>
+                                    <option value="Banco de Venezuela S.A.C.A. Banco Universal" @if(Input::old('user_bank') && Input::old('user_bank') == "Banco de Venezuela S.A.C.A. Banco Universal") selected @endif>Banco de Venezuela S.A.C.A. Banco Universal</option>
+                                    <option value="Venezolano de Crédito, S.A. Banco Universal" @if(Input::old('user_bank') && Input::old('user_bank') == "Venezolano de Crédito, S.A. Banco Universal") selected @endif>Venezolano de Crédito, S.A. Banco Universal</option>
+                                    <option value="Banco Mercantil, C.A S.A.C.A. Banco Universal" @if(Input::old('user_bank') && Input::old('user_bank') == "Banco Mercantil, C.A S.A.C.A. Banco Universal") selected @endif>Banco Mercantil, C.A S.A.C.A. Banco Universal</option>
+                                    <option value="Banco Provincial, S.A. Banco Universal" @if(Input::old('user_bank') && Input::old('user_bank') == "Banco Provincial, S.A. Banco Universal") selected @endif>Banco Provincial, S.A. Banco Universal</option>
+                                    <option value="Bancaribe C.A. Banco Universal" @if(Input::old('user_bank') && Input::old('user_bank') == "Bancaribe C.A. Banco Universal") selected @endif>Bancaribe C.A. Banco Universal</option>
+                                    <option value="Banco Exterior C.A. Banco Universal" @if(Input::old('user_bank') && Input::old('user_bank') == "Banco Exterior C.A. Banco Universal") selected @endif>Banco Exterior C.A. Banco Universal</option>
+                                    <option value="Banco Occidental de Descuento, Banco Universal C.A." @if(Input::old('user_bank') && Input::old('user_bank') == "Banco Occidental de Descuento, Banco Universal C.A.") selected @endif>Banco Occidental de Descuento, Banco Universal C.A.</option>
+                                    <option value="Banco Caroní C.A. Banco Universal" @if(Input::old('user_bank') && Input::old('user_bank') == "Banco Caroní C.A. Banco Universal") selected @endif>Banco Caroní C.A. Banco Universal</option>
+                                    <option value="Banesco Banco Universal S.A.C.A." @if(Input::old('user_bank') && Input::old('user_bank') == "Banesco Banco Universal S.A.C.A.") selected @endif>Banesco Banco Universal S.A.C.A.</option>
+                                    <option value="Banco Sofitasa Banco Universal" @if(Input::old('user_bank') && Input::old('user_bank') == "Banco Sofitasa Banco Universal") selected @endif>Banco Sofitasa Banco Universal</option>
+                                    <option value="Banco Plaza Banco Universal" @if(Input::old('user_bank') && Input::old('user_bank') == "Banco Plaza Banco Universal") selected @endif>Banco Plaza Banco Universal</option>
+                                    <option value="Banco de la Gente Emprendedora C.A." @if(Input::old('user_bank') && Input::old('user_bank') == "Banco de la Gente Emprendedora C.A.") selected @endif>Banco de la Gente Emprendedora C.A.</option>
+                                    <option value="Banco del Pueblo Soberano, C.A. Banco de Desarrollo" @if(Input::old('user_bank') && Input::old('user_bank') == "Banco del Pueblo Soberano, C.A. Banco de Desarrollo") selected @endif>Banco del Pueblo Soberano, C.A. Banco de Desarrollo</option>
+                                    <option value="BFC Banco Fondo Común C.A Banco Universal" @if(Input::old('user_bank') && Input::old('user_bank') == "BFC Banco Fondo Común C.A Banco Universal") selected @endif>BFC Banco Fondo Común C.A Banco Universal</option>
+                                    <option value="100% Banco, Banco Universal C.A." @if(Input::old('user_bank') && Input::old('user_bank') == "100% Banco, Banco Universal C.A.") selected @endif>100% Banco, Banco Universal C.A.</option>
+                                    <option value="DelSur Banco Universal, C.A." @if(Input::old('user_bank') && Input::old('user_bank') == "DelSur Banco Universal, C.A.") selected @endif>DelSur Banco Universal, C.A.</option>
+                                    <option value="Banco del Tesoro, C.A. Banco Universal" @if(Input::old('user_bank') && Input::old('user_bank') == "Banco del Tesoro, C.A. Banco Universal") selected @endif>Banco del Tesoro, C.A. Banco Universal</option>
+                                    <option value="Banco Agrícola de Venezuela, C.A. Banco Universal" @if(Input::old('user_bank') && Input::old('user_bank') == "Banco Agrícola de Venezuela, C.A. Banco Universal") selected @endif>Banco Agrícola de Venezuela, C.A. Banco Universal</option>
+                                    <option value="Bancrecer, S.A. Banco Microfinanciero" @if(Input::old('user_bank') && Input::old('user_bank') == "Bancrecer, S.A. Banco Microfinanciero") selected @endif>Bancrecer, S.A. Banco Microfinanciero</option>
+                                    <option value="Mi Banco Banco Microfinanciero C.A." @if(Input::old('user_bank') && Input::old('user_bank') == "Mi Banco Banco Microfinanciero C.A.") selected @endif>Mi Banco Banco Microfinanciero C.A.</option>
+                                    <option value="Banco Activo, C.A. Banco Universal" @if(Input::old('user_bank') && Input::old('user_bank') == "Banco Activo, C.A. Banco Universal") selected @endif>Banco Activo, C.A. Banco Universal</option>
+                                    <option value="Bancamiga Banco Microfinanciero C.A." @if(Input::old('user_bank') && Input::old('user_bank') == "Bancamiga Banco Microfinanciero C.A.") selected @endif>Bancamiga Banco Microfinanciero C.A.</option>
+                                    <option value="Banco Internacional de Desarrollo, C.A. Banco Universal" @if(Input::old('user_bank') && Input::old('user_bank') == "Banco Internacional de Desarrollo, C.A. Banco Universal") selected @endif>Banco Internacional de Desarrollo, C.A. Banco Universal</option>
+                                    <option value="Banplus Banco Universal, C.A." @if(Input::old('user_bank') && Input::old('user_bank') == "Banplus Banco Universal, C.A.") selected @endif>Banplus Banco Universal, C.A.</option>
+                                    <option value="Banco Bicentenario Banco Universal C.A." @if(Input::old('user_bank') && Input::old('user_bank') == "Banco Bicentenario Banco Universal C.A.") selected @endif>Banco Bicentenario Banco Universal C.A.</option>
+                                    <option value="Banco Espirito Santo, S.A. Sucursal Venezuela B.U." @if(Input::old('user_bank') && Input::old('user_bank') == "Banco Espirito Santo, S.A. Sucursal Venezuela B.U.") selected @endif>Banco Espirito Santo, S.A. Sucursal Venezuela B.U.</option>
+                                    <option value="Banco de la Fuerza Armada Nacional Bolivariana, B.U." @if(Input::old('user_bank') && Input::old('user_bank') == "Banco de la Fuerza Armada Nacional Bolivariana, B.U.") selected @endif>Banco de la Fuerza Armada Nacional Bolivariana, B.U.</option>
+                                    <option value="Citibank N.A." @if(Input::old('user_bank') && Input::old('user_bank') == "Citibank N.A.") selected @endif>Citibank N.A.</option>
+                                    <option value="Banco Nacional de Crédito, C.A. Banco Universal" @if(Input::old('user_bank') && Input::old('user_bank') == "Banco Nacional de Crédito, C.A. Banco Universal") selected @endif>Banco Nacional de Crédito, C.A. Banco Universal</option>
+                                    <option value="Instituto Municipal de Crédito Popular" @if(Input::old('user_bank') && Input::old('user_bank') == "Instituto Municipal de Crédito Popular") selected @endif>Instituto Municipal de Crédito Popular</option>
+                                </select>
+                            </div>
+                            <div class="formulario">
+                                <label>Cuenta</label>
+                                <select class="form-control donation-input shop_bank" name="shop_bank">
+                                    <option value="">Seleccione una opción...</option>
+                                    <option value="Sede principal">Sede principal - Cta. Cte. 0105-0191-12-1191072029</option>
+                                    <option value="Sede principal">Las Acacias - Cta. Cte. 0134-0390-20-3901023342 </option>
+                                    <option value="Sede principal">La Boyera - Cta. Cte. 0102-0178-11-0000050869</option>
+                                    <option value="Sede principal">Sacerdotal - Cta. Cte. 0191-0035-92-2135021589</option>
 
+                                </select>
+                            </div>
+                            <div class="formulario">
+                                <label>Fecha de transacción</label>
+                                <input type="text" class="datepicker form-control donation-input transaction_date" name="transaction_date" value="{{ Input::old('transaction_date') }}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <img src="{{ asset('images/ajax-loader.gif') }}" class="miniLoader">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-success btn-send-donation">Enviar</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <script type="text/javascript" src="{{ asset('html/js/jquery.js') }}"></script>
     <script type="text/javascript" src="{{ asset('html/js/bootstrap.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/owl.carousel.min.js') }}"></script>
@@ -196,6 +285,23 @@
     @yield('postscript')
     <script type="text/javascript" src="{{ asset('html/js/main.js') }}"></script>   
     <script type="text/javascript" src="{{ asset('js/custom.js') }}"></script>   
+    <script type="text/javascript" src="{{ asset('plugins/jquery-ui/jquery-ui.min.js') }}"></script>
+
     <!-- Add mousewheel plugin (this is optional) -->
+    <script type="text/javascript">
+        jQuery(document).ready(function($) {
+            $('.transaction_type').on('change', function(event) {
+                if ($(this).val() == "transferencia") {
+                    $('.transaction_type_container').removeClass('hidden').children('.emisor').removeClass('disabled').attr('disabled', false);
+                }else
+                {
+                    $('.transaction_type_container').addClass('hidden').children('.emisor').removeClass('disabled').attr('disabled', true);
+                }
+            });
+            $('.datepicker').datepicker({
+                dateFormat: 'yy-mm-dd'
+            });
+        });
+    </script>
 </body>
 </html>

@@ -1,3 +1,11 @@
+function getRootUrl () {
+  return $('.baseUrl').val();
+}
+function hideResponseAjax () {
+	$('.responseAjax').removeClass('alert-success');
+	$('.responseAjax').removeClass('alert-danger');
+	$('.responseAjax').removeClass('active');
+}
 function makeContact (base,boton) {
 	$.ajax({
 		url: base+'/contacto/enviar',
@@ -185,5 +193,75 @@ jQuery(document).ready(function($) {
 			$('.album-container').fadeIn('fast');
 		});
 
+	});
+	$('.btn-send-donation').on('click', function(event) {
+		$('.response-to-elim').remove();
+		var btn = $(this);
+		var proceed = 1;
+		$('.donation-input').each(function(index, el) {
+			if ($(el).val() == "") {
+				proceed = 0;
+			};
+		});
+		proceed = 1;
+		if (proceed == 1) {
+			if ($('.user_bank').hasClass('disabled')) {
+				var dataPost = 
+				{
+					reference_number 	: $('.reference_number').val(),
+					transaction_type 	: $('.transaction_type').val(),
+					shop_bank 			: $('.shop_bank').val(),
+					transaction_date 	: $('.transaction_date').val(),
+				}
+			}else
+			{
+				var dataPost = 
+				{
+					reference_number 	: $('.reference_number').val(),
+					transaction_type 	: $('.transaction_type').val(),
+					user_bank 			: $('.user_bank').val(),
+					shop_bank 			: $('.shop_bank').val(),
+					transaction_date 	: $('.transaction_date').val(),
+				}
+			}
+			$.ajax({
+				url: getRootUrl()+'/nueva-donacion',
+				type: 'POST',
+				dataType: 'json',
+				data: dataPost,
+				beforeSend: function()
+				{
+					$('.donation-input').addClass('disabled').attr('disabled', true);
+					btn.addClass('disabled').attr('disabled', true);
+					btn.prevAll('.miniLoader').addClass('active');
+				},
+				success: function(response)
+				{
+					btn.removeClass('disabled').attr('disabled', false);
+					$('.donation-input').removeClass('disabled').attr('disabled', false);
+					btn.prevAll('.miniLoader').removeClass('active');
+
+					if (response.type == 'danger') {
+						$.each(response.data, function(index, val) {
+							$('.'+index).after('<div class="response-to-elim clearfix"></div><div style="margin-top:1em;" class="alert responseAjax response-to-elim alert-danger active"><p>'+val+'</p></div>')
+						});
+					}else
+					{
+						$('.responseAjax').addClass('alert-'+response.type).addClass('active').children('p').html(response.msg);
+						$('.donation-input').val('');
+					}
+					setTimeout(hideResponseAjax, 4000)
+				},
+				error: function()
+				{
+					btn.removeClass('disabled').attr('disabled', false);
+					$('.donation-input').removeClass('disabled').attr('disabled', false);
+					btn.prevAll('.miniLoader').removeClass('active');
+					$('.responseAjax').addClass('alert-danger').addClass('active').children('p').html('Error 500, por favor intente mas tarde.');
+					setTimeout(hideResponseAjax, 4000)		
+
+				}
+			})
+		};
 	});
 });

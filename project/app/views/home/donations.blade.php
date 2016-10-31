@@ -42,7 +42,7 @@
                             </div>
                         </div>
                         <div class="col-sm-12 col-md-6 formulario">
-                            <h3>Donaciones para Funda Epékeina</h3>
+                            <h3><strong>Donaciones para Funda Epékeina Sede principal</strong></h3>
 
                             Banco Mercantil
                             <br>
@@ -53,7 +53,7 @@
                             Mail: <a href="mailto:fundaepekeina@gmail.com">fundaepekeina@gmail.com</a>
                         </div>
                         <div class="col-sm-12 col-md-6 formulario">
-                            <h3>Donaciones para Funda Epékeina</h3>
+                            <h3><strong>Donaciones para Funda Epékeina Las Acacias</strong></h3>
 
                             Banco Banesco
                             <br>
@@ -64,7 +64,7 @@
                             Mail: <a href="mailto:fundaepekeina@gmail.com">fundaepekeina@gmail.com</a>
                         </div>
                         <div class="col-sm-12 col-md-6 formulario">
-                            <h3>Donaciones para Funda Epékeina</h3>
+                            <h3><strong>Donaciones para Funda Epékeina La Boyera</strong></h3>
                             
                             Banco de Venezuela
                             <br>
@@ -75,7 +75,7 @@
                             Mail: <a href="mailto:fundaepekeina@gmail.com">fundaepekeina@gmail.com</a>
                         </div>
                         <div class="col-sm-12 col-md-6 formulario">
-                            <h3>Donaciones para Funda Epékeina</h3>
+                            <h3><strong>Donaciones para Funda Epékeina Sacerdotal</strong></h3>
 
                             Banco Nacional de Crédito
                             <br>

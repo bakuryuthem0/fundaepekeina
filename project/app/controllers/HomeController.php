@@ -290,7 +290,7 @@ class HomeController extends BaseController {
 
 		Mail::send('emails.envia', $datos, function($message) use ($data)
 		{
-			$message->to('Funda Epékeina@gmail.com')->from($data['email'])->subject($data['subject']);
+			$message->to('comunicaciones@fundaepekeina.org')->from($data['email'])->subject($data['subject']);
 		});
 
 		return Response::json(array(
@@ -386,5 +386,49 @@ class HomeController extends BaseController {
 	public function getEmail()
 	{
 		return View::make('emails.sub');
+	}
+	public function postDonation()
+	{
+		$data 	= Input::all();
+		$rules 	= array(
+			'reference_number' 		=> 'required',
+			'transaction_type' 	 	=> 'required',
+			'user_bank' 			=> 'required_if:transaction_type,transferencia',
+			'shop_bank'				=> 'required',
+			'transaction_date'		=> 'required|date|max:'.date('Y-m-d',time()),
+		);
+		$msg = array();
+		$attr = array(
+			'reference_number' 		=> 'numero de referencia',
+			'transaction_type'	 		=> 'tipo de transacción',
+			'user_bank'			 	=> 'banco remitente',
+			'shop_bank'			 	=> 'cuenta',
+			'transaction_date'	 	=> 'fecha de la transacción'
+		);
+		$validator = Validator::make($data, $rules, $msg, $attr);
+		if ($validator->fails()) {
+			return Response::json(array(
+				'type' => 'danger',
+				'data' => $validator->getMessageBag()
+			));
+		}
+		$donation = new Donation;
+		$donation->reference_number = $data['reference_number'];
+		$donation->transaction_type = $data['transaction_type'];
+		if ($data['transaction_type'] == 'transferencia') {
+			$donation->user_bank	= $data['user_bank'];
+		}
+		$donation->account			= $data['shop_bank'];
+		$donation->transaction_date = $data['transaction_date'];
+		$donation->save();
+		$data['title'] = "Nueva donación";
+		Mail::send('emails.new-donation', $data, function($message) use ($data)
+		{
+			$message->to('comunicaciones@fundaepekeina.org')->from('mail@fundaepekeina.org')->subject('Nueva donación');
+		});
+		return Response::json(array(
+			'type' 	=> 'success',
+			'msg'	=> 'Gracias por enviar su donación'
+		));
 	}
 }

@@ -94,3 +94,5 @@ Route::group(array('before' => 'auth'),function()
 });
 
 Route::get('test','HomeController@getEmail');
+Route::post('nueva-donacion','HomeController@postDonation');
+Route::get('dar-de-baja','BoletinController@deleteFromBoletin');
