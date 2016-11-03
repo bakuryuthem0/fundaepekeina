@@ -34,7 +34,7 @@
                   <input type="checkbox" name="art[]" value="{{ $a->id }}">
                 </td>
                 <td>
-                  <input type="radio" name="principal" value="{{ $a->id }}">
+                  <input type="checkbox"  class="principal"  name="principal" value="{{ $a->id }}">
                 </td>
               </tr>
               @endforeach
@@ -57,7 +57,7 @@
   {{ HTML::script('plugins/datatables/dataTables.bootstrap.min.js') }}
   <script>
     $(function () {
-      
+     
     });
   </script>
 

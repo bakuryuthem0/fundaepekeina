@@ -5,7 +5,10 @@ class BoletinController extends BaseController {
 	public function getBoletinAdmin()
 	{
 		$data = Input::all();
-		$principal = Articulo::with('imagenes')->find($data['principal']);
+		$principal = "";
+		if (Input::has('principal')) {
+			$principal = Articulo::with('imagenes')->find($data['principal']);
+		}
 		$article = Articulo::with('imagenes');
 		foreach($data['art'] as $a)
 		{
@@ -31,4 +34,10 @@ class BoletinController extends BaseController {
 		->with('article',$article)
 		->with('title','Generar Boletin');
 	}*/
+	public function deleteFromBoletin()
+	{
+		$title = "Dar de baja Boletin | fundaepekeina";
+		return View::make('boletin.baja')
+		->with('title',$title);
+	}
 }
