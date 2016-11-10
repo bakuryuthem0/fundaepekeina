@@ -195,7 +195,7 @@
                         </div>
                         <div class="input-group center-block">
                             <div class="formulario">
-                                <label>Numero de referecia</label>
+                                <label>Numero de referencia</label>
                                 <input type="text" class="form-control donation-input reference_number" name="reference_number" value="{{ Input::old('reference_number') }}">
                             </div>
                             <div class="formulario">
