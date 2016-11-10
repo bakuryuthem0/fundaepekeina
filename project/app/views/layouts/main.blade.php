@@ -135,7 +135,7 @@
             <div class="row valign-wrapper">
                 <div class="col-xs-12 col-md-4 footer-colum">
                     <div class="contact-info bottom">
-                        <h2>Contacts</h2>
+                        <h2>Contactenos</h2>
                         <address>
                         E-mail: <a href="mailto:fundaepekeina@gmail.com">fundaepekeina@gmail.com</a> <br> 
                         Phone: +58 0212-3077281 <br> 
