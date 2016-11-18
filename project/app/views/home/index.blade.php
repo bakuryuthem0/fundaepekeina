@@ -5,9 +5,9 @@
         <div class="container">
             <div class="row">
                 <div class="main-slider owl-carousel">
-                    <div class="">
+                    <!--<div class="">
                         <a href="{{ URL::to('noticias/que-hacemos/18') }}"><img src="{{ asset('images/slides/1.jpg') }}"></a>
-                    </div>
+                    </div>-->
                     <div class="">
                         <a href="{{ URL::to('noticias/que-hacemos/19') }}"><img src="{{ asset('images/slides/2.jpg') }}"></a>
                     </div>
