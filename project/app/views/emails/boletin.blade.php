@@ -53,7 +53,7 @@
                                     <img src="{{ asset('images/logo.png') }}" class="img-responsive center-block img-boletin" alt="{{ $principal->title }}">
                                 @endif
                             <p>{{ substr(strip_tags($principal->descripcion), 0, 300) }} [...]</p>
-                            <a href="{{ URL::to('fundaepekeina.org/noticias/'.$principal->id) }}" class="btn btn-primary">Leer mas</a>
+                            <a target="_blank" href="{{ URL::to('noticias/'.$principal->id) }}" class="btn btn-primary">Leer mas</a>
                         </div>
                     </div>
                 </div>
@@ -73,7 +73,7 @@
                                                 <img src="{{ asset('images/logo.png') }}" class="img-responsive center-block img-boletin" alt="{{ $a->title }}">
                                             @endif
                                         <p>{{ substr(strip_tags($a->descripcion), 0, 300) }} [...]</p>
-                                        <a href="{{ URL::to('fundaepekeina.org/noticias/'.$a->id) }}" class="btn btn-primary">Leer mas</a>
+                                        <a target="_blank" href="{{ URL::to('noticias/'.$a->id) }}" class="btn btn-primary">Leer mas</a>
                                     </div>
                                 </div>
                             </div>
@@ -91,7 +91,7 @@
                                         <img src="{{ asset('images/logo.png') }}" class="img-responsive center-block img-boletin" alt="{{ $a->title }}">
                                     @endif
                                 <p>{{ substr(strip_tags($a->descripcion), 0, 300) }} [...]</p>
-                                <a href="{{ URL::to('fundaepekeina.org/noticias/'.$a->id) }}" class="btn btn-primary">Leer mas</a>
+                                <a target="_blank" href="{{ URL::to('noticias/'.$a->id) }}" class="btn btn-primary">Leer mas</a>
                             </div>
                         </div>
                     </div>
