@@ -42,48 +42,16 @@
                             </div>
                         </div>
                         <div class="col-sm-12 col-md-6 formulario">
-                            <h3><strong>Donaciones para Funda Epékeina Sede principal</strong></h3>
-
-                            Banco Mercantil
-                            <br>
-                            Cta. Cte. 0105-0191-12-1191072029
-                            <br>
-                            Funda Epékeina Rif J-29868492-5
-                            <br>
-                            Mail: <a href="mailto:fundaepekeina@gmail.com">fundaepekeina@gmail.com</a>
+                            <img src="{{ asset('images/info/donaciones_sedeprincipal.jpg') }}" class="center-block">
                         </div>
                         <div class="col-sm-12 col-md-6 formulario">
-                            <h3><strong>Donaciones para Funda Epékeina Las Acacias</strong></h3>
-
-                            Banco Banesco
-                            <br>
-                            Cta. Cte. 0134-0390-20-3901023342
-                            <br>
-                            Funda Epékeina Rif J-29868492-5
-                            <br>
-                            Mail: <a href="mailto:fundaepekeina@gmail.com">fundaepekeina@gmail.com</a>
+                            <img src="{{ asset('images/info/donaciones_acacias.jpg') }}" class="center-block">
                         </div>
                         <div class="col-sm-12 col-md-6 formulario">
-                            <h3><strong>Donaciones para Funda Epékeina La Boyera</strong></h3>
-                            
-                            Banco de Venezuela
-                            <br>
-                            Cta. Cte. 0102-0178-11-0000050869
-                            <br>
-                            Funda Epékeina Rif J-29868492-5
-                            <br>
-                            Mail: <a href="mailto:fundaepekeina@gmail.com">fundaepekeina@gmail.com</a>
+                            <img src="{{ asset('images/info/donaciones_laboyera.jpg') }}" class="center-block">
                         </div>
                         <div class="col-sm-12 col-md-6 formulario">
-                            <h3><strong>Donaciones para Funda Epékeina Sacerdotal</strong></h3>
-
-                            Banco Nacional de Crédito
-                            <br>
-                            Cta. Cte. 0191-0035-92-2135021589
-                            <br>
-                            Funda Epékeina Rif J-29868492-5
-                            <br>
-                            Mail: <a href="mailto:fundaepekeina@gmail.com">fundaepekeina@gmail.com</a>
+                            <img src="{{ asset('images/info/donaciones_sacerdotal.jpg') }}" class="center-block">
                         </div>
 
                     </div>
