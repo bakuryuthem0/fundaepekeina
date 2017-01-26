@@ -138,7 +138,8 @@
                         <h2>Contáctenos</h2>
                         <address>
                         E-mail: <a href="mailto:fundaepekeina@gmail.com">fundaepekeina@gmail.com</a> <br> 
-                        Phone: +58 0212-3077281 <br> 
+                        <a href="mailto:comunicaciones@fundaepekeina.org">comunicaciones@fundaepekeina.org</a>
+                        <br> 
                         </address>
                         <button class="btn btn-info" data-toggle="modal" data-target="#donation">Donar</button>
                     </div>

@@ -147,7 +147,9 @@
                     <div class="">
                         <a href="{{ URL::to('http://uba.edu.ve') }}"><img src="{{ asset('images/allies/uba.png') }}"></a>
                     </div>
-                    
+                    <div class="">
+                        <a href="{{ URL::to('http://redjovenvenezuela.com') }}"><img src="{{ asset('images/allies/redjoven.png') }}" style="max-width:300px;"></a>
+                    </div>
                 </div>
 
             </div>

@@ -42,16 +42,16 @@
                             </div>
                         </div>
                         <div class="col-sm-12 col-md-6 formulario">
-                            <img src="{{ asset('images/info/donaciones_sedeprincipal.jpg') }}" class="center-block">
+                            <img src="{{ asset('images/info/donaciones_sedeprincipal.jpg') }}" class="center-block img-responsive">
                         </div>
                         <div class="col-sm-12 col-md-6 formulario">
-                            <img src="{{ asset('images/info/donaciones_acacias.jpg') }}" class="center-block">
+                            <img src="{{ asset('images/info/donaciones_acacias.jpg') }}" class="center-block img-responsive">
                         </div>
                         <div class="col-sm-12 col-md-6 formulario">
-                            <img src="{{ asset('images/info/donaciones_laboyera.jpg') }}" class="center-block">
+                            <img src="{{ asset('images/info/donaciones_laboyera.jpg') }}" class="center-block img-responsive">
                         </div>
                         <div class="col-sm-12 col-md-6 formulario">
-                            <img src="{{ asset('images/info/donaciones_sacerdotal.jpg') }}" class="center-block">
+                            <img src="{{ asset('images/info/donaciones_sacerdotal.jpg') }}" class="center-block img-responsive">
                         </div>
 
                     </div>
