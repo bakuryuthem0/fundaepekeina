@@ -30,11 +30,14 @@
 </head><!--/head-->
 
 <body>
-   <div class="logo-image" style="margin-bottom: 50px;">                                
+    <!--<div class="logo-image" style="margin-bottom: 50px;">                                
        <a href="index.html"><img class="img-responsive" src="{{ asset('images/logo.png') }}" alt=""> </a> 
-    </div>
+    </div>-->
      <section id="">        
          <div class="container">
+            <div class="row" style="margin-bottom: 50px">
+                <img src="{{ asset('images/slides/boletin_banner.jpg') }}" class="img-responsive center-block">
+            </div>
             <div class="row">
                 <div class="text-center" style="margin-bottom:50px;">
                     <h1>Boletín oficial</h1>
