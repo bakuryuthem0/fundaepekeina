@@ -102,4 +102,4 @@ Route::get('test','HomeController@getEmail');
 Route::post('nueva-donacion','HomeController@postDonation');
 Route::get('dar-de-baja','BoletinController@deleteFromBoletin');
 
-Route::get('boletin-7-años','BoletinController@get7years');
+Route::get('boletin-celebrando-7','BoletinController@get7years');
