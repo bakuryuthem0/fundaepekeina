@@ -84,15 +84,22 @@ Route::group(array('before' => 'auth'),function()
 	Route::get('administrador/cambiar-password/{id}','AdminController@chageUserPass');
 	Route::post('administrador/cambiar-password/enviar/{id}','AdminController@postChangePass');
 
-
-
-
+	//galeria
+	Route::get('administrador/galeria/nueva-categoria','AdminController@getNewCat');
+	Route::post('administrador/galeria/nueva-categoria/enviar','AdminController@postNewCat');
+	Route::post('administrador/chequear-imagen','AdminController@checkImg');
+	Route::get('administrador/galeria/ver-galerias', 'AdminController@getGalleries');
+	Route::post('administrador/mostrar-galeria/eliminar','AdminController@elimGallery');
+	Route::get('administrador/galeria/agregar-imagenes/{id}','AdminController@addImages');
+	Route::post('administrador/galeria/agregar-imagenes/enviar', 'AdminController@postNewImage');
 	Route::post('administrador/ver-productos/eliminar','AdminController@elimItem');
-	
-
+	Route::get('administrador/galeria/{type}/{id}','AdminController@showGallery');
+	Route::post('administrador/galeria/editar/enviar','AdminController@postMdfGal');
 	Route::get('administrador/logout','AdminController@getLogOut');
 });
 
 Route::get('test','HomeController@getEmail');
 Route::post('nueva-donacion','HomeController@postDonation');
 Route::get('dar-de-baja','BoletinController@deleteFromBoletin');
+
+Route::get('boletin-7-años','BoletinController@get7years');

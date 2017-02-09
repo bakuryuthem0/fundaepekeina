@@ -40,4 +40,8 @@ class BoletinController extends BaseController {
 		return View::make('boletin.baja')
 		->with('title',$title);
 	}
+	public function get7years()
+	{
+		return View::make('boletin.922016');
+	}
 }
