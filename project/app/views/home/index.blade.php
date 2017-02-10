@@ -5,6 +5,9 @@
         <div class="container">
             <div class="row">
                 <div class="main-slider owl-carousel">
+                    <div>
+                        <img src="http://fundaepekeina.org/images/slides/boletin_banner.jpg">
+                    </div>
                     <div class="">
                         <a href="{{ URL::to('noticias/que-hacemos/18') }}"><img src="{{ asset('images/slides/1.jpg') }}"></a>
                     </div>
