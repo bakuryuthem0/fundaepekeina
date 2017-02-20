@@ -76,7 +76,7 @@
                 <div class="row">
                     <div class=" take-tour">
                         <div class="col-xs-12 wow fadeInLeft" data-wow-duration="500ms" data-wow-delay="300ms">
-                            <h1 class="title">Ultimas noticias</h1>
+                            <h1 class="title">Últimas noticias</h1>
                         </div>
                     </div>
                 </div>
