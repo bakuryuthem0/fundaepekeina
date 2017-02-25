@@ -18,6 +18,7 @@ Route::get('proyectos/escuela-de-campo-para-agricultores','ProjectController@get
 Route::get('quienes-somos','HomeController@getAbout');
 Route::get('organigrama','HomeController@getOrg');
 Route::get('localizacion','HomeController@getMap');
+Route::get('quienes-somos/historias-epekeinas','HomeController@getHistories');
 
 Route::get('noticias','HomeController@getNews');
 Route::get('noticias/{id}','HomeController@getArticleSelf')->where('id', '[0-9]+');;
@@ -85,8 +86,8 @@ Route::group(array('before' => 'auth'),function()
 	Route::post('administrador/cambiar-password/enviar/{id}','AdminController@postChangePass');
 
 	//galeria
-	Route::get('administrador/galeria/nueva-categoria','AdminController@getNewCat');
-	Route::post('administrador/galeria/nueva-categoria/enviar','AdminController@postNewCat');
+	Route::get('administrador/galeria/nueva-galeria','AdminController@getNewCat');
+	Route::post('administrador/galeria/nueva-galeria/enviar','AdminController@postNewCat');
 	Route::post('administrador/chequear-imagen','AdminController@checkImg');
 	Route::get('administrador/galeria/ver-galerias', 'AdminController@getGalleries');
 	Route::post('administrador/mostrar-galeria/eliminar','AdminController@elimGallery');

@@ -50,7 +50,7 @@
                         <div class="col-sm-12 formulario">
                             <h3><strong>Patrocinio de Nuestros Eventos Pro-Fondos</strong></h3>
                             <br>
-                            Patrocinando con dinero, promoción y voluntariado los eventos que realizamos a lo largo del año para celebrar en comunidad y recoger fondos necesarios para continuar la ejecución de nuestras actividades con los niños de Terrazas del Alba.
+                            Patrocinando con dinero, promoción y voluntariado los eventos que realizamos a lo largo del año para celebrar en comunidad y recoger fondos necesarios para continuar la ejecución de nuestras actividades con los beneficiarios de nuestros programas en Las Acacias y en La Boyera.
                         </div>
                         <div class="col-xs-12 text-center">
                             <a href="{{ URL::to('contacto/donaciones') }}" class="btn btn-info">Ver cuentas bancarias</a>

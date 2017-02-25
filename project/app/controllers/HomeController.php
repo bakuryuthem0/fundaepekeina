@@ -33,6 +33,14 @@ class HomeController extends BaseController {
 		->with('active',$active)
 		->with('title',$title);
 	}
+	public function getHistories()
+	{
+		$title = "Historias Epékeinas | Funda Epékeina";
+		$active = "about";
+		return View::make('about.history')
+		->with('title',$title)
+		->with('active',$active);
+	}
 	public function getArticleSelf($type,$id = null)
 	{
 		if (is_numeric($type)) {
@@ -82,7 +90,7 @@ class HomeController extends BaseController {
 			}
 		}else
 		{
-			return $view->with('subtitle','¿Que hacemos?')
+			return $view->with('subtitle','¿Qué hacemos?')
 				->with('active','about')
 				->with('menu','all');
 		}
@@ -245,9 +253,12 @@ class HomeController extends BaseController {
 	public function getGallery()
 	{
 		$title = "Galería | Funda Epékeina";
+		$gallery = Gallery::with('imagenes')->get();
+		
 		return View::make('home.gallery')
 		->with('title',$title)
-		->with('active','galeria');
+		->with('active','galeria')
+		->with('gallery',$gallery);
 	}
 	public function getContact()
 	{

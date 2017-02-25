@@ -5,8 +5,8 @@
         <div class="container">
             <div class="row">
                 <div class="main-slider owl-carousel">
-                    <div>
-                        <img src="http://fundaepekeina.org/images/slides/boletin_banner.jpg">
+                    <div class="">
+                        <a href="{{ URL::to('boletin-celebrando-7') }}"><img src="{{ asset('images/slides/Banner_Boletin_logros_2016.jpg') }}"></a>
                     </div>
                     <div class="">
                         <a href="{{ URL::to('noticias/que-hacemos/18') }}"><img src="{{ asset('images/slides/1.jpg') }}"></a>
@@ -20,7 +20,18 @@
                     <div class="">
                         <a href="{{ URL::to('noticias/que-hacemos/21') }}"><img src="{{ asset('images/slides/4.jpg') }}"></a>
                     </div>
-                    
+                    <div>
+                        <a href="{{ URL::to('noticias/que-hacemos/1') }}"><img src="{{ asset('images/slides/campamento.jpg') }}"></a>
+                    </div>
+                    <div>
+                        <a href="{{ URL::to('noticias/que-hacemos/70') }}"><img src="{{ asset('images/slides/escuela_campo.jpg') }}"></a>
+                    </div>
+                    <div>
+                        <a href="{{ URL::to('noticias/proyectos/218') }}"><img src="{{ asset('images/slides/habiarte.jpg') }}"></a>
+                    </div>
+                    <div>
+                        <img src="{{ asset('images/slides/papagayos.jpg') }}">
+                    </div>
 
                 </div>
 

@@ -1,13 +1,16 @@
 @extends('layouts.main')
 
 @section('content')
-<section id="page-breadcrumb">
+<section id="page-breadcrumb" class="formulario">
         <div class="vertical-center sun">
              <div class="container">
                 <div class="row">
                     <div class="">
                         <div class="col-sm-12">
-                            <h1 class="title">Galería</h1>
+                            <h1 class="title">
+                                Galería
+                                <a href="#!" class="back-link pull-right">Volver atras</a>
+                            </h1>
                         </div>
                     </div>
                 </div>
@@ -21,96 +24,117 @@
             <div class="row">
                 <div class="col-xs-12">
                     <div class="row">
-                       
-                        <div class="col-xs-6 col-sm-6 col-md-3 album-container">
+                        <div class="col-xs-6 col-sm-6 col-md-3 album-container formulario">
                             <div class="portfolio-album">
                                 <div class="portfolio-wrapper">
                                     <div class="">
                                         <div class="portfolio-thumb">
                                             
                                         </div>
-                                        <div class="portfolio-view">
-                                            <ul class="nav nav-pills">
-                                                <li>
-                                                    <h2>Sacerdotal</h2>
-                                                </li>
-                                                <li>
-                                                    <a href="#!" rel="album" class="album" data-target=".sacerdotal"><i class="fa fa-eye"></i></a>
-                                                </li>
-                                            </ul>
+                                        <div class="portfolio-view album" data-target=".sacerdotal">
+                                            <img src="{{ asset('images/gallery/icon/sacerdotal.jpg') }}">
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xs-6 col-sm-6 col-md-3 album-container">
+                        <div class="col-xs-6 col-sm-6 col-md-3 album-container formulario">
                             <div class="portfolio-album">
                                 <div class="portfolio-wrapper">
                                     <div class="">
                                         <div class="portfolio-thumb">
                                             
                                         </div>
-                                        <div class="portfolio-view">
-                                            <ul class="nav nav-pills">
-                                                <li>
-                                                    <h2>Jovenes que inspiran</h2>
-                                                </li>
-                                                <li>
-                                                    <a href="#!" rel="album" class="album" data-parent="" data-target=".joven">
-                                                    <i class="fa fa-eye"></i></a>
-                                                </li>
-                                            </ul>
+                                        <div class="portfolio-view album" data-target=".laguna">
+                                            <img src="{{ asset('images/gallery/icon/laguna.jpg') }}">
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xs-6 col-sm-6 col-md-3 album-container">
+                        <div class="col-xs-6 col-sm-6 col-md-3 album-container formulario">
                             <div class="portfolio-album">
                                 <div class="portfolio-wrapper">
                                     <div class="">
                                         <div class="portfolio-thumb">
                                             
                                         </div>
-                                        <div class="portfolio-view">
-                                            <ul class="nav nav-pills">
-                                                <li>
-                                                    <h2>La laguna</h2>
-                                                </li>
-                                                <li>
-                                                    <a href="#!" rel="album" class="album" data-target=".laguna">
-                                                    <i class="fa fa-eye"></i></a>
-                                                </li>
-                                            </ul>
+                                        <div class="portfolio-view album" data-target=".juvenil">
+                                            <img src="{{ asset('images/gallery/icon/juvenil.jpg') }}">
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xs-6 col-sm-6 col-md-3 album-container">
+                        <div class="col-xs-6 col-sm-6 col-md-3 album-container formulario">
                             <div class="portfolio-album">
                                 <div class="portfolio-wrapper">
                                     <div class="">
                                         <div class="portfolio-thumb">
                                             
                                         </div>
-                                        <div class="portfolio-view">
-                                            <ul class="nav nav-pills">
-                                                <li>
-                                                    <h2>Juvenil</h2>
-                                                </li>
-                                                <li>
-                                                    <a href="#!" rel="album" class="album" data-target=".juvenil">
-                                                    <i class="fa fa-eye"></i></a>
-                                                </li>
-                                            </ul>
+                                        <div class="portfolio-view album" data-target=".acacias">
+                                            <img src="{{ asset('images/gallery/icon/acacias.jpg') }}">
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xs-12">
-                            <a href="#!" class="back-link">Volver atras</a>
+                        <div class="col-xs-6 col-sm-6 col-md-3 album-container formulario">
+                            <div class="portfolio-album">
+                                <div class="portfolio-wrapper">
+                                    <div class="">
+                                        <div class="portfolio-thumb">
+                                            
+                                        </div>
+                                        <div class="portfolio-view album" data-target=".boyera">
+                                            <img src="{{ asset('images/gallery/icon/boyera.jpg') }}">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-6 col-md-3 album-container formulario">
+                            <div class="portfolio-album">
+                                <div class="portfolio-wrapper">
+                                    <div class="">
+                                        <div class="portfolio-thumb">
+                                            
+                                        </div>
+                                        <div class="portfolio-view album" data-target=".campamento">
+                                            <img src="{{ asset('images/gallery/icon/campamento.jpg') }}">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-6 col-md-3 album-container formulario">
+                            <div class="portfolio-album">
+                                <div class="portfolio-wrapper">
+                                    <div class="">
+                                        <div class="portfolio-thumb">
+                                            
+                                        </div>
+                                        <div class="portfolio-view album" data-target=".papagayos">
+                                            <img src="{{ asset('images/gallery/icon/papagayos.jpg') }}">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-6 col-md-3 album-container formulario">
+                            <div class="portfolio-album">
+                                <div class="portfolio-wrapper">
+                                    <div class="">
+                                        <div class="portfolio-thumb">
+                                            
+                                        </div>
+                                        <div class="portfolio-view album" data-target=".habiarte">
+                                            <img src="{{ asset('images/gallery/icon/habiarte.jpg') }}">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="portfolio-items">
                             <div class="col-xs-6 col-sm-6 col-md-4 portfolio-item sacerdotal logos">
@@ -270,7 +294,7 @@
                                 <div class="portfolio-wrapper">
                                     <div class="portfolio-single">
                                         <div class="portfolio-thumb">
-                                            <img src="{{ asset('images/gallery/jovenes-que-inspiran/jovenes-que-inspiran-1.png') }}" class="img-responsive  alt="">
+                                            <img src="{{ asset('images/gallery/jovenes-que-inspiran/jovenes-que-inspiran-1.png') }}" class="img-responsive"  alt="">
                                         </div>
                                         <div class="portfolio-view">
                                             <ul class="nav nav-pills">
@@ -284,7 +308,7 @@
                                 <div class="portfolio-wrapper">
                                     <div class="portfolio-single">
                                         <div class="portfolio-thumb">
-                                            <img src="{{ asset('images/gallery/jovenes-que-inspiran/jovenes-que-inspiran-2.png') }}" class="img-responsive  alt="">
+                                            <img src="{{ asset('images/gallery/jovenes-que-inspiran/jovenes-que-inspiran-2.png') }}" class="img-responsive"  alt="">
                                         </div>
                                         <div class="portfolio-view">
                                             <ul class="nav nav-pills">
@@ -298,7 +322,7 @@
                                 <div class="portfolio-wrapper">
                                     <div class="portfolio-single">
                                         <div class="portfolio-thumb">
-                                            <img src="{{ asset('images/gallery/jovenes-que-inspiran/jovenes-que-inspiran-3.png') }}" class="img-responsive  alt="">
+                                            <img src="{{ asset('images/gallery/jovenes-que-inspiran/jovenes-que-inspiran-3.png') }}" class="img-responsive"  alt="">
                                         </div>
                                         <div class="portfolio-view">
                                             <ul class="nav nav-pills">
@@ -312,7 +336,7 @@
                                 <div class="portfolio-wrapper">
                                     <div class="portfolio-single">
                                         <div class="portfolio-thumb">
-                                            <img src="{{ asset('images/gallery/jovenes-que-inspiran/jovenes-que-inspiran-4.png') }}" class="img-responsive  alt="">
+                                            <img src="{{ asset('images/gallery/jovenes-que-inspiran/jovenes-que-inspiran-4.png') }}" class="img-responsive"  alt="">
                                         </div>
                                         <div class="portfolio-view">
                                             <ul class="nav nav-pills">
@@ -326,7 +350,7 @@
                                 <div class="portfolio-wrapper">
                                     <div class="portfolio-single">
                                         <div class="portfolio-thumb">
-                                            <img src="{{ asset('images/gallery/jovenes-que-inspiran/jovenes-que-inspiran-5.png') }}" class="img-responsive  alt="">
+                                            <img src="{{ asset('images/gallery/jovenes-que-inspiran/jovenes-que-inspiran-5.png') }}" class="img-responsive"  alt="">
                                         </div>
                                         <div class="portfolio-view">
                                             <ul class="nav nav-pills">
@@ -340,7 +364,7 @@
                                 <div class="portfolio-wrapper">
                                     <div class="portfolio-single">
                                         <div class="portfolio-thumb">
-                                            <img src="{{ asset('images/gallery/jovenes-que-inspiran/jovenes-que-inspiran-6.png') }}" class="img-responsive  alt="">
+                                            <img src="{{ asset('images/gallery/jovenes-que-inspiran/jovenes-que-inspiran-6.png') }}" class="img-responsive"  alt="">
                                         </div>
                                         <div class="portfolio-view">
                                             <ul class="nav nav-pills">
@@ -354,7 +378,7 @@
                                 <div class="portfolio-wrapper">
                                     <div class="portfolio-single">
                                         <div class="portfolio-thumb">
-                                            <img src="{{ asset('images/gallery/jovenes-que-inspiran/jovenes-que-inspiran-7.png') }}" class="img-responsive  alt="">
+                                            <img src="{{ asset('images/gallery/jovenes-que-inspiran/jovenes-que-inspiran-7.png') }}" class="img-responsive"  alt="">
                                         </div>
                                         <div class="portfolio-view">
                                             <ul class="nav nav-pills">
@@ -368,7 +392,7 @@
                                 <div class="portfolio-wrapper">
                                     <div class="portfolio-single">
                                         <div class="portfolio-thumb">
-                                            <img src="{{ asset('images/gallery/jovenes-que-inspiran/jovenes-que-inspiran-8.png') }}" class="img-responsive  alt="">
+                                            <img src="{{ asset('images/gallery/jovenes-que-inspiran/jovenes-que-inspiran-8.png') }}" class="img-responsive"  alt="">
                                         </div>
                                         <div class="portfolio-view">
                                             <ul class="nav nav-pills">
@@ -382,7 +406,7 @@
                                 <div class="portfolio-wrapper">
                                     <div class="portfolio-single">
                                         <div class="portfolio-thumb">
-                                            <img src="{{ asset('images/gallery/jovenes-que-inspiran/jovenes-que-inspiran-9.png') }}" class="img-responsive  alt="">
+                                            <img src="{{ asset('images/gallery/jovenes-que-inspiran/jovenes-que-inspiran-9.png') }}" class="img-responsive"  alt="">
                                         </div>
                                         <div class="portfolio-view">
                                             <ul class="nav nav-pills">
@@ -396,7 +420,7 @@
                                 <div class="portfolio-wrapper">
                                     <div class="portfolio-single">
                                         <div class="portfolio-thumb">
-                                            <img src="{{ asset('images/gallery/jovenes-que-inspiran/jovenes-que-inspiran-10.png') }}" class="img-responsive  alt="">
+                                            <img src="{{ asset('images/gallery/jovenes-que-inspiran/jovenes-que-inspiran-10.png') }}" class="img-responsive"  alt="">
                                         </div>
                                         <div class="portfolio-view">
                                             <ul class="nav nav-pills">
@@ -410,7 +434,7 @@
                                 <div class="portfolio-wrapper">
                                     <div class="portfolio-single">
                                         <div class="portfolio-thumb">
-                                            <img src="{{ asset('images/gallery/jovenes-que-inspiran/jovenes-que-inspiran-11.png') }}" class="img-responsive  alt="">
+                                            <img src="{{ asset('images/gallery/jovenes-que-inspiran/jovenes-que-inspiran-11.png') }}" class="img-responsive"  alt="">
                                         </div>
                                         <div class="portfolio-view">
                                             <ul class="nav nav-pills">
@@ -424,7 +448,7 @@
                                 <div class="portfolio-wrapper">
                                     <div class="portfolio-single">
                                         <div class="portfolio-thumb">
-                                            <img src="{{ asset('images/gallery/jovenes-que-inspiran/jovenes-que-inspiran-12.png') }}" class="img-responsive  alt="">
+                                            <img src="{{ asset('images/gallery/jovenes-que-inspiran/jovenes-que-inspiran-12.png') }}" class="img-responsive"  alt="">
                                         </div>
                                         <div class="portfolio-view">
                                             <ul class="nav nav-pills">
@@ -1149,6 +1173,7 @@
                                 </div>
                             </div>
                         </div>
+                        
                     </div>
                 </div>
             </div>
