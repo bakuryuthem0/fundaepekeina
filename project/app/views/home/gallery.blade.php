@@ -24,114 +24,74 @@
             <div class="row">
                 <div class="col-xs-12">
                     <div class="row">
-                        <div class="col-xs-6 col-sm-6 col-md-3 album-container formulario">
+                        <div class="col-xs-12 col-sm-6 col-lg-3 album-container formulario">
                             <div class="portfolio-album">
                                 <div class="portfolio-wrapper">
-                                    <div class="">
-                                        <div class="portfolio-thumb">
-                                            
-                                        </div>
-                                        <div class="portfolio-view album" data-target=".sacerdotal">
-                                            <img src="{{ asset('images/gallery/icon/sacerdotal.jpg') }}">
-                                        </div>
+                                    <div class="portfolio-view album" data-target=".sacerdotal">
+                                        <img src="{{ asset('images/gallery/icon/sacerdotal.jpg') }}" class="text-center">
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xs-6 col-sm-6 col-md-3 album-container formulario">
+                        <div class="col-xs-12 col-sm-6 col-lg-3 album-container formulario">
                             <div class="portfolio-album">
                                 <div class="portfolio-wrapper">
-                                    <div class="">
-                                        <div class="portfolio-thumb">
-                                            
-                                        </div>
-                                        <div class="portfolio-view album" data-target=".laguna">
-                                            <img src="{{ asset('images/gallery/icon/laguna.jpg') }}">
-                                        </div>
+                                    <div class="portfolio-view album" data-target=".laguna">
+                                        <img src="{{ asset('images/gallery/icon/laguna.jpg') }}" class="text-center">
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xs-6 col-sm-6 col-md-3 album-container formulario">
+                        <div class="col-xs-12 col-sm-6 col-lg-3 album-container formulario">
                             <div class="portfolio-album">
                                 <div class="portfolio-wrapper">
-                                    <div class="">
-                                        <div class="portfolio-thumb">
-                                            
-                                        </div>
-                                        <div class="portfolio-view album" data-target=".juvenil">
-                                            <img src="{{ asset('images/gallery/icon/juvenil.jpg') }}">
-                                        </div>
+                                    <div class="portfolio-view album" data-target=".juvenil">
+                                        <img src="{{ asset('images/gallery/icon/juvenil.jpg') }}" class="text-center">
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xs-6 col-sm-6 col-md-3 album-container formulario">
+                        <div class="col-xs-12 col-sm-6 col-lg-3 album-container formulario">
                             <div class="portfolio-album">
                                 <div class="portfolio-wrapper">
-                                    <div class="">
-                                        <div class="portfolio-thumb">
-                                            
-                                        </div>
-                                        <div class="portfolio-view album" data-target=".acacias">
-                                            <img src="{{ asset('images/gallery/icon/acacias.jpg') }}">
-                                        </div>
+                                    <div class="portfolio-view album" data-target=".acacias">
+                                        <img src="{{ asset('images/gallery/icon/acacias.jpg') }}" class="text-center">
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xs-6 col-sm-6 col-md-3 album-container formulario">
+                        <div class="col-xs-12 col-sm-6 col-lg-3 album-container formulario">
                             <div class="portfolio-album">
                                 <div class="portfolio-wrapper">
-                                    <div class="">
-                                        <div class="portfolio-thumb">
-                                            
-                                        </div>
-                                        <div class="portfolio-view album" data-target=".boyera">
-                                            <img src="{{ asset('images/gallery/icon/boyera.jpg') }}">
-                                        </div>
+                                    <div class="portfolio-view album" data-target=".boyera">
+                                        <img src="{{ asset('images/gallery/icon/boyera.jpg') }}" class="text-center">
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xs-6 col-sm-6 col-md-3 album-container formulario">
+                        <div class="col-xs-12 col-sm-6 col-lg-3 album-container formulario">
                             <div class="portfolio-album">
                                 <div class="portfolio-wrapper">
-                                    <div class="">
-                                        <div class="portfolio-thumb">
-                                            
-                                        </div>
-                                        <div class="portfolio-view album" data-target=".campamento">
-                                            <img src="{{ asset('images/gallery/icon/campamento.jpg') }}">
-                                        </div>
+                                    <div class="portfolio-view album" data-target=".campamento">
+                                        <img src="{{ asset('images/gallery/icon/campamento.jpg') }}" class="text-center">
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xs-6 col-sm-6 col-md-3 album-container formulario">
+                        <div class="col-xs-12 col-sm-6 col-lg-3 album-container formulario">
                             <div class="portfolio-album">
                                 <div class="portfolio-wrapper">
-                                    <div class="">
-                                        <div class="portfolio-thumb">
-                                            
-                                        </div>
-                                        <div class="portfolio-view album" data-target=".papagayos">
-                                            <img src="{{ asset('images/gallery/icon/papagayos.jpg') }}">
-                                        </div>
+                                    <div class="portfolio-view album" data-target=".papagayos">
+                                        <img src="{{ asset('images/gallery/icon/papagayos.jpg') }}" class="text-center">
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xs-6 col-sm-6 col-md-3 album-container formulario">
+                        <div class="col-xs-12 col-sm-6 col-lg-3 album-container formulario">
                             <div class="portfolio-album">
                                 <div class="portfolio-wrapper">
-                                    <div class="">
-                                        <div class="portfolio-thumb">
-                                            
-                                        </div>
-                                        <div class="portfolio-view album" data-target=".habiarte">
-                                            <img src="{{ asset('images/gallery/icon/habiarte.jpg') }}">
-                                        </div>
+                                    <div class="portfolio-view album" data-target=".habiarte">
+                                        <img src="{{ asset('images/gallery/icon/habiarte.jpg') }}" class="text-center">
                                     </div>
                                 </div>
                             </div>

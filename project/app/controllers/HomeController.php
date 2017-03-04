@@ -37,9 +37,28 @@ class HomeController extends BaseController {
 	{
 		$title = "Historias Epékeinas | Funda Epékeina";
 		$active = "about";
+		$hist = Articulo::where('tipo','=',3)
+		->with('subtitle')
+		->with('imagenes')
+		->get();
+		return View::make('about.show')
+		->with('title',$title)
+		->with('active',$active)
+		->with('hist',$hist);
+	}
+	public function getHistory($id)
+	{
+		$title = "Historias Epékeinas | Funda Epékeina";
+		$active = "about";
+		$hist = Articulo::where('id','=',$id)
+		->with('subtitle')
+		->with('imagenes')
+		->first();
+
 		return View::make('about.history')
 		->with('title',$title)
-		->with('active',$active);
+		->with('active',$active)
+		->with('hist',$hist);
 	}
 	public function getArticleSelf($type,$id = null)
 	{

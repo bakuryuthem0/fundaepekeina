@@ -19,4 +19,8 @@ class Articulo extends Eloquent{
 	    ->selectRaw('articulo_id,count(*) as aggregate')
 	    ->groupBy('articulo_id');
 	}
+	public function subtitle()
+	{
+		return $this->hasOne('Subtitle','articulo_id');
+	}
 }

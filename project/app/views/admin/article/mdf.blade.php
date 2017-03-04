@@ -32,11 +32,24 @@
           <select class="form-control sedes" name="sede">
             <option value="">Seleccione una opción...</option>
             @foreach($sede as $s)
-              <option value="{{ $s->id }}" @if($article->tipo == $s->id) selected @endif>{{ ucfirst(strtolower($s->descripcion)) }}</option>
+              <option value="{{ $s->id }}" @if($article->cat_id == $s->id) selected @endif>{{ ucfirst(strtolower($s->descripcion)) }}</option>
             @endforeach
           </select>
           @if($errors->has('sede'))
             @foreach($errors->get('sede') as $err)
+            <div class="clearfix"></div>
+            <div class="alert alert-danger">
+              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+              {{ $err }}
+            </div>
+            @endforeach
+          @endif
+        </div>
+        <div class="formulario col-xs-12 @if(!is_null($article->subtitle) && $article->cat_id != 3) hidden @endif subtitle-container">
+          <label>Subtitulo</label>
+          <input type="text" name="subtitle" class="form-control" placeholder="Titulo" required value="@if(!is_null($article->subtitle)){{ $article->subtitle->subtitulo }} @endif">
+          @if($errors->has('subtitle'))
+            @foreach($errors->get('subtitle') as $err)
             <div class="clearfix"></div>
             <div class="alert alert-danger">
               <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>

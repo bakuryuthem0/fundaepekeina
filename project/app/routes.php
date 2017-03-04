@@ -19,6 +19,7 @@ Route::get('quienes-somos','HomeController@getAbout');
 Route::get('organigrama','HomeController@getOrg');
 Route::get('localizacion','HomeController@getMap');
 Route::get('quienes-somos/historias-epekeinas','HomeController@getHistories');
+Route::get('quienes-somos/historias-epekeinas/{id}','HomeController@getHistory');
 
 Route::get('noticias','HomeController@getNews');
 Route::get('noticias/{id}','HomeController@getArticleSelf')->where('id', '[0-9]+');;

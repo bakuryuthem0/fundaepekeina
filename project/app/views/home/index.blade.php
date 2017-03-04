@@ -21,7 +21,7 @@
                         <a href="{{ URL::to('noticias/que-hacemos/1') }}"><img src="{{ asset('images/slides/campamento.jpg') }}"></a>
                     </div>
                     <div>
-                        <a href="{{ URL::to('noticias/que-hacemos/70') }}"><img src="{{ asset('images/slides/escuela_campo.jpg') }}"></a>
+                        <a href="{{ URL::to('noticias/sedes/111') }}"><img src="{{ asset('images/slides/escuela_campo.jpg') }}"></a>
                     </div>
                     <div>
                         <a href="{{ URL::to('noticias/proyectos/218') }}"><img src="{{ asset('images/slides/habiarte.jpg') }}"></a>
@@ -98,12 +98,12 @@
                 <div class="news-slider owl-carousel formulario-top">
                 @foreach($article as $a)
                     <div class="single-features post-content">
-                        <div class="col-sm-12 col-md-6 wow fadeInLeft image-container" data-wow-duration="500ms" data-wow-delay="300ms">
+                        <div class="col-xs-12 col-md-6 wow fadeInLeft image-container" data-wow-duration="500ms" data-wow-delay="300ms">
                             <a href="{{ URL::to('noticias/'.$a->id) }}">
                                 <img src="{{ asset('images/news/'.$a->imagenes->first()['image']) }}" class="img-responsive" alt="">
                             </a>
                         </div>
-                        <div class="col-sm-12 col-md-6 wow fadeInRight news-text-index" data-wow-duration="500ms" data-wow-delay="300ms">
+                        <div class="col-xs-12 col-md-6 wow fadeInRight news-text-index" data-wow-duration="500ms" data-wow-delay="300ms">
                             <h2>{{ $a->title }}</h2>
                             <h3 class="post-author"><p class="text-justify no-pointer">{{ substr(strip_tags($a->descripcion), 0, 300) }} [...]</p></h3>
                             <a href="{{ URL::to('noticias/'.$a->id) }}" class="read-more">Leer mas</a>

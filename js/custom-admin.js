@@ -85,6 +85,8 @@ jQuery(document).ready(function($) {
 	$('.sedes').on('change', function(event) {
 		var val = $(this).val();
 		if (val == "") {
+			$('.subtitle-container').addClass('hidden');
+			
 			$('.sedes-group').addClass('hidden');
 			$('.response-option').remove();
 			$('.btn-loader').removeClass('hidden');
@@ -93,6 +95,12 @@ jQuery(document).ready(function($) {
 
 		}else
 		{
+			if (val == 3) {
+				$('.subtitle-container').removeClass('hidden');
+			}else
+			{
+				$('.subtitle-container').addClass('hidden');
+			}
 			$.ajax({
 				url: base+'/administrador/buscar-sedes-o-proyectos',
 				type: 'GET',
@@ -130,7 +138,19 @@ jQuery(document).ready(function($) {
 		$('.modal .btn').removeClass('disabled').attr('disabled', false);
 		hideResponseAjax();
 	});
-
+	$('.btn-elim-gallery').on('click', function(event) {
+		var btn = $(this);
+		btn.addClass('to-elim');
+		$('.btn-modal-elim-gallery').val(btn.val());
+	});
+	$('.btn-modal-elim-gallery').on('click', function(event) {
+		var url = base+'/administrador/mostrar-galeria/eliminar',
+		btn = $(this),
+		dataPost = {
+			'id' : btn.val()
+		};
+		ajaxElim(url, dataPost, btn);
+	});
 	$('.btn-elim-art').on('click', function(event) {
 		var btn = $(this);
 		btn.addClass('to-elim');
@@ -225,5 +245,23 @@ jQuery(document).ready(function($) {
 		$('.btn-download').addClass('disabled').attr('disabled', true);
 		var fecha = (new Date()).toLocaleDateString();
 		descargarArchivo(generarHtml(getData()),'boletin'+fecha+'.html',llamadaPatras);
+	});
+	$('.removeGalleryImage').on('click', function(event) {
+		var close = $(this);
+		if (close.nextAll('.shake').hasClass('toElim')) {
+			$('.img_'+close.val()).remove();
+			close.nextAll('.shake').removeClass('toElim');
+		}else
+		{
+			$input = $('<input>').attr({
+				'type': 'hidden',
+				'name': 'img['+close.val()+']'
+			})
+			.addClass('img_'+close.val())
+			.val(close.val());
+			
+			close.nextAll('.shake').addClass('toElim');
+			$('.inputsHolder').append($input);
+		}
 	});
 });

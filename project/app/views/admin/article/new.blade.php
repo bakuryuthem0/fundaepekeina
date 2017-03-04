@@ -44,10 +44,23 @@
             @endforeach
           @endif
         </div>
+        <div class="formulario col-xs-12 hidden subtitle-container">
+          <label>Subtitulo</label>
+          <input type="text" name="subtitle" class="form-control" placeholder="Titulo" required value="{{ Input::old('subtitle') }}">
+          @if($errors->has('subtitle'))
+            @foreach($errors->get('subtitle') as $err)
+            <div class="clearfix"></div>
+            <div class="alert alert-danger">
+              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+              {{ $err }}
+            </div>
+            @endforeach
+          @endif
+        </div>
         <div class="formulario col-xs-12 hidden sedes-group">
           <div class="form-group">
               <div class="input-group full-leght">
-                <select class="response-content form-control">
+                <select class="response-content form-control" name="cat">
                   <option value="">Seleccione una opción...</option>
                 </select>
                 <span class="input-group-btn">
@@ -59,6 +72,7 @@
               </div><!-- /input-group -->
           </div>
         </div>
+        
         <div class="formulario col-xs-12">
           <label>Descripción</label>
           <textarea name="desc" class="textarea" placeholder="Place some text here" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;" required>{{ Input::old('desc') }}</textarea>

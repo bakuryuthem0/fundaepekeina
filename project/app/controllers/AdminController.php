@@ -2,13 +2,12 @@
 
 class AdminController extends BaseController {
 
-	public function upload_image($file)
+	public function upload_image($file, $ruta)
 	{
-		$ruta 	 = "images/news/";
 		$extension = File::extension($file->getClientOriginalName());
 		$time = time();
 		$miImg = $time.'.'.$extension;
-		while (file_exists($ruta.$miImg)) {
+		while (file_exists($ruta.'/'.$miImg)) {
 			$time = time();
 			$miImg = $time.'.'.$extension;
 		}
@@ -132,19 +131,27 @@ class AdminController extends BaseController {
 		}
 
 		$art = new Articulo;
-		$art->cat_id      = $data['sede'];
+		$art->cat_id      = $data['cat'];
+		$art->tipo        = $data['sede'];
 		$art->title       = $data['title'];
 		$art->descripcion = $data['desc'];
 		$art->created_by  = Auth::id();
 		$art->modified_by = Auth::id();
 		$art->save();
+		if ($data['sede'] == 3) {
+			$sub = new Subtitle;
+			$sub->articulo_id = $art->id;
+			$sub->subtitulo   = $data['subtitle'];
+			$sub->save();
+		}
 		$id = $art->id;
 		$file = Input::file();
+		$ruta 	 = "images/news/";
 		foreach($file['file'] as $f)
 		{
 			$img = new NewsImages;
 			$img->articulo_id = $id;
-			$img->image   	  = $this->upload_image($f);
+			$img->image   	  = $this->upload_image($f, $ruta);
 			$img->save();
 		}
 
@@ -204,6 +211,7 @@ class AdminController extends BaseController {
 		$article = Articulo::leftJoin('categorias','categorias.id','=','articulos.cat_id')
 		->where('articulos.id','=',$id)
 		->with('imagenes')
+		->with('subtitle')
 		->first(array(
 			'articulos.id',
 			'articulos.title',
@@ -213,7 +221,7 @@ class AdminController extends BaseController {
 			'categorias.tipo'
 		));
 		$title = "Modificar articulo: ".$article->title;
-		$cat = Categoria::where('tipo','=',$article->tipo)->get();
+		$cat = Categoria::where('tipo','=',$article->cat_id)->get();
 		$sede = Tipo::get();
 		return View::make('admin.article.mdf')
 		->with('title',$title)
@@ -243,11 +251,20 @@ class AdminController extends BaseController {
 
 		$art = Articulo::find($data['id']);
 		$art->cat_id      = $data['cat'];
+		$art->tipo        = $data['sede'];
 		$art->title       = $data['title'];
 		$art->descripcion = $data['desc'];
 		$art->modified_by = Auth::id();
 		$art->save();
+		if ($data['sede'] == 3) {
+			Subtitle::where('articulo_id','=',$art->id)->delete();
+			$sub = new Subtitle;
+			$sub->articulo_id = $art->id;
+			$sub->subtitulo   = $data['subtitle'];
+			$sub->save();
+		}
 		if (Input::hasFile('file')) {
+			$ruta 	 = "images/news/";
 			$file = Input::file();
 			foreach($file['file'] as $id => $i)
 			{
@@ -260,7 +277,7 @@ class AdminController extends BaseController {
 					{
 						File::delete('images/news/'.$img->image);
 					}
-					$img->image   = $this->upload_image($i);
+					$img->image   = $this->upload_image($i, $ruta);
 					$img->save();
 				}
 			}
@@ -392,5 +409,159 @@ class AdminController extends BaseController {
 		Session::flash('success','Se ha cerrado sesión satisfactoriamente.');
 		Auth::logout();
 		return Redirect::to('administrador/login');
+	}
+	public function getNewCat()
+	{
+		$title = "Nueva galería | Funda Epékeina";
+
+		return View::make('admin.gallery.newCat')
+		->with('title',$title);
+	}
+	public function checkImg()
+	{
+		$data = Input::all();
+		$rules = array(
+			'file' => 'required|min:20|max:3000'
+		);
+		$validator = Validator::make($data, $rules);
+		if ($validator->fails()) {
+			return Response::json(array(
+				'type' => 'danger',
+				'data' => $validator->getMessageBag()
+			));
+		}
+		return Response::json(array(
+			'type' => 'success'
+		));
+	}
+	public function postNewCat()
+	{
+		$data = Input::all();
+
+		$rules = array(
+			'name' => 'required|min:4|max:45',
+			'icon' => 'image|max:3000',
+			'files.*.file' => 'images|min:20|max:3000',
+		);
+		$validator = Validator::make($data, $rules);
+		if ($validator->fails()) {
+			return $validator->getMessageBag();
+		}
+		$gal = new Gallery;
+		$gal->name = $data['name'];
+		$gal->icon = $this->upload_image(Input::file('icon'), 'images/gallery/icon');
+		$gal->updated_by = Auth::id();
+		$ruta = "images/gallery/".$gal->name;
+		if ($gal->save()) {
+			foreach ($data['files'] as $f) {
+				$img_gal = new GalleryImage;
+				$img_gal->gallery_id = $gal->id;
+				$img_gal->image = $this->upload_image($f, $ruta);
+				$img_gal->save();
+			}
+		}
+		return Redirect::to('administrador/galeria/ver-galerias');
+	}
+	public function getGalleries()
+	{
+		$title = "Ver galerias | Funda Epékeina";
+		$gal = Gallery::with('imgCount')->get();
+		return View::make('admin.gallery.show')
+		->with('gal',$gal)
+		->with('title',$title);
+	}
+	public function addImages($id = null)
+	{
+		$title = "Agregar imagenes | Funda Epékeina";
+		$gal   = Gallery::get(); 
+		$view  = View::make('admin.gallery.addImages')
+		->with('title',$title)
+		->with('gal',$gal);
+		if (!is_null($id)) {
+			$view = $view->with('id',$id);
+		}
+		return $view;
+	}
+	public function postNewImage()
+	{
+		$gal_id = Input::get('gal_id');
+		$gal = Gallery::find($gal_id);
+		if (count($gal) > 0) {
+			$data = Input::all();
+			$ruta = "images/gallery/".$gal->name;
+			foreach ($data['files'] as $f) {
+				$img_gal = new GalleryImage;
+				$img_gal->gallery_id = $gal->id;
+				$img_gal->image = $this->upload_image($f, $ruta);
+				$img_gal->save();
+			}
+			Session::flash('success', 'Se han agregado las imagenes satisfactoriamente.');
+			return Redirect::back();
+		}else
+		{
+			Session::flash('danger', 'Error, no se encontra la galeria');
+			return Redirect::back();
+		}
+	}
+	public function showGallery($type,$id)
+	{
+
+		if ($type == 'ver-galeria') {
+			$title = "Ver galería | Funda Epékeina";
+			$template = 'admin.gallery.showGallery';
+		}elseif($type == "editar-galeria")
+		{
+			$title = "Editar galería | Funda Epékeina";
+			$template = 'admin.gallery.editGallery';
+			$gallery = Gallery::get();
+		}
+		$gal   = Gallery::with('imagenes')->find($id);
+		$view = View::make($template)
+		->with('title',$title)
+		->with('gal',$gal);
+		return $view;
+	}
+	public function postMdfGal()
+	{
+		$data = Input::all();
+		$gal = Gallery::find($data['gal_id']);
+		$ruta = "images/gallery/".$gal->name;
+		if (Input::hasFile('icon')) {
+			$gal->icon = $this->upload_image(Input::file('icon'), 'images/gallery/icon');
+		}
+		if (!is_null($data['files'][0])) {
+			foreach ($data['files'] as $f) {
+				$img_gal = new GalleryImage;
+				$img_gal->gallery_id = $gal->id;
+				$img_gal->image = $this->upload_image($f, $ruta);
+				$img_gal->save();
+			}
+		}
+		if (isset($data['img']) > 0) {
+			foreach ($data['img'] as $j => $i) {
+				$imgGal = GalleryImage::find($i);
+				File::delete($ruta.'/'.$imgGal->image);
+				$imgGal->delete();
+			}
+		}
+		$gal->save();
+		Session::flash('success','se ha modificado la galeria');
+		return Redirect::back();
+	}
+	public function elimGallery()
+	{
+		$id = Input::get('id');
+		$gallery = Gallery::find($id); 
+		$aux = GalleryImage::where('gallery_id','=',$id);
+		$rows = $aux->get();
+		foreach ($rows as $r) {
+			File::delete('images/gallery/'.$gallery->name.'/'.$r->image);
+		}
+		$aux->delete();
+		$gallery->delete();
+		return Response::json(array(
+			'type' => 'success',
+			'msg'  => 'Se ha eliminado la galería'
+		));
 	}
 }
