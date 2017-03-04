@@ -27,7 +27,7 @@
                         </h1>   
                         @if(!is_null($hist->subtitle))
                         <h2 class="text-center">
-                            <span class="text-blue"><strong>{{ $hist->subtitle->subtitulo }}</span>
+                            <span class="text-blue"><strong>{{ $hist->subtitle->subtitulo }}</strong></span>
                         </h2>
                         @endif
                         <div class="col-xs-12 text-justify">
