@@ -45,7 +45,7 @@
             @endforeach
           @endif
         </div>
-        <div class="formulario col-xs-12 @if(!is_null($article->subtitle) && $article->cat_id != 3) hidden @endif subtitle-container">
+        <div class="formulario col-xs-12 @if(is_null($article->subtitle) || $article->cat_id != 3) hidden @endif subtitle-container">
           <label>Subtitulo</label>
           <input type="text" name="subtitle" class="form-control" placeholder="Titulo" required value="@if(!is_null($article->subtitle)){{ $article->subtitle->subtitulo }} @endif">
           @if($errors->has('subtitle'))
