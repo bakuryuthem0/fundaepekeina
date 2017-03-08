@@ -120,7 +120,7 @@
                     </div>
                     <hr>
                     <div class="text-justify">
-                        {{ substr(strip_tags($hist->descripcion), 0, 1600) }}
+                        {{ substr(strip_tags($hist->descripcion), 0, 1600) }}[...]
                         <br>
                         <a href="{{ URL::to('quienes-somos/historias-epekeinas/'.$hist->id) }}" class="pull-right">Leer mas</a>
                     </div>
