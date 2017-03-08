@@ -14,10 +14,19 @@ class BoletinController extends BaseController {
 		{
 			$article = $article->orWhere('id','=',$a);
 		}
+		$article = $article->orderBy('id','DESC')->get();
+		$colors  = array('yellow','green','pink','blue');
+		$hist = Articulo::where('tipo','=',3)
+		->orderBy('id','DESC')
+		->with('subtitle')
+		->with('imagenes')
+		->first();		
 		return View::make('admin.generate')
-		->with('article',$article->orderBy('id','DESC')->get())
+		->with('article',$article)
 		->with('title','Generar Boletin')
-		->with('principal',$principal);
+		->with('principal',$principal)
+		->with('colors',$colors)
+		->with('hist',$hist);
 	}
 	public function selectNews()
 	{
@@ -27,13 +36,21 @@ class BoletinController extends BaseController {
 		->with('article',$article)
 		->with('title',$title);
 	}
-	/*public function getBoletinAdmin()
+	public function getTest()
 	{
 		$article = Articulo::with('imagenes')->orderBy('created_at','DESC')->take(6)->get();
-		return View::make('admin.generate')
+		$hist = Articulo::where('tipo','=',3)
+		->orderBy('id','DESC')
+		->with('subtitle')
+		->with('imagenes')
+		->first();
+		$colors  = array('yellow','green','pink','blue');
+		return View::make('emails.boletin')
 		->with('article',$article)
-		->with('title','Generar Boletin');
-	}*/
+		->with('title','Generar Boletin')
+		->with('colors',$colors)
+		->with('hist',$hist);
+	}
 	public function deleteFromBoletin()
 	{
 		$title = "Dar de baja Boletin | fundaepekeina";
