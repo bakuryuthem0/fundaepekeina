@@ -417,10 +417,7 @@ small.response-danger
 {
     min-width: 200px; 
 }
-.fixedheight
-{
-    min-height: 225px;
-}
+
 .center-block
 {
     float: none;
@@ -680,4 +677,102 @@ margin: 0 -27px;
 blockquote
 {
     border-left: 5px solid #afcb08;
+}
+
+/*boletin*/
+@font-face{
+   font-family: 'TypoGraphica';
+   src: url('http://fundaepekeina.org/fonts/TypoGraphica.otf');
+}
+.boletin *
+{
+    font-family: 'TypoGragica' !important;
+}
+.boletin
+{
+    width: 97.5%;
+    margin: 0 auto;
+    display: block;
+}
+
+.boletin .row
+{
+    margin: 0;
+}
+.boletin .bg
+{
+    border: 5px solid white;
+}
+.boletin .bg .content
+{
+    padding: 10px;
+}
+.boletin .bg .content .boletin-title
+{
+    color: white;
+    font-size: 32px;
+    font-weight: bold;
+}
+.boletin .bg-blue .content .boletin-title
+{
+    font-size: 38px;
+}
+.bg-blue
+{
+    background-color: #25aae2;
+}
+.bg-yellow
+{
+    background-color: #ffca08;
+}
+.bg-green
+{
+    background-color: #a6ce39;
+}
+.bg-pink
+{
+    background-color: #ed008c;
+}
+.social-container
+{
+    width: 100%;
+    height: 100px;
+    background-color: #a6ce39;
+    color: #fff;
+}
+.social-container hr
+{
+    margin-bottom: 15px;
+}
+.social-container ul li
+{
+    list-style: none;
+    display: inline-block;
+    margin: 0 7px;
+}
+.social-container ul li .fa
+{
+    border-radius: 50%;
+    background-color: #fff;
+    color: #25aae2;
+    padding: 10px;
+}
+.social-container ul li .fa.fa-facebook
+{
+    padding: 10px 13px;
+}
+.fixedHeight
+{
+    height: 600px;
+}
+.hist-title
+{
+    font-size: 28px;
+    font-weight: bold;
+    color: #fff;
+    padding: 5px;
+}
+.bg-square
+{
+    min-height: 30px;
 }
