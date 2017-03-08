@@ -776,3 +776,9 @@ blockquote
 {
     min-height: 30px;
 }
+.img-hist
+{
+    max-height: 195px;
+    display: block;
+    margin: 0 auto;
+}

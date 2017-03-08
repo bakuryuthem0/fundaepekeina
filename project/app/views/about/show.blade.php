@@ -25,7 +25,7 @@
                 <div class="col-xs-12 center-block padding wow fadeIn" data-wow-duration="1000ms" data-wow-delay="300ms">
                     @foreach($hist as $h)
                         <div class="col-xs-12 col-sm-6 col-lg-3">
-                            <img src="{{ asset('images/news/'.$h->imagenes->first()->image) }}" class="img-responsive">
+                            <img src="{{ asset('images/news/'.$h->imagenes->first()->image) }}" class="img-responsive img-hist">
                             <div class="text-justify">
                                 <h3 class="text-pink">{{ $h->title }}</h3>
                                 <h5 class="text-blue">{{ date('d/m/Y H:i:s',strtotime($h->updated_at)) }}</h5>
