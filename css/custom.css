@@ -757,9 +757,9 @@ blockquote
     color: #25aae2;
     padding: 10px;
 }
-.social-container ul li .fa.fa-facebook
+.social-container ul li .fa.ion-social-facebook
 {
-    padding: 10px 13px;
+    padding: 10px 15px;
 }
 .fixedHeight
 {
