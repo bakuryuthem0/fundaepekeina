@@ -51,7 +51,7 @@
                         <div class="content">
                             <h2 class="boletin-title">{{ $principal->title }}</h2>
                             <p class="text-justify">{{ substr(strip_tags($principal->descripcion), 0, 300) }} [...]</p>
-                            <a target="_blank" href="{{ URL::to('noticias/'.$principal->id) }}" class="btn btn-default btn-xs pull-right">Leer mas</a>
+                            <a target="_blank" href="{{ URL::to('noticias/'.$principal->id) }}" class="btn btn-default btn-xs pull-right">Leer más</a>
                             <div class="clearfix"></div>
                         </div>
                     </div>
@@ -59,7 +59,7 @@
                     <div class="row">
                         <?php $k = 0;?>
                         @foreach($article as $a)
-                            @if($k == 3)
+                            @if($k == 4)
                                 <?php $k = 0;?>
                             @endif
                             @if(!empty($principal))
@@ -73,7 +73,7 @@
                                         <div class="content">
                                             <h2 class="boletin-title">{{ $a->title }}</h2>
                                             <p class="text-justify">{{ substr(strip_tags($a->descripcion), 0, 300) }} [...]</p>
-                                            <a target="_blank" href="{{ URL::to('noticias/'.$a->id) }}" class="btn btn-default btn-xs pull-right">Leer mas</a>
+                                            <a target="_blank" href="{{ URL::to('noticias/'.$a->id) }}" class="btn btn-default btn-xs pull-right">Leer más</a>
                                             <div class="clearfix"></div>
 
                                         </div>
@@ -89,7 +89,7 @@
                                     <div class="content">
                                         <h2 class="boletin-title">{{ $a->title }}</h2>
                                         <p class="text-justify">{{ substr(strip_tags($a->descripcion), 0, 300) }} [...]</p>
-                                        <a target="_blank" href="{{ URL::to('noticias/'.$a->id) }}" class="btn btn-default btn-xs pull-right">Leer mas</a>
+                                        <a target="_blank" href="{{ URL::to('noticias/'.$a->id) }}" class="btn btn-default btn-xs pull-right">Leer más</a>
                                         <div class="clearfix"></div>
                                     </div>
                                 </div>
@@ -122,7 +122,7 @@
                     <div class="text-justify">
                         {{ substr(strip_tags($hist->descripcion), 0, 1600) }}[...]
                         <br>
-                        <a href="{{ URL::to('quienes-somos/historias-epekeinas/'.$hist->id) }}" class="pull-right">Leer mas</a>
+                        <a href="{{ URL::to('quienes-somos/historias-epekeinas/'.$hist->id) }}" class="pull-right">Leer más</a>
                     </div>
                 </div>
             </div>

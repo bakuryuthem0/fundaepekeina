@@ -684,7 +684,7 @@ blockquote
    font-family: 'TypoGraphica';
    src: url('http://fundaepekeina.org/fonts/TypoGraphica.otf');
 }
-.boletin *
+.boletin p, .boletin h1, .boletin h2, .boletin h3, .boletin h4, .boletin h5, .boletin h6
 {
     font-family: 'TypoGragica' !important;
 }
