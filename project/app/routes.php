@@ -100,8 +100,8 @@ Route::group(array('before' => 'auth'),function()
 	Route::get('administrador/logout','AdminController@getLogOut');
 });
 
-Route::get('test','HomeController@getEmail');
+Route::get('test','BoletinController@getTest');
 Route::post('nueva-donacion','HomeController@postDonation');
 Route::get('dar-de-baja','BoletinController@deleteFromBoletin');
 
-Route::get('boletin-celebrando-7','BoletinController@get7years');
+Route::get('boletin-marzo','BoletinController@getLastBoletin');
