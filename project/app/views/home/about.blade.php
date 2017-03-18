@@ -21,18 +21,12 @@
             <div class="row">
                 <div class="col-xs-12 col-sm-6 text-center padding wow fadeIn" data-wow-duration="1000ms" data-wow-delay="300ms">
                     <div class="single-service">
-                        <div class="wow scaleIn icon-container fadeIn" data-wow-duration="500ms" data-wow-delay="300ms">
-                            <i class="fa fa-flag about-icons" aria-hidden="true"></i>
-                        </div>
                         <h2>Misión</h2>
                         <p class="text-justify fadeIn" data-wow-duration="500ms" data-wow-delay="300ms">Acompañar a las comunidades en situación de pobreza en su esfuerzo por lograr una calidad de vida digna y en la defensa de sus derechos ciudadanos, a través de un proceso integral, a nivel educativo y de organización participativa, con el fin de promover la formación intelectual y la capacitación de sus miembros, enfocados principalmente en los niños, adolescentes, jóvenes y su núcleo familiar, en conformidad con los valores de la democracia y la paz social.</p>
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-6 text-center padding wow fadeIn" data-wow-duration="1000ms" data-wow-delay="900ms">
                     <div class="single-service">
-                        <div class="wow scaleIn icon-container" data-wow-duration="500ms" data-wow-delay="900ms">
-                            <i class="fa fa-eye about-icons" aria-hidden="true"></i>
-                        </div>
                         <h2 class="fadeIn" data-wow-duration="500ms" data-wow-delay="300ms">Visión</h2>
                         <p class="text-justify fadeIn" data-wow-duration="500ms" data-wow-delay="300ms">Construir una Venezuela democrática donde sea posible convivir libres de ideologías, exclusiones y etiquetas socio-políticas. Tener un País con igualdad de oportunidades para todos y una nación plural, incluyente, solidaria y justa, promoviendo una calidad de vida digna para las comunidades pobres y para la gente más necesitada, donde todos trabajen desde la riqueza y el potencial de sus propias realidades sociales y culturales.</p>
                     </div>
