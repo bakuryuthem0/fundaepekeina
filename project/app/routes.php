@@ -104,4 +104,4 @@ Route::get('test','BoletinController@getTest');
 Route::post('nueva-donacion','HomeController@postDonation');
 Route::get('dar-de-baja','BoletinController@deleteFromBoletin');
 
-Route::get('boletin-marzo','BoletinController@getLastBoletin');
+Route::get('boletin-abril','BoletinController@getLastBoletin');
