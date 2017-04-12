@@ -59,6 +59,6 @@ class BoletinController extends BaseController {
 	}
 	public function getLastBoletin()
 	{
-		return View::make('boletin.1032017');
+		return View::make('boletin.06042017');
 	}
 }
