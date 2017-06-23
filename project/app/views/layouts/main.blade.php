@@ -78,7 +78,7 @@
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right navbar-menu">
-                        <li class="@if($active == 'home') active @endif"><a href="{{ URL::to('biblioteca') }}">Biblioteca Virtual</a>
+                        <li class="@if($active == 'home') active @endif"><a href="{{ URL::to('biblioteca-virtual') }}">Biblioteca Virtual</a>
                         </li>
                         <li class="@if($active == 'about') active @endif dropdown">
                             <a href="{{ URL::to('quienes-somos') }}" class="visible-md-block visible-lg-block">Quiénes somos <i class="fa fa-angle-down"></i></a>
