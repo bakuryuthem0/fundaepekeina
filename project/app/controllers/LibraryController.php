@@ -54,6 +54,9 @@ class LibraryController extends BaseController {
 		if (Input::has('publication_date')) {
 			$library->publication_date 	= date('Y-m-d',strtotime($data['publication_date']));
 		}
+		if (Input::has('description')) {
+			$library->description 	= $data['description'];
+		}
 		$file = Input::file('file');
 		$library->file              = $this->upload_image($file, storage_path().'/biblioteca');
 		$library->save();
