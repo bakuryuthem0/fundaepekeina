@@ -1,31 +1,33 @@
+function beforeElim (btn) {
+	$('.miniLoader').addClass('active');
+	btn.addClass('disabled').attr('disabled',true);
+}
+function successElim (response, btn) {
+	$('.miniLoader').removeClass('active');
+	$('.responseAjax').addClass('alert-'+response.type).addClass('active').children('p').html(response.msg);
+	if (response.type == 'danger') {
+		btn.removeClass('disabled').attr('disabled',false);
+	}else if(response.type == 'success')
+	{
+		$('.to-elim').parent().parent().remove();
+	}
+}
+function errorElim(btn)
+{
+	$('.miniLoader').removeClass('active');
+	$('.responseAjax').addClass('alert-danger').addClass('active').children('p').html('Ups, ocurrio un error.');
+	btn.removeClass('disabled').attr('disabled',false);
+
+}
 function ajaxElim (url,dataPost, btn) {
 	$.ajax({
 		url: url,
 		type: 'POST',
 		dataType: 'json',
 		data: dataPost,
-		beforeSend:function(){
-			$('.miniLoader').addClass('active');
-			btn.addClass('disabled').attr('disabled',true);
-		},
-		success:function(response)
-		{
-			$('.miniLoader').removeClass('active');
-			$('.responseAjax').addClass('alert-'+response.type).addClass('active').children('p').html(response.msg);
-			if (response.type == 'danger') {
-				btn.removeClass('disabled').attr('disabled',false);
-			}else if(response.type == 'success')
-			{
-				$('.to-elim').parent().parent().remove();
-			}
-		},
-		error:function()
-		{
-			$('.miniLoader').removeClass('active');
-			$('.responseAjax').addClass('alert-danger').addClass('active').children('p').html('Ups, ocurrio un error.');
-			btn.removeClass('disabled').attr('disabled',false);
-
-		}
+		beforeSend: beforeElim,
+		success: successElim,
+		error: errorElim
 	});
 }
 function hideResponseAjax () {
@@ -199,6 +201,16 @@ jQuery(document).ready(function($) {
 		};
 		var url = $(this).data('url');
 		ajaxElim(url, dataPost, btn);
+	});
+	$('.btn-elim-file').on('click', function(event) {
+		addValToElim ($('.btn-elim-thing'), $(this));
+	});
+	$('.btn-elim-thing').on('click', function(event) {
+		var btn = $(this);
+		var dataPost = {
+			id : btn.val()
+		}
+		doAjax(btn.data('url'), "POST", "json", dataPost, btn, beforeElim, successElim, errorElim);
 	});
 	$(document).on('click','.dimiss-cloned', function(event) {
 		removeCloned($(this));

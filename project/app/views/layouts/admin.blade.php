@@ -12,7 +12,7 @@
     {{ HTML::style("html/css/bootstrap.min.css") }}
     {{ HTML::style("plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css") }}
 
-    {{ HTML::style('css/custom-admin.css') }}
+    {{ HTML::style('css/custom-admin.css?v=1.0') }}
     <!-- Font Awesome -->
     <!-- Ionicons -->
     <!-- Theme style -->
@@ -62,6 +62,22 @@
             </li>
             <li><a href="{{ URL::to('generar-boletin') }}">Generar Boletin</a></li>
             @endif
+            <li>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Biblioteca <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="{{ URL::to('administrador/biblioteca/nuevo-archivo') }}"><i class="fa fa-plus"></i> Nuevo archivo</a></li>
+                <li><a href="{{ URL::to('administrador/biblioteca/ver-archivos') }}"><i class="fa fa-list"></i> Ver archivos</a></li>
+              </ul>
+            </li>
+            @if(1 == 2)
+            <li>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Galeria <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="{{ URL::to('administrador/galeria/nueva-galeria') }}"><i class="fa fa-plus"></i> Nueva Galeria</a></li>
+                <li><a href="{{ URL::to('administrador/galeria/ver-galerias') }}"><i class="fa fa-list"></i> Ver Galeria</a></li>
+              </ul>
+            </li>
+            @endif
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
@@ -86,7 +102,7 @@
     <!-- Bootstrap 3.3.5 -->
     {{ HTML::script("html/js/bootstrap.min.js") }}
     {{ HTML::script("plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js") }}
-
+    {{ HTML::script("js/functions.js") }}
     {{ HTML::script("js/custom-admin.js?v=0.1") }}
     @yield('postscript')
   </body>

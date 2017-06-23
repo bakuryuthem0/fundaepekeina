@@ -161,6 +161,9 @@
                     <div class="">
                         <a href="{{ URL::to('http://redjovenvenezuela.com') }}"><img src="{{ asset('images/allies/redjoven.png') }}" style="max-width:300px;"></a>
                     </div>
+                    <div class="">
+                        <img src="{{ asset('images/allies/ecv.jpg') }}">
+                    </div>
                 </div>
 
             </div>

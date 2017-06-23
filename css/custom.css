@@ -782,3 +782,11 @@ blockquote
     display: block;
     margin: 0 auto;
 }
+.library-container:nth-child(even) .hist-title.library
+{
+    color: #1570b7;
+}
+.library-container:nth-child(odd) .hist-title.library
+{
+    color: #f6a22c;
+}

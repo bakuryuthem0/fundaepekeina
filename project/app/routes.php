@@ -32,6 +32,9 @@ Route::get('noticias/{type}/categoria/{id}','HomeController@getByCat');
 
 Route::get('galeria','HomeController@getGallery');
 
+Route::get('biblioteca','LibraryController@getIndex');
+Route::get('biblioteca/descargar/{id}','LibraryController@downloadFile');
+
 Route::get('contacto','HomeController@getContact');
 Route::post('contacto/enviar','HomeController@postContact');
 
@@ -98,6 +101,16 @@ Route::group(array('before' => 'auth'),function()
 	Route::get('administrador/galeria/{type}/{id}','AdminController@showGallery');
 	Route::post('administrador/galeria/editar/enviar','AdminController@postMdfGal');
 	Route::get('administrador/logout','AdminController@getLogOut');
+
+	//Biblioteca
+
+	Route::get('administrador/biblioteca/nuevo-archivo','LibraryController@getNewFile');
+	Route::post('administrador/biblioteca/nuevo-archivo/enviar','LibraryController@postNewFile');
+	Route::get('administrador/biblioteca/ver-archivos','LibraryController@getFiles');
+	Route::get('administrador/biblioteca/ver-archivos/{id}','LibraryController@downloadFile');
+	Route::get('administrador/biblioteca/editar-archivos/{id}','LibraryController@getMdfFile');
+	Route::post('administrador/biblioteca/editar-archivos/{id}/enviar','LibraryController@postMdfFile');
+	Route::post('administrador/biblioteca/ver-archivos/eliminar','LibraryController@postElimFile');
 });
 
 Route::get('test','BoletinController@getTest');
