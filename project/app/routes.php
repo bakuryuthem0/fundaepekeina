@@ -32,7 +32,7 @@ Route::get('noticias/{type}/categoria/{id}','HomeController@getByCat');
 
 Route::get('galeria','HomeController@getGallery');
 
-Route::get('biblioteca','LibraryController@getIndex');
+Route::get('biblioteca-virtual','LibraryController@getIndex');
 Route::get('biblioteca/descargar/{id}','LibraryController@downloadFile');
 
 Route::get('contacto','HomeController@getContact');
