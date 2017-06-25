@@ -63,21 +63,12 @@
             <li><a href="{{ URL::to('generar-boletin') }}">Generar Boletin</a></li>
             @endif
             <li>
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Biblioteca <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="{{ URL::to('administrador/biblioteca/nuevo-archivo') }}"><i class="fa fa-plus"></i> Nuevo archivo</a></li>
-                <li><a href="{{ URL::to('administrador/biblioteca/ver-archivos') }}"><i class="fa fa-list"></i> Ver archivos</a></li>
-              </ul>
-            </li>
-            @if(1 == 2)
-            <li>
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Galeria <span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><a href="{{ URL::to('administrador/galeria/nueva-galeria') }}"><i class="fa fa-plus"></i> Nueva Galeria</a></li>
                 <li><a href="{{ URL::to('administrador/galeria/ver-galerias') }}"><i class="fa fa-list"></i> Ver Galeria</a></li>
               </ul>
             </li>
-            @endif
             <li>
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Biblioteca <span class="caret"></span></a>
               <ul class="dropdown-menu">
