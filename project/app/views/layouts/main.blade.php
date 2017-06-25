@@ -78,7 +78,7 @@
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right navbar-menu">
-                        <li class="@if($active == 'home') active @endif"><a href="{{ URL::to('biblioteca-virtual') }}">Biblioteca Virtual</a>
+                        <li class="@if($active == 'home') active @endif"><a href="{{ URL::to('quienes-somos/historias-epekeinas') }}">  Historias Epékeinas</a>
                         </li>
                         <li class="@if($active == 'about') active @endif dropdown">
                             <a href="{{ URL::to('quienes-somos') }}" class="visible-md-block visible-lg-block">Quiénes somos <i class="fa fa-angle-down"></i></a>
@@ -101,8 +101,6 @@
                                 <li><a href="{{ URL::to('noticias')}}" class="hidden-md hidden-lg">Todas</a></li>
                                 <li><a href="{{ URL::to('noticias/sedes') }}">Por sede</a></li>
                                 <li><a href="{{ URL::to('noticias/proyectos') }}">Proyectos</a></li>
-                                <li class="@if($active == 'home') active @endif"><a href="{{ URL::to('quienes-somos/historias-epekeinas') }}">  Historias Epékeinas</a>
-                                </li>
                             </ul>
                         </li> 
                         </li>                         
