@@ -156,39 +156,7 @@
             </div>
         </div>
     </section>
-    <!--/#services-->
-    <section id="services">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 text-center padding wow fadeIn" data-wow-duration="1000ms" data-wow-delay="300ms">
-                    <div class="single-service">
-                        <div class="wow scaleIn icon-container" data-wow-duration="500ms" data-wow-delay="300ms">
-                            <i class="fa fa-crosshairs about-icons" aria-hidden="true"></i>
-                        </div>
-                        <h2 class="fadeIn" data-wow-duration="500ms" data-wow-delay="300ms">Objetivo general</h2>
-                        <p class="text-justify fadeIn" data-wow-duration="500ms" data-wow-delay="300ms">Promover iniciativas comunitarias y socio-pastorales alternativas a los sistemas socio económicos y políticos establecidos en el País, desde la realidad de las comunidades pobres, con el liderazgo y el protagonismo de los jóvenes, y la atención a los niños, para contribuir en la formación de una nación justa, democrática, pluricultural y multicultural, en paz y convivencia armónica con las riquezas naturales que el Creador nos ha dado.</p>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-6 text-center padding wow fadeIn" data-wow-duration="1000ms" data-wow-delay="900ms">
-                    <div class="single-service">
-                        <div class="wow scaleIn icon-container" data-wow-duration="500ms" data-wow-delay="900ms">
-                            <i class="fa fa-list-ul about-icons" aria-hidden="true"></i>
-                        </div>
-                        <h2 class="fadeIn" data-wow-duration="500ms" data-wow-delay="300ms">Objetivos especificos</h2>
-                        <ol class="text-justify fadeIn" data-wow-duration="500ms" data-wow-delay="300ms">
-                        	<li>Capacitar a los jóvenes, acompañarlos, y brindarles herramientas y nuevos conocimientos.</li>
-
-							<li>Promover y fortalecer las formas de organización social, ya existentes, y que encontremos y despertemos en las comunidades.</li>
-
-							<li>Fortalecer la incidencia y la articulación de Funda Epékeina con las redes de otras Fundaciones y ONG, con las académicas (centros de investigación y universidades) y los organismos defensores de los derechos humanos nacionales e internacionales.</li>
-
-							<li>Colaborar y fortalecer las articulaciones regionales, nacionales e internacionales que los mismos, niños, adolescentes y jóvenes van impulsando.</li>
-                        </ol>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    
     <section id="" class="responsive action">
         <div class="vertical-center">
              <div class="container">

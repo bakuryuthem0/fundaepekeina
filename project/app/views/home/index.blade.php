@@ -54,18 +54,16 @@
         <div class="container">
             <div class="row">
 
-                <!--
                 <div class="col-xs-12 col-sm-6 text-center padding wow fadeIn" data-wow-duration="1000ms" data-wow-delay="300ms">
                     <div class="single-service">
                         <div class="wow scaleIn" data-wow-duration="500ms" data-wow-delay="300ms">
                             <img src="images/projects/redjoven.png" alt="">
                         </div>
                         <h2>Red Joven Venezuela</h2>
-                        <p class="text-justify">Ground round tenderloin flank shank ribeye. Hamkevin meatball swine. Cow shankle beef sirloin chicken ground round.</p>
+                        <p class="text-justify">Nos inspiramos en Venezuela, en la valoración de lo que somos, de nuestra esencia, en el reconocimiento de la venezolanidad. Nosotros creemos en la gente, apostamos por la gente; por ese principio de vida, de salvación, de fuerza y esperanza activa, construye, propone y se mueve para superar obstáculos. <strong>Visitanos <a href="http://redjovenvenezuela.com" target="_blank">aqui</a></strong></p>
                     </div>
                 </div>
-                -->
-                <div class="col-xs-12 col-sm-6 center-block text-center padding wow fadeIn" data-wow-duration="1000ms" data-wow-delay="900ms">
+                <div class="col-xs-12 col-sm-6 text-center padding wow fadeIn" data-wow-duration="1000ms" data-wow-delay="900ms">
                     <div class="single-service">
                         <div class="wow scaleIn" data-wow-duration="500ms" data-wow-delay="900ms">
                             <img src="{{ asset('images/projects/laguna.png') }}" alt="">

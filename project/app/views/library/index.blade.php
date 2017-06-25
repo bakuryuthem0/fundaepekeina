@@ -24,7 +24,7 @@
             <div class="row">
                 <div class="col-xs-12">
                     <div class="row">
-                        <form method="GET" action="{{ URL::to('biblioteca?').$paginatorFilter }}">
+                        <form method="GET" action="{{ URL::to('biblioteca-vitual?').$paginatorFilter }}">
                             <div class="col-xs-12 no-padding">
                                 <h1 class="text-center">Filtros</h1>
                                 <div class="col-xs-12 col-md-8">
@@ -60,6 +60,8 @@
                                 </p>
                             @endif
                             <small>
+                                <span><i class="fa fa-book"></i> {{ ucfirst(str_replace('-',' ',$f->type)) }}</span>
+
                                 @if(!empty($f->autor))
                                     <span><i class="fa fa-pencil"></i> {{ $f->autor }}</span>
                                 @endif

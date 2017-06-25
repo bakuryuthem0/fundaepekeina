@@ -78,6 +78,13 @@
               </ul>
             </li>
             @endif
+            <li>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Biblioteca <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="{{ URL::to('administrador/biblioteca/nuevo-archivo') }}"><i class="fa fa-plus"></i> Nuevo archivo</a></li>
+                <li><a href="{{ URL::to('administrador/biblioteca/ver-archivos') }}"><i class="fa fa-list"></i> Ver archivos</a></li>
+              </ul>
+            </li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
