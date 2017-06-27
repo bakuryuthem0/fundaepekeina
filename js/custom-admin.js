@@ -25,9 +25,13 @@ function ajaxElim (url,dataPost, btn) {
 		type: 'POST',
 		dataType: 'json',
 		data: dataPost,
-		beforeSend: beforeElim,
-		success: successElim,
-		error: errorElim
+		function(btn){
+			beforeElim
+		},
+		function(response, btn){
+			successElim
+		},
+		function(btn){errorElim}
 	});
 }
 function hideResponseAjax () {
