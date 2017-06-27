@@ -76,29 +76,27 @@
 @stop
 
 @section('postscript')
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
-{{ HTML::style('plugins/jquery-file-upload/css/jquery.fileupload.css') }}
+<link rel="stylesheet" type="text/css" href="{{ asset('plugins/jquery-file-upload/css/jquery.fileupload.css') }}">
 <!-- The jQuery UI widget factory, can be omitted if jQuery UI is already included -->
-{{ HTML::script('plugins/jquery-file-upload/js/vendor/jquery.ui.widget.js') }}
+<script type="text/javascript" src="{{ asset('plugins/jquery-file-upload/js/vendor/jquery.ui.widget.js') }}"></script>
 <!-- The Load Image plugin is included for the preview images and image resizing functionality -->
-<script src="//blueimp.github.io/JavaScript-Load-Image/js/load-image.all.min.js"></script>
-<!-- The Canvas to Blob plugin is included for image resizing functionality -->
-<script src="//blueimp.github.io/JavaScript-Canvas-to-Blob/js/canvas-to-blob.min.js"></script>
+<script type="text/javascript" src="{{ asset('plugins/jquery-file-upload/js/load-image.all.min.js') }}"></script>
+
 <!-- Bootstrap JS is not required, but included for the responsive demo navigation -->
-{{ HTML::script('plugins/jquery-file-upload/js/jquery.iframe-transport.js') }}
+<script type="text/javascript" src="{{ asset('plugins/jquery-file-upload/js/jquery.iframe-transport.js') }}"></script>
 <!-- The basic File Upload plugin -->
-{{ HTML::script('plugins/jquery-file-upload/js/jquery.fileupload.js') }}
+<script type="text/javascript" src="{{ asset('plugins/jquery-file-upload/js/jquery.fileupload.js') }}"></script>
 <!-- The File Upload processing plugin -->
-{{ HTML::script('plugins/jquery-file-upload/js/jquery.fileupload-process.js') }}
+<script type="text/javascript" src="{{ asset('plugins/jquery-file-upload/js/jquery.fileupload-process.js') }}"></script>
 <!-- The File Upload image preview & resize plugin -->
-{{ HTML::script('plugins/jquery-file-upload/js/jquery.fileupload-image.js') }}
+<script type="text/javascript" src="{{ asset('plugins/jquery-file-upload/js/jquery.fileupload-image.js') }}"></script>
 <!-- The File Upload audio preview plugin -->
-{{ HTML::script('plugins/jquery-file-upload/js/jquery.fileupload-audio.js') }}
+<script type="text/javascript" src="{{ asset('plugins/jquery-file-upload/js/jquery.fileupload-audio.js') }}"></script>
 <!-- The File Upload video preview plugin -->
-{{ HTML::script('plugins/jquery-file-upload/js/jquery.fileupload-video.js') }}
+<script type="text/javascript" src="{{ asset('plugins/jquery-file-upload/js/jquery.fileupload-video.js') }}"></script>
 <!-- The File Upload validation plugin -->
-{{ HTML::script('plugins/jquery-file-upload/js/jquery.fileupload-validate.js') }}
+<script type="text/javascript" src="{{ asset('plugins/jquery-file-upload/js/jquery.fileupload-validate.js') }}"></script>
 <script>
 /*jslint unparam: true, regexp: true */
 /*global window, $ */
