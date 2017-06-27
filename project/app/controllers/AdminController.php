@@ -447,13 +447,13 @@ class AdminController extends BaseController {
 		if ($validator->fails()) {
 			return $validator->getMessageBag();
 		}
+		$gal = new Gallery;
+		$gal->name = $data['name'];
+		$gal->icon = $this->upload_image(Input::file('icon'), 'images/gallery/icon');
+		$gal->updated_by = Auth::id();
+		$ruta = "images/gallery/".$gal->name;
 		if(Input::has('files'))
 		{
-			$gal = new Gallery;
-			$gal->name = $data['name'];
-			$gal->icon = $this->upload_image(Input::file('icon'), 'images/gallery/icon');
-			$gal->updated_by = Auth::id();
-			$ruta = "images/gallery/".$gal->name;
 			if ($gal->save()) {
 				foreach ($data['files'] as $f) {
 					$img_gal = new GalleryImage;
@@ -462,9 +462,8 @@ class AdminController extends BaseController {
 					$img_gal->save();
 				}
 			}
-			return Redirect::to('administrador/galeria/ver-galerias');
 		}
-			return Redirect::back();
+		return Redirect::to('administrador/galeria/ver-galerias');
 	}
 	public function getGalleries()
 	{
