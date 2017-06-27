@@ -97,7 +97,7 @@
 <script type="text/javascript" src="{{ asset('plugins/jquery-file-upload/js/jquery.fileupload-video.js') }}"></script>
 <!-- The File Upload validation plugin -->
 <script type="text/javascript" src="{{ asset('plugins/jquery-file-upload/js/jquery.fileupload-validate.js') }}"></script>
-<script>
+<script type="text/javascript">
 /*jslint unparam: true, regexp: true */
 /*global window, $ */
 $(function () {
@@ -181,7 +181,7 @@ $(function () {
         });
     }).prop('disabled', !$.support.fileInput)
         .parent().addClass($.support.fileInput ? undefined : 'disabled');
-});
+})
 </script>
 
 @stop
