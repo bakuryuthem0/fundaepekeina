@@ -79,7 +79,7 @@
 
 <link rel="stylesheet" type="text/css" href="{{ asset('plugins/jquery-file-upload/css/jquery.fileupload.css') }}">
 <!-- The jQuery UI widget factory, can be omitted if jQuery UI is already included -->
-<script type="text/javascript" src="{{ asset('plugins/jquery-file-upload/js/vendor/jquery.ui.widget.js') }}"></script>
+<script type="text/javascript" src="{{ asset('plugins/jquery-file-upload/js/jquery.ui.widget.js') }}"></script>
 <!-- The Load Image plugin is included for the preview images and image resizing functionality -->
 <script type="text/javascript" src="{{ asset('plugins/jquery-file-upload/js/load-image.all.min.js') }}"></script>
 

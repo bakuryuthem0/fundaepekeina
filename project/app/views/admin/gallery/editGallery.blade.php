@@ -70,7 +70,7 @@
 {{ HTML::style('plugins/jquery-file-upload/css/jquery.fileupload.css') }}
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <!-- The jQuery UI widget factory, can be omitted if jQuery UI is already included -->
-{{ HTML::script('plugins/jquery-file-upload/js/vendor/jquery.ui.widget.js') }}
+{{ HTML::script('plugins/jquery-file-upload/js/jquery.ui.widget.js') }}
 <!-- The Load Image plugin is included for the preview images and image resizing functionality -->
 <script src="//blueimp.github.io/JavaScript-Load-Image/js/load-image.all.min.js"></script>
 <!-- The Canvas to Blob plugin is included for image resizing functionality -->
