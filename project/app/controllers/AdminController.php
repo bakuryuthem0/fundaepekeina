@@ -452,15 +452,14 @@ class AdminController extends BaseController {
 		$gal->icon = $this->upload_image(Input::file('icon'), 'images/gallery/icon');
 		$gal->updated_by = Auth::id();
 		$ruta = "images/gallery/".$gal->name;
+		$gal->save();
 		if(Input::has('files'))
 		{
-			if ($gal->save()) {
-				foreach ($data['files'] as $f) {
-					$img_gal = new GalleryImage;
-					$img_gal->gallery_id = $gal->id;
-					$img_gal->image = $this->upload_image($f, $ruta);
-					$img_gal->save();
-				}
+			foreach ($data['files'] as $f) {
+				$img_gal = new GalleryImage;
+				$img_gal->gallery_id = $gal->id;
+				$img_gal->image = $this->upload_image($f, $ruta);
+				$img_gal->save();
 			}
 		}
 		return Redirect::to('administrador/galeria/ver-galerias');
