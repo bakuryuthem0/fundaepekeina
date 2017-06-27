@@ -162,6 +162,9 @@
                     <div class="">
                         <img src="{{ asset('images/allies/ecv.jpg') }}">
                     </div>
+                    <div class="">
+                        <img src="{{ asset('images/allies/zerolo.jpg') }}">
+                    </div>
                 </div>
 
             </div>
