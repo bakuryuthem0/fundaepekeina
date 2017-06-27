@@ -1,5 +1,5 @@
 function beforeElim (btn) {
-	$('.miniLoader').addClass('active');
+	btn.prevAll('.miniLoader').addClass('active');
 	btn.addClass('disabled').attr('disabled',true);
 }
 function successElim (response, btn) {
@@ -25,13 +25,15 @@ function ajaxElim (url,dataPost, btn) {
 		type: 'POST',
 		dataType: 'json',
 		data: dataPost,
-		function(btn){
-			beforeElim
+		beforeSend: function(){
+			beforeElim(btn)
 		},
-		function(response, btn){
-			successElim
+		success: function(response){
+			successElim(response, btn)
 		},
-		function(btn){errorElim}
+		error: function(){
+			errorElim(btn)
+		}
 	});
 }
 function hideResponseAjax () {
@@ -150,12 +152,11 @@ jQuery(document).ready(function($) {
 		$('.btn-modal-elim-gallery').val(btn.val());
 	});
 	$('.btn-modal-elim-gallery').on('click', function(event) {
-		var url = base+'/administrador/mostrar-galeria/eliminar',
-		btn = $(this),
-		dataPost = {
-			'id' : btn.val()
-		};
-		ajaxElim(url, dataPost, btn);
+		var btn = $(this);
+		var dataPost = {
+			id : btn.val()
+		}
+		doAjax(btn.data('url'), "POST", "json", dataPost, btn, beforeElim, successElim, errorElim);
 	});
 	$('.btn-elim-art').on('click', function(event) {
 		var btn = $(this);

@@ -275,12 +275,12 @@ class HomeController extends BaseController {
 	public function getGallery()
 	{
 		$title = "Galería | Funda Epékeina";
-		//$gallery = Gallery::with('imagenes')->get();
+		$gallery = Gallery::with('imagenes')->get();
 		
 		return View::make('home.gallery')
 		->with('title',$title)
-		->with('active','galeria');
-		//->with('gallery',$gallery);
+		->with('active','galeria')
+		->with('gallery',$gallery);
 	}
 	public function getContact()
 	{

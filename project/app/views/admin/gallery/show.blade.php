@@ -60,7 +60,7 @@
       </div>
       <div class="modal-footer">
         <img src="{{ asset('images/ajax-loader.gif') }}" class="miniLoader">
-        <button type="button" class="btn btn-danger btn-modal-elim-gallery">Eliminar</button>
+        <button type="button" class="btn btn-danger btn-modal-elim-gallery" data-url="{{ URL::to('administrador/mostrar-galeria/eliminar') }}">Eliminar</button>
       </div>
     </div>
   </div>
