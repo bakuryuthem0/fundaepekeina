@@ -25,76 +25,77 @@
                         <div class="col-xs-12">
                             <h3>No hay noticias para @if($type == 'sedes') esta sede @elseif($type == 'proyectos') este proyecto @endif</h3>
                         </div>
-                        @endif
-                        @foreach($article as $a)
-                         <div class="col-sm-12 col-md-12 no-padding">
-                            <div class="single-blog single-column">
-                                <div class="post-thumb index col-xs-12 col-sm-6">
-                                    @if($type != 'sedes/proyectos')
-                                    <a href="{{ URL::to('noticias/'.$type.'/'.$a->id) }}">
-                                    @else
-                                    <a href="{{ URL::to('noticias/'.$a->id) }}">
-                                    @endif
-                                        @if(!is_null($a->imagenes->first()['image']))
-                                            <img data-original="{{ asset('images/news/'.$a->imagenes->first()['image']) }}" class="lazy img-responsive" alt="{{ $a->title }}">
-                                        @else
-                                            <img data-original="{{ asset('images/logo.png') }}" class="lazy center-block new-no-image img-responsive" alt="{{ $a->title }}">
-                                        @endif
-                                    </a>
-                                    @if($type != "que-hacemos")
-                                    <div class="post-overlay">
-                                       <span class="uppercase">
+                        @else
+                            @foreach($article as $a)
+                             <div class="col-sm-12 col-md-12 no-padding">
+                                <div class="single-blog single-column">
+                                    <div class="post-thumb index col-xs-12 col-sm-6">
                                         @if($type != 'sedes/proyectos')
-                                            <a href="{{ URL::to('noticias/'.$type.'/'.$a->id) }}">
+                                        <a href="{{ URL::to('noticias/'.$type.'/'.$a->id) }}">
                                         @else
-                                            <a href="{{ URL::to('noticias/'.$a->id) }}">
+                                        <a href="{{ URL::to('noticias/'.$a->id) }}">
                                         @endif
-                                            <?php 
-                                                $aux2 = explode(' ',$a->created_at);
-                                                $aux  = explode('-',$aux2[0]);
-                                            ?>
-                                            {{ $aux[2] }} <br><small>{{ date('M',strtotime($aux2[0])); }}</small>
-                                            </a>
-                                        </span>
-                                   </div>
-                                   @endif
-                                </div>
-                                <div class="post-content overflow col-xs-12 col-sm-6">
-                                    @if($type != 'sedes/proyectos')
-                                    <h2 class="post-title bold"><a href="{{ URL::to('noticias/'.$type.'/'.$a->id) }}">{{ $a->title }}</a></h2>
-                                    @else
-                                    <h2 class="post-title bold"><a href="{{ URL::to('noticias/'.$a->id) }}">{{ $a->title }}</a></h2>
-                                    @endif
-                                    <h3 class="post-author"><p class="no-pointer">{{ substr(strip_tags($a->descripcion), 0, 300) }} [...]</p></h3>
-                                    @if($type != 'sedes/proyectos')
-                                    <a href="{{ URL::to('noticias/'.$type.'/'.$a->id) }}" class="read-more">Leer mas</a>
-                                    @else
-                                    <a href="{{ URL::to('noticias/'.$a->id) }}" class="read-more">Leer mas</a>
-                                    @endif
-                                </div>
-                                <div class="post-bottom index overflow col-xs-12">
-                                    <ul class="nav navbar-nav post-nav">
-                                        <li>
-                                            <div>
-                                                <a href="https://twitter.com/share" class="twitter-share-button" data-via="fundaepekeina" data-hashtags="fundaepekeina" data-dnt="true">Tweet</a>
-                                        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-                                            </div>
-                                        </li>
-                                        <!--<li><a href="#"><i class="fa fa-tag"></i>Creative</a></li>-->
-                                        @if($a->likeCount->first()['aggregate'])
-                                        <li><a href="#!"><i class="fa fa-heart"></i></i>{{ $a->likeCount->first()['aggregate'] }} Heart</a></li>
+                                            @if(!is_null($a->imagenes->first()['image']))
+                                                <img data-original="{{ asset('images/news/'.$a->imagenes->first()['image']) }}" class="lazy img-responsive" alt="{{ $a->title }}">
+                                            @else
+                                                <img data-original="{{ asset('images/logo.png') }}" class="lazy center-block new-no-image img-responsive" alt="{{ $a->title }}">
+                                            @endif
+                                        </a>
+                                        @if($type != "que-hacemos")
+                                        <div class="post-overlay">
+                                           <span class="uppercase">
+                                            @if($type != 'sedes/proyectos')
+                                                <a href="{{ URL::to('noticias/'.$type.'/'.$a->id) }}">
+                                            @else
+                                                <a href="{{ URL::to('noticias/'.$a->id) }}">
+                                            @endif
+                                                <?php 
+                                                    $aux2 = explode(' ',$a->created_at);
+                                                    $aux  = explode('-',$aux2[0]);
+                                                ?>
+                                                {{ $aux[2] }} <br><small>{{ date('M',strtotime($aux2[0])); }}</small>
+                                                </a>
+                                            </span>
+                                       </div>
+                                       @endif
+                                    </div>
+                                    <div class="post-content overflow col-xs-12 col-sm-6">
+                                        @if($type != 'sedes/proyectos')
+                                        <h2 class="post-title bold"><a href="{{ URL::to('noticias/'.$type.'/'.$a->id) }}">{{ $a->title }}</a></h2>
+                                        @else
+                                        <h2 class="post-title bold"><a href="{{ URL::to('noticias/'.$a->id) }}">{{ $a->title }}</a></h2>
                                         @endif
-                                    </ul>
-                                    @if($type != "que-hacemos")
+                                        <h3 class="post-author"><p class="no-pointer">{{ substr(strip_tags($a->descripcion), 0, 300) }} [...]</p></h3>
+                                        @if($type != 'sedes/proyectos')
+                                        <a href="{{ URL::to('noticias/'.$type.'/'.$a->id) }}" class="read-more">Leer mas</a>
+                                        @else
+                                        <a href="{{ URL::to('noticias/'.$a->id) }}" class="read-more">Leer mas</a>
+                                        @endif
+                                    </div>
+                                    <div class="post-bottom index overflow col-xs-12">
+                                        <ul class="nav navbar-nav post-nav">
+                                            <li>
+                                                <div>
+                                                    <a href="https://twitter.com/share" class="twitter-share-button" data-via="fundaepekeina" data-hashtags="fundaepekeina" data-dnt="true">Tweet</a>
+                                            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                                                </div>
+                                            </li>
+                                            <!--<li><a href="#"><i class="fa fa-tag"></i>Creative</a></li>-->
+                                            @if($a->likeCount->first()['aggregate'])
+                                            <li><a href="#!"><i class="fa fa-heart"></i></i>{{ $a->likeCount->first()['aggregate'] }} Heart</a></li>
+                                            @endif
+                                        </ul>
+                                        @if($type != "que-hacemos")
 
-                                    <div class="pull-right visible-md-block visible-lg-block">Creado: {{ date('d-m-Y',strtotime($a->created_at)) }}</div>
+                                        <div class="pull-right visible-md-block visible-lg-block">Creado: {{ date('d-m-Y',strtotime($a->created_at)) }}</div>
 
-                                    <div class="pull-left hidden-md hidden-lg">Creado: {{ date('d-m-Y',strtotime($a->created_at)) }}</div>
-                                    @endif
+                                        <div class="pull-left hidden-md hidden-lg">Creado: {{ date('d-m-Y',strtotime($a->created_at)) }}</div>
+                                        @endif
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        @endforeach
+                            @endforeach
+                        @endif
                     </div>
             </div>
             {{ View::make('partials.sideBar')->with('menu',$menu)->with('type', $type) }}
