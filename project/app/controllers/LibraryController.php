@@ -29,6 +29,7 @@ class LibraryController extends BaseController {
 			'autor'				=> 'sometimes|min:4|max:100',
 			'publication_date'	=> 'sometimes|date',
 			'description'		=> 'sometimes|min:4|max:2000',
+			'portada'			=> 'sometimes|image|max:3000',
 			'file'				=> 'required|mimes:doc,docx,pdf',
 		);
 		$msg  = array();
@@ -57,8 +58,12 @@ class LibraryController extends BaseController {
 		if (Input::has('description')) {
 			$library->description 	= $data['description'];
 		}
+		if (Input::hasFile('portada')) {
+			$portada = Input::file('portada');
+			$library->portada = $this->upload_image($portada,'redjoven/biblioteca/images/');
+		}
 		$file = Input::file('file');
-		$library->file              = $this->upload_image($file, storage_path().'/biblioteca');
+		$library->file              = $this->upload_image($file, storage_path().'/biblioteca/');
 		$library->save();
 
 		Session::flash('success', 'Se ha cargado el documento satisfactoriamente.');
@@ -103,6 +108,7 @@ class LibraryController extends BaseController {
 			'autor'				=> 'sometimes|min:4|max:100',
 			'publication_date'	=> 'sometimes|date',
 			'description'		=> 'sometimes|min:4|max:2000',
+			'portada'			=> 'sometimes|image|max:3000',
 			'file'				=> 'sometimes|mimes:doc,docx,pdf',
 		);
 		$msg  = array();
@@ -111,6 +117,7 @@ class LibraryController extends BaseController {
 			'type'  			=> 'tipo de publicación',
 			'publication_date'	=> 'fecha de publicación',
 			'description'		=> 'descripción',
+			'portada'			=> 'portada',
 			'file'				=> 'documento'
 		); 
 		$validator = Validator::make($data, $rules, $msg, $attr);
@@ -131,9 +138,13 @@ class LibraryController extends BaseController {
 		if (Input::has('description')) {
 			$library->description 	= $data['description'];
 		}
+		if (Input::hasFile('portada')) {
+			$portada = Input::file('portada');
+			$library->portada = $this->upload_image($portada,'redjoven/biblioteca/images/');
+		}
 		if (Input::hasFile('file')) {
 			$file = Input::file('file');
-			$library->file              = $this->upload_image($file, storage_path().'/biblioteca');
+			$library->file              = $this->upload_image($file, storage_path().'/biblioteca/');
 		}
 		$library->save();
 
@@ -184,7 +195,7 @@ class LibraryController extends BaseController {
 				$view = $view->with('type',$type);
 			}
 		}
-		$files = $files->paginate(6);
+		$files = $files->orderBy('id','DESC')->paginate(6);
 		return $view
 		->with('title',$title)
 		->with('files',$files)

@@ -82,7 +82,20 @@
             @endforeach
           @endif
         </div>
-        <div class="formulario col-xs-12">
+        <div class="formulario col-xs-12 col-md-6">
+          <label class="control-label">Portada (Opcional)</label>
+          <input type="file" name="portada">
+          @if($errors->has('portada'))
+            @foreach($errors->get('portada') as $err)
+            <div class="clearfix"></div>
+            <div class="alert alert-danger">
+              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+              {{ $err }}
+            </div>
+            @endforeach
+          @endif
+        </div>
+        <div class="formulario col-xs-12 col-md-6">
           <label class="control-label">Artchivo (*)</label>
           <input type="file" name="file">
           @if($errors->has('file'))

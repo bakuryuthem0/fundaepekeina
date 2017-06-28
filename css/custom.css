@@ -790,3 +790,15 @@ blockquote
 {
     color: #f6a22c;
 }
+.book-container
+{
+    display: table;
+    width: 100%;
+    margin: 1em 0;
+}
+.book-container div
+{
+    display: table-cell;
+    float: none;
+    vertical-align: middle;
+}

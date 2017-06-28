@@ -52,24 +52,31 @@
                         <div class="col-xs-12 formulario"><h1 class="">Resultados.</h1></div>
                         @endif
                         @foreach($files as $f)
-                        <div class="col-xs-12 library-container">
-                            <h2 class="hist-title library">{{ ucfirst(strtolower($f->title)) }}</h2>
-                            @if(!empty($f->description))
-                                <p class="text-justify">
-                                    {{ $f->description }}
-                                </p>
+                        <div class="row book-container">
+                            @if(!is_null($f->portada))
+                                <div class="col-xs-12 col-md-4">
+                                    <img src="{{ asset('redjoven/biblioteca/images/'.$f->portada) }}" class="img-responsive">
+                                </div>
                             @endif
-                            <small>
-                                <span><i class="fa fa-book"></i> {{ ucfirst(str_replace('-',' ',$f->type)) }}</span>
+                            <div class="col-xs-12 @if(!is_null($f->portada)) col-md-8 @endif library-container">
+                                <h2 class="hist-title library">{{ ucfirst(strtolower($f->title)) }}</h2>
+                                @if(!empty($f->description))
+                                    <p class="text-justify">
+                                        {{ $f->description }}
+                                    </p>
+                                @endif
+                                <small>
+                                    <span><i class="fa fa-book"></i> {{ ucfirst(str_replace('-',' ',$f->type)) }}</span>
 
-                                @if(!empty($f->autor))
-                                    <span><i class="fa fa-pencil"></i> {{ $f->autor }}</span>
-                                @endif
-                                @if(!empty($f->publication_date))
-                                    <span><i class="fa fa-calendar"></i> {{ $f->publication_date }}</span>
-                                @endif
-                            </small>
-                            <a href="{{ URL::to('biblioteca/descargar/'.$f->id) }}" target="_blank" class="pull-right">Descargar</a>
+                                    @if(!empty($f->autor))
+                                        <span><i class="fa fa-pencil"></i> {{ $f->autor }}</span>
+                                    @endif
+                                    @if(!empty($f->publication_date))
+                                        <span><i class="fa fa-calendar"></i> {{ $f->publication_date }}</span>
+                                    @endif
+                                </small>
+                                <a href="{{ URL::to('biblioteca/descargar/'.$f->id) }}" target="_blank" class="pull-right">Descargar</a>
+                            </div>
                         </div>
                         <div class="clearfix"></div>
                         <hr>
