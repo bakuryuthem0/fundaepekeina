@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
 	<div class="col-xs-12 col-md-8 col-md-offset-2 box box-bordered">
-    <h2>Nuevo Artículo.</h2>
+    <h2>Modificar Archivo.</h2>
     <hr>
     @if(Session::has('success'))
     <div class="alert alert-success">
