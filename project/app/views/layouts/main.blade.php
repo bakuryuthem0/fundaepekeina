@@ -101,6 +101,10 @@
                                 <li><a href="{{ URL::to('noticias')}}" class="hidden-md hidden-lg">Todas</a></li>
                                 <li><a href="{{ URL::to('noticias/sedes') }}">Por sede</a></li>
                                 <li><a href="{{ URL::to('noticias/proyectos') }}">Proyectos</a></li>
+                                <li><a href="{{ URL::to('noticias/programas') }}">Programas</a></li>
+                                <li><a href="{{ URL::to('noticias/regiones') }}">Regiones</a></li>
+                                <li><a href="{{ URL::to('noticias/campamentos') }}">Campamentos</a></li>
+
                             </ul>
                         </li> 
                         </li>          

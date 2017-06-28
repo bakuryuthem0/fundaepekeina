@@ -23,4 +23,8 @@ class Articulo extends Eloquent{
 	{
 		return $this->hasOne('Subtitle','articulo_id');
 	}
+	public function type()
+	{
+		return $this->belongsTo('Tipo','tipo');
+	}
 }

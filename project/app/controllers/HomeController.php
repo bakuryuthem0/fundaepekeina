@@ -40,7 +40,7 @@ class HomeController extends BaseController {
 	{
 		$title = "Historias Epékeinas | Funda Epékeina";
 		$active = "about";
-		$hist = Articulo::where('tipo','=',3)
+		$hist = Articulo::where('tipo','=',6)
 		->with('subtitle')
 		->with('imagenes')
 		->get();
@@ -144,30 +144,16 @@ class HomeController extends BaseController {
 
 	public function getNewsType($type)
 	{
-		
-		$article = Articulo::with('imagenes')->with('likeCount');
-		if ($type == 'proyectos') {
-			$article = $article->leftJoin('categorias','categorias.id','=','cat_id')
-			->where('categorias.tipo','=','2')
-			->where('articulos.state','=',1)
-			->orderBy('articulos.created_at','DESC')
-			->paginate(6,array(
-				'articulos.id',
-				'articulos.title',
-				'articulos.descripcion',
-				'articulos.created_at',
-			));
-		}elseif($type == 'sedes')
-		{
-			$article = $article->where('articulos.state','=',1)
-			->orderBy('articulos.created_at','DESC')
-			->paginate(6,array(
-				'articulos.id',
-				'articulos.title',
-				'articulos.descripcion',
-				'articulos.created_at',
-			));
-		}elseif($type == "que-hacemos")
+		$tipo = Tipo::where('slug','=',$type)->first();
+		$article = Articulo::with('imagenes')
+		->with('likeCount')
+		->with('categorias')
+		->where('tipo','=',$tipo->id)
+		->where('state','=',1)
+		->orderBy('created_at','DESC')
+		->paginate(6);
+
+		if($type == "que-hacemos")
 		{
 			$article = Articulo::where('cat_id','=','4')->where('state','=',1)->orderBy('created_at','DESC')->paginate(6);
 		}
@@ -176,6 +162,7 @@ class HomeController extends BaseController {
 		->with('title',$title)
 		->with('article',$article)
 		->with('type',$type);
+
 		if ($type == 'proyectos') {
 			return $view->with('menu','2')
 			->with('active','noticias')
