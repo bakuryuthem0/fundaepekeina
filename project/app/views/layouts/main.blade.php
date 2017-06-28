@@ -80,8 +80,6 @@
                     <ul class="nav navbar-nav navbar-right navbar-menu">
                         <li class="@if($active == 'home') active @endif"><a href="{{ URL::to('quienes-somos/historias-epekeinas') }}">  Historias Epékeinas</a>
                         </li>
-                        <li class="@if($active == 'library') active @endif"><a href="{{ URL::to('biblioteca-virtual') }}">  Biblioteca Virtual</a>
-                        </li>
                         <li class="@if($active == 'about') active @endif dropdown">
                             <a href="{{ URL::to('quienes-somos') }}" class="visible-md-block visible-lg-block">Quiénes somos <i class="fa fa-angle-down"></i></a>
                             <a href="#!" class="hidden-md hidden-lg">Conócenos <i class="fa fa-angle-down"></i></a>
@@ -105,7 +103,9 @@
                                 <li><a href="{{ URL::to('noticias/proyectos') }}">Proyectos</a></li>
                             </ul>
                         </li> 
-                        </li>                         
+                        </li>          
+                        <li class="@if($active == 'library') active @endif"><a href="{{ URL::to('biblioteca-virtual') }}">  Biblioteca Virtual</a>
+                        </li>               
                         <li class="@if($active == 'galeria') active @endif"><a href="{{ URL::to('galeria') }}">Galeria</a>
                         </li>
                         <li class="@if($active == 'contacto') active @endif dropdown">
