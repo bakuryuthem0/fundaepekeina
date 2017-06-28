@@ -163,24 +163,18 @@ class HomeController extends BaseController {
 		->with('article',$article)
 		->with('type',$type);
 
-		if ($type == 'proyectos') {
-			return $view->with('menu','2')
-			->with('active','noticias')
-			->with('subtitle','noticias')
-			->with('type','proyectos');
-		}elseif($type == 'sedes')
-		{
-			return $view->with('menu','1')
-			->with('active','noticias')
-			->with('subtitle','noticias')
-			->with('type','sedes');
-		}
-		elseif($type == 'que-hacemos')
+		if($type == 'que-hacemos')
 		{
 			return $view->with('menu','all')
 			->with('active','about')
 			->with('subtitle','¿Que hacemos?')
 			->with('type','que-hacemos');
+		}else
+		{
+			return $view->with('menu','2')
+			->with('active','noticias')
+			->with('subtitle','noticias')
+			->with('type',$type);
 		}
 
 	}
