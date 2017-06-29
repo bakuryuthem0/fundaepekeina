@@ -210,6 +210,9 @@ jQuery(document).ready(function($) {
 	$('.btn-elim-file').on('click', function(event) {
 		addValToElim ($('.btn-elim-thing'), $(this));
 	});
+	$('.btn-elim-category').on('click', function(event) {
+		addValToElim ($('.btn-elim-thing'), $(this));
+	});
 	$('.btn-elim-thing').on('click', function(event) {
 		var btn = $(this);
 		var dataPost = {

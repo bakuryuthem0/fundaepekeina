@@ -49,6 +49,8 @@
               <ul class="dropdown-menu">
                 <li><a href="{{ URL::to('administrador/nuevo-articulo') }}"><i class="fa fa-plus"></i> Nuevo Artículo</a></li>
                 <li><a href="{{ URL::to('administrador/mostrar-articulos') }}"><i class="fa fa-list"></i> Ver Artículos</a></li>
+                <li><a href="{{ URL::to('administrador/nueva-categoria') }}"><i class="fa fa-plus"></i> Nueva Categoría</a></li>
+                <li><a href="{{ URL::to('administrador/ver-categorias') }}"><i class="fa fa-list"></i> Ver Categorías</a></li>
               </ul>
             </li>
             @endif

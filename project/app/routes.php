@@ -81,6 +81,13 @@ Route::group(array('before' => 'auth'),function()
 	Route::post('administrador/ver-articulos/eliminar-imagen','AdminController@elimImg');
 	Route::post('administrador/mostrar-articulos/eliminar','AdminController@elimArticulo');
 	Route::post('administrador/cambiar-estado','AdminController@changeStatus');
+
+	Route::get('administrador/nueva-categoria','AdminController@getNewCategory');
+	Route::post('administrador/nuevo-categoria/enviar','AdminController@postNewCategory');
+	Route::get('administrador/ver-categorias','AdminController@getCategories');
+	Route::get('administrador/editar-categoria/{id}','AdminController@getMdfCategory');
+	Route::post('administrador/modificar-categoria/{id}/enviar','AdminController@postMdfCategory');
+	Route::post('administrador/ver-categorias/eliminar','AdminController@postElimCategory');
 	//usuarios
 	Route::get('administrador/nuevo-usuario','AdminController@newUser');
 	Route::post('administrador/nuevo-usuario/enviar','AdminController@postNewUser');

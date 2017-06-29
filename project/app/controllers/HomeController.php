@@ -171,7 +171,7 @@ class HomeController extends BaseController {
 			->with('type','que-hacemos');
 		}else
 		{
-			return $view->with('menu','2')
+			return $view->with('menu',$tipo->id)
 			->with('active','noticias')
 			->with('subtitle','noticias')
 			->with('type',$type);

@@ -566,4 +566,97 @@ class AdminController extends BaseController {
 			'msg'  => 'Se ha eliminado la galería'
 		));
 	}
+	public function getNewCategory()
+	{
+		$title = "Nueva Categoría | Funda Epékeina";
+
+		$types = Tipo::get();
+
+		return View::make('admin.category.new')
+		->with('title',$title)
+		->with('types',$types);
+	}
+	public function postNewCategory()
+	{
+		$data = Input::all();
+
+		$rules = array(
+			'title' => 'required|min:4|max:45',
+			'type' => 'required|exists:tipos,id',
+		);
+		$msg = array();
+		$attr = array(
+			'title' => 'titulo',
+			'type' => 'sede/proyecto'
+		);
+		$validator = Validator::make($data, $rules);
+		if ($validator->fails()) {
+			return $validator->getMessageBag();
+		}
+
+		$cat = new Categoria;
+		$cat->title = $data['title'];
+		$cat->tipo  = $data['type'];
+		$cat->save();
+
+		Session::flash('success','Se ha creado la Categoría satisfactoriamente');
+		return Redirect::back();
+	}
+	public function getCategories()
+	{
+		$title = "Ver Categorías | Funda Epékeina";
+
+		$cat = Categoria::with('tipos')
+		->get();
+		return View::make('admin.category.show')
+		->with('title',$title)
+		->with('cat',$cat);
+	}
+	public function getMdfCategory($id)
+	{
+		$cat = Categoria::find($id);
+		$title = "Nueva Categoría | Funda Epékeina";
+
+		$types = Tipo::get();
+
+		return View::make('admin.category.mdf')
+		->with('title',$title)
+		->with('types',$types)
+		->with('cat',$cat);
+	}
+	public function postMdfCategory($id)
+	{
+		$data = Input::all();
+
+		$rules = array(
+			'title' => 'required|min:4|max:45',
+			'type' => 'required|exists:tipos,id',
+		);
+		$msg = array();
+		$attr = array(
+			'title' => 'titulo',
+			'type' => 'sede/proyecto'
+		);
+		$validator = Validator::make($data, $rules);
+		if ($validator->fails()) {
+			return $validator->getMessageBag();
+		}
+
+		$cat = Categoria::find($id);
+		$cat->title = $data['title'];
+		$cat->tipo  = $data['type'];
+		$cat->save();
+
+		Session::flash('success','Se ha creado la Categoría satisfactoriamente');
+		return Redirect::back();
+	}
+	public function postElimCategory()
+	{
+		$id = Input::get('id');
+		$cat = Categoria::find($id)->delete(); 
+		return Response::json(array(
+			'type' => 'success',
+			'msg'  => 'Se ha eliminado la Categoría'
+		));
+	}
 }
