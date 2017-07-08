@@ -109,7 +109,7 @@
             @endforeach
           @endif
         </div>
-        @if(!empty($file->portada))
+        @if(!is_null($file->portada) && !empty($file->portada))
         <div class="col-xs-12 col-md-6">
           <label>Remover portada</label>
           <input type="checkbox" name="remove-portada" value="1">
