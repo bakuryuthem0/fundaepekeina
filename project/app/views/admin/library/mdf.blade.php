@@ -32,6 +32,7 @@
             <option value="libros" @if($file->type == "libros") selected @endif>Libros</option>
             <option value="articulos-de-investigacion" @if($file->type == "articulos-de-investigacion") selected @endif>Artículos de Investigación</option>
             <option value="informes" @if($file->type == "informes") selected @endif>Informes</option>
+            <option value="cuento" @if($file->type == "cuento") selected @endif>Cuento</option>
           </select>
           @if($errors->has('type'))
             @foreach($errors->get('type') as $err)
