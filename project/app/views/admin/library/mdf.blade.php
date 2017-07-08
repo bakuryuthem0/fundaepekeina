@@ -109,6 +109,12 @@
             @endforeach
           @endif
         </div>
+        @if(!empty($file->portada))
+        <div class="col-xs-12 col-md-6">
+          <label>Remover portada</label>
+          <input type="checkbox" name="remove-portada" value="1">
+        </div>
+        @endif
       </div>
       <div class="col-xs-12">
           <button type="submit" class="btn btn-primary btn-send-new-product">Enviar</button>

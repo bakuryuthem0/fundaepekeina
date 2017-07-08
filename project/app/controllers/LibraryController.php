@@ -146,6 +146,9 @@ class LibraryController extends BaseController {
 			$file = Input::file('file');
 			$library->file              = $this->upload_image($file, storage_path().'/biblioteca/');
 		}
+		if (Input::has('remove-portada')) {
+			$library->portada = "";
+		}
 		$library->save();
 
 		Session::flash('success', 'Se ha modificado el documento satisfactoriamente.');
