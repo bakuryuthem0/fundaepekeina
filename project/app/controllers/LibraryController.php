@@ -25,7 +25,7 @@ class LibraryController extends BaseController {
 		$data  = Input::all();
 		$rules = array(
 			'title'				=> 'required|min:4|max:100',
-			'type'				=> 'required|in:libros,articulos-de-investigacion,informes',
+			'type'				=> 'required|in:libros,articulos-de-investigacion,informes,cuento',
 			'autor'				=> 'sometimes|min:4|max:100',
 			'publication_date'	=> 'sometimes|date',
 			'description'		=> 'sometimes|min:4|max:2000',
@@ -104,7 +104,7 @@ class LibraryController extends BaseController {
 		$data  = Input::all();
 		$rules = array(
 			'title'				=> 'required|min:4|max:100',
-			'type'				=> 'required|in:libros,articulos-de-investigacion,informes',
+			'type'				=> 'required|in:libros,articulos-de-investigacion,informes,cuento',
 			'autor'				=> 'sometimes|min:4|max:100',
 			'publication_date'	=> 'sometimes|date',
 			'description'		=> 'sometimes|min:4|max:2000',
