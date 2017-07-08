@@ -46,7 +46,7 @@ class LibraryController extends BaseController {
 		}
 
 		$library 					= new LibraryFile;
-		$library->title 			= ucfirst(strtolower($data['title']));
+		$library->title 			= $data['title'];
 		$library->slug              = str_replace(' ','-',strtolower($data['title']));
 		$library->type 				= $data['type'];
 		if (Input::has('autor')) {
@@ -126,7 +126,7 @@ class LibraryController extends BaseController {
 		}
 
 		$library 					= LibraryFile::find($id);
-		$library->title 			= ucfirst(strtolower($data['title']));
+		$library->title 			= $data['title'];
 		$library->slug              = str_replace(' ','-',strtolower($data['title']));
 		$library->type 				= $data['type'];
 		if (Input::has('autor')) {

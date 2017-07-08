@@ -59,14 +59,14 @@
                                 </div>
                             @endif
                             <div class="col-xs-12 @if(!is_null($f->portada)) col-md-8 @endif library-container">
-                                <h2 class="hist-title library">{{ ucfirst(strtolower($f->title)) }}</h2>
+                                <h2 class="hist-title library">{{ strtolower($f->title) }}</h2>
                                 @if(!empty($f->description))
                                     <p class="text-justify">
                                         {{ $f->description }}
                                     </p>
                                 @endif
                                 <small>
-                                    <span><i class="fa fa-book"></i> {{ ucfirst(str_replace('-',' ',$f->type)) }}</span>
+                                    <span><i class="fa fa-book"></i> ucfirst({{ str_replace('-',' ',$f->type) }})</span>
 
                                     @if(!empty($f->autor))
                                         <span><i class="fa fa-pencil"></i> {{ $f->autor }}</span>

@@ -78,8 +78,6 @@
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right navbar-menu">
-                        <li class="@if($active == 'home') active @endif"><a href="{{ URL::to('quienes-somos/historias-epekeinas') }}">  Historias Epékeinas</a>
-                        </li>
                         <li class="@if($active == 'about') active @endif dropdown">
                             <a href="{{ URL::to('quienes-somos') }}" class="visible-md-block visible-lg-block">Quiénes somos <i class="fa fa-angle-down"></i></a>
                             <a href="#!" class="hidden-md hidden-lg">Conócenos <i class="fa fa-angle-down"></i></a>
@@ -91,8 +89,6 @@
                                 <li><a href="{{ URL::to('organigrama') }}">Organigrama</a></li>
                             </ul>
                         </li>                   
-
-                        <!--<li><a href="{{ URL::to('quienes-somos/historias-epekeinas') }}">Historias Epékeinas</a></li> -->
                         <li class="@if($active == 'noticias') active @endif dropdown">
                             <a href="{{ URL::to('noticias')}}" class="visible-md-block visible-lg-block">Noticias <i class="fa fa-angle-down"></i></a>
                             <a href="#!" class="hidden-md hidden-lg">Noticias <i class="fa fa-angle-down"></i></a>
@@ -107,7 +103,10 @@
 
                             </ul>
                         </li> 
-                        </li>          
+                        <li class="@if($active == 'home') active @endif"><a href="{{ URL::to('quienes-somos/historias-epekeinas') }}">  Historias Epékeinas</a>
+                        </li>
+
+                        <!--<li><a href="{{ URL::to('quienes-somos/historias-epekeinas') }}">Historias Epékeinas</a></li> -->
                         <li class="@if($active == 'library') active @endif"><a href="{{ URL::to('biblioteca-virtual') }}">  Biblioteca Virtual</a>
                         </li>               
                         <li class="@if($active == 'galeria') active @endif"><a href="{{ URL::to('galeria') }}">Galeria</a>
