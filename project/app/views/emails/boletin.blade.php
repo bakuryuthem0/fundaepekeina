@@ -155,7 +155,7 @@ table {
 <table class="center-block">
     <tr>
         <td colspan="3">
-            <img src="btn_cabeza.jpg" class="img-responsive center-block">
+            <img src="{{ asset('images/boletin/btn_cabeza.jpg') }}" class="img-responsive center-block">
         </td>
     </tr>
     <tr>

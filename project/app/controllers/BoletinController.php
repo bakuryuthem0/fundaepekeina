@@ -21,7 +21,6 @@ class BoletinController extends BaseController {
 		->with('subtitle')
 		->with('imagenes')
 		->first();		
-		return View::make('emails.boletin')->with('article',$article)->with('principal',$principal)->with('colors',$colors)->with('hist',$hist);
 		return View::make('admin.generate')
 		->with('article',$article)
 		->with('title','Generar Boletin')
