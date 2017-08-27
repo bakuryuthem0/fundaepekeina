@@ -165,6 +165,9 @@
                     <div class="">
                         <img src="{{ asset('images/allies/zerolo.jpg') }}">
                     </div>
+                    <div class="">
+                        <img src="{{ asset('images/allies/ofigrapa.png') }}">
+                    </div>
                 </div>
 
             </div>
