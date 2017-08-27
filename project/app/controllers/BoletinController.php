@@ -16,7 +16,7 @@ class BoletinController extends BaseController {
 		}
 		$article = $article->orderBy('id','DESC')->get();
 		$colors  = array('yellow','green','pink','blue');
-		$hist = Articulo::where('tipo','=',3)
+		$hist = Articulo::where('tipo','=',6)
 		->orderBy('id','DESC')
 		->with('subtitle')
 		->with('imagenes')
