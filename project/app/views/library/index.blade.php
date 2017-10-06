@@ -26,7 +26,7 @@
                     <div class="row">
                         <form method="GET" action="{{ URL::to('biblioteca-vitual?').$paginatorFilter }}">
                             <div class="col-xs-12 no-padding">
-                                <h1 class="text-center">Filtros</h1>
+                                <h1 class="text-center" style="font-size: 24px;">Filtros</h1>
                                 <div class="col-xs-12 col-md-8">
                                     <input type="text" name="busq" class="form-control" placeholder="Palabras claves" @if(isset($busq)) value="{{ $busq }}" @endif>
                                 </div>
@@ -49,7 +49,7 @@
                         <div class="col-xs-12 formulario"><h2>No se han encontrado resultados para la busqueda.</h2></div>
                         @else
                         <hr>
-                        <div class="col-xs-12 formulario"><h1 class="">Resultados.</h1></div>
+                        <div class="col-xs-12 formulario"><h1 class="" style="font-size: 24px;">Resultados.</h1></div>
                         @endif
                         @foreach($files as $f)
                         <div class="row book-container">

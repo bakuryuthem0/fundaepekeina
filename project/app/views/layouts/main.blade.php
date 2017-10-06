@@ -116,7 +116,7 @@
                             <a href="#!" class="hidden-md hidden-lg">Qué puedes hacer tú <i class="fa fa-angle-down"></i></a>
 
                              <ul role="menu" class="sub-menu">
-                                <li><a href="{{ URL::to('contacto') }}">Contactenos</a></li>
+                                <li><a href="{{ URL::to('contacto') }}">contáctenos</a></li>
                                 <li><a href="{{ URL::to('contacto/apoyenos') }}" class="hidden-md hidden-lg">Qué puedes hacer tú</a></li>
                                 <li><a href="{{ URL::to('contacto/donaciones') }}">Donaciones</a></li>
                             </ul>
