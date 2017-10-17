@@ -481,21 +481,6 @@ class HomeController extends BaseController {
 	public function prueba()
 	{
 		$langs = Language::get();
-		$types = Tipo::get();
-		$data  = [];
-		foreach ($types as $t) {
-			$data['description'][1] = $t->descripcion;	
-			$data['description'][2] = $t->descripcion;
-			$translation 			= LangController::newTranslation();
-			LangController::newEntry($langs, $translation,$data, 'description');
-			$t->descripcion 		= $translation;
-
-			$translation 			= LangController::newTranslation();
-			LangController::newSlug($langs, $translation, $data, 'description');
-			$t->slug 				= $translation;
-
-			$t->save();
-		}
 		$art   = Articulo::get();
 		$data  = [];
 		foreach ($art as $a) {
@@ -517,17 +502,17 @@ class HomeController extends BaseController {
 
 			$a->save();
 			
-			$sub   = Subtitle::get();
-			$subs  = [];
-			foreach ($sub as $s) {
-				$subs['description'][1] = $s->subtitulo;	
-				$subs['description'][2] = $s->subtitulo;
-				$translation 			= LangController::newTranslation();
-				LangController::newEntry($langs, $translation,$data, 'description');
-				$s->subtitulo 		    = $translation;
+		}
+		$sub   = Subtitle::get();
+		$subs  = [];
+		foreach ($sub as $s) {
+			$subs['description'][1] = $s->subtitulo;	
+			$subs['description'][2] = $s->subtitulo;
+			$translation 			= LangController::newTranslation();
+			LangController::newEntry($langs, $translation,$data, 'description');
+			$s->subtitulo 		    = $translation;
 
-				$s->save();
-			}
+			$s->save();
 		}
 		return 'listo';
 	}
