@@ -293,7 +293,7 @@
           <ul class="dropdown-menu">
             <!-- Dropdown menu links -->
             @foreach(LangController::getLangs() as $l)
-                <li @if($l->code == App::getLocale()) class="active" @endif><a href="{{ URL::to('cambiar-lenguaje/'.$l->code) }}">{{ $l->name }}</a></li>
+                <li @if($l->code == App::getLocale()) class="active" @endif><a href="{{ URL::to('cambiar-lenguaje/'.$l->code) }}">{{ $l->names->first()->text }}</a></li>
             @endforeach
           </ul>
         </div>

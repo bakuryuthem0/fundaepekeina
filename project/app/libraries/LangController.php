@@ -2,7 +2,9 @@
 	Class LangController{
 		public static function getLangs()
 		{
-			return Language::get();
+			return Language::with(array('names' => function($names){
+				$names->where('lang_id','=',LangController::getActiveLang()->id);
+			}))->get();
 		}
 		public static function getActiveLang()
 		{
