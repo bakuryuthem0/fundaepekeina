@@ -24,7 +24,7 @@
             <div class="row">
                 <div class="col-xs-12">
                     <div class="row">
-                        <form method="GET" action="{{ URL::to('biblioteca-vitual?').$paginatorFilter }}">
+                        <form method="GET" action="{{ URL::to('biblioteca-virtual?').$paginatorFilter }}">
                             <div class="col-xs-12 no-padding">
                                 <h1 class="text-center" style="font-size: 24px;">Filtros</h1>
                                 <div class="col-xs-12 col-md-8">
@@ -36,6 +36,7 @@
                                         <option value="libros" @if(isset($type) && $type == "libros") selected @endif>Libros</option>
                                         <option value="articulos-de-investigacion" @if(isset($type) && $type == "articulos-de-investigacion") selected @endif>Articulos de investigacion</option>
                                         <option value="informes" @if(isset($type) && $type == "informes") selected @endif>Informes</option>
+                                        <option value="boletin" @if(isset($type) && $type == "boletin") selected @endif>Boletin</option>
                                     </select>
                                 </div>
                                 <div class="col-xs-3 col-md-1">

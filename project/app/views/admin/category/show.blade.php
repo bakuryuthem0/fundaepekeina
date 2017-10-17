@@ -28,7 +28,7 @@
             <tr>
               <td>{{ $c->id }}</td>
               <td>{{ $c->title }}</td>
-              <td>{{ $c->tipos->descripcion }}</td>
+              <td>{{ $c->tipos->descriptions->first()->text }}</td>
               <td><a target="_blank" href="{{ URL::to('administrador/editar-categoria/'.$c->id) }}" class="btn btn-warning btn-xs">Editar</a></td>
               <td><button value="{{ $c->id }}" class="btn btn-danger btn-xs btn-elim-category" data-toggle="modal" data-target="#elimCat">Eliminar</button></td>
             </tr>

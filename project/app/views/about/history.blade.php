@@ -7,7 +7,7 @@
                 <div class="row">
                     <div class="">
                         <div class="col-sm-12">
-                            <h1 class="title">Historias Epékeinas</h1>
+                            <h1 class="title">{{ Lang::get('lang.history_menu') }}</h1>
                         </div>
                      </div>
                 </div>
@@ -23,7 +23,11 @@
                 <div class="col-xs-12 center-block padding wow fadeIn" data-wow-duration="1000ms" data-wow-delay="300ms">
                     @if(count($hist->imagenes) < 2)
                         <div class="post-thumb">
-                            <a href="#"><img src="{{ asset('images/news/'.$hist->imagenes->first()->image) }}" class="center-block img-responsive" alt="{{ $hist->title }}"></a>
+                            @if(!is_null($hist->imagenes->first()))
+                            <a href="#">
+                                <img src="{{ asset('images/news/'.$hist->imagenes->first()->image) }}" class="center-block img-responsive" alt="{{ $hist->title }}">
+                            </a>
+                            @endif
                         </div>
                     @else
                         <ul class="pgwSlideshow">
@@ -36,7 +40,7 @@
                     @endif
                     <div class="single-service">
                         <h1 class="veronica text-center">
-                            <span class="text-pink"><strong>{{ $hist->title }}</strong></span>
+                            <span class="text-pink"><strong>{{ $hist->titles->first()->text }}</strong></span>
                         </h1>   
                         @if(!is_null($hist->subtitle))
                         <h2 class="text-center">
@@ -44,7 +48,7 @@
                         </h2>
                         @endif
                         <div class="col-xs-12 text-justify">
-                            {{ $hist->descripcion }}
+                            {{ $hist->descriptions->first()->text }}
                         </div>
                     </div>
                 </div>

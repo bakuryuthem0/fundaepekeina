@@ -28,8 +28,8 @@
               @foreach($article as $a)
               <tr>
                 <td>{{ $a->id }}</td>
-                <td>{{ $a->title }}</td>
-                <td><a target="_blank" href="{{ URL::to('administrador/ver-articulo/'.$a->id) }}" class="btn btn-xs btn-primary">Ver</a></td>
+                <td>{{ $a->titles->first()->text }}</td>
+                <td><a target="_blank" href="{{ URL::to('administrador/ver-articulo/'.$a->slugs->first()->text) }}" class="btn btn-xs btn-primary">Ver</a></td>
                 <td>
                   <input type="checkbox" name="art[]" value="{{ $a->id }}">
                 </td>

@@ -17,8 +17,11 @@ class HomeController extends BaseController {
 
 	public function getIndex()
 	{
-		$title = "Inicio | Funda Epékeina";
+		$title = Lang::get('lang.home_title');
 		$article = Articulo::with('imagenes')
+		->with('slugs')
+		->with('titles')
+		->with('descriptions')
 		->where('state','=',1)
 		->where('articulos.cat_id','!=',4)
 		->orderBy('created_at','DESC')->take(6)->get();
@@ -30,7 +33,7 @@ class HomeController extends BaseController {
 	}
 	public function getAbout()
 	{
-		$title = "Quienes Somos | Funda Epékeina";
+		$title = Lang::get('lang.about_menu')." | Funda Epékeina";
 		$active = "about";
 		return View::make('home.about')
 		->with('active',$active)
@@ -38,24 +41,33 @@ class HomeController extends BaseController {
 	}
 	public function getHistories()
 	{
-		$title = "Historias Epékeinas | Funda Epékeina";
+		$title = Lang::get('lang.history_menu')." | Funda Epékeina";
 		$active = "about";
 		$hist = Articulo::where('tipo','=',6)
 		->with('subtitle')
 		->with('imagenes')
+		->with('slugs')
+		->with('titles')
+		->with('descriptions')
 		->get();
 		return View::make('about.show')
 		->with('title',$title)
 		->with('active',$active)
 		->with('hist',$hist);
 	}
-	public function getHistory($id)
+	public function getHistory($slug)
 	{
-		$title = "Historias Epékeinas | Funda Epékeina";
+		$title = Lang::get('lang.history_menu')." | Funda Epékeina";
 		$active = "about";
-		$hist = Articulo::where('id','=',$id)
+		$hist = Articulo::whereHas('slugs',function($slugs) use ($slug)
+		{
+			$slugs->where('text','=',$slug);
+		})
 		->with('subtitle')
 		->with('imagenes')
+		->with('slugs')
+		->with('titles')
+		->with('descriptions')
 		->first();
 
 		return View::make('about.history')
@@ -63,28 +75,29 @@ class HomeController extends BaseController {
 		->with('active',$active)
 		->with('hist',$hist);
 	}
-	public function getArticleSelf($type,$id = null)
+	public function getArticleSelf($type,$slug = null)
 	{
 		if (is_numeric($type)) {
-			$id   = $type;
+			$slug = $type;
 			$type = 'sedes/proyectos'; 
 		}
-		$article = Articulo::leftJoin('categorias','categorias.id','=','articulos.cat_id')
-		->where('articulos.id','=',$id)
-		->where('articulos.state','=',1)
+		$lang  = LangController::getActiveLang();
+		//find slug entry
+		$entry = TranslationEntry::where('text','=',$slug)
+		->where('lang_id','=',$lang->id)
+		->first();
+		$article = Articulo::with('categorias')
 		->with('imagenes')
-		->first(array(
-			'articulos.id',
-			'articulos.title',
-			'articulos.descripcion',
-			'articulos.created_at',
-			'categorias.tipo'
-		));
+		->with('descriptions')
+		->with('titles')
+		->where('slug','=',$entry->translation_id)
+		->where('state','=',1)
+		->first();
 
 		$request = Request::instance();
 		$request->setTrustedProxies(array('127.0.0.1')); // only trust proxy headers coming from the IP addresses on the array (change this to suit your needs)
 		$ip = $request->getClientIp();
-		$aux = Like::where('articulo_id','=',$id)->where('ip','=',$ip)->get();
+		$aux = Like::where('articulo_id','=',$article->id)->where('ip','=',$ip)->get();
 		if (count($aux) > 0) {
 			$fa = 'fa-heart';
 		}else
@@ -92,7 +105,7 @@ class HomeController extends BaseController {
 			$fa = 'fa-heart-o';
 		}
 
-		$title   = "Noticia: ".$article->title." | Funda Epékeina";
+		$title   = Lang::get('lang.news_menu').": ".$article->titles->first()->text." | Funda Epékeina";
 		$view = View::make('home.articles.article')
 		->with('article',$article)
 		->with('type',$type)
@@ -100,54 +113,74 @@ class HomeController extends BaseController {
 		->with('fa',$fa);
 
 
-
-		if ($type == 'proyectos' || $type == "sedes") {
-			$view = $view->with('subtitle','Noticias')
-			->with('active','noticias');
-			if ($article->tipo == 1) {
-				return $view->with('menu','1');
-			}else
-			{
-				return $view->with('menu','2');
-			}
-		}else
-		{
-			return $view->with('subtitle','¿Qué hacemos?')
+		switch ($type) {
+			case 'proyectos':
+				$view = $view->with('subtitle',Lang::get('lang.news_menu'))
+				->with('active','noticias')
+				->with('type',Lang::get('lang.projects'));
+				if ($article->tipo == 1) {
+					return $view->with('menu','1');
+				}else
+				{
+					return $view->with('menu','2');
+				}
+				break;
+			case 'sedes':
+				$view = $view->with('subtitle',Lang::get('lang.news_menu3'))
+				->with('active','noticias')
+				->with('type',Lang::get('lang.projects'));
+				if ($article->tipo == 1) {
+					return $view->with('menu','1');
+				}else
+				{
+					return $view->with('menu','2');
+				}
+				break;
+			default:
+				return $view->with('subtitle',Lang::get('lang.about_menu3'))
 				->with('active','about')
 				->with('menu','all');
+				break;
 		}
 	}
 	public function getNews()
 	{
-		$title = "Noticias por proyectos | Funda Epékeina";
-
-		$article = Articulo::with('imagenes')->with('likeCount')
+		$title = Lang::get('lang.news_by')." ".Lang::get('lang.projects')." | Funda Epékeina";
+		$article = Articulo::with('imagenes')
+		->with('likeCount')
+		->with('slugs')
+		->with('titles')
+		->with('descriptions')
 		->where('state','=',1)
-		->where('articulos.cat_id','!=',4)
-		->orderBy('articulos.created_at','DESC')
-		->paginate(6,array(
-			'articulos.id',
-			'articulos.title',
-			'articulos.descripcion',
-			'articulos.created_at',
-		));
+		->where('cat_id','!=',4)
+		->orderBy('created_at','DESC')
+		->paginate(6);
 		return View::make('home.articles.index')
 		->with('title',$title)
 		->with('article',$article)
 		->with('active','noticias')
-		->with('subtitle','Noticias')
+		->with('subtitle',Lang::get('lang.news_menu'))
 		->with('url','noticias')
-		->with('type','sedes/proyectos')
+		->with('type',Lang::get('lang.news_menu3').'/'.Lang::get('lang.news_menu4'))
 		->with('menu','all');
 
 	}
 
 	public function getNewsType($type)
 	{
-		$tipo = Tipo::where('slug','=',$type)->first();
+
+		$tipo = Tipo::whereHas('slugs',function($slugs) use($type){
+			$slugs->where('text','=',$type);
+		})
+		->with('slugs')
+		->with('descriptions')
+		->first();
 		$article = Articulo::with('imagenes')
 		->with('likeCount')
 		->with('categorias')
+		->with('descriptions')
+		->with('titles')
+		->with('slugs')
 		->where('tipo','=',$tipo->id)
 		->where('state','=',1)
 		->orderBy('created_at','DESC')
@@ -157,24 +190,23 @@ class HomeController extends BaseController {
 		{
 			$article = Articulo::where('cat_id','=','4')->where('state','=',1)->orderBy('created_at','DESC')->paginate(6);
 		}
-		$title = "Noticias por ".$type." | Funda Epékeina";
+		$title =  Lang::get('lang.news_by').$type." | Funda Epékeina";
 		$view = View::make('home.articles.index')
 		->with('title',$title)
 		->with('article',$article)
 		->with('type',$type);
-
-		if($type == 'que-hacemos')
-		{
-			return $view->with('menu','all')
-			->with('active','about')
-			->with('subtitle','¿Que hacemos?')
-			->with('type','que-hacemos');
-		}else
-		{
-			return $view->with('menu',$tipo->id)
-			->with('active','noticias')
-			->with('subtitle','noticias')
-			->with('type',$type);
+		switch ($type) {
+			case "que-hacemos":
+				return $view->with('menu','all')
+				->with('active','about')
+				->with('subtitle',Lang::get('lang.about_menu3'))
+				->with('type','que-hacemos');
+				break;
+			default:
+				return $view->with('menu',$tipo->id)
+				->with('active','noticias')
+				->with('subtitle',Lang::get('lang.news_menu'))
+				->with('type',$type);
 		}
 
 	}
@@ -444,5 +476,59 @@ class HomeController extends BaseController {
 			'type' 	=> 'success',
 			'msg'	=> 'Gracias por enviar su donación'
 		));
+	}
+
+	public function prueba()
+	{
+		$langs = Language::get();
+		$types = Tipo::get();
+		$data  = [];
+		foreach ($types as $t) {
+			$data['description'][1] = $t->descripcion;	
+			$data['description'][2] = $t->descripcion;
+			$translation 			= LangController::newTranslation();
+			LangController::newEntry($langs, $translation,$data, 'description');
+			$t->descripcion 		= $translation;
+
+			$translation 			= LangController::newTranslation();
+			LangController::newSlug($langs, $translation, $data, 'description');
+			$t->slug 				= $translation;
+
+			$t->save();
+		}
+		$art   = Articulo::get();
+		$data  = [];
+		foreach ($art as $a) {
+			$data['title'][1] 		= $a->title;	
+			$data['title'][2] 		= $a->title;
+			$translation 			= LangController::newTranslation();
+			LangController::newEntry($langs, $translation,$data, 'title');
+			$a->title 				= $translation;
+
+			$translation 			= LangController::newTranslation();
+			LangController::newSlug($langs, $translation, $data, 'title');
+			$a->slug 				= $translation;
+
+			$data['description'][1] = $a->descripcion;	
+			$data['description'][2] = $a->descripcion;
+			$translation 			= LangController::newTranslation();
+			LangController::newEntry($langs, $translation,$data, 'description');
+			$a->descripcion 		= $translation;
+
+			$a->save();
+			
+			$sub   = Subtitle::get();
+			$subs  = [];
+			foreach ($sub as $s) {
+				$subs['description'][1] = $s->subtitulo;	
+				$subs['description'][2] = $s->subtitulo;
+				$translation 			= LangController::newTranslation();
+				LangController::newEntry($langs, $translation,$data, 'description');
+				$s->subtitulo 		    = $translation;
+
+				$s->save();
+			}
+		}
+		return 'listo';
 	}
 }

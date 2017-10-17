@@ -20,10 +20,10 @@
             </div>
             @endif
         @endif
-    <h2>{{ $articulo->title }}.</h2>
+    <h2>{{ $articulo->titles->first()->text }}.</h2>
     <hr>
 		<div class="col-xs-12">
-	      {{ $articulo->descripcion }}
+	      {{ $articulo->descriptions->first()->text }}
 	    </div>
 	</div>
 </div>

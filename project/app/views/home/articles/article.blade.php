@@ -26,7 +26,7 @@
                             <div class="single-blog blog-details two-column">
                                 @if(count($article->imagenes) < 2)
                                     <div class="post-thumb">
-                                        <a href="#"><img src="{{ asset('images/news/'.$article->imagenes->first()['image']) }}" class="center-block img-responsive" alt="{{ $article->title }}"></a>
+                                        <a href="#"><img src="{{ asset('images/news/'.$article->imagenes->first()->image) }}" class="center-block img-responsive" alt="{{ $article->title }}"></a>
                                         @if($type != "que-hacemos")
                                         <div class="post-overlay">
                                             <span class="uppercase"><a href="#">
@@ -49,9 +49,9 @@
                                     </ul>
                                 @endif
                                 <div class="post-content text-justify">
-                                    <h2 class="post-title bold"><a href="#"><strong>{{ $article->title }}</strong></a></h2>
+                                    <h2 class="post-title bold"><a href="#"><strong>{{ $article->titles->first()->text }}</strong></a></h2>
                                     <p>
-                                        {{ $article->descripcion }}
+                                        {{ $article->descriptions->first()->text }}
                                     </p>
                                     <div class="post-bottom over-popover">
                                         <ul class="nav navbar-nav post-nav">
@@ -68,11 +68,10 @@
                                                     </span>
                                                 </a>
                                                     <img src="{{ asset('images/ajax-loader.gif') }}" class="miniLoader"></li>
-                                            <li><a href="#"><i class="fa fa-tag"></i>Creative</a></li>
                                         </ul>
-                                        <div class="pull-right visible-md-block visible-lg-block">Creado: {{ date('d-m-Y',strtotime($article->created_at)) }}</div>
+                                        <div class="pull-right visible-md-block visible-lg-block">{{ Lang::get('lang.created_at') }}: {{ date('d-m-Y',strtotime($article->created_at)) }}</div>
                                         @if($type != "que-hacemos")
-                                        <div class="pull-left hidden-md hidden-lg">Creado: {{ date('d-m-Y',strtotime($article->created_at)) }}</div>
+                                        <div class="pull-left hidden-md hidden-lg">{{ Lang::get('lang.created_at') }}: {{ date('d-m-Y',strtotime($article->created_at)) }}</div>
                                         @endif
                                     </div>
                                 </div>

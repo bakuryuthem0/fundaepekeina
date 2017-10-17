@@ -73,7 +73,12 @@ App::down(function()
 	return View::make("maintenance.down");
 });
 
-
+if (Session::has('lang')) {
+	App::setLocale(Session::get('lang'));
+}else
+{
+	App::setLocale('es');
+}
 /*
 |--------------------------------------------------------------------------
 | Require The Filters File

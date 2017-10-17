@@ -79,46 +79,46 @@
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right navbar-menu">
                         <li class="@if($active == 'about') active @endif dropdown">
-                            <a href="{{ URL::to('quienes-somos') }}" class="visible-md-block visible-lg-block">Quiénes somos <i class="fa fa-angle-down"></i></a>
-                            <a href="#!" class="hidden-md hidden-lg">Conócenos <i class="fa fa-angle-down"></i></a>
+                            <a href="{{ URL::to('quienes-somos') }}" class="visible-md-block visible-lg-block">{{ Lang::get('lang.about_menu') }} <i class="fa fa-angle-down"></i></a>
+                            <a href="#!" class="hidden-md hidden-lg">{{ Lang::get('lang.about_menu2') }} <i class="fa fa-angle-down"></i></a>
                             <ul role="menu" class="sub-menu">
                                 
-                                <li><a href="{{ URL::to('quienes-somos') }}" class="hidden-md hidden-lg">Quiénes Somos</a></li>
-                                <li><a href="{{ URL::to('noticias/que-hacemos') }}">¿Qué hacemos?</a></li>
+                                <li><a href="{{ URL::to('quienes-somos') }}" class="hidden-md hidden-lg">{{ Lang::get('lang.about_menu') }}</a></li>
+                                <li><a href="{{ URL::to('noticias/que-hacemos') }}">{{ Lang::get('lang.about_menu3') }}</a></li>
                                 <!--<li><a href="localizacion">¿Donde estamos?</a></li>-->
-                                <li><a href="{{ URL::to('organigrama') }}">Organigrama</a></li>
+                                <li><a href="{{ URL::to('organigrama') }}">{{ Lang::get('lang.about_menu4') }}</a></li>
                             </ul>
                         </li>                   
                         <li class="@if($active == 'noticias') active @endif dropdown">
-                            <a href="{{ URL::to('noticias')}}" class="visible-md-block visible-lg-block">Noticias <i class="fa fa-angle-down"></i></a>
-                            <a href="#!" class="hidden-md hidden-lg">Noticias <i class="fa fa-angle-down"></i></a>
+                            <a href="{{ URL::to('noticias')}}" class="visible-md-block visible-lg-block">{{ Lang::get('lang.news_menu') }} <i class="fa fa-angle-down"></i></a>
+                            <a href="#!" class="hidden-md hidden-lg">{{ Lang::get('lang.news_menu') }} <i class="fa fa-angle-down"></i></a>
 
                             <ul role="menu" class="sub-menu">
-                                <li><a href="{{ URL::to('noticias')}}" class="hidden-md hidden-lg">Todas</a></li>
-                                <li><a href="{{ URL::to('noticias/sedes') }}">Por sede</a></li>
-                                <li><a href="{{ URL::to('noticias/proyectos') }}">Proyectos</a></li>
-                                <li><a href="{{ URL::to('noticias/programas') }}">Programas</a></li>
-                                <li><a href="{{ URL::to('noticias/regiones') }}">Regiones</a></li>
-                                <li><a href="{{ URL::to('noticias/campamentos') }}">Campamentos</a></li>
+                                <li><a href="{{ URL::to('noticias')}}" class="hidden-md hidden-lg">{{ Lang::get('lang.news_menu2') }}</a></li>
+                                <li><a href="{{ URL::to('noticias/'.Lang::get('lang.sedes')) }}">{{ Lang::get('lang.news_menu3') }}</a></li>
+                                <li><a href="{{ URL::to('noticias/'.Lang::get('lang.proyectos')) }}">{{ Lang::get('lang.news_menu4') }}</a></li>
+                                <li><a href="{{ URL::to('noticias/'.Lang::get('lang.programas')) }}">{{ Lang::get('lang.news_menu5') }}</a></li>
+                                <li><a href="{{ URL::to('noticias/'.Lang::get('lang.regiones')) }}">{{ Lang::get('lang.news_menu6') }}</a></li>
+                                <li><a href="{{ URL::to('noticias/'.Lang::get('lang.campamentos')) }}">{{ Lang::get('lang.news_menu7') }}</a></li>
 
                             </ul>
                         </li> 
-                        <li class="@if($active == 'home') active @endif"><a href="{{ URL::to('quienes-somos/historias-epekeinas') }}">  Historias Epékeinas</a>
+                        <li class="@if($active == 'home') active @endif"><a href="{{ URL::to('quienes-somos/historias-epekeinas') }}">  {{ Lang::get('lang.history_menu') }}</a>
                         </li>
 
                         <!--<li><a href="{{ URL::to('quienes-somos/historias-epekeinas') }}">Historias Epékeinas</a></li> -->
-                        <li class="@if($active == 'library') active @endif"><a href="{{ URL::to('biblioteca-virtual') }}">  Biblioteca Virtual</a>
+                        <li class="@if($active == 'library') active @endif"><a href="{{ URL::to('biblioteca-virtual') }}">  {{ Lang::get('lang.library_menu') }}</a>
                         </li>               
-                        <li class="@if($active == 'galeria') active @endif"><a href="{{ URL::to('galeria') }}">Galeria</a>
+                        <li class="@if($active == 'galeria') active @endif"><a href="{{ URL::to('galeria') }}">{{ Lang::get('lang.gallery_menu') }}</a>
                         </li>
                         <li class="@if($active == 'contacto') active @endif dropdown">
-                            <a href="{{ URL::to('contacto/apoyenos') }}" class="visible-md-block visible-lg-block">Qué puedes hacer tú <i class="fa fa-angle-down"></i></a>
-                            <a href="#!" class="hidden-md hidden-lg">Qué puedes hacer tú <i class="fa fa-angle-down"></i></a>
+                            <a href="{{ URL::to('contacto/apoyenos') }}" class="visible-md-block visible-lg-block">{{ Lang::get('lang.donation_menu') }} <i class="fa fa-angle-down"></i></a>
+                            <a href="#!" class="hidden-md hidden-lg">{{ Lang::get('lang.donation_menu') }} <i class="fa fa-angle-down"></i></a>
 
                              <ul role="menu" class="sub-menu">
-                                <li><a href="{{ URL::to('contacto') }}">contáctenos</a></li>
-                                <li><a href="{{ URL::to('contacto/apoyenos') }}" class="hidden-md hidden-lg">Qué puedes hacer tú</a></li>
-                                <li><a href="{{ URL::to('contacto/donaciones') }}">Donaciones</a></li>
+                                <li><a href="{{ URL::to('contacto') }}">{{ Lang::get('lang.contact_us') }}</a></li>
+                                <li><a href="{{ URL::to('contacto/apoyenos') }}" class="hidden-md hidden-lg">{{ Lang::get('lang.donation_menu') }}</a></li>
+                                <li><a href="{{ URL::to('contacto/donaciones') }}">{{ Lang::get('lang.donation') }}</a></li>
                             </ul>
                         </li>                    
                     </ul>
@@ -143,13 +143,13 @@
             <div class="row valign-wrapper">
                 <div class="col-xs-12 col-md-4 footer-colum">
                     <div class="contact-info bottom">
-                        <h2>Contáctenos</h2>
+                        <h2>{{ Lang::get('lang.contact_us') }}</h2>
                         <address>
                         E-mail: <a href="mailto:fundaepekeina@gmail.com">fundaepekeina@gmail.com</a> <br> 
                         <a href="mailto:comunicaciones@fundaepekeina.org">comunicaciones@fundaepekeina.org</a>
                         <br> 
                         </address>
-                        <button class="btn btn-info" data-toggle="modal" data-target="#donation">Donar</button>
+                        <button class="btn btn-info" data-toggle="modal" data-target="#donation">{{ Lang::get('lang.donate') }}</button>
                     </div>
                 </div>
                 <div class="col-xs-8 center-block col-md-4 footer-colum cont-twitter">
@@ -159,7 +159,7 @@
                 </div>
                 <div class="col-xs-12 col-md-4 footer-colum">
                     <div class="contact-form bottom">
-                        <h2>Suscríbete a nuestro boletín</h2>
+                        <h2>{{ Lang::get('lang.subscribe') }}</h2>
                         <form id="main-contact-form" name="contact-form" method="post" action="">
                             <div class="form-group">
                                 <div class="input-group full-leght">
@@ -172,7 +172,7 @@
                                     </button>
                                   </span>
                                 </div><!-- /input-group -->
-                                <p><small>No se preocupe, no usaremos su email para spam</small></p>
+                                <p><small>{{ Lang::get('lang.worry_not') }}</small></p>
                             </div>
                         </form>
                     </div>
@@ -182,7 +182,7 @@
             <div class="row">
                 <div class="col-sm-12 no-float">
                     <div class="copyright-text text-center">
-                        <p>&copy; Derechos Reservados Funda Epékeina 2016.</p>
+                        <p>&copy; {{ Lang::get('lang.copyright') }}.</p>
                     </div>
                 </div>
             </div>
@@ -194,30 +194,35 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title">Enviar donación</h4>
+                    <h4 class="modal-title">{{ Lang::get('lang.send_donation') }}</h4>
                 </div>
                 <div class="modal-body">
-                    <p><small>Si usted ha realizado una donación en algunas de nuestras cuentas, ingrese los datos en el siguiente formulario. Si usted desea realizar una donación, puede ver nuestros planes <a href="{{ URL::to('contacto/apoyenos') }}">aquí</a> y cuentas bancarias <a href="{{ URL::to('contacto/donaciones') }}">aquí</a></small></p>
+                    <p>
+                        <small>
+                            {{ Lang::get('lang.donation_text',array(
+                            'link1' => '<a href="'.URL::to('contacto/apoyenos').'">'.Lang::get('lang.here').'</a>',
+                            'link2' => '<a href="'.URL::to('contacto/donaciones').'">'.Lang::get('lang.here').'</a>'
+                            )) }}</small></p>
                     <div class="formulario">
                         <div class="alert responseAjax">
                             <p></p>
                         </div>
                         <div class="input-group center-block">
                             <div class="formulario">
-                                <label>Numero de referencia</label>
+                                <label>{{ Lang::get('lang.reference_number') }}</label>
                                 <input type="text" class="form-control donation-input reference_number" name="reference_number" value="{{ Input::old('reference_number') }}">
                             </div>
                             <div class="formulario">
-                                <label>Tipo de Transacción</label>
+                                <label>{{ Lang::get('lang.transaction_type') }}</label>
                                 <select class="form-control donation-input transaction_type" name="transaction_type">
-                                    <option value="deposito" @if(Input::old('transaction_type') && Input::old('transaction_type') == "deposito") selected @endif>Deposito</option>
-                                    <option value="transferencia" @if(Input::old('transaction_type') && Input::old('transaction_type') == 'transferencia') selected @endif>Transferencia</option>
+                                    <option value="deposito" @if(Input::old('transaction_type') && Input::old('transaction_type') == "deposito") selected @endif>{{ Lang::get('lang.transaction_type2') }}</option>
+                                    <option value="transferencia" @if(Input::old('transaction_type') && Input::old('transaction_type') == 'transferencia') selected @endif>{{ Lang::get('lang.transaction_type3') }}</option>
                                 </select>
                             </div>
                             <div class="formulario transaction_type_container @if(!Input::old('transaction_type')) hidden @endif">
                                 <label>Banco</label>
                                 <select class="form-control emisor donation-input disabled user_bank" name="user_bank" @if(!Input::old('transaction_type')) disabled @endif>
-                                    <option value="">Seleccione una opción...</option>
+                                    <option value="">{{ Lang::get('lang.select_an_option') }}...</option>
                                     <option value="Banco Central de Venezuela" @if(Input::old('user_bank') && Input::old('user_bank') == "Banco Central de Venezuela") selected @endif>Banco Central de Venezuela</option>
                                     <option value="Banco Industrial de Venezuela, C.A. Banco Universal" @if(Input::old('user_bank') && Input::old('user_bank') == "Banco Industrial de Venezuela, C.A. Banco Universal") selected @endif>Banco Industrial de Venezuela, C.A. Banco Universal</option>
                                     <option value="Banco de Venezuela S.A.C.A. Banco Universal" @if(Input::old('user_bank') && Input::old('user_bank') == "Banco de Venezuela S.A.C.A. Banco Universal") selected @endif>Banco de Venezuela S.A.C.A. Banco Universal</option>
@@ -253,9 +258,9 @@
                                 </select>
                             </div>
                             <div class="formulario">
-                                <label>Cuenta</label>
+                                <label>{{ Lang::get('lang.account') }}</label>
                                 <select class="form-control donation-input shop_bank" name="shop_bank">
-                                    <option value="">Seleccione una opción...</option>
+                                    <option value="">{{ Lang::get('select_an_option') }}...</option>
                                     <option value="Sede principal">Sede principal - Cta. Cte. 0105-0191-12-1191072029</option>
                                     <option value="Sede principal">Las Acacias - Cta. Cte. 0134-0390-20-3901023342 </option>
                                     <option value="Sede principal">La Boyera - Cta. Cte. 0102-0178-11-0000050869</option>
@@ -264,7 +269,7 @@
                                 </select>
                             </div>
                             <div class="formulario">
-                                <label>Fecha de transacción</label>
+                                <label>{{ Lang::get('lang.transaction_date') }}</label>
                                 <input type="text" class="datepicker form-control donation-input transaction_date" name="transaction_date" value="{{ Input::old('transaction_date') }}">
                             </div>
                         </div>
@@ -272,10 +277,25 @@
                 </div>
                 <div class="modal-footer">
                     <img src="{{ asset('images/ajax-loader.gif') }}" class="miniLoader">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-success btn-send-donation">Enviar</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">{{ Lang::get('lang.close') }}</button>
+                    <button type="button" class="btn btn-success btn-send-donation">{{ Lang::get('lang.send') }}</button>
                 </div>
             </div>
+        </div>
+    </div>
+    <div class="col-xs-4 col-md-3 fixedLang">
+        <div class="btn-group dropup">
+          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ Lang::get('lang.change_lang') }}</button>
+          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="caret"></span>
+            <span class="sr-only">Toggle Dropdown</span>
+          </button>
+          <ul class="dropdown-menu">
+            <!-- Dropdown menu links -->
+            @foreach(LangController::getLangs() as $l)
+                <li @if($l->code == App::getLocale()) class="active" @endif><a href="{{ URL::to('cambiar-lenguaje/'.$l->code) }}">{{ $l->name }}</a></li>
+            @endforeach
+          </ul>
         </div>
     </div>
     <script type="text/javascript" src="{{ asset('html/js/jquery.js') }}"></script>

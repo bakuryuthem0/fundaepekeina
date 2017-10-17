@@ -7,7 +7,7 @@
                 <div class="row">
                     <div class="">
                         <div class="col-sm-12">
-                            <h1 class="title">Contáctenos</h1>
+                            <h1 class="title">{{ Lang::get('lang.contact_us') }}</h1>
                         </div>                        
                     </div>
                 </div>
@@ -19,17 +19,15 @@
     <section id="">
         <div class="container">
             <div class="col-sm-12 col-md-6 info-contact">
-                <h2>Contactos</h2>
+                <h2>{{ Lang::get('lang.contact') }}</h2>
                 <address>
                 <i class="fa fa-envelope-o"></i> E-mail: <a href="mailto:fundaepekeina@gmail.com">fundaepekeina@gmail.com</a> <br> 
-                <i class="fa fa-phone"></i> Telefono: +58 0212-3077281<br> 
+                <i class="fa fa-phone"></i> {{ Lang::get('lang.phone') }}: +58 0212-3077281<br> 
                 </address>
 
-                <h2>Dirección</h2>
+                <h2>{{ Lang::get('lang.address_title') }}</h2>
                 <address>
-                Av. Valencia Edif. Rossini, Apto 9, Entrada B.<br>
-                Urb. Las Acacias Caracas.<br>
-                Z.P 1040.
+                    {{ Lang::get('lang.address_text') }}
                 </address>
             </div>
             <div class="col-md-6 col-sm-12">
@@ -40,27 +38,27 @@
             </div>
             <div class="col-md-6 col-sm-12">
                 <div class="contact-form bottom">
-                    <h2>Envienos un correo</h2>
+                    <h2>{{ Lang::get('lang.send_email') }}</h2>
                     
                     <div class="form-group">
-                        <input type="text" name="name" class="name form-control" required="required" placeholder="Nombre">
+                        <input type="text" name="name" class="name form-control" required="required" placeholder="{{ Lang::get('lang.contact_input1') }}">
                         <small class="response-danger response-danger-name"></small>
                     </div>
                     <div class="form-group">
-                        <input type="text" name="subject" class="subject form-control" required="required" placeholder="Asunto">
+                        <input type="text" name="subject" class="subject form-control" required="required" placeholder="{{ Lang::get('lang.contact_input2') }}">
                         <small class="response-danger response-danger-subject"></small>
                     </div>
                     <div class="form-group">
-                        <input type="email" name="email" class="email form-control" required="required" placeholder="Email">
+                        <input type="email" name="email" class="email form-control" required="required" placeholder="{{ Lang::get('lang.contact_input3') }}">
                         <small class="response-danger response-danger-email"></small>
                     </div>
                     <div class="form-group">
-                        <textarea name="msg" class="msg form-control" id="msg" required="required" rows="8" placeholder="Escriba aqui su mensaje"></textarea>
+                        <textarea name="msg" class="msg form-control" id="msg" required="required" rows="8" placeholder="{{ Lang::get('lang.contact_input4') }}"></textarea>
                         <small class="response-danger response-danger-msg"></small>
                     </div>                        
                     <div class="form-group">
                         <button class="submit btn btn-submit btn-contact">
-                            <p>Enviar</p>
+                            <p>{{ Lang::get('lang.send') }}</p>
                             <img src="{{ asset('images/ajax-loader.gif') }}" class="miniLoader">
                         </button>
                     </div>

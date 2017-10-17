@@ -11,52 +11,38 @@
       {{ Session::get('success') }}
     </div>
     @endif
+    @if(count($errors->getMessageBag()) > 0)
+      <div class="alert alert-danger">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+          @foreach($errors->all() as $err)
+              <li>{{ $err }}</li>
+          @endforeach
+        </ul>
+      </div>
+      @endif
 		<form class="" method="POST" action="{{ URL::to('administrador/nuevo-articulo/enviar') }}" enctype="multipart/form-data">
       <div class="col-xs-12 input-group no-padding">
+        @foreach($lang as $l)
         <div class="formulario col-xs-12 col-md-6">
-          <label for="inputPassOld" class="text-left control-label">Titulo</label>
-          <input type="text" name="title" class="form-control" placeholder="Titulo" required value="{{ Input::old('title') }}">
-          @if($errors->has('title'))
-            @foreach($errors->get('title') as $err)
-            <div class="clearfix"></div>
-            <div class="alert alert-danger">
-              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-              {{ $err }}
-            </div>
-            @endforeach
-          @endif
+          <label for="inputPassOld" class="text-left control-label">Titulo ({{ $l->names->first()->text }})</label>
+          <input type="text" name="title[{{ $l->id }}]" class="form-control" placeholder="Titulo" required value="{{ Input::old('title.'.$l->id) }}">
         </div>
-        <div class="formulario col-xs-12 col-md-6">
+        @endforeach
+        <div class="formulario col-xs-12">
           <label for="inputPassOld" class="text-left control-label">Sede/Proyecto</label>
           <select class="form-control sedes" name="sede">
             <option value="">Seleccione una opción...</option>
             @foreach($sede as $s)
-              <option value="{{ $s->id }}">{{ ucfirst(strtolower($s->descripcion)) }}</option>
+              <option value="{{ $s->id }}">{{ ucfirst(strtolower($s->descriptions->first()->text)) }}</option>
             @endforeach
           </select>
-          @if($errors->has('sede'))
-            @foreach($errors->get('sede') as $err)
-            <div class="clearfix"></div>
-            <div class="alert alert-danger">
-              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-              {{ $err }}
-            </div>
-            @endforeach
-          @endif
         </div>
-        <div class="formulario col-xs-12 hidden subtitle-container">
-          <label>Subtitulo</label>
-          <input type="text" name="subtitle" class="form-control" placeholder="Titulo" required value="{{ Input::old('subtitle') }}">
-          @if($errors->has('subtitle'))
-            @foreach($errors->get('subtitle') as $err)
-            <div class="clearfix"></div>
-            <div class="alert alert-danger">
-              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-              {{ $err }}
-            </div>
-            @endforeach
-          @endif
+        @foreach($lang as $l)
+        <div class="formulario col-xs-12 col-md-6 hidden subtitle-container">
+          <label>Subtitulo ({{ $l->names->first()->text }})</label>
+          <input type="text" name="subtitle[{{ $l->id }}]" class="form-control" placeholder="Subtitulo" required value="{{ Input::old('subtitle.'.$l->id) }}">
         </div>
+        @endforeach
         <div class="formulario col-xs-12 hidden sedes-group">
           <div class="form-group">
               <div class="input-group full-leght">
@@ -72,10 +58,10 @@
               </div><!-- /input-group -->
           </div>
         </div>
-        
+        @foreach($lang as $l)
         <div class="formulario col-xs-12">
-          <label>Descripción</label>
-          <textarea name="desc" class="textarea" placeholder="Place some text here" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;" required>{{ Input::old('desc') }}</textarea>
+          <label>Descripción ({{ $l->names->first()->text }})</label>
+          <textarea name="desc[{{ $l->id }}]" class="textarea" placeholder="Place some text here" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;" required>{{ Input::old('desc.'.$l->id) }}</textarea>
           @if($errors->has('desc'))
             @foreach($errors->get('desc') as $err)
             <div class="clearfix"></div>
@@ -86,6 +72,7 @@
             @endforeach
           @endif
         </div>
+        @endforeach
         <div class="col-xs-12 formulario">
           <div clas="col-xs-12 no-padding">
             <label>Imagen: </label>

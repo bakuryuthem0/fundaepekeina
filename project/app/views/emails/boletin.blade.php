@@ -1,4 +1,4 @@
-<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <style type="text/css">
 .img-boletin {
   max-height: 312px; }
@@ -152,6 +152,8 @@ table {
 
 /*# sourceMappingURL=css.css.map */
 </style>
+<link href="{{ asset('html/css/font-awesome.min.css') }}" rel="stylesheet">
+
 <table class="center-block">
     <tr>
         <td colspan="3">
@@ -162,14 +164,14 @@ table {
         <td colspan="2" class="bg bg-blue fixedHeight">
             <?php $j = 0; ?>
             @if(!empty($principal))
-                @if(!is_null($article->first()->imagenes->first()['image']))
+                @if(!count($principal->imagenes) > 0)
                     <img src="{{ asset('images/news/'.$principal->imagenes->first()->image) }}" class="img-responsive center-block img-boletin">
                 @else
                     <img src="{{ asset('images/logo.png') }}" class="img-responsive center-block img-boletin" alt="{{ $article->first()->title }}">
                 @endif
-                <h2 class="boletin-title">{{ $principal->title }}</h2>
-                <p class="text-justify">{{ substr(strip_tags($principal->descripcion), 0, 300) }} [...]</p>
-                <a target="_blank" href="{{ URL::to('noticias/'.$principal->id) }}" class="btn btn-default btn-xs pull-right">Leer más</a>
+                <h2 class="boletin-title">{{ $principal->titles->first()->text }}</h2>
+                <p class="text-justify">{{ substr(strip_tags($principal->descriptions->first()->text), 0, 300) }} [...]</p>
+                <a target="_blank" href="{{ URL::to('noticias/'.$principal->slugs->first()->text) }}" class="btn btn-default btn-xs pull-right">Leer más</a>
                 <div class="clearfix"></div>
             @endif
         </td>
@@ -190,15 +192,22 @@ table {
             </div>
             <h2 class="text-blue">Historias Epékeinas</h2>
             <br>
-            <img src="{{ asset('images/news/'.$hist->imagenes->first()->image) }}" class="img-responsive img-boletin" alt="{{ $hist->title }}">
+            @if(count($hist->imagenes) > 0)
+              <img src="{{ asset('images/news/'.$hist->imagenes->first()->image) }}" class="img-responsive img-boletin" alt="{{ $hist->titles->first()->text }}">
+            @endif
             <div class="bg-green padding-20">
-                <h2 class="boletin-title">{{ $hist->title }}@if(!is_null($hist->subtitle)){{ $hist->subtitle->subtitulo }}@endif</h2>
+                <h2 class="boletin-title">
+                  {{ $hist->titles->first()->text }}
+                  @if(!is_null($hist->subtitle))
+                    {{ $hist->subtitle->titles->first()->text }}
+                  @endif
+                </h2>
             </div>
             <hr>
             <div class="text-justify">
-                {{ substr(strip_tags($hist->descripcion), 0, 1600) }}[...]
+                {{ substr(strip_tags($hist->descriptions->first()->text), 0, 1600) }}[...]
                 <br>
-                <a href="{{ URL::to('quienes-somos/historias-epekeinas/'.$hist->id) }}" class="pull-right">Leer más</a>
+                <a href="{{ URL::to('quienes-somos/historias-epekeinas/'.$hist->slugs->first()->text) }}" class="pull-right">Leer más</a>
             </div>
         </td>
     </tr>
@@ -208,31 +217,31 @@ table {
             <tr>
         @endif
         @if(!empty($principal))
-            @if($a->id != $principal->id)
+            @if($a->slugs->first()->text != $principal->id)
                 <td class="news fixedHeight bg-{{ $colors[$j] }}">
 
-                    @if(!is_null($a->imagenes->first()->first()))
-                        <img src="{{ asset('images/news/'.$a->imagenes->first()['image']) }}" class="img-responsive center-block img-boletin" alt="{{ $a->title }}">
+                    @if(count($a->imagenes) > 0)
+                        <img src="{{ asset('images/news/'.$a->imagenes->first()->image) }}" class="img-responsive center-block img-boletin" alt="{{ $a->titles->first()->text }}">
                     @else
-                        <img src="{{ asset('images/logo.png') }}" class="img-responsive center-block img-boletin" alt="{{ $a->title }}">
+                        <img src="{{ asset('images/logo.png') }}" class="img-responsive center-block img-boletin" alt="{{ $a->titles->first()->text }}">
                     @endif
-                    <h2 class="boletin-title">{{ $a->title }}</h2>
-                    <p class="text-justify">{{ substr(strip_tags($a->descripcion), 0, 300) }} [...]</p>
-                    <a target="_blank" href="{{ URL::to('noticias/'.$a->id) }}" class="btn btn-default btn-xs pull-right">Leer más</a>
+                    <h2 class="boletin-title">{{ $a->titles->first()->text }}</h2>
+                    <p class="text-justify">{{ substr(strip_tags($a->descriptions->first()->text), 0, 300) }} [...]</p>
+                    <a target="_blank" href="{{ URL::to('noticias/'.$a->slugs->first()->text) }}" class="btn btn-default btn-xs pull-right">Leer más</a>
                     <div class="clearfix"></div>
                 </td>
               <?php $k++; ?>
             @endif
         @else
             <td class="news fixedHeight bg-{{ $colors[$j] }}">
-                @if(!is_null($a->imagenes->first()->first()))
-                    <img src="{{ asset('images/news/'.$a->imagenes->first()->image) }}" class="img-responsive center-block img-boletin" alt="{{ $a->title }}">
+                @if(count($a->imagenes) > 0)
+                    <img src="{{ asset('images/news/'.$a->imagenes->first()->image) }}" class="img-responsive center-block img-boletin" alt="{{ $a->titles->first()->text }}">
                 @else
-                    <img src="{{ asset('images/logo.png') }}" class="img-responsive center-block img-boletin" alt="{{ $a->title }}">
+                    <img src="{{ asset('images/logo.png') }}" class="img-responsive center-block img-boletin" alt="{{ $a->titles->first()->text }}">
                 @endif
-                <h2 class="boletin-title">{{ $a->title }}</h2>
-                <p class="text-justify">{{ substr(strip_tags($a->descripcion), 0, 300) }} [...]</p>
-                <a target="_blank" href="{{ URL::to('noticias/'.$a->id) }}" class="btn btn-default btn-xs pull-right">Leer más</a>
+                <h2 class="boletin-title">{{ $a->titles->first()->text }}</h2>
+                <p class="text-justify">{{ substr(strip_tags($a->descriptions->first()->text), 0, 300) }} [...]</p>
+                <a target="_blank" href="{{ URL::to('noticias/'.$a->slugs->first()->text) }}" class="btn btn-default btn-xs pull-right">Leer más</a>
                 <div class="clearfix"></div>
             </td>
             <?php $k++; ?>

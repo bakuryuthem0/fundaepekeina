@@ -31,7 +31,7 @@
           <select class="form-control sedes" name="type">
             <option value="">Seleccione una opción...</option>
             @foreach($types as $t)
-              <option value="{{ $t->id }}">{{ ucfirst(strtolower($t->descripcion)) }}</option>
+              <option value="{{ $t->id }}">{{ ucfirst(strtolower($t->descriptions->first()->text)) }}</option>
             @endforeach
           </select>
           @if($errors->has('type'))

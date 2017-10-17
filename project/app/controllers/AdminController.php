@@ -103,17 +103,21 @@ class AdminController extends BaseController {
 	public function getNewArticulo($value='')
 	{
 		$title = "Nuevo Artículo | Funda Epékeina";
-		$sede = Tipo::get();
+		$sede = Tipo::with('descriptions')
+		->get();
+		$lang = Language::with('names')->get();
 		return View::make('admin.article.new')
 		->with('title',$title)
-		->with('sede',$sede);
+		->with('sede',$sede)
+		->with('lang',$lang);
 	}
 	public function postNewArticulo()
 	{
 		$data 	= Input::all();
 		$rules 	= array(
 			'sede'			=> 'required',
-			'title'    		=> 'required|max:100',
+			'title'    		=> 'required',
+			'title.i'		=> 'max:100',
 			'desc' 	   		=> 'required',
 			'file'	   	 	=> 'required|min:1',
 		);
@@ -129,19 +133,35 @@ class AdminController extends BaseController {
 		if ($validator->fails()) {
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
-
+		$langs = Language::get();
 		$art = new Articulo;
+
 		$art->cat_id      = $data['cat'];
 		$art->tipo        = $data['sede'];
-		$art->title       = $data['title'];
-		$art->descripcion = $data['desc'];
+
+		$translation      = LangController::newTranslation();
+		LangController::newEntry($langs, $translation,$data, 'title');
+		$art->title       = $translation;
+
+		$translation      = LangController::newTranslation();
+		LangController::newSlug($langs, $translation, $data, 'title');
+		$art->slug       = $translation;
+
+		$translation      = LangController::newTranslation();
+		LangController::newEntry($langs, $translation,$data, 'desc');
+		$art->descripcion = $translation;
+
 		$art->created_by  = Auth::id();
 		$art->modified_by = Auth::id();
 		$art->save();
 		if ($data['sede'] == 3) {
 			$sub = new Subtitle;
 			$sub->articulo_id = $art->id;
-			$sub->subtitulo   = $data['subtitle'];
+
+			$translation      = LangController::newTranslation();
+			LangController::newEntry($langs, $translation,$data, 'subtitle');
+			$sub->subtitulo   = $translation;
+
 			$sub->save();
 		}
 		$id = $art->id;
@@ -162,16 +182,26 @@ class AdminController extends BaseController {
 	public function showArticulos()
 	{
 		$title = "Ver articulos | Funda Epékeina";
-		$article = Articulo::orderBy('id','DESC')->get();
+		$article = Articulo::with('titles')
+		->orderBy('id','DESC')->get();
 		return View::make('admin.article.show')
 		->with('title',$title)
 		->with('article',$article);
 
 	}
-	public function showArt($id)
+	public function showArt($slug)
 	{
-		$articulo = Articulo::with('imagenes')->find($id);
-		$title = "Ver artículo: ".$articulo->title." | Funda Epékeina";
+		$articulo = Articulo::with('imagenes')
+		->with('titles')
+		->with('descriptions')
+		->with(array('subtitle' => function($subtitle){
+			$subtitle->with('titles');
+		}))
+		->whereHas('slugs',function($slugs) use ($slug){
+			$slugs->where('text','=',$slug);
+		})
+		->first();
+		$title = "Ver artículo: ".$articulo->titles->first()->text." | Funda Epékeina";
 		return View::make('admin.article.view')
 		->with('title',$title)
 		->with('articulo',$articulo);
@@ -208,33 +238,32 @@ class AdminController extends BaseController {
 	}
 	public function getModifyArt($id)
 	{
-		$article = Articulo::leftJoin('categorias','categorias.id','=','articulos.cat_id')
-		->where('articulos.id','=',$id)
-		->with('imagenes')
-		->with('subtitle')
-		->first(array(
-			'articulos.id',
-			'articulos.title',
-			'articulos.descripcion',
-			'articulos.cat_id',
-			'articulos.created_at',
-			'categorias.tipo'
-		));
-		$title = "Modificar articulo: ".$article->title;
+		$lang = Language::with('names')->get();
+
+		$article = Articulo::with('imagenes')
+		->with('titlesAll')
+		->with('descriptionsAll')
+		->with(array('subtitle' => function($subtitle){
+			$subtitle->with('titles');
+		}))
+		->find($id);
+		$title = "Modificar articulo: ".$article->titles->first()->text." | Funda Epékeina";
 		$cat = Categoria::where('tipo','=',$article->cat_id)->get();
-		$sede = Tipo::get();
+		$sede = Tipo::with('descriptions')->get();
 		return View::make('admin.article.mdf')
 		->with('title',$title)
 		->with('article',$article)
 		->with('cat',$cat)
-		->with('sede',$sede);
+		->with('sede',$sede)
+		->with('lang',$lang);
 	}
 	public function postMdfArt()
 	{
 		$data 	= Input::all();
 		$rules 	= array(
 			'sede'			=> 'required',
-			'title'    		=> 'required|max:100',
+			'title'    		=> 'required',
+			'title.i'		=> 'max:100',
 			'desc' 	   		=> 'required',
 		);
 		$msg 	= array(
@@ -249,19 +278,31 @@ class AdminController extends BaseController {
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
 
-		$art = Articulo::find($data['id']);
+		$langs = Language::get();
+		$art = Articulo::with('subtitle')->find($data['id']);
 		$art->cat_id      = $data['cat'];
 		$art->tipo        = $data['sede'];
-		$art->title       = $data['title'];
-		$art->descripcion = $data['desc'];
+
+ 		LangController::mdfEntry($langs, $data, 'title');
+		LangController::mdfSlug($langs, $data, 'title', $art);
+ 		LangController::mdfEntry($langs, $data, 'desc');
+
 		$art->modified_by = Auth::id();
 		$art->save();
-		if ($data['sede'] == 3) {
-			Subtitle::where('articulo_id','=',$art->id)->delete();
-			$sub = new Subtitle;
-			$sub->articulo_id = $art->id;
-			$sub->subtitulo   = $data['subtitle'];
-			$sub->save();
+		if ($data['sede'] == 3 || Input::has('subtitle')) {
+			if (empty($art->subtitle)) {
+				$sub = new Subtitle;
+				$sub->articulo_id = $art->id;
+
+				$translation      = LangController::newTranslation();
+				LangController::newEntry($langs, $translation,$data, 'subtitle');
+				$sub->subtitulo   = $translation;
+
+				$sub->save();
+			}else
+			{
+ 				LangController::mdfEntry($langs, $data, 'subtitle');
+			}
 		}
 		if (Input::hasFile('file')) {
 			$ruta 	 = "images/news/";
@@ -570,7 +611,7 @@ class AdminController extends BaseController {
 	{
 		$title = "Nueva Categoría | Funda Epékeina";
 
-		$types = Tipo::get();
+		$types = Tipo::with('descriptions')->get();
 
 		return View::make('admin.category.new')
 		->with('title',$title)
@@ -606,7 +647,9 @@ class AdminController extends BaseController {
 	{
 		$title = "Ver Categorías | Funda Epékeina";
 
-		$cat = Categoria::with('tipos')
+		$cat = Categoria::with(array('tipos' => function($tipos){
+			$tipos->with('descriptions');
+		}))
 		->get();
 		return View::make('admin.category.show')
 		->with('title',$title)
@@ -617,7 +660,7 @@ class AdminController extends BaseController {
 		$cat = Categoria::find($id);
 		$title = "Nueva Categoría | Funda Epékeina";
 
-		$types = Tipo::get();
+		$types = Tipo::with('descriptions')->get();
 
 		return View::make('admin.category.mdf')
 		->with('title',$title)

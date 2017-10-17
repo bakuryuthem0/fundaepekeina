@@ -21,22 +21,18 @@
             <div class="row">
                 <div class="col-md-9 col-sm-7 news-container">
                     <div class="row">
-                        @if(count($article) < 1)
-                        <div class="col-xs-12">
-                            <h3>No hay noticias para @if($type == 'sedes') esta sede @elseif($type == 'proyectos') este proyecto @endif</h3>
-                        </div>
-                        @else
+                        @if(count($article) > 0)
                             @foreach($article as $a)
                              <div class="col-sm-12 col-md-12 no-padding">
                                 <div class="single-blog single-column">
                                     <div class="post-thumb index col-xs-12 col-sm-6">
                                         @if($type != 'sedes/proyectos')
-                                        <a href="{{ URL::to('noticias/'.$type.'/'.$a->id) }}">
+                                        <a href="{{ URL::to('noticias/'.$type.'/'.$a->slugs->first()->text) }}">
                                         @else
-                                        <a href="{{ URL::to('noticias/'.$a->id) }}">
+                                        <a href="{{ URL::to('noticias/'.$a->slugs->first()->text) }}">
                                         @endif
-                                            @if(!is_null($a->imagenes->first()['image']))
-                                                <img data-original="{{ asset('images/news/'.$a->imagenes->first()['image']) }}" class="lazy img-responsive" alt="{{ $a->title }}">
+                                            @if(!is_null($a->imagenes->first()))
+                                                <img data-original="{{ asset('images/news/'.$a->imagenes->first()->image) }}" class="lazy img-responsive" alt="{{ $a->title }}">
                                             @else
                                                 <img data-original="{{ asset('images/logo.png') }}" class="lazy center-block new-no-image img-responsive" alt="{{ $a->title }}">
                                             @endif
@@ -45,9 +41,9 @@
                                         <div class="post-overlay">
                                            <span class="uppercase">
                                             @if($type != 'sedes/proyectos')
-                                                <a href="{{ URL::to('noticias/'.$type.'/'.$a->id) }}">
+                                                <a href="{{ URL::to('noticias/'.$type.'/'.$a->slugs->first()->text) }}">
                                             @else
-                                                <a href="{{ URL::to('noticias/'.$a->id) }}">
+                                                <a href="{{ URL::to('noticias/'.$a->slugs->first()->text) }}">
                                             @endif
                                                 <?php 
                                                     $aux2 = explode(' ',$a->created_at);
@@ -61,15 +57,15 @@
                                     </div>
                                     <div class="post-content overflow col-xs-12 col-sm-6">
                                         @if($type != 'sedes/proyectos')
-                                        <h2 class="post-title bold"><a href="{{ URL::to('noticias/'.$type.'/'.$a->id) }}">{{ $a->title }}</a></h2>
+                                            <h2 class="post-title bold"><a href="{{ URL::to('noticias/'.$type.'/'.$a->slugs->first()->text) }}">{{ $a->titles->first()->text }}</a></h2>
                                         @else
-                                        <h2 class="post-title bold"><a href="{{ URL::to('noticias/'.$a->id) }}">{{ $a->title }}</a></h2>
+                                            <h2 class="post-title bold"><a href="{{ URL::to('noticias/'.$a->slugs->first()->text) }}">{{ $a->titles->first()->text }}</a></h2>
                                         @endif
-                                        <h3 class="post-author"><p class="no-pointer">{{ substr(strip_tags($a->descripcion), 0, 300) }} [...]</p></h3>
+                                            <h3 class="post-author"><p class="no-pointer">{{ substr(strip_tags($a->descriptions->first()->text), 0, 300) }} [...]</p></h3>
                                         @if($type != 'sedes/proyectos')
-                                        <a href="{{ URL::to('noticias/'.$type.'/'.$a->id) }}" class="read-more">Leer mas</a>
+                                            <a href="{{ URL::to('noticias/'.$type.'/'.$a->slugs->first()->text) }}" class="read-more">{{ Lang::get('lang.read_more') }}</a>
                                         @else
-                                        <a href="{{ URL::to('noticias/'.$a->id) }}" class="read-more">Leer mas</a>
+                                            <a href="{{ URL::to('noticias/'.$a->slugs->first()->text) }}" class="read-more">{{ Lang::get('lang.read_more') }}</a>
                                         @endif
                                     </div>
                                     <div class="post-bottom index overflow col-xs-12">
@@ -87,14 +83,20 @@
                                         </ul>
                                         @if($type != "que-hacemos")
 
-                                        <div class="pull-right visible-md-block visible-lg-block">Creado: {{ date('d-m-Y',strtotime($a->created_at)) }}</div>
+                                        <div class="pull-right visible-md-block visible-lg-block">{{ Lang::get('lang.created_at') }}: {{ date('d-m-Y',strtotime($a->created_at)) }}</div>
 
-                                        <div class="pull-left hidden-md hidden-lg">Creado: {{ date('d-m-Y',strtotime($a->created_at)) }}</div>
+                                        <div class="pull-left hidden-md hidden-lg">{{ Lang::get('lang.created_at') }}: {{ date('d-m-Y',strtotime($a->created_at)) }}</div>
                                         @endif
                                     </div>
                                 </div>
                             </div>
                             @endforeach
+                        @else
+                        <div class="col-xs-12">
+                            <h3>{{ Lang::get('lang.no_paginate',array(
+                                'text' => $type == 'sedes' ? Lang::get('lang.this_sede'): Lang::get('lang.this_project')
+                            )) }} </h3>
+                        </div>
                         @endif
                     </div>
             </div>
@@ -123,12 +125,12 @@
                             }
                             if ($currentPage <= 1)
                             {
-                                echo '<li class="disabled"><a href="#">&laquo; Primera</a></li>';
+                                echo '<li class="disabled"><a href="#">&laquo; '.Lang::get('lang.first').'</a></li>';
                             }
                             else
                             {
                                 $url = $article->getUrl(1);
-                                echo '<li><a class="" href="'.$url.'">&laquo; Primera</a></li>';
+                                echo '<li><a class="" href="'.$url.'">&laquo; '.Lang::get('lang.first').'</a></li>';
                             }
                             if (($currentPage-1) < $start) {
                                 echo '<li class="disabled"><a href="#">&laquo;</a></li>';   
@@ -153,12 +155,12 @@
                             }
                             if ($currentPage >= $lastPage)
                             {
-                                echo '<li class="disabled"><a href="#">Última &raquo;</a></li>';
+                                echo '<li class="disabled"><a href="#">'.Lang::get('lang.last').' &raquo;</a></li>';
                             }
                             else
                             {
                                 $url = $article->getUrl($lastPage);
-                                echo '<li><a class="" href="'.$url.'">Última &raquo;</a></li>';
+                                echo '<li><a class="" href="'.$url.'">'.Lang::get('lang.last').' &raquo;</a></li>';
                             }
                         ?>
                         </ul>

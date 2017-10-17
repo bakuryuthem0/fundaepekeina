@@ -19,10 +19,9 @@ Route::get('quienes-somos','HomeController@getAbout');
 Route::get('organigrama','HomeController@getOrg');
 Route::get('localizacion','HomeController@getMap');
 Route::get('quienes-somos/historias-epekeinas','HomeController@getHistories');
-Route::get('quienes-somos/historias-epekeinas/{id}','HomeController@getHistory');
+Route::get('quienes-somos/historias-epekeinas/{slug}','HomeController@getHistory');
 
 Route::get('noticias','HomeController@getNews');
-Route::get('noticias/{id}','HomeController@getArticleSelf')->where('id', '[0-9]+');;
 Route::get('noticias/{type}','HomeController@getNewsType');
 
 Route::get('biblioteca-virtual','LibraryController@getIndex');
@@ -71,7 +70,7 @@ Route::group(array('before' => 'auth'),function()
 	Route::get('administrador/nuevo-articulo','AdminController@getNewArticulo');
 	Route::post('administrador/nuevo-articulo/enviar','AdminController@postNewArticulo');
 
-	Route::get('administrador/ver-articulo/{id}','AdminController@showArt');
+	Route::get('administrador/ver-articulo/{slug}','AdminController@showArt');
 	Route::get('administrador/mostrar-articulos','AdminController@showArticulos');
 	Route::get('administrador/mostrar-articulos/{id}','AdminController@getArticulo');
 	Route::post('administrador/mostrar-articulo/{id}/enviar','AdminController@postArticulo');
@@ -120,8 +119,14 @@ Route::group(array('before' => 'auth'),function()
 	Route::post('administrador/biblioteca/ver-archivos/eliminar','LibraryController@postElimFile');
 });
 
-Route::get('test','BoletinController@getTest');
+Route::get('test','HomeController@prueba');
 Route::post('nueva-donacion','HomeController@postDonation');
 Route::get('dar-de-baja','BoletinController@deleteFromBoletin');
 
 Route::get('boletin-abril','BoletinController@getLastBoletin');
+
+Route::get('cambiar-lenguaje/{lang}',function($lang)
+{
+	Session::set('lang', $lang);
+	return Redirect::back();
+});

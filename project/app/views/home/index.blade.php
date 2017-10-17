@@ -43,7 +43,7 @@
                 <div class="row">
                     <div class=" take-tour">
                         <div class="col-xs-12 wow fadeInLeft" data-wow-duration="500ms" data-wow-delay="300ms">
-                            <h1 class="title">Proyectos</h1>
+                            <h1 class="title">{{ Lang::get('lang.projects') }}</h1>
                         </div>
                     </div>
                 </div>
@@ -60,7 +60,9 @@
                             <img src="images/projects/redjoven.png" alt="">
                         </div>
                         <h2>Red Joven Venezuela</h2>
-                        <p class="text-justify">Nos inspiramos en Venezuela, en la valoración de lo que somos, de nuestra esencia, en el reconocimiento de la venezolanidad. Nosotros creemos en la gente, apostamos por la gente; por ese principio de vida, de salvación, de fuerza y esperanza activa, construye, propone y se mueve para superar obstáculos. <strong>Visitanos <a href="http://redjovenvenezuela.com" target="_blank">aqui</a></strong></p>
+                        <p class="text-justify">{{ Lang::get('lang.rjv_text',array(
+                            "link1" => '<a href="http://redjovenvenezuela.com" target="_blank">'.Lang::get('lang.here').'</a>'
+                        )) }}</p>
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-6 text-center padding wow fadeIn" data-wow-duration="1000ms" data-wow-delay="900ms">
@@ -69,7 +71,7 @@
                             <img src="{{ asset('images/projects/laguna.png') }}" alt="">
                         </div>
                         <h2>La laguna</h2>
-                        <p class="text-justify">Proyecto que tiene como objetivo desarrollar un plan de capacitación y formación de caficultores, a través del diseño de un pensum por especialistas de la  universidad de los Andes para los suelos y cultivos propios de la zona de Canaguá en el Estado Mérida.... <a href="{{ URL::to('proyectos/escuela-de-campo-para-agricultores') }}">Leer mas</a></p>
+                        <p class="text-justify">{{ Lang::get('lang.pnud_text') }}.... <a href="{{ URL::to('proyectos/escuela-de-campo-para-agricultores') }}">{{ Lang::get('lang.read_more') }}</a></p>
                     </div>
                 </div>
             </div>
@@ -82,7 +84,7 @@
                 <div class="row">
                     <div class=" take-tour">
                         <div class="col-xs-12 wow fadeInLeft" data-wow-duration="500ms" data-wow-delay="300ms">
-                            <h1 class="title">Últimas noticias</h1>
+                            <h1 class="title">{{ Lang::get('lang.last_news') }}</h1>
                         </div>
                     </div>
                 </div>
@@ -97,19 +99,23 @@
                 @foreach($article as $a)
                     <div class="single-features post-content">
                         <div class="col-xs-12 col-md-6 wow fadeInLeft image-container" data-wow-duration="500ms" data-wow-delay="300ms">
-                            <a href="{{ URL::to('noticias/'.$a->id) }}">
-                                <img src="{{ asset('images/news/'.$a->imagenes->first()['image']) }}" class="img-responsive" alt="">
+                            <a href="{{ URL::to('noticias/proyectos/'.$a->slugs->first()->text) }}">
+                                @if(!is_null($a->imagenes->first()))
+                                    <img src="{{ asset('images/news/'.$a->imagenes->first()->image) }}" class="img-responsive" alt="">
+                                @else
+                                    <img src="{{ asset('images/logo.png') }}" class="img-responsive" alt="">
+                                @endif
                             </a>
                         </div>
                         <div class="col-xs-12 col-md-6 wow fadeInRight news-text-index" data-wow-duration="500ms" data-wow-delay="300ms">
-                            <h2>{{ $a->title }}</h2>
-                            <h3 class="post-author"><p class="text-justify no-pointer">{{ substr(strip_tags($a->descripcion), 0, 300) }} [...]</p></h3>
-                            <a href="{{ URL::to('noticias/'.$a->id) }}" class="read-more">Leer mas</a>
+                            <h2>{{ $a->titles->first()->text }}</h2>
+                            <h3 class="post-author"><p class="text-justify no-pointer">{{ substr(strip_tags($a->descriptions->first()->text), 0, 300) }} [...]</p></h3>
+                            <a href="{{ URL::to('noticias/proyectos/'.$a->slugs->first()->text) }}" class="read-more">{{ Lang::get('lang.read_more') }}</a>
                         </div>
                     </div>
                 @endforeach
                 </div>
-                <div class="text-center" style="margin-bottom:50px;margin-top:50px;"><a href="{{ URL::to('noticias') }}" class="btn btn-lg btn-info">Ver todas</a></div>
+                <div class="text-center" style="margin-bottom:50px;margin-top:50px;"><a href="{{ URL::to('noticias') }}" class="btn btn-lg btn-info">{{ Lang::get('lang.see_all') }}</a></div>
             </div>
         </div>
     </section>
@@ -120,7 +126,7 @@
                 <div class="row">
                     <div class=" take-tour">
                         <div class="col-xs-12 wow fadeInLeft" data-wow-duration="500ms" data-wow-delay="300ms">
-                            <h1 class="title">Nuestros aliados</h1>
+                            <h1 class="title">{{ Lang::get('lang.our_allies') }}</h1>
                         </div>
                     </div>
                 </div>
@@ -182,7 +188,7 @@
             loop: true,
             margin: 10,
             nav:true,
-            navText: [ 'Anterior', 'Siguiente' ],
+            navText: [ '<<', '>>' ],
             autoplay: true,
             autoplayTimeout: 5000,
             autoplayHoverPause: false,
@@ -196,7 +202,7 @@
             loop: true,
             margin: 10,
             nav:true,
-            navText: [ 'Anterior', 'Siguiente' ],
+            navText: [ '<<', '>>' ],
             autoplay: true,
             autoplayTimeout: 5000,
             autoplayHoverPause: false,

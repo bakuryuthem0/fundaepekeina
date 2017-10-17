@@ -2,9 +2,9 @@
     <div class="sidebar blog-sidebar">
         <div class="sidebar-item categories">
             @if($type == 'que-hacemos')
-            <h3>Sedes/Proyectos</h3>
+                <h3>Sedes/Proyectos</h3>
             @else
-            <h3>{{ ucwords($type) }}</h3>
+                <h3>{{ ucwords($type) }}</h3>
             @endif
             <ul class="nav navbar-stacked">
                 @foreach(SideBarController::getCategories($menu) as $c)

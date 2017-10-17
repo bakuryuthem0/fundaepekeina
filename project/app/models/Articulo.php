@@ -27,4 +27,31 @@ class Articulo extends Eloquent{
 	{
 		return $this->belongsTo('Tipo','tipo');
 	}
+	public function slugs()
+	{
+		return $this->hasMany('TranslationEntry','translation_id','slug')
+		->where('lang_id','=',LangController::getActiveLang()->id);
+	}
+	public function titles()
+	{
+		return $this->hasMany('TranslationEntry','translation_id','title')
+		->where('lang_id','=',LangController::getActiveLang()->id);
+	}
+	public function descriptions()
+	{
+		return $this->hasMany('TranslationEntry','translation_id','descripcion')
+		->where('lang_id','=',LangController::getActiveLang()->id);
+	}
+	public function slugsAll()
+	{
+		return $this->hasMany('TranslationEntry','translation_id','slug');
+	}
+	public function titlesAll()
+	{
+		return $this->hasMany('TranslationEntry','translation_id','title');
+	}
+	public function descriptionsAll()
+	{
+		return $this->hasMany('TranslationEntry','translation_id','descripcion');
+	}
 }

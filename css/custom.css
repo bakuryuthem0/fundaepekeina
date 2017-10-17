@@ -802,3 +802,15 @@ blockquote
     float: none;
     vertical-align: middle;
 }
+
+.fixedLang
+{
+    left: 0;
+    bottom: 0;
+    z-index: 10;
+    position: fixed;
+}
+.fixedLang li
+{
+    padding: 0 10px;
+}
