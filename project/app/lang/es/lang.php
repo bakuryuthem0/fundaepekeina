@@ -46,7 +46,7 @@
 		//index
 		'projects'			=> 'Proyectos',
 		'rjv_text'			=> 'Nos inspiramos en Venezuela, en la valoración de lo que somos, de nuestra esencia, en el reconocimiento de la venezolanidad. Nosotros creemos en la gente, apostamos por la gente; por ese principio de vida, de salvación, de fuerza y esperanza activa, construye, propone y se mueve para superar obstáculos. <strong>Visitanos :link1</strong>',
-		'pnud_text'			=> 'Proyecto que tiene como objetivo desarrollar un plan de capacitación y formación de caficultores, a través del diseño de un pensum por especialistas de la  universidad de los Andes para los suelos y cultivos propios de la zona de Canaguá en el Estado Mérida :link1',
+		'pnud_text'			=> 'Proyecto que tiene como objetivo desarrollar un plan de capacitación y formación de caficultores, a través del diseño de un pensum por especialistas de la  universidad de los Andes para los suelos y cultivos propios de la zona de Canaguá en el Estado Mérida ',
 		
 		'last_news'			=> 'Últimas noticias',
 		'our_allies'		=> 'Nuestros aliados',
