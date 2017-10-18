@@ -21,13 +21,13 @@
             <div class="row">
                 <div class="col-xs-12 col-sm-6 text-center padding wow fadeIn" data-wow-duration="1000ms" data-wow-delay="300ms">
                     <div class="single-service">
-                        <h2>{{ Lang::get('lang.') }}</h2>
+                        <h2>{{ Lang::get('lang.mission') }}</h2>
                         <p class="text-justify fadeIn" data-wow-duration="500ms" data-wow-delay="300ms">{{ Lang::get('lang.mission_text') }}</p>
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-6 text-center padding wow fadeIn" data-wow-duration="1000ms" data-wow-delay="900ms">
                     <div class="single-service">
-                        <h2 class="fadeIn" data-wow-duration="500ms" data-wow-delay="300ms">{{ Lang::get('lang.') }}</h2>
+                        <h2 class="fadeIn" data-wow-duration="500ms" data-wow-delay="300ms">{{ Lang::get('lang.vision') }}</h2>
                         <p class="text-justify fadeIn" data-wow-duration="500ms" data-wow-delay="300ms">{{ Lang::get('lang.vision_text') }}</p>
                     </div>
                 </div>
