@@ -31,22 +31,22 @@
                             <div class="single-blog single-column">
                                 <div class="post-thumb index col-xs-12 col-sm-6">
                                     @if($type != 'sedes/proyectos')
-                                    <a href="{{ URL::to('noticias/'.$type.'/'.$a->id) }}">
+                                    <a href="{{ URL::to('noticias/'.$type.'/'.$a->slugs->first()->text) }}">
                                     @else
-                                    <a href="{{ URL::to('noticias/'.$a->id) }}">
+                                    <a href="{{ URL::to('noticias/'.$a->slugs->first()->text) }}">
                                     @endif
-                                        @if(!is_null($a->imagenes->first()['image']))
-                                            <img data-original="{{ asset('images/news/'.$a->imagenes->first()['image']) }}" class="lazy img-responsive" alt="{{ $a->title }}">
+                                        @if(!is_null($a->imagenes->first()->image))
+                                            <img data-original="{{ asset('images/news/'.$a->imagenes->first()->image) }}" class="lazy img-responsive" alt="{{ $a->titles->first()->text }}">
                                         @else
-                                            <img data-original="{{ asset('images/logo.png') }}" class="center-block new-no-image lazy img-responsive" alt="{{ $a->title }}">
+                                            <img data-original="{{ asset('images/logo.png') }}" class="center-block new-no-image lazy img-responsive" alt="{{ $a->titles->first()->text }}">
                                         @endif
                                     </a>
                                     <div class="post-overlay">
                                        <span class="uppercase">
                                         @if($type != 'sedes/proyectos')
-                                            <a href="{{ URL::to('noticias/'.$type.'/'.$a->id) }}">
+                                            <a href="{{ URL::to('noticias/'.$type.'/'.$a->slugs->first()->text) }}">
                                         @else
-                                            <a href="{{ URL::to('noticias/'.$a->id) }}">
+                                            <a href="{{ URL::to('noticias/'.$a->slugs->first()->text) }}">
                                         @endif
                                             <?php 
                                                 $aux2 = explode(' ',$a->created_at);
@@ -59,15 +59,15 @@
                                 </div>
                                 <div class="post-content overflow col-xs-12 col-sm-6">
                                     @if($type != 'sedes/proyectos')
-                                    <h2 class="post-title bold"><a href="{{ URL::to('noticias/'.$type.'/'.$a->id) }}">{{ $a->title }}</a></h2>
+                                    <h2 class="post-title bold"><a href="{{ URL::to('noticias/'.$type.'/'.$a->slugs->first()->text) }}">{{ $a->titles->first()->text }}</a></h2>
                                     @else
-                                    <h2 class="post-title bold"><a href="{{ URL::to('noticias/'.$a->id) }}">{{ $a->title }}</a></h2>
+                                    <h2 class="post-title bold"><a href="{{ URL::to('noticias/'.$a->slugs->first()->text) }}">{{ $a->titles->first()->text }}</a></h2>
                                     @endif
-                                    <h3 class="post-author"><p class="no-pointer">{{ substr(strip_tags($a->descripcion), 0, 300) }} [...]</p></h3>
+                                    <h3 class="post-author"><p class="no-pointer">{{ substr(strip_tags($a->descriptions->first()->text), 0, 300) }} [...]</p></h3>
                                     @if($type != 'sedes/proyectos')
-                                    <a href="{{ URL::to('noticias/'.$type.'/'.$a->id) }}" class="read-more">Leer mas</a>
+                                    <a href="{{ URL::to('noticias/'.$type.'/'.$a->slugs->first()->text) }}" class="read-more">Leer mas</a>
                                     @else
-                                    <a href="{{ URL::to('noticias/'.$a->id) }}" class="read-more">Leer mas</a>
+                                    <a href="{{ URL::to('noticias/'.$a->slugs->first()->text) }}" class="read-more">Leer mas</a>
                                     @endif
                                 </div>
                                 <div class="post-bottom index overflow col-xs-12">

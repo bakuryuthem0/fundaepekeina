@@ -213,31 +213,24 @@ class HomeController extends BaseController {
 	public function getByCat($type,$id)
 	{
 
-		$article = Articulo::with('imagenes');
+		$article = Articulo::with('imagenes')
+		->with('titles')
+		->with('slugs')
+		->with('descriptions');
 		if ($type == 'proyectos') {
 			$article = $article->leftJoin('categorias','categorias.id','=','cat_id')
 			->where('articulos.state','=',1)
 			->where('categorias.tipo','=','2')
 			->where('articulos.cat_id','=',$id)
 			->orderBy('articulos.created_at','DESC')
-			->paginate(6,array(
-				'articulos.id',
-				'articulos.title',
-				'articulos.descripcion',
-				'articulos.created_at',
-			));
+			->paginate(6);
 		}elseif($type == 'sedes')
 		{
 			$article = $article
 			->where('articulos.state','=',1)
 			->where('articulos.cat_id','=',$id)
 			->orderBy('articulos.created_at','DESC')
-			->paginate(6,array(
-				'articulos.id',
-				'articulos.title',
-				'articulos.descripcion',
-				'articulos.created_at',
-			));
+			->paginate(6);
 		}
 		$title = "Noticias por ".$type." | Funda Epékeina";
 		$view = View::make('home.articles.index')
@@ -269,7 +262,12 @@ class HomeController extends BaseController {
 	public function getSearch()
 	{
 		$busq = Input::get('busq');
-		$article = Articulo::with('imagenes')->where('state','=',1)->where(function($query) use ($busq)
+		$article = Articulo::with('imagenes')
+		->with('titles')
+		->with('slugs')
+		->with('descriptions')
+		->where('state','=',1)
+		->where(function($query) use ($busq)
 		{
 			$query->whereRaw('LOWER(title)  LIKE "%'.$busq.'%"')
 			->orWhereRaw('LOWER(descripcion) LIKE "%'.$busq.'%"');
