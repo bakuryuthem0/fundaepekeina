@@ -29,7 +29,7 @@
             <tr>
               <td>{{ $a->id }}</td>
               <td>{{ $a->titles->first()->text }}</td>
-              <td><a target="_blank" href="{{ URL::to('administrador/ver-articulo/'.$a->id) }}" class="btn btn-xs btn-primary">Ver</a></td>
+              <td><a target="_blank" href="{{ URL::to('administrador/ver-articulo/'.$a->slugs->first()->text) }}" class="btn btn-xs btn-primary">Ver</a></td>
               <td><a target="_blank" href="{{ URL::to('administrador/editar-articulo/'.$a->id) }}" class="btn btn-warning btn-xs">Editar</a></td>
               <td class="text-center">
                 @if($a->state == 0)

@@ -183,6 +183,7 @@ class AdminController extends BaseController {
 	{
 		$title = "Ver articulos | Funda Epékeina";
 		$article = Articulo::with('titles')
+		->with('slugs')
 		->orderBy('id','DESC')->get();
 		return View::make('admin.article.show')
 		->with('title',$title)
@@ -192,7 +193,7 @@ class AdminController extends BaseController {
 	public function showArt($slug)
 	{
 		$articulo = Articulo::with('imagenes')
-		->with('titlesAll')
+		->with('titles')
 		->with('descriptions')
 		->with(array('subtitle' => function($subtitle){
 			$subtitle->with('titles');
@@ -201,7 +202,6 @@ class AdminController extends BaseController {
 			$slugs->where('text','=',$slug);
 		})
 		->first();
-		return $articulo->titles;
 		$title = "Ver artículo: ".$articulo->titles->first()->text." | Funda Epékeina";
 		return View::make('admin.article.view')
 		->with('title',$title)
