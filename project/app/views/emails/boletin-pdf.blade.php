@@ -4,7 +4,6 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Boletin</title>
-  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
   <style type="text/css">
   html, body {
     font-size: 16px; 
@@ -41,7 +40,6 @@
   }
   .img-boletin {
     width: 300px; 
-    display: inline-block;
   }
   .padding-1
   {
@@ -68,8 +66,8 @@
         @if(!count($principal->imagenes) > 0)
         <center><img src="{{ asset('images/news/'.$principal->imagenes->first()->image) }}" class="img-boletin"></center>
         @else
-        <center>
-          <img src="{{ asset('images/logo.png') }}" class="" alt="{{ $article->first()->title }}"></center>
+        
+          <center><img src="{{ asset('images/logo.png') }}" class="" alt="{{ $article->first()->title }}"></center>
         @endif
       </div>
       <div class="col-xs-12">
