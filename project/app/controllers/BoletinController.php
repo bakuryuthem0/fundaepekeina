@@ -41,6 +41,7 @@ class BoletinController extends BaseController {
 		->with('titles')
 		->with('descriptions')
 		->first();		
+		return View::make('emails.boletin-pdf')->with('article',$article)->with('principal',$principal)->with('colors',$colors)->with('hist',$hist);
 		$library = LibraryFile::where('slug','=',str_replace(' ','-',strtolower("Boletin ".date('d-m-Y H:m:s'))))->first();
 		if (empty($library)) {
 			$library 					= new LibraryFile;
