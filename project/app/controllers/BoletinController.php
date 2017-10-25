@@ -46,6 +46,7 @@ class BoletinController extends BaseController {
 			$library 					= new LibraryFile;
 			$library->title 			= "Boletin ".date('d-m-Y H:m:s');
 			$library->slug              = str_replace(' ','-',strtolower($library->title));
+			$library->autor 		    = "fundaepekeina.org";
 		}
 		$library->type 				= 'boletin';
 		$library->publication_date  = date('d-m-Y H:m:s',time());
