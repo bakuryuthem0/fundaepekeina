@@ -104,9 +104,9 @@ class LibraryController extends BaseController {
 		$data  = Input::all();
 		$rules = array(
 			'title'				=> 'required|min:4|max:100',
-			'type'				=> 'required|in:libros,articulos-de-investigacion,informes,cuento',
+			'type'				=> 'required|in:libros,articulos-de-investigacion,informes,cuento,boletin',
 			'autor'				=> 'sometimes|min:4|max:100',
-			'publication_date'	=> 'sometimes|date',
+			'publication_date'	=> 'sometimes|date_format:d/m/Y',
 			'description'		=> 'sometimes|min:4|max:2000',
 			'portada'			=> 'sometimes|image|max:3000',
 			'file'				=> 'sometimes|mimes:doc,docx,pdf',
