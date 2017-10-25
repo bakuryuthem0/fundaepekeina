@@ -478,6 +478,7 @@ class HomeController extends BaseController {
 
 	public function prueba()
 	{
+		return Redirect::to('/');
 		$langs = Language::get();
 		$art   = Articulo::get();
 		$data  = [];
