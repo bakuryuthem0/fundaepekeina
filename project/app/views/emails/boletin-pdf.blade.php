@@ -40,7 +40,7 @@
     color: white;
   }
   .img-boletin {
-    width: 600px; 
+    width: 300px; 
     display: inline-block;
   }
   .padding-1
