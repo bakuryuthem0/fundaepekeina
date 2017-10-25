@@ -9,36 +9,46 @@ class BoletinController extends BaseController {
 			$principal = Articulo::with('imagenes')->with('slugs')
 			->with('titles')
 			->with('descriptions')
+			->with(array('type' => function($type){
+				$type->with('slugs');
+			}))
 			->find($data['principal']);
 		}
 		$article = Articulo::with('imagenes')
 		->with('slugs')
 		->with('titles')
-		->with('descriptions');
+		->with('descriptions')
+		->with(array('type' => function($type){
+			$type->with('slugs');
+		}));
 		foreach($data['art'] as $a)
 		{
 			$article = $article->orWhere('id','=',$a);
 		}
 		$article = $article->orderBy('id','DESC')->get();
+
 		$colors  = array('yellow','green','pink','blue');
 		$hist = Articulo::where('tipo','=',6)
 		->orderBy('id','DESC')
 		->with(array('subtitle'=>function($subtitle){
 			$subtitle->with('titles');
 		}))
+		->with(array('type' => function($type){
+			$type->with('slugs');
+		}))
 		->with('imagenes')
 		->with('slugs')
 		->with('titles')
 		->with('descriptions')
 		->first();		
-		$library = LibraryFile::where('slug','=',str_replace(' ','-',strtolower("Boletin ".date('d-m-Y'))))->first();
+		$library = LibraryFile::where('slug','=',str_replace(' ','-',strtolower("Boletin ".date('d-m-Y H:m:s'))))->first();
 		if (empty($library)) {
 			$library 					= new LibraryFile;
+			$library->title 			= "Boletin ".date('d-m-Y H:m:s');
 			$library->slug              = str_replace(' ','-',strtolower($library->title));
 		}
-		$library->title 			= "Boletin ".date('d-m-Y');
 		$library->type 				= 'boletin';
-		$library->publication_date  = date('d-m-Y',time());
+		$library->publication_date  = date('d-m-Y H:m:s',time());
 		$library->save();
 		define('BUDGETS_DIR', storage_path().'/biblioteca/'); // I define this in a constants.php file
 
