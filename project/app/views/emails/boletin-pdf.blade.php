@@ -68,7 +68,8 @@
         @if(!count($principal->imagenes) > 0)
         <center><img src="{{ asset('images/news/'.$principal->imagenes->first()->image) }}" class="img-boletin"></center>
         @else
-        <center><img src="{{ asset('images/logo.png') }}" class="img-boletin" alt="{{ $article->first()->title }}"></center>
+        <center>
+          <img src="{{ asset('images/logo.png') }}" class="" alt="{{ $article->first()->title }}"></center>
         @endif
       </div>
       <div class="col-xs-12">
@@ -87,7 +88,7 @@
         @if(count($a->imagenes) > 0)
         <center><img src="{{ asset('images/news/'.$a->imagenes->first()->image) }}" class="img-boletin" alt="{{ $a->titles->first()->text }}"></center>
         @else
-        <center><img src="{{ asset('images/logo.png') }}" class="img-boletin" alt="{{ $a->titles->first()->text }}"></center>
+        <center><img src="{{ asset('images/logo.png') }}" class="" alt="{{ $a->titles->first()->text }}"></center>
         @endif
       </div>
       <div class="col-xs-12">
@@ -102,7 +103,7 @@
         @if(count($a->imagenes) > 0)
         <center><img src="{{ asset('images/news/'.$a->imagenes->first()->image) }}" class="img-boletin" alt="{{ $a->titles->first()->text }}"></center>
         @else
-        <center><img src="{{ asset('images/logo.png') }}" class="img-boletin" alt="{{ $a->titles->first()->text }}"></center>
+        <center><img src="{{ asset('images/logo.png') }}" class="" alt="{{ $a->titles->first()->text }}"></center>
         @endif
       </div>
       <div class="col-xs-12">
