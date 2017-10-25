@@ -60,7 +60,7 @@
         </div>
         <div class="formulario col-xs-12 col-md-6">
           <label class="control-label">fecha de publicación (opcional)</label>
-          <input type="text" name="publication_date" class="form-control" placeholder="dd/mm/YYYY" value="{{ $file->publication_date }}">
+          <input type="text" name="publication_date" class="form-control" placeholder="dd/mm/YYYY" value="{{ date('d/m/Y',strtotime($file->publication_date)) }}">
           @if($errors->has('publication_date'))
             @foreach($errors->get('publication_date') as $err)
             <div class="clearfix"></div>
