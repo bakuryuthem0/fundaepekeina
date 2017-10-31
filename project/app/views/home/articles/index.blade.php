@@ -57,7 +57,7 @@
                                     </div>
                                     <div class="post-content overflow col-xs-12 col-sm-6">
                                         @if($type != 'sedes/proyectos')
-                                            <h2 class="post-title bold"><a href="{{ URL::to('noticias/'.$type.'/'.$a->slugs->first()->text) }}">{{ $a->titles->first()->text }}</a></h2>
+                                            <h2 class="post-title bold"><a href="{{ URL::to('noticias/'.str_replace(' ','-',$type).'/'.$a->slugs->first()->text) }}">{{ $a->titles->first()->text }}</a></h2>
                                         @else
                                             <h2 class="post-title bold"><a href="{{ URL::to('noticias/'.$a->slugs->first()->text) }}">{{ $a->titles->first()->text }}</a></h2>
                                         @endif
