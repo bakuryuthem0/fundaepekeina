@@ -24,9 +24,9 @@
                     <div class="row">
                          <div class="col-md-12 col-sm-12">
                             <div class="single-blog blog-details two-column">
-                                @if(count($article->imagenes) < 2)
+                                @if(count($article->imagenes) < 1)
                                     <div class="post-thumb">
-                                        <a href="#"><img src="{{ asset('images/news/'.$article->imagenes->first()->image) }}" class="center-block img-responsive" alt="{{ $article->title }}"></a>
+                                        <a href="#"><img src="{{ asset('images/logo.png'.) }}" class="center-block img-responsive" alt="{{ $article->title }}"></a>
                                         @if($type != "que-hacemos")
                                         <div class="post-overlay">
                                             <span class="uppercase"><a href="#">
