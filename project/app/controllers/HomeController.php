@@ -93,7 +93,7 @@ class HomeController extends BaseController {
 		->where('slug','=',$entry->translation_id)
 		->where('state','=',1)
 		->first();
-
+		return $article;
 		$request = Request::instance();
 		$request->setTrustedProxies(array('127.0.0.1')); // only trust proxy headers coming from the IP addresses on the array (change this to suit your needs)
 		$ip = $request->getClientIp();
@@ -168,7 +168,7 @@ class HomeController extends BaseController {
 
 	public function getNewsType($type)
 	{
-		
+
 		$tipo = Tipo::whereHas('slugs',function($slugs) use($type){
 			$slugs->where('text','=',$type);
 		})
