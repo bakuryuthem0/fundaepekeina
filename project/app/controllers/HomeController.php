@@ -170,13 +170,23 @@ class HomeController extends BaseController {
 
 	public function getNewsType($type)
 	{
-
-		$tipo = Tipo::whereHas('slugs',function($slugs) use($type){
-			$slugs->where('text','=',$type);
-		})
-		->with('slugs')
-		->with('descriptions')
-		->first();
+		if (!is_null($type)) {
+			$tipo = Tipo::whereHas('slugs',function($slugs) use($type){
+				$slugs->where('text','=',$type);
+			})
+			->with('slugs')
+			->with('descriptions')
+			->first();
+			
+		}else
+		{
+			$tipo = Tipo::whereHas('slugs',function($slugs){
+				$slugs->where('text','=','proyectos');
+			})
+			->with('slugs')
+			->with('descriptions')
+			->first();
+		}
 		$article = Articulo::with('imagenes')
 		->with('likeCount')
 		->with('categorias')
