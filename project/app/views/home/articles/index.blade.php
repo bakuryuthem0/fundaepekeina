@@ -29,7 +29,7 @@
                                         @if($type != 'sedes/proyectos')
                                         <a href="{{ URL::to('noticias/'.$type.'/'.$a->slugs->first()->text) }}">
                                         @else
-                                        <a href="{{ URL::to('noticias/'.$a->slugs->first()->text) }}">
+                                        <a href="{{ URL::to('noticias/proyectos/'.$a->slugs->first()->text) }}">
                                         @endif
                                             @if(!is_null($a->imagenes->first()))
                                                 <img data-original="{{ asset('images/news/'.$a->imagenes->first()->image) }}" class="lazy img-responsive" alt="{{ $a->title }}">
@@ -43,7 +43,7 @@
                                             @if($type != 'sedes/proyectos')
                                                 <a href="{{ URL::to('noticias/'.$type.'/'.$a->slugs->first()->text) }}">
                                             @else
-                                                <a href="{{ URL::to('noticias/'.$a->slugs->first()->text) }}">
+                                                <a href="{{ URL::to('noticias/proyectos/'.$a->slugs->first()->text) }}">
                                             @endif
                                                 <?php 
                                                     $aux2 = explode(' ',$a->created_at);
@@ -59,7 +59,7 @@
                                         @if($type != 'sedes/proyectos')
                                             <h2 class="post-title bold"><a href="{{ URL::to('noticias/'.$type.'/'.$a->slugs->first()->text) }}">{{ $a->titles->first()->text }}</a></h2>
                                         @else
-                                            <h2 class="post-title bold"><a href="{{ URL::to('noticias/'.$a->slugs->first()->text) }}">{{ $a->titles->first()->text }}</a></h2>
+                                            <h2 class="post-title bold"><a href="{{ URL::to('noticias/proyectos/'.$a->slugs->first()->text) }}">{{ $a->titles->first()->text }}</a></h2>
                                         @endif
                                             <h3 class="post-author"><p class="no-pointer">{{ substr(strip_tags($a->descriptions->first()->text), 0, 300) }} [...]</p></h3>
                                         @if($type != 'sedes/proyectos')
