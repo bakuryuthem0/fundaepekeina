@@ -25,10 +25,10 @@ Route::get('noticias','HomeController@getNews');
 Route::get('noticias/{type}','HomeController@getNewsType');
 
 Route::get('biblioteca-virtual','LibraryController@getIndex');
-Route::get('biblioteca/descargar/{id}','LibraryController@downloadFile');
+Route::get('biblioteca/descargar/{slug}','LibraryController@downloadFile');
 
-Route::get('noticias/{type}/{id}','HomeController@getArticleSelf');
-Route::get('noticias/{type}/categoria/{id}','HomeController@getByCat');
+Route::get('noticias/{type}/{slug}','HomeController@getArticleSelf');
+Route::get('noticias/{type}/categoria/{slug}','HomeController@getByCat');
 
 
 Route::get('galeria','HomeController@getGallery');
@@ -72,10 +72,10 @@ Route::group(array('before' => 'auth'),function()
 
 	Route::get('administrador/ver-articulo/{slug}','AdminController@showArt');
 	Route::get('administrador/mostrar-articulos','AdminController@showArticulos');
-	Route::get('administrador/mostrar-articulos/{id}','AdminController@getArticulo');
-	Route::post('administrador/mostrar-articulo/{id}/enviar','AdminController@postArticulo');
+	Route::get('administrador/mostrar-articulos/{slug}','AdminController@getArticulo');
+	Route::post('administrador/mostrar-articulo/{slug}/enviar','AdminController@postArticulo');
 
-	Route::get('administrador/editar-articulo/{id}','AdminController@getModifyArt');
+	Route::get('administrador/editar-articulo/{slug}','AdminController@getModifyArt');
 	Route::post('administrador/ver-articulo/enviar','AdminController@postMdfArt');
 	Route::post('administrador/ver-articulos/eliminar-imagen','AdminController@elimImg');
 	Route::post('administrador/mostrar-articulos/eliminar','AdminController@elimArticulo');
@@ -84,16 +84,16 @@ Route::group(array('before' => 'auth'),function()
 	Route::get('administrador/nueva-categoria','AdminController@getNewCategory');
 	Route::post('administrador/nuevo-categoria/enviar','AdminController@postNewCategory');
 	Route::get('administrador/ver-categorias','AdminController@getCategories');
-	Route::get('administrador/editar-categoria/{id}','AdminController@getMdfCategory');
-	Route::post('administrador/modificar-categoria/{id}/enviar','AdminController@postMdfCategory');
+	Route::get('administrador/editar-categoria/{slug}','AdminController@getMdfCategory');
+	Route::post('administrador/modificar-categoria/{slug}/enviar','AdminController@postMdfCategory');
 	Route::post('administrador/ver-categorias/eliminar','AdminController@postElimCategory');
 	//usuarios
 	Route::get('administrador/nuevo-usuario','AdminController@newUser');
 	Route::post('administrador/nuevo-usuario/enviar','AdminController@postNewUser');
 	Route::get('administrador/ver-usuarios','AdminController@getUsers');
 	Route::post('administrador/ver-usuarios/eliminar','AdminController@elimUser');
-	Route::get('administrador/cambiar-password/{id}','AdminController@chageUserPass');
-	Route::post('administrador/cambiar-password/enviar/{id}','AdminController@postChangePass');
+	Route::get('administrador/cambiar-password/{slug}','AdminController@chageUserPass');
+	Route::post('administrador/cambiar-password/enviar/{slug}','AdminController@postChangePass');
 
 	//galeria
 	Route::get('administrador/galeria/nueva-galeria','AdminController@getNewCat');
@@ -101,10 +101,10 @@ Route::group(array('before' => 'auth'),function()
 	Route::post('administrador/chequear-imagen','AdminController@checkImg');
 	Route::get('administrador/galeria/ver-galerias', 'AdminController@getGalleries');
 	Route::post('administrador/mostrar-galeria/eliminar','AdminController@elimGallery');
-	Route::get('administrador/galeria/agregar-imagenes/{id}','AdminController@addImages');
+	Route::get('administrador/galeria/agregar-imagenes/{slug}','AdminController@addImages');
 	Route::post('administrador/galeria/agregar-imagenes/enviar', 'AdminController@postNewImage');
 	Route::post('administrador/ver-productos/eliminar','AdminController@elimItem');
-	Route::get('administrador/galeria/{type}/{id}','AdminController@showGallery');
+	Route::get('administrador/galeria/{type}/{slug}','AdminController@showGallery');
 	Route::post('administrador/galeria/editar/enviar','AdminController@postMdfGal');
 	Route::get('administrador/logout','AdminController@getLogOut');
 
@@ -113,9 +113,9 @@ Route::group(array('before' => 'auth'),function()
 	Route::get('administrador/biblioteca/nuevo-archivo','LibraryController@getNewFile');
 	Route::post('administrador/biblioteca/nuevo-archivo/enviar','LibraryController@postNewFile');
 	Route::get('administrador/biblioteca/ver-archivos','LibraryController@getFiles');
-	Route::get('administrador/biblioteca/ver-archivos/{id}','LibraryController@downloadFile');
-	Route::get('administrador/biblioteca/editar-archivos/{id}','LibraryController@getMdfFile');
-	Route::post('administrador/biblioteca/editar-archivos/{id}/enviar','LibraryController@postMdfFile');
+	Route::get('administrador/biblioteca/ver-archivos/{slug}','LibraryController@downloadFile');
+	Route::get('administrador/biblioteca/editar-archivos/{slug}','LibraryController@getMdfFile');
+	Route::post('administrador/biblioteca/editar-archivos/{slug}/enviar','LibraryController@postMdfFile');
 	Route::post('administrador/biblioteca/ver-archivos/eliminar','LibraryController@postElimFile');
 });
 
