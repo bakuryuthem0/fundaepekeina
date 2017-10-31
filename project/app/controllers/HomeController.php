@@ -181,7 +181,7 @@ class HomeController extends BaseController {
 		}else
 		{
 			$tipo = Tipo::whereHas('slugs',function($slugs){
-				$slugs->where('text','=','proyectos');
+				$slugs->where('text','=','sedes');
 			})
 			->with('slugs')
 			->with('descriptions')
