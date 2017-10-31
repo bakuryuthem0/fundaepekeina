@@ -86,8 +86,6 @@ class HomeController extends BaseController {
 		$entry = TranslationEntry::where('text','=',$slug)
 		->where('lang_id','=',$lang->id)
 		->first();
-		return $slug;
-		return $entry;
 		$article = Articulo::with('categorias')
 		->with('imagenes')
 		->with('descriptions')
@@ -170,23 +168,13 @@ class HomeController extends BaseController {
 
 	public function getNewsType($type)
 	{
-		if (!is_null($type)) {
-			$tipo = Tipo::whereHas('slugs',function($slugs) use($type){
-				$slugs->where('text','=',$type);
-			})
-			->with('slugs')
-			->with('descriptions')
-			->first();
-			
-		}else
-		{
-			$tipo = Tipo::whereHas('slugs',function($slugs){
-				$slugs->where('text','=','sedes');
-			})
-			->with('slugs')
-			->with('descriptions')
-			->first();
-		}
+		
+		$tipo = Tipo::whereHas('slugs',function($slugs) use($type){
+			$slugs->where('text','=',$type);
+		})
+		->with('slugs')
+		->with('descriptions')
+		->first();
 		$article = Articulo::with('imagenes')
 		->with('likeCount')
 		->with('categorias')
