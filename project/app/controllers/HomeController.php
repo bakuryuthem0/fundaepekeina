@@ -86,7 +86,6 @@ class HomeController extends BaseController {
 		$entry = TranslationEntry::where('text','=',$slug)
 		->where('lang_id','=',$lang->id)
 		->first();
-		return $entry;
 		$article = Articulo::with('categorias')
 		->with('imagenes')
 		->with('descriptions')
