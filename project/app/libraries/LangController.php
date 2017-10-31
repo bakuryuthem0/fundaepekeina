@@ -33,7 +33,7 @@
 		public static function newSlug($langs, $translation, $data, $field)
 		{
 			foreach ($data[$field] as $key => $val) {
-				$slugs[$field][$key] = str_replace('#','',str_replace(' ','-',strtolower($val)));
+				$slugs[$field][$key] = str_replace(' ','-',strtolower($val)).date('s');
 			}
 			LangController::newEntry($langs, $translation,$slugs, $field);
 		}
