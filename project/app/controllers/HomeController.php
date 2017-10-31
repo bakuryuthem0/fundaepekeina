@@ -86,6 +86,7 @@ class HomeController extends BaseController {
 		$entry = TranslationEntry::where('text','=',$slug)
 		->where('lang_id','=',$lang->id)
 		->first();
+		return $entry;
 		$article = Articulo::with('categorias')
 		->with('imagenes')
 		->with('descriptions')
@@ -93,7 +94,6 @@ class HomeController extends BaseController {
 		->where('slug','=',$entry->translation_id)
 		->where('state','=',1)
 		->first();
-		return $article;
 		$request = Request::instance();
 		$request->setTrustedProxies(array('127.0.0.1')); // only trust proxy headers coming from the IP addresses on the array (change this to suit your needs)
 		$ip = $request->getClientIp();
