@@ -163,7 +163,7 @@ class HomeController extends BaseController {
 		->with('active','noticias')
 		->with('subtitle',Lang::get('lang.news_menu'))
 		->with('url','noticias')
-		->with('type',Lang::get('lang.news_menu3').'/'.Lang::get('lang.news_menu4'))
+		->with('type',Lang::get('lang.sedes').'/'.Lang::get('lang.proyectos'))
 		->with('menu','all');
 
 	}
