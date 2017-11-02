@@ -65,7 +65,7 @@
                                         @if($type != 'sedes/proyectos')
                                             <a href="{{ URL::to('noticias/'.$type.'/'.$a->slugs->first()->text) }}" class="read-more">{{ Lang::get('lang.read_more') }}</a>
                                         @else
-                                            <a href="{{ URL::to('noticias/'.$a->slugs->first()->text) }}" class="read-more">{{ Lang::get('lang.read_more') }}</a>
+                                            <a href="{{ URL::to('noticias/proyectos/'.$a->slugs->first()->text) }}" class="read-more">{{ Lang::get('lang.read_more') }}</a>
                                         @endif
                                     </div>
                                     <div class="post-bottom index overflow col-xs-12">
