@@ -164,7 +164,7 @@ table {
         <td colspan="2" class="bg bg-blue fixedHeight">
             <?php $j = 0; ?>
             @if(!empty($principal))
-                @if(!count($principal->imagenes) > 0)
+                @if(count($principal->imagenes) > 0)
                     <img src="{{ asset('images/news/'.$principal->imagenes->first()->image) }}" class="img-responsive center-block img-boletin">
                 @else
                     <img src="{{ asset('images/logo.png') }}" class="img-responsive center-block img-boletin" alt="{{ $article->first()->title }}">
