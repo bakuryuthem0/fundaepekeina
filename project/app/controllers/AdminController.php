@@ -198,8 +198,8 @@ class AdminController extends BaseController {
 		->with(array('subtitle' => function($subtitle){
 			$subtitle->with('titles');
 		}))
-		->whereHas('slugs',function($slugs) use ($slug){
-			$slugs->where('text','=',$slug);
+		->whereHas('slugsAll',function($slugsAll) use ($slug){
+			$slugsAll->where('text','=',$slug);
 		})
 		->first();
 		return $articulo;
