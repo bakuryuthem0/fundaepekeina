@@ -45,11 +45,16 @@
           @foreach($lang as $l)
           <div class="formulario col-xs-12 col-md-6 @if($article->cat_id != 3 && empty($article->subtitle)) hidden @endif subtitle-container">
             <label>Subtitulo ({{ $l->names->first()->text }})</label>
-            @foreach($article->subtitle->titles as $t)
-              @if($t->lang_id == $l->id)
-                <input type="text" name="subtitle[{{ $t->id }}]" class="form-control" placeholder="Subtitulo ({{ $l->names->first()->text }})" required value="{{ $t->text }}">
-              @endif
-            @endforeach
+            @if(count($article->subtitl) > 0)
+              @foreach($article->subtitle->titles as $t)
+                @if($t->lang_id == $l->id)
+                  <input type="text" name="subtitle[{{ $t->id }}]" class="form-control" placeholder="Subtitulo ({{ $l->names->first()->text }})" required value="{{ $t->text }}">
+                @endif
+              @endforeach
+            @else
+                <input type="text" name="subtitle[{{ $l->id }}]" class="form-control" placeholder="Subtitulo ({{ $l->names->first()->text }})" required value="">
+
+            @endif
           </div>
           @endforeach
         <div class="formulario col-xs-12 sedes-group">
