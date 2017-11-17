@@ -192,7 +192,6 @@ class AdminController extends BaseController {
 	}
 	public function showArt($slug)
 	{
-		return $slug;
 		$articulo = Articulo::with('imagenes')
 		->with('titles')
 		->with('descriptions')
