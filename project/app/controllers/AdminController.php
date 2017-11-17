@@ -231,7 +231,11 @@ class AdminController extends BaseController {
 			File::delete('images/news/'.$i->image);
 		}
 		$img->delete();
-		$art = Articulo::find($id)->delete();
+		$art = Articulo::find($id);
+		LangController::deleteEntry($art->slug);
+		LangController::deleteEntry($art->title);
+		LangController::deleteEntry($art->descripcion);
+		$art->delete();
 		return Response::json(array(
 			'type' => 'success',
 			'msg' => 'Se ha eliminado el articulo',

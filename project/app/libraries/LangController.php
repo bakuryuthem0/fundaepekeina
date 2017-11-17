@@ -33,7 +33,7 @@
 		public static function newSlug($langs, $translation, $data, $field)
 		{
 			foreach ($data[$field] as $key => $val) {
-				$slugs[$field][$key] = str_replace(' ','-',strtolower($val)).date('s');
+				$slugs[$field][$key] = str_replace(' ','-',strtolower($val)).'-'.time();
 			}
 			LangController::newEntry($langs, $translation,$slugs, $field);
 		}
@@ -54,7 +54,7 @@
 				$table_slugs 	= TranslationEntry::where('translation_id','=',$table->slug)->get();
 				foreach ($table_slugs as $s) {
 					if ($entry->lang_id == $s->lang_id) {
-						$slugs[$field][$s->id] = str_replace(' ','-',strtolower($t));
+						$slugs[$field][$s->id] = str_replace(' ','-',strtolower($t)).'-'.time();
 					}
 				}
 			}
