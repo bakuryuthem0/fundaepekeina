@@ -202,7 +202,6 @@ class AdminController extends BaseController {
 			$slugsAll->where('text','=',$slug);
 		})
 		->first();
-		return $articulo;
 		$title = "Ver artículo: ".$articulo->titles->first()->text." | Funda Epékeina";
 		return View::make('admin.article.view')
 		->with('title',$title)
