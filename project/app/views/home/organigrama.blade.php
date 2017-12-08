@@ -7,7 +7,7 @@
                 <div class="row">
                     <div class="">
                         <div class="col-sm-12">
-                            <h1 class="title">{{ Lang::get('lang.organization_chart') }}</h1>
+                            <h1 class="title">{{ Lang::get('lang.our_organization') }}</h1>
                         </div>                        
                     </div>
                 </div>
