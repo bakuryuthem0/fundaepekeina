@@ -6,7 +6,8 @@ class BoletinController extends BaseController {
 		$data = Input::all();
 		$principal = "";
 		if (Input::has('principal')) {
-			$principal = Articulo::with('imagenes')->with('slugs')
+			$principal = Articulo::with('imagenes')
+			->with('slugs')
 			->with('titles')
 			->with('descriptions')
 			->with(array('type' => function($type){
@@ -92,6 +93,7 @@ class BoletinController extends BaseController {
 	}
 	public function getTest()
 	{
+		$principal = Articulo::with('imagenes')->orderBy('created_at','DESC')->first();
 		$article = Articulo::with('imagenes')->orderBy('created_at','DESC')->take(6)->get();
 		$hist = Articulo::where('tipo','=',3)
 		->orderBy('id','DESC')
@@ -101,6 +103,7 @@ class BoletinController extends BaseController {
 		$colors  = array('yellow','green','pink','blue');
 		return View::make('emails.boletin')
 		->with('article',$article)
+		->with('principal',$principal)
 		->with('title','Generar Boletin')
 		->with('colors',$colors)
 		->with('hist',$hist);

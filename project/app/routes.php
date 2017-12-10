@@ -27,7 +27,7 @@ Route::get('noticias/{type}','HomeController@getNewsType');
 Route::get('biblioteca-virtual','LibraryController@getIndex');
 Route::get('biblioteca/descargar/{slug}','LibraryController@downloadFile');
 
-Route::get('noticias/{type}/{slug}','HomeController@getArticleSelf');
+Route::get('noticias/ver/{slug}','HomeController@getArticleSelf');
 Route::get('noticias/{type}/categoria/{slug}','HomeController@getByCat');
 
 
@@ -123,7 +123,7 @@ Route::get('test','HomeController@prueba');
 Route::post('nueva-donacion','HomeController@postDonation');
 Route::get('dar-de-baja','BoletinController@deleteFromBoletin');
 
-Route::get('boletin-abril','BoletinController@getLastBoletin');
+Route::get('test-boletin','BoletinController@getTest');
 
 Route::get('cambiar-lenguaje/{lang}',function($lang)
 {

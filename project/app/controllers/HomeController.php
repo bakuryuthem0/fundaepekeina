@@ -75,23 +75,23 @@ class HomeController extends BaseController {
 		->with('active',$active)
 		->with('hist',$hist);
 	}
-	public function getArticleSelf($type,$slug = null)
+	public function getArticleSelf($slug)
 	{
-		if (is_numeric($type)) {
-			$slug = $type;
-			$type = 'sedes/proyectos'; 
-		}
 		$lang  = LangController::getActiveLang();
 		//find slug entry
 		$entry = TranslationEntry::where('text','=',$slug)
 		->where('lang_id','=',$lang->id)
 		->first();
 		$article = Articulo::with('categorias')
-		->with('imagenes')
-		->with('descriptions')
+		->with(array('type' => function($type){
+			$type->with('slugs')
+			->with('descriptions');	
+		}))
 		->with('titles')
-		->where('slug','=',$entry->translation_id)
+		->with('imagenes')
 		->where('state','=',1)
+		->with('descriptions')
+		->where('slug','=',$entry->translation_id)
 		->first();
 		$request = Request::instance();
 		$request->setTrustedProxies(array('127.0.0.1')); // only trust proxy headers coming from the IP addresses on the array (change this to suit your needs)
@@ -103,44 +103,20 @@ class HomeController extends BaseController {
 		{
 			$fa = 'fa-heart-o';
 		}
-
 		$title   = Lang::get('lang.news_menu').": ".$article->titles->first()->text." | Funda Epékeina";
 		$view = View::make('home.articles.article')
 		->with('article',$article)
-		->with('type',$type)
 		->with('title',$title)
 		->with('fa',$fa);
-
-
-		switch ($type) {
-			case 'proyectos':
-				$view = $view->with('subtitle',Lang::get('lang.news_menu'))
-				->with('active','noticias')
-				->with('type',Lang::get('lang.projects'));
-				if ($article->tipo == 1) {
-					return $view->with('menu','1');
-				}else
-				{
-					return $view->with('menu','2');
-				}
-				break;
-			case 'sedes':
-				$view = $view->with('subtitle',Lang::get('lang.news_menu3'))
-				->with('active','noticias')
-				->with('type',Lang::get('lang.projects'));
-				if ($article->tipo == 1) {
-					return $view->with('menu','1');
-				}else
-				{
-					return $view->with('menu','2');
-				}
-				break;
-			default:
-				return $view->with('subtitle',Lang::get('lang.about_menu3'))
-				->with('active','about')
-				->with('menu','all');
-				break;
+		if ($article->type && $article->type->descriptions->first()) {
+			$subtitle = $article->type->descriptions->first()->text;
+		}else
+		{
+			$subtitle = Lang::get('lang.news_menu');
 		}
+		return $view->with('subtitle',$subtitle)
+		->with('active','about')
+		->with('menu','all');
 	}
 	public function getNews()
 	{

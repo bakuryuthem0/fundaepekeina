@@ -817,7 +817,14 @@ blockquote
 }
 .fixedLang li
 {
-    padding: 0 10px;
-    color: #fff !important;
-    
+    padding: 0;
+}
+.fixedLang .dropdown-menu>li>a
+{
+    color: white
+}
+.fixedLang .dropdown-menu>li>a:hover
+{
+    background-color: #f6a22c;
+    color: #333;
 }

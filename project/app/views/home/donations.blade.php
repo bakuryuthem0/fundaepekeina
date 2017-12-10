@@ -30,7 +30,7 @@
                                         {{ Lang::get('lang.donation_text1') }}
                                     </p>
                                     <hr>
-                                    <h3>{{ Lang::get('donation_text2') }}</h3>
+                                    <h3>{{ Lang::get('lang.donation_text2') }}</h3>
                                     <p class="text-justify">
                                         {{ Lang::get('lang.donation_text3') }}
                                     </p>

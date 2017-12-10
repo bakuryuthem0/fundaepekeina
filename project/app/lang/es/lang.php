@@ -128,8 +128,8 @@
 
         'send_email'		=> 'Envienos un correo',	
         'contact_input1'    => 'Nombre',
-		'contact_input1'    => 'Asunto',
-		'contact_input1'    => 'Email',
+		'contact_input2'    => 'Asunto',
+		'contact_input3'    => 'Email',
 		'contact_input4'	=> 'Escriba aqui su mensaje',
 
 		//footer

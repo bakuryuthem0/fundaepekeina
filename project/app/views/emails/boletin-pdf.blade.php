@@ -73,7 +73,7 @@
       <div class="col-xs-12">
         <h2 class="boletin-title">{{ $principal->titles->first()->text }}</h2>
         <p class="text-justify">{{ substr(strip_tags($principal->descriptions->first()->text), 0, 300) }} [...]</p>
-        <a target="_blank" href="{{ URL::to('noticias/'.$principal->type->slugs->first()->text.'/'.$principal->slugs->first()->text) }}" class="btn btn-default btn-xs pull-right">Leer más</a>
+        <a target="_blank" href="{{ URL::to('noticias/ver/'.$principal->type->slugs->first()->text.'/'.$principal->slugs->first()->text) }}" class="btn btn-default btn-xs pull-right">Leer más</a>
       </div>
       <div class="clearfix"></div>
       @endif
@@ -92,7 +92,7 @@
       <div class="col-xs-12">
         <h2 class="boletin-title">{{ $a->titles->first()->text }}</h2>
         <p class="text-justify">{{ substr(strip_tags($a->descriptions->first()->text), 0, 300) }} [...]</p>
-        <a target="_blank" href="{{ URL::to('noticias/'.$a->type->slugs->first()->text.'/'.$a->slugs->first()->text) }}" class="btn btn-default btn-xs pull-right">Leer más</a>
+        <a target="_blank" href="{{ URL::to('noticias/ver/'.$a->type->slugs->first()->text.'/'.$a->slugs->first()->text) }}" class="btn btn-default btn-xs pull-right">Leer más</a>
         <div class="clearfix"></div>
       </div>
       @endif
@@ -107,7 +107,7 @@
       <div class="col-xs-12">
         <h2 class="boletin-title">{{ $a->titles->first()->text }}</h2>
         <p class="text-justify">{{ substr(strip_tags($a->descriptions->first()->text), 0, 300) }} [...]</p>
-        <a target="_blank" href="{{ URL::to('noticias/'.$a->slugs->first()->text) }}" class="btn btn-default btn-xs pull-right">Leer más</a>
+        <a target="_blank" href="{{ URL::to('noticias/ver/'.$a->slugs->first()->text) }}" class="btn btn-default btn-xs pull-right">Leer más</a>
         <div class="clearfix"></div>
       </div>
       @endif

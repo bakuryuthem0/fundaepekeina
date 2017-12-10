@@ -26,11 +26,7 @@
                              <div class="col-sm-12 col-md-12 no-padding">
                                 <div class="single-blog single-column">
                                     <div class="post-thumb index col-xs-12 col-sm-6">
-                                        @if($type != 'sedes/proyectos')
-                                        <a href="{{ URL::to('noticias/'.$type.'/'.$a->slugs->first()->text) }}">
-                                        @else
-                                        <a href="{{ URL::to('noticias/proyectos/'.$a->slugs->first()->text) }}">
-                                        @endif
+                                        <a href="{{ URL::to('noticias/ver/'.$a->slugs->first()->text) }}">
                                             @if(!is_null($a->imagenes->first()))
                                                 <img data-original="{{ asset('images/news/'.$a->imagenes->first()->image) }}" class="lazy img-responsive" alt="{{ $a->title }}">
                                             @else
@@ -40,33 +36,30 @@
                                         @if($type != "que-hacemos")
                                         <div class="post-overlay">
                                            <span class="uppercase">
-                                            @if($type != 'sedes/proyectos')
-                                                <a href="{{ URL::to('noticias/'.$type.'/'.$a->slugs->first()->text) }}">
-                                            @else
-                                                <a href="{{ URL::to('noticias/proyectos/'.$a->slugs->first()->text) }}">
-                                            @endif
-                                                <?php 
-                                                    $aux2 = explode(' ',$a->created_at);
-                                                    $aux  = explode('-',$aux2[0]);
-                                                ?>
-                                                {{ $aux[2] }} <br><small>{{ date('M',strtotime($aux2[0])); }}</small>
+                                                <a href="{{ URL::to('noticias/ver/'.$a->slugs->first()->text) }}">
+                                                    {{ date("d",strtotime($a->created_at)) }}
+                                                    <br>
+                                                    <small>{{ date("M",strtotime($a->created_at)) }}</small>
                                                 </a>
                                             </span>
                                        </div>
                                        @endif
                                     </div>
                                     <div class="post-content overflow col-xs-12 col-sm-6">
-                                        @if($type != 'sedes/proyectos')
-                                            <h2 class="post-title bold"><a href="{{ URL::to('noticias/'.$type.'/'.$a->slugs->first()->text) }}">{{ $a->titles->first()->text }}</a></h2>
-                                        @else
-                                            <h2 class="post-title bold"><a href="{{ URL::to('noticias/proyectos/'.$a->slugs->first()->text) }}">{{ $a->titles->first()->text }}</a></h2>
-                                        @endif
-                                            <h3 class="post-author"><p class="no-pointer">{{ substr(strip_tags($a->descriptions->first()->text), 0, 300) }} [...]</p></h3>
-                                        @if($type != 'sedes/proyectos')
-                                            <a href="{{ URL::to('noticias/'.$type.'/'.$a->slugs->first()->text) }}" class="read-more">{{ Lang::get('lang.read_more') }}</a>
-                                        @else
-                                            <a href="{{ URL::to('noticias/proyectos/'.$a->slugs->first()->text) }}" class="read-more">{{ Lang::get('lang.read_more') }}</a>
-                                        @endif
+                                        <h2 class="post-title bold">
+                                            <a href="{{ URL::to('noticias/ver/'.$a->slugs->first()->text) }}">
+                                                @if($a->titles->first())
+                                                {{ $a->titles->first()->text }}
+                                                @endif
+                                            </a>
+                                        </h2>
+                                        <h3 class="post-author">
+                                            <p class="no-pointer">
+                                                {{ substr(strip_tags($a->descriptions->first()->text), 0, 300) }} [...]
+                                            </p>
+                                        </h3>
+                                       
+                                        <a href="{{ URL::to('noticias/ver/'.$a->slugs->first()->text) }}" class="read-more">{{ Lang::get('lang.read_more') }}</a>
                                     </div>
                                     <div class="post-bottom index overflow col-xs-12">
                                         <ul class="nav navbar-nav post-nav">
