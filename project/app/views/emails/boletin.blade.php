@@ -422,7 +422,7 @@
                                     <div class="contentEditableContainer contentTextEditable">
                                       <div class="contentEditable">
                                         <h2 style='text-align: left;'>
-                                          {{ $hist->titles->first()->text }}
+                                          {{ substr($hist->titles->first()->text,0,100) }}
                                         </h2>
                                         @if(!is_null($hist->subtitle))
                                           <p>{{ $hist->subtitle->titles->first()->text }}</p>
