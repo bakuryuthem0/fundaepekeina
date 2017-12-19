@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
 	<div class="col-xs-12 center-block box box-bordered">
-    <h2>Artículos.</h2>
+    <h2>Ver biblioteca.</h2>
     <hr>
     @if(Session::has('success'))
     <div class="alert alert-success">
@@ -45,7 +45,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title">Eliminar Artículos</h4>
+        <h4 class="modal-title">Eliminar archivo</h4>
       </div>
       <div class="modal-body">
         ¿Seguro desea realizar esta accion?, tenga en cuenta que es irreversible.
