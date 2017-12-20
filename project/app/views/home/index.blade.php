@@ -24,7 +24,7 @@
                         <a href="{{ URL::to('noticias/sedes/111') }}"><img src="{{ asset('images/slides/escuela_campo.jpg') }}"></a>
                     </div>
                     <div>
-                        <a href="{{ URL::to('noticias/proyectos/218') }}"><img src="{{ asset('images/slides/habiarte.jpg') }}"></a>
+                        <a href="{{ URL::to('noticias/ver/218') }}"><img src="{{ asset('images/slides/habiarte.jpg') }}"></a>
                     </div>
                     <div>
                         <img src="{{ asset('images/slides/papagayos.jpg') }}">
@@ -99,7 +99,7 @@
                 @foreach($article as $a)
                     <div class="single-features post-content">
                         <div class="col-xs-12 col-md-6 wow fadeInLeft image-container" data-wow-duration="500ms" data-wow-delay="300ms">
-                            <a href="{{ URL::to('noticias/proyectos/'.$a->slugs->first()->text) }}">
+                            <a href="{{ URL::to('noticias/ver/'.$a->slugs->first()->text) }}">
                                 @if(!is_null($a->imagenes->first()))
                                     <img src="{{ asset('images/news/'.$a->imagenes->first()->image) }}" class="img-responsive" alt="">
                                 @else
@@ -110,7 +110,7 @@
                         <div class="col-xs-12 col-md-6 wow fadeInRight news-text-index" data-wow-duration="500ms" data-wow-delay="300ms">
                             <h2>{{ $a->titles->first()->text }}</h2>
                             <h3 class="post-author"><p class="text-justify no-pointer">{{ substr(strip_tags($a->descriptions->first()->text), 0, 300) }} [...]</p></h3>
-                            <a href="{{ URL::to('noticias/proyectos/'.$a->slugs->first()->text) }}" class="read-more">{{ Lang::get('lang.read_more') }}</a>
+                            <a href="{{ URL::to('noticias/ver/'.$a->slugs->first()->text) }}" class="read-more">{{ Lang::get('lang.read_more') }}</a>
                         </div>
                     </div>
                 @endforeach
