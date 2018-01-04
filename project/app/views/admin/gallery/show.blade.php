@@ -34,7 +34,7 @@
               <td class="text-center"><a target="_blank" href="{{ URL::to('administrador/galeria/ver-galeria/'.$g->id) }}" class="btn btn-xs btn-primary">Ver</a></td>
               <td class="text-center"><a target="_blank" href="{{ URL::to('administrador/galeria/agregar-imagenes/'.$g->id) }}" class="btn btn-success btn-xs">Agregar</a></td>
               <td class="text-center"><a target="_blank" href="{{ URL::to('administrador/galeria/editar-galeria/'.$g->id) }}" class="btn btn-warning btn-xs">Editar</a></td>
-              <td class="text-center"><button value="{{ $g->id }}" class="btn btn-danger btn-xs btn-elim-gallery" data-toggle="modal" data-target="#elimgallery">Eliminar</button></td>
+              <td class="text-center"><button value="{{ $g->id }}" class="btn btn-danger btn-xs btn-elim" data-toggle="modal" data-target="#elimThing" data-url="{{ URL::to('administrador/mostrar-galeria/eliminar') }}" data-tosend="id" data-toelim="galeria">Eliminar</button></td>
             </tr>
             @endforeach
           </tbody>
@@ -44,27 +44,7 @@
     <div class="clearfix"></div>
 	</div>
 </div>
-<div class="modal fade" id="elimgallery">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title">Eliminar Galería</h4>
-      </div>
-      <div class="modal-body">
-        ¿Seguro desea realizar esta accion?, tenga en cuenta que es irreversible.
-        <div class="alert responseAjax">
-          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-          <p></p>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <img src="{{ asset('images/ajax-loader.gif') }}" class="miniLoader">
-        <button type="button" class="btn btn-danger btn-modal-elim-gallery" data-url="{{ URL::to('administrador/mostrar-galeria/eliminar') }}">Eliminar</button>
-      </div>
-    </div>
-  </div>
-</div>
+@include('partials.modalElim')
 @stop
 
 @section('postscript')

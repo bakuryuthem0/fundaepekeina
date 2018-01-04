@@ -39,7 +39,7 @@
                 @endif
                 <img src="{{ asset('images/ajax-loader.gif') }}" class="miniLoader">
               </td>
-              <td><button value="{{ $a->id }}" class="btn btn-danger btn-xs btn-elim-art" data-toggle="modal" data-target="#elimArt">Eliminar</button></td>
+              <td><button value="{{ $a->id }}" class="btn btn-danger btn-xs btn-elim" data-toggle="modal" data-target="#elimThing" data-tosend="id" data-toelim="articulo" data-url="{{ URL::to('administrador/mostrar-articulos/eliminar') }}">Eliminar</button></td>
             </tr>
             @endforeach
           </tbody>
@@ -49,27 +49,7 @@
     <div class="clearfix"></div>
 	</div>
 </div>
-<div class="modal fade" id="elimArt">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title">Eliminar Artículos</h4>
-      </div>
-      <div class="modal-body">
-        ¿Seguro desea realizar esta accion?, tenga en cuenta que es irreversible.
-        <div class="alert responseAjax">
-          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-          <p></p>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <img src="{{ asset('images/ajax-loader.gif') }}" class="miniLoader">
-        <button type="button" class="btn btn-danger btn-modal-elim-art">Eliminar</button>
-      </div>
-    </div>
-  </div>
-</div>
+@include('partials.modalElim')
 @stop
 
 @section('postscript')

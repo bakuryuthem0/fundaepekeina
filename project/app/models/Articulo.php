@@ -9,15 +9,25 @@ class Articulo extends Eloquent{
 	{
 		return $this->hasMany('Like','articulo_id');
 	}
-	public function categorias()
-	{
-		return $this->belongsTo('Categoria','cat_id');
-	}
-	public function likeCount()
+	public function likesCount()
 	{
 	  return $this->likes()
 	    ->selectRaw('articulo_id,count(*) as aggregate')
 	    ->groupBy('articulo_id');
+	}
+	public function visits()
+	{
+		return $this->hasMany('Visitor','article_id');
+	}
+	public function visitsCount()
+	{
+	  return $this->visits()
+	    ->selectRaw('article_id,count(*) as aggregate')
+	    ->groupBy('article_id');
+	}
+	public function categorias()
+	{
+		return $this->belongsTo('Categoria','cat_id');
 	}
 	public function subtitle()
 	{

@@ -136,7 +136,7 @@ class AdminController extends BaseController {
 		$langs = Language::get();
 		$art = new Articulo;
 
-		$art->cat_id      = $data['cat'];
+		//$art->cat_id      = $data['cat'];
 		$art->tipo        = $data['sede'];
 
 		$translation      = LangController::newTranslation();
@@ -285,7 +285,7 @@ class AdminController extends BaseController {
 
 		$langs = Language::get();
 		$art = Articulo::with('subtitle')->find($data['id']);
-		$art->cat_id      = $data['cat'];
+		//$art->cat_id      = $data['cat'];
 		$art->tipo        = $data['sede'];
 
  		LangController::mdfEntry($langs, $data, 'title');
@@ -350,7 +350,7 @@ class AdminController extends BaseController {
 	}
 	public function elimImg()
 	{
-		$id = Input::get('img_id');
+		$id = Input::get('id');
 		$i  = NewsImages::find($id);
 		File::delete('images/news/'.$i->image);
 		$aux = NewsImages::where('id','=',$id)->delete();
@@ -435,7 +435,7 @@ class AdminController extends BaseController {
 	}
 	public function elimUser()
 	{
-		$id = Input::get('user_id');
+		$id = Input::get('id');
 		$user = User::find($id)->delete();
 		if ($user) {
 			return Response::json(array(
@@ -706,5 +706,111 @@ class AdminController extends BaseController {
 			'type' => 'success',
 			'msg'  => 'Se ha eliminado la Categoría'
 		));
+	}
+	public function getNewAccount()
+	{
+		$title = "Nueva cuenta bancaria | Funda Epékeina";
+
+		return View::make('admin.accounts.new')
+		->with('title',$title);
+	}
+	public function postnewAccount()
+	{
+		$data  = Input::all();
+		$rules = [
+			'name'			=> 'required|min:3|max:100',
+			'number'		=> 'required|min:3|max:100',
+			'type'			=> 'required|min:3|max:100',
+			'bank'			=> 'required|min:3|max:100',
+			'social_name'	=> 'required|min:3|max:100',
+			'rif'			=> 'required|min:3|max:100',
+		];
+		$msg  = [];
+		$attr = [
+			'name'			=> 'Nombre de la cuenta',
+			'number'		=> 'Numero de cuenta',
+			'type'			=> 'Tipo de cuenta',
+			'bank'			=> 'Nombre del banco',
+			'social_name'	=> 'Rasón social',
+			'rif'			=> 'Rif',
+		];
+		$validator = Validator::make($data, $rules, $msg, $attr);
+		if ($validator->fails()) {
+			return Redirect::back()->withErrors($validator)->withInput();
+		}
+
+		$acc = new Account;
+		$acc->fillData($data);
+		$acc->save();
+		Session::flash('success','Se ha guardado la nueva cuenta bancaria satisfactoriamente.');
+		return Redirect::back();
+	}
+	public function getAccounts()
+	{
+		$acc = Account::where('deleted','=',0)->get();
+		$title = "Ver cuentas | Funda Epékeina";
+		return View::make('admin.accounts.show')
+		->with('acc',$acc)
+		->with('title',$title);
+	}
+	public function getMdfAccount($id)
+	{
+		$acc = Account::find($id);
+		$title = "Modificar cuenta bancaria | Funda Epékeina";
+		return View::make('admin.accounts.mdf')
+		->with('acc',$acc)
+		->with('title',$title);
+	}
+	public function postMdfAccount($id)
+	{
+		$data  = Input::all();
+		$rules = [
+			'name'			=> 'required|min:3|max:100',
+			'number'		=> 'required|min:3|max:100',
+			'type'			=> 'required|min:3|max:100',
+			'bank'			=> 'required|min:3|max:100',
+			'social_name'	=> 'required|min:3|max:100',
+			'rif'			=> 'required|min:3|max:100',
+		];
+		$msg  = [];
+		$attr = [
+			'name'			=> 'Nombre de la cuenta',
+			'number'		=> 'Numero de cuenta',
+			'type'			=> 'Tipo de cuenta',
+			'bank'			=> 'Nombre del banco',
+			'social_name'	=> 'Rasón social',
+			'rif'			=> 'Rif',
+		];
+		$validator = Validator::make($data, $rules, $msg, $attr);
+		if ($validator->fails()) {
+			return Redirect::back()->withErrors($validator)->withInput();
+		}
+
+		$acc = Account::find($id);
+		$acc->fillData($data);
+		$acc->save();
+		Session::flash('success','Se ha modificado la cuenta bancaria satisfactoriamente.');
+		return Redirect::back();
+	}
+	public function postElimAccount()
+	{
+		$id = Input::get('id');
+		$acc = Account::find($id);
+		$acc->deleted = 1;
+		$acc->save();
+		return Response::json(array(
+			'type' => 'success',
+			'msg'  => 'Se ha eliminado la cuenta satisfactoriamente'
+		));
+	}
+	public function getDonations()
+	{
+		$title = "Ver Donaciones | Funda Epékeina";
+
+		$donations = Donation::with('accounts')->orderBy('id','DESC')->get();
+
+		return View::make('admin.donations.show')
+		->with('title',$title)
+		->with('donations',$donations);
 	}
 }

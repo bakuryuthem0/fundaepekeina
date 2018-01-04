@@ -45,12 +45,24 @@
           <ul class="nav navbar-nav">
             @if(Auth::user()->role  <=2)
             <li class="dropdown">
+             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cuentas bancarias <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="{{ URL::to('administrador/nuevo-cuenta') }}"><i class="fa fa-plus"></i> Nueva cuentas bancaria</a></li>
+                <li><a href="{{ URL::to('administrador/ver-cuentas') }}"><i class="fa fa-list"></i> Ver cuentas bancarias</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+             <a href="{{ URL::to('administrador/ver-donaciones') }}">Ver Donaciones</a>
+            </li>
+            <li class="dropdown">
              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Artículos <span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><a href="{{ URL::to('administrador/nuevo-articulo') }}"><i class="fa fa-plus"></i> Nuevo Artículo</a></li>
                 <li><a href="{{ URL::to('administrador/mostrar-articulos') }}"><i class="fa fa-list"></i> Ver Artículos</a></li>
+                @if(1 == 2)
                 <li><a href="{{ URL::to('administrador/nueva-categoria') }}"><i class="fa fa-plus"></i> Nueva Categoría</a></li>
                 <li><a href="{{ URL::to('administrador/ver-categorias') }}"><i class="fa fa-list"></i> Ver Categorías</a></li>
+                @endif
               </ul>
             </li>
             @endif

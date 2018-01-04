@@ -48,24 +48,22 @@
 	        			<table class="table table-hover">
 	        				<thead>
 	        					<tr>
-	        						<th>Numero de referencia</th>
-	        						<th>Tipo de transacción</th>
-	        						<th>Banco(para transferencia)</th>
-	        						<th>Cuenta</th>
-	        						<th>Fecha de transacción</th>
+	        						<th>{{Lang::get('lang.fullname')}}</th>
+									<th>{{Lang::get('lang.accounts')}}</th>
+									<th>{{'email'}}</th>
+									<th>{{Lang::get('lang.date')}}</th>
+									<th>{{Lang::get('lang.amount')}}</th>
+									<th>{{Lang::get('lang.reference_number')}}</th>
 	        					</tr>
 	        				</thead>
 	        				<tbody>
 	        					<tr>
-	        						<td>{{ $reference_number }}</td>
-	        						<td>{{ $transaction_type }}</td>
-	        						<td>
-	        							@if($transaction_type == 'transferencia')
-	        								{{ $user_bank }}
-										@endif
-	        						</td>
-	        						<td>{{ $shop_bank }}</td>
-	        						<td>{{ $transaction_date }}</td>
+	        						<td>{{$fullname}}</td>		
+									<td>{{$account_name}}</td>		
+									<td>{{$email}}</td>			
+									<td>{{$date}}</td>			
+									<td>{{$amount}}</td>		
+									<td>{{$reference_number}}</td>
 	        					</tr>
 	        				</tbody>
 	        			</table>

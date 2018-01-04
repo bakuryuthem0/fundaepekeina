@@ -57,6 +57,7 @@
             @endif
           </div>
           @endforeach
+          @if(1 == 3)
         <div class="formulario col-xs-12 sedes-group">
           <div class="form-group">
               <div class="input-group full-leght">
@@ -75,6 +76,7 @@
               </div><!-- /input-group -->
           </div>
         </div>
+        @endif
         @foreach($lang as $l)
         <div class="formulario col-xs-12">
           <label>Descripción ({{ $l->names->first()->text }})</label>
@@ -92,7 +94,7 @@
           <div class="col-xs-12 no-padding">
             @foreach($article->imagenes as $i)
             <div class="col-xs-12 col-md-6 formulario no-padding-half">
-              <div><button type="button" class="close btn-elim-image" data-toggle="modal" data-target="#elimItems" data-id="{{ $i->id }}" data-url="{{ URL::to('administrador/ver-articulos/eliminar-imagen') }}" data-what-to-elim="imagen">&times;</button></div>
+              <div><button type="button" class="close btn-elim" data-toggle="modal" data-target="#elimThing" value="{{ $i->id }}" data-url="{{ URL::to('administrador/ver-articulos/eliminar-imagen') }}" data-tosend="id" data-toelim="imagen">&times;</button></div>
               <input type="file" name="file[{{ $i->id }}]">
               <div class="col-xs-12 no-padding item-img"><img src="{{ asset('images/news/'.$i->image) }}"></div>
             </div>
@@ -115,27 +117,7 @@
     </form>
 	</div>
 </div>
-<div class="modal fade" id="elimItems">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title">Eliminar <span class="what-to-elim"></span></h4>
-      </div>
-      <div class="modal-body">
-        ¿Seguro desea realizar esta acción?, los cambios son irreversibles.
-        <div class="alert responseAjax">
-          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-          <p></p>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <img src="{{ asset('images/ajax-loader.gif') }}" class="miniLoader">
-        <button type="button" class="btn btn-danger btn-elim-thing-modal">Eliminar</button>
-      </div>
-    </div>
-  </div>
-</div>
+@include('partials.modalElim')
 @stop
 
 @section('postscript')

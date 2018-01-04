@@ -46,7 +46,7 @@ function ajaxError (btn) {
 }
 function addValToElim (toAdd, esto) {
 	esto.addClass('to-elim');
-	$(toAdd).val(esto.val()).attr('data-url',esto.data('url')).attr('data-tosend',esto.data('tosend'));
+	$(toAdd).val(esto.val()).attr('data-url',esto.data('url')).attr('data-tosend',esto.data('tosend')).attr('data-toelim',esto.data('toelim'));
 }
 function closeModalElim (boton) {
 	$('.to-elim').removeClass('to-elim');

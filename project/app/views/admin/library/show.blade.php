@@ -30,7 +30,7 @@
               <td>{{ $f->title }}</td>
               <td><a target="_blank" href="{{ URL::to('administrador/biblioteca/editar-archivos/'.$f->id) }}" class="btn btn-warning btn-xs">Editar</a></td>
               <td><a target="_blank" href="{{ URL::to('administrador/biblioteca/ver-archivos/'.$f->id) }}" class="btn btn-success btn-xs">Descargar</a></td>
-              <td><button value="{{ $f->id }}" class="btn btn-danger btn-xs btn-elim-file" data-url="{{ URL::to('administrador/biblioteca/ver-archivos/eliminar') }}" data-to-send="id" data-toggle="modal" data-target="#elimArt">Eliminar</button></td>
+              <td><button value="{{ $f->id }}" class="btn btn-danger btn-xs btn-elim" data-url="{{ URL::to('administrador/biblioteca/ver-archivos/eliminar') }}" data-tosend="id" data-toggle="modal" data-target="#elimThing" data-toelim="archivo">Eliminar</button></td>
             </tr>
             @endforeach
           </tbody>
@@ -40,27 +40,7 @@
     <div class="clearfix"></div>
 	</div>
 </div>
-<div class="modal fade" id="elimArt">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title">Eliminar archivo</h4>
-      </div>
-      <div class="modal-body">
-        ¿Seguro desea realizar esta accion?, tenga en cuenta que es irreversible.
-        <div class="alert responseAjax">
-          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-          <p></p>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <img src="{{ asset('images/ajax-loader.gif') }}" class="miniLoader">
-        <button type="button" class="btn btn-danger btn-elim-thing">Eliminar</button>
-      </div>
-    </div>
-  </div>
-</div>
+@include('partials.modalElim')
 @stop
 
 @section('postscript')

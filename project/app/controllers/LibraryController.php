@@ -27,7 +27,7 @@ class LibraryController extends BaseController {
 			'title'				=> 'required|min:4|max:100',
 			'type'				=> 'required|in:libros,articulos-de-investigacion,informes,cuento,boletin',
 			'autor'				=> 'sometimes|min:4|max:100',
-			'publication_date'	=> 'sometimes|date',
+			'publication_date'	=> 'sometimes|date_format:d/m/Y',
 			'description'		=> 'sometimes|min:4|max:2000',
 			'portada'			=> 'sometimes|image|max:3000',
 			'file'				=> 'required|mimes:doc,docx,pdf',
@@ -106,7 +106,7 @@ class LibraryController extends BaseController {
 			'title'				=> 'required|min:4|max:100',
 			'type'				=> 'required|in:libros,articulos-de-investigacion,informes,cuento,boletin',
 			'autor'				=> 'sometimes|min:4|max:100',
-			'publication_date'	=> 'sometimes|date_format:Y-m-d',
+			'publication_date'	=> 'sometimes|date_format:d/m/Y',
 			'description'		=> 'sometimes|min:4|max:2000',
 			'portada'			=> 'sometimes|image|max:3000',
 			'file'				=> 'sometimes|mimes:doc,docx,pdf',
@@ -133,7 +133,7 @@ class LibraryController extends BaseController {
 			$library->autor 			= $data['autor'];
 		}
 		if (Input::has('publication_date')) {
-			$library->publication_date 	= $data['publication_date'];
+			$library->publication_date 	= date('Y-m-d',strtotime($data['publication_date']));
 		}
 		if (Input::has('description')) {
 			$library->description 	= $data['description'];
@@ -201,8 +201,9 @@ class LibraryController extends BaseController {
 		$files = $files->orderBy('id','DESC')->paginate(6);
 		return $view
 		->with('title',$title)
-		->with('files',$files)
-		->with('active',$active)
+		->with('collection',$files)
+		->with('size','big')
+		->with('busq','')
 		->with('paginatorFilter',$paginatorFilter);
 	}
 }

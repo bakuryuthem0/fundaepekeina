@@ -1,5 +1,5 @@
 <?php
 
 class Subscriber extends Eloquent{
-	protected $table = "suscriptores";
+	protected $table = "suscriptores_mailchimp";
 }

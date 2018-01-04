@@ -1,0 +1,86 @@
+@import "variables.scss";
+
+@mixin prefixed($type, $value)
+{
+	-webkit-#{$type}: $value;
+	   -moz-#{$type}: $value;
+	    -ms-#{$type}: $value;
+	     -o-#{$type}: $value;
+	        #{$type}: $value;
+}
+@mixin fullSize()
+{
+	width: $fullWidth;
+	height: $fullHeight;
+}
+@mixin overAll()
+{
+	top: 0;
+	left: 0;
+	position: fixed;
+}
+@mixin generateBg($colors)
+{
+	@each $name, $type in $colors
+	{
+		.bg-#{$name}
+		{
+			background-color: $type !important;
+		}
+		.text-#{$name}
+		{
+			color: $type !important;
+		}
+	}
+}
+@mixin generatePositions($positions)
+{
+	@each $name, $type in $positions
+	{
+		.#{$name}
+		{
+			position: $type;
+		}
+	}
+}
+@mixin generateDisplays($displays)
+{
+	@each $name, $type in $displays
+	{
+		.d-#{$name}
+		{
+			display: $type !important;
+		}
+	}
+}
+@mixin generateMargins($cardinals, $minPx)
+{
+	@each $name, $direction in $cardinals 
+	{
+		@for $i from 0 through 4
+		{
+			.m#{$name}-#{$i}
+			{
+				
+				margin-#{$direction}: $minPx*$i/2;
+			}
+			.p#{$name}-#{$i}
+			{
+				padding-#{$direction}: $minPx*$i/2 !important;
+			}
+		}
+	}
+	.mx-auto
+	{
+		margin-left: auto !important;
+		margin-right: auto !important;
+	}
+	.ml-auto
+	{
+		margin-left: auto !important;
+	}
+	.mr-auto
+	{
+		margin-right: auto !important;
+	}
+}

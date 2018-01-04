@@ -92,133 +92,42 @@ jQuery(document).ready(function($) {
 	//buscar sedes y proyectos
 	$('.sedes').on('change', function(event) {
 		var val = $(this).val();
+		console.log(val)
 		if (val == "") {
 			$('.subtitle-container').addClass('hidden');
-			
-			$('.sedes-group').addClass('hidden');
-			$('.response-option').remove();
-			$('.btn-loader').removeClass('hidden');
-			$('.loading-fa').addClass('hidden');
-			$('.loading-fa').removeClass('fa-times').removeClass('fa-check');
-
 		}else
 		{
 			if (val == 3) {
-				$('.subtitle-container').removeClass('hidden');
+				$('.subtitle-container').removeClass('hidden').find('input').attr('disabled',false);
 			}else
 			{
-				$('.subtitle-container').addClass('hidden');
+				$('.subtitle-container').addClass('hidden').find('input').attr('disabled',true);
 			}
-			$.ajax({
-				url: base+'/administrador/buscar-sedes-o-proyectos',
-				type: 'GET',
-				dataType: 'json',
-				data: {id: val},
-				beforeSend: function()
-				{
-					$('.loading-fa').addClass('hidden');
-					$('.loading-fa').removeClass('fa-times').removeClass('fa-check');
-					$('.response-option').remove();
-					$('.btn-loader').removeClass('hidden');
-					$('.sedes-group').removeClass('hidden');
-				},
-				success: function(response)
-				{
-					$('.btn-loader').addClass('hidden');
-					$('.loading-fa').removeClass('hidden');
-					if (response.type == 'success') {
-						$('.loading-fa').addClass('fa-check');
-						$.each(response.data, function(index, val) {
-							 $('.response-content').append('<option class="response-option" value="'+val.id+'">'+val.title+'</option>');
-						});
-					}else
-					{
-						$('.loading-fa').addClass('fa-times');
-					}
-				}
-			})
 		}
-		
 	});
 	//modal events
+	$('.btn-elim').on('click', function(event) {
+		$($(this).data('target')+' .modal-title > span').html($(this).data('toelim'));
+		addValToElim ($('.btn-elim-thing'), $(this));
+	});
+	$('.btn-elim-thing').on('click',  function(event) {
+		var btn = $(this);
+		var url = btn.data('url');
+		var dataPost = {};
+		dataPost[btn.data('tosend')] = btn.val();
+		doAjax(url, 'POST', 'json', dataPost, btn, beforeElim, elimSuccess, ajaxError);
+	});
+
 	$('.modal').on('hide.bs.modal', function(event) {
 		$('.to-elim').removeClass('to-elim');
 		$('.modal .btn').removeClass('disabled').attr('disabled', false);
 		hideResponseAjax();
-	});
-	$('.btn-elim-gallery').on('click', function(event) {
-		var btn = $(this);
-		btn.addClass('to-elim');
-		$('.btn-modal-elim-gallery').val(btn.val());
-	});
-	$('.btn-modal-elim-gallery').on('click', function(event) {
-		var btn = $(this);
-		var dataPost = {
-			id : btn.val()
-		}
-		doAjax(btn.data('url'), "POST", "json", dataPost, btn, beforeElim, successElim, errorElim);
-	});
-	$('.btn-elim-art').on('click', function(event) {
-		var btn = $(this);
-		btn.addClass('to-elim');
-		$('.btn-modal-elim-art').val(btn.val());
-	});
-	$('.btn-modal-elim-art').on('click', function(event) {
-		var url = base+'/administrador/mostrar-articulos/eliminar',
-		btn = $(this),
-		dataPost = {
-			'id' : btn.val()
-		};
-		ajaxElim(url, dataPost, btn);
 	});
 	$('.btn-clone').on('click', function(event) {
 		var btn    = $(this);
 		var target = btn.data('target');
 		var name   = btn.data('name');
 		clonar(target, name);
-	});
-	$('.btn-elim-image').on('click', function(event) {
-		var btn = $(this);
-		var name    = btn.data('what-to-elim');
-		var url 	= btn.data('url');
-		btn.addClass('to-elim');
-		$('.what-to-elim').html(name);
-		$('.btn-elim-thing-modal').val(btn.data('id')).attr('data-url',url);
-	});
-	$('.btn-elim-thing-modal').on('click', function(event) {
-		var btn = $(this);
-		var dataPost = {
-			'img_id' : btn.val()
-		};
-		var url = $(this).data('url');
-		ajaxElim(url, dataPost, btn);
-	});
-	$('.btn-elim-user').on('click', function(event) {
-		var btn = $(this);
-		var url = btn.data('url');
-		btn.addClass('to-elim');
-		$('.btn-modal-elim-user').val(btn.val()).attr('data-url',url);
-	});
-	$('.btn-modal-elim-user').on('click', function(event) {
-		var btn = $(this);
-		var dataPost = {
-			'user_id' : btn.val()
-		};
-		var url = $(this).data('url');
-		ajaxElim(url, dataPost, btn);
-	});
-	$('.btn-elim-file').on('click', function(event) {
-		addValToElim ($('.btn-elim-thing'), $(this));
-	});
-	$('.btn-elim-category').on('click', function(event) {
-		addValToElim ($('.btn-elim-thing'), $(this));
-	});
-	$('.btn-elim-thing').on('click', function(event) {
-		var btn = $(this);
-		var dataPost = {
-			id : btn.val()
-		}
-		doAjax(btn.data('url'), "POST", "json", dataPost, btn, beforeElim, successElim, errorElim);
 	});
 	$(document).on('click','.dimiss-cloned', function(event) {
 		removeCloned($(this));

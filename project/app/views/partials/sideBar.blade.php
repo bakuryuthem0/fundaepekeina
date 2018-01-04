@@ -1,26 +1,26 @@
-<div class="col-md-3 col-sm-5 @if(isset($self)) no-scroll @endif sidebar-container">
-    <div class="sidebar blog-sidebar">
-        <div class="sidebar-item categories">
-                <h3>Sedes/Proyectos</h3>
-            <ul class="nav navbar-stacked">
-                @foreach(SideBarController::getCategories($menu) as $c)
-                    @if($c->id != 4)
-                        <li><a href="{{ URL::to('noticias/'.$c->tipos->descriptions->first()->text.'/categoria/'.$c->id) }}">{{ ucwords($c->title) }}</a></li>
-                    @endif
-                @endforeach
-            </ul>
-        </div>
-<!--
-        <div class="sidebar-item tag-cloud">
-            <h3>Tag Cloud</h3>
-            <ul class="nav nav-pills">
-                <li><a href="#">Corporate</a></li>
-                <li><a href="#">Abstract</a></li>
-                <li><a href="#">Creative</a></li>
-                <li><a href="#">Business</a></li>
-                <li><a href="#">Product</a></li>
-            </ul>
-        </div>
-        -->
-    </div>
-</div>
+<ul class="collection news mt-0">
+    @foreach($mostVisited as $a)
+        <li class="collection-item hoverable pl-3 pt-0">
+            <h3 class="truncate card-title">{{ $a->article->titles->first()->text }}</h3>
+            <div class="side-text">
+                {{ substr(strip_tags($a->article->descriptions->first()->text), 0, 32) }}...
+            </div>
+            <br>
+            <a href="{{ URL::to('noticias/ver/'.$a->article->slugs->first()->text) }}" class="blue-grey-text text-darken-3 read-more" title="{{ $a->article->titles->first()->text }}">
+                {{ Lang::get('lang.read_more') }}
+            </a>
+        </li>
+    @endforeach
+    @foreach($mostLiked as $a)
+        <li class="collection-item hoverable pl-3">
+            <h3 class="truncate card-title">{{ $a->article->titles->first()->text }}</h3>
+            <div class="side-text">
+                {{ substr(strip_tags($a->article->descriptions->first()->text), 0, 32) }}...
+            </div>
+            <br>
+            <a href="{{ URL::to('noticias/ver/'.$a->article->slugs->first()->text) }}" class="blue-grey-text text-darken-3 read-more read-more" title="{{ $a->article->titles->first()->text }}">
+                {{ Lang::get('lang.read_more') }}
+            </a>
+        </li>
+    @endforeach
+</ul>

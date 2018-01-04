@@ -1,29 +1,31 @@
-@extends('layouts.main')
+@extends('layouts.default')
 @section('content')
-	<section id="error-page">
-        <div class="error-page-inner">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="text-center">
-                            <div class="bg-404">
-                                <div class="error-image">                                
-                                    <img class="img-responsive" src="{{ asset('html/images/404.png') }}" alt="">  
-                                </div>
-                            </div>
-                            <h2>Pagina no encontrada</h2>
-                            <p>La pagina que esta buscando puede que no exista o se haya removido.</p>
-                            <a href="{{ URL::to('/') }}" class="btn btn-error">Volver al inicio</a>
-                            <div class="social-link">
-                                <span><a href="#"><i class="fa fa-facebook"></i></a></span>
-                                <span><a href="#"><i class="fa fa-twitter"></i></a></span>
-                                <span><a href="#"><i class="fa fa-google-plus"></i></a></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <div class="mt-4 mb-4"></div>
+    <div class="row valign-wrapper center-align" style="height: 80vh;">
+        <div class="col s12">
+            <h1 class="not_found">404</h1>
+            <p>{{ Lang::get('lang.not_found') }}</p>
+            <p>{{ Lang::get('lang.not_found_text') }}</p>
+            <a href="{{ URL::to('/') }}" class="btn bg-red waves-effect waves-light">{{ Lang::get('lang.back_to_home') }}</a>
 
+            <ul>
+                <li class="d-inline ml-1 mr-1">
+                    <a target="_blank" class="blue-grey-text text-darken-4" href="https://twitter.com/fundaepekeina">
+                        <i class="fa fa-twitter fa-2x"></i>
+                    </a>
+                </li>
+                <li class="d-inline ml-1 mr-1">
+                    <a target="_blank" class="blue-grey-text text-darken-4" href="https://www.facebook.com/funda.epekeina">
+                        <i class="fa fa-facebook fa-2x"></i>
+                    </a>
+                </li>
+                <li class="d-inline ml-1 mr-1">
+                    <a target="_blank" class="blue-grey-text text-darken-4" href="https://www.instagram.com/fundaepekeina/">
+                        <i class="fa fa-instagram fa-2x"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="mt-4 mb-4"></div>
 @stop
