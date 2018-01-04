@@ -50,7 +50,7 @@
           <h3>Eliminar imagenes actuales</h3>
         </div>
         @foreach($gal->imagenes as $i)
-          <div class="col-xs-12 col-md-6 formulario relative">
+          <div class="col-xs-12 col-md-3 formulario relative">
             <button class="close removeGalleryImage" value="{{ $i->id }}" type="button"><i class="fa fa-times"></i></button>
             <img src="{{ asset('images/gallery/'.$gal->name.'/'.$i->image) }}" class="img-responsive shake">
           </div>

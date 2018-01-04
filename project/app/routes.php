@@ -12,38 +12,40 @@
 */
 
 Route::get('/', 'HomeController@getIndex');
+Route::get('inicio', 'HomeController@getIndex');
 
 Route::get('proyectos/escuela-de-campo-para-agricultores','ProjectController@getLaguna');
 
 Route::get('quienes-somos','HomeController@getAbout');
+Route::get('quienes-somos/que-hacemos','HomeController@getWhatWeDo');
 Route::get('organigrama','HomeController@getOrg');
 Route::get('localizacion','HomeController@getMap');
-Route::get('quienes-somos/historias-epekeinas','HomeController@getHistories');
-Route::get('quienes-somos/historias-epekeinas/{slug}','HomeController@getHistory');
-
-Route::get('noticias','HomeController@getNews');
-Route::get('noticias/{type}','HomeController@getNewsType');
+Route::get('entrevistas/historias-epekeinas','HomeController@getHistories');
+Route::get('entrevistas/historias-epekeinas/{slug}','HomeController@getHistory');
 
 Route::get('biblioteca-virtual','LibraryController@getIndex');
 Route::get('biblioteca/descargar/{slug}','LibraryController@downloadFile');
 
-Route::get('noticias/ver/{slug}','HomeController@getArticleSelf');
-Route::get('noticias/{type}/categoria/{slug}','HomeController@getByCat');
 
 
 Route::get('galeria','HomeController@getGallery');
+Route::get('galeria/{id}','HomeController@getGalleryById');
 
 
 Route::get('contacto','HomeController@getContact');
-Route::post('contacto/enviar','HomeController@postContact');
-
+Route::get('contacto/suscribete','HomeController@getNewSubscription');
 Route::get('contacto/donaciones','HomeController@getDonation');
 Route::get('contacto/apoyenos','HomeController@getSupport');
+Route::get('contacto/gracias','HomeController@thanks');
+Route::get('contacto/voluntariado','HomeController@getVolunteer');
+Route::post('contacto/donaciones/enviar','HomeController@postDonation');
+Route::post('contacto/enviar','HomeController@postContact');
+Route::post('contacto/suscribete/enviar','HomeController@getNewSubscriber');
 
 
-Route::post('suscribir-nuevo','HomeController@getNewSubscriber');
-
-Route::get('buscar','HomeController@getSearch');
+Route::get('noticias/buscar','HomeController@getSearch');
+Route::get('noticias/buscar/{t}','HomeController@getSearch');
+Route::get('noticias/ver/{slug}','HomeController@getArticleSelf');
 Route::group(array('before' => 'no_auth'),function() 
 {
 	Route::get('administrador/login', 'AdminController@getLogin');
@@ -65,7 +67,15 @@ Route::group(array('before' => 'auth'),function()
 	Route::post('administrador/change-password/send','AdminController@postUserNewPass');
 
 	Route::get('administrador/buscar-sedes-o-proyectos','AdminController@getProy');
-
+	//bank account
+	Route::get('administrador/nuevo-cuenta','AdminController@getNewAccount');
+	Route::get('administrador/ver-cuentas','AdminController@getAccounts');
+	Route::get('administrador/editar-cuenta/{id}','AdminController@getMdfAccount');
+	Route::post('administrador/nuevo-cuenta/enviar','AdminController@postnewAccount');
+	Route::post('administrador/editar-cuenta/{id}/enviar','AdminController@postMdfAccount');
+	Route::post('administrador/ver-cuentas/eliminar','AdminController@postElimAccount');
+	//donaciones
+	Route::get('administrador/ver-donaciones','AdminController@getDonations');
 	//articulos
 	Route::get('administrador/nuevo-articulo','AdminController@getNewArticulo');
 	Route::post('administrador/nuevo-articulo/enviar','AdminController@postNewArticulo');
@@ -120,7 +130,6 @@ Route::group(array('before' => 'auth'),function()
 });
 
 Route::get('test','HomeController@prueba');
-Route::post('nueva-donacion','HomeController@postDonation');
 Route::get('dar-de-baja','BoletinController@deleteFromBoletin');
 
 Route::get('test-boletin','BoletinController@getTest');
@@ -128,5 +137,10 @@ Route::get('test-boletin','BoletinController@getTest');
 Route::get('cambiar-lenguaje/{lang}',function($lang)
 {
 	Session::set('lang', $lang);
+	if (Request::ajax()) {
+		return Response::json(array(
+			'type' => 'success'
+		));
+	}
 	return Redirect::back();
 });

@@ -1,0 +1,39 @@
+
+/*sizes*/
+$fullHeight : 100vh;
+$fullWidth  : 100%;
+$minPx		: 16px;
+$textSize   : 15px;
+
+/*maps*/
+$displays  : (
+	block 	  	 : block,
+	inline 		 : inline,
+	inline-block : inline-block,
+	table   	 : table,
+	table-cell   : table-cell,
+	none		 : none
+);
+$cardinals : (
+	t : 'top',
+	b : 'bottom',
+	l : 'left',
+	r : 'right'
+);
+
+$positions : (
+	absolute : absolute,
+	relative : relative,
+	fixed    : fixed
+);
+
+/*Colors*/
+
+$colors : (
+	"red"   		: #ED1E79,
+	"white" 		: #ffffff,
+	"turquesa"		: #00A99D,
+	"blue"			: #25aae2,
+	"green"  		: #a6ce39,
+
+);

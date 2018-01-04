@@ -1,5 +1,6 @@
 <?php
 	return array(
+		'slide-to-close'	=> 'Slide to close',
 		'select_an_option'  => 'Select an option',
 		'here'				=> 'here',
 		'read_more'			=> 'Read more',
@@ -18,9 +19,14 @@
 		'programas' 		=> 'programs',
 		'regiones' 			=> 'regions',
 		'campamentos' 		=> 'camps',
-
+		'voluntariado_title'=> 'Voluntariado',
+		'search'			=> 'search',
 		'home_title' 		=> 'Home | Funda Epékeina',
-		
+		'language'			=> 'Language',
+		'like'				=> 'I like this',
+		'more_news'			=> 'More News',
+		'campaing'			=> 'Enseñando valores, formando ciudadanos',
+		'choose_an_option'	=> 'Choose an option',
 		//menu
 		'about_menu' 		=> 'About Us',
 		'about_menu2'		=> 'Know About Us',
@@ -42,7 +48,8 @@
 		'donation_menu'		=> 'What can you do',
 		'contact_us'		=> 'Contact Us',
 		'donation'			=> 'Donations',
-
+		'not_found'			=> 'Pagina no encontrada',
+		'not_found_text'	=> 'La pagina que esta buscando puede que no exista o se haya removido.',
 		//index
 		'projects'			=> 'Projects',
 		'rjv_text'			=> 'Nos inspiramos en Venezuela, en la valoración de lo que somos, de nuestra esencia, en el reconocimiento de la venezolanidad. Nosotros creemos en la gente, apostamos por la gente; por ese principio de vida, de salvación, de fuerza y esperanza activa, construye, propone y se mueve para superar obstáculos. <strong>Visitanos :link1</strong>',
@@ -52,50 +59,71 @@
 		'our_allies'		=> 'Our Allies',
 
 		//about
+		'epekeina'			=> 'EPÉKEINA:',
+		'epekeina_means'	=> 'Greek word whose summarized meaning is "beyond humane". It can also be interpret as God\'s strength and His vital impulse that transcends everything related to human being. In Epékeina Foundation (in Spanish Fundación Epékeina), the essential is the human being and its dignity, that is why the slogan \"beyond humane\" is adopted. Human and Christian values are the light and guide that defines certainty in education and humanitarian help towards the most dispossessed people.',
+		'epekeina_about'	=> 'starts its social and pastoral work by visiting Terrazas de San Agustín del Sur\'s neighborhood in Caracas since 2008 on a weekly basis. Formally, its first administrative activities recognized by the National Integrated Service for the Administration of Customs Duties and Taxes (SENIAT, Spanish acronym) are managed from El Salvador parish located in Las Acacias residential area (Caracas), since February 2010. It currently has five locations throughout the country and three international locations. During the years, its social work has been broadened by executing programs focused on children, teenagers, and young people, as well as one specially dedicated to support retired priests. Since 2014 and in alliance with the PNUD Venezuela (UNDP Venezuela), it starts a project to recover Canagua\'s, Merida state, agricultural landscape by cultivating agroecological coffee. On April 2012, the sports program for young people, Leaders Building the Future (Líderes Construyendo Futuro) was born. In just two years it expands throughout the capital city, and in 2014 becomes Caracas Young Network (Red Joven Caracas). By May 2016, this initiative\'s success becomes a proposal for the country with the Venezuela Young Network (Red Joven Venezuela) project which proposes a new citizen participation scheme in which young people are their own initiatives and entrepreneurships\' designers, producers, and leaders. During these years, other very important programs have rose up and consolidated, such as: Epékeinando Summer Camp (Campamento Epékeinando) for July and August; Kites for the Peace (Papagayos por la Paz) for September; HabitArt-Murals (Murales-HabitArte) or Murals that are Values (Murales que son Valores), permanent program; Leadership and Entrepreneurship School; among other cultural, art, and sports programs for young people.',
 		'mission'			=> 'Mission',
-		'mission_text'		=> 'Acompañar a las comunidades en situación de pobreza en su esfuerzo por lograr una calidad de vida digna y en la defensa de sus derechos ciudadanos, a través de un proceso integral, a nivel educativo y de organización participativa, con el fin de promover la formación intelectual y la capacitación de sus miembros, enfocados principalmente en los niños, adolescentes, jóvenes y su núcleo familiar, en conformidad con los valores de la democracia y la paz social.',
+		'mission_text'		=> 'To accompany and support communities in poverty situation with their efforts to get a dignifying life quality, by defending their civil rights by means of a comprehensive process involving education and participative organization, with the purpose of promoting its members\' intellectual education and training, focused mainly on children, teenagers, young people, and their families, in agreement with democracy and social peace values.',
 		'vision'			=> 'Vision',
-		'vision_text'		=> 'Construir una Venezuela democrática donde sea posible convivir libres de ideologías, exclusiones y etiquetas socio-políticas. Tener un País con igualdad de oportunidades para todos y una nación plural, incluyente, solidaria y justa, promoviendo una calidad de vida digna para las comunidades pobres y para la gente más necesitada, donde todos trabajen desde la riqueza y el potencial de sus propias realidades sociales y culturales.',
-		'strategy_title'    => 'Estrategia Organizacional',
-		'strategy_text1' 	=> 'Consiste en sumarnos a las organizaciones e instituciones independientes (universidades e Iglesia Católica), libres de ideologías y partidos políticos, para promover los procesos de cambio social y el fortalecimiento de la Sociedad Civil, y así procurar la defensa y promoción de los Derechos Humanos, los Derechos Económicos y Sociales, los Derechos Culturales y Ambientales con fuerte incidencia social para despertar la conciencia crítica desde y entre la gente.',
-		'strategy_text2' 	=> 'Crear un círculo virtuoso de alianzas nacionales e internacionales con entes públicos y privados, que permita involucrar nuevos actores y sumar voluntades en la búsqueda de mayores beneficios a las comunidades desasistidas.',
-		'strategy_text3' 	=> 'Delimitar estrategias internas; consolidación de programas y proyectos integrales e integrados entre sí, y externas; redes académicas, socio culturales y deportivas.',
-		'objetive_primary'  => 'Objetivo general',
-		'objetive_specific' => 'Objetivos especificos',
-		'objetive_text1'	=> 'Promover iniciativas comunitarias y socio-pastorales alternativas a los sistemas socio económicos y políticos establecidos en el País, desde la realidad de las comunidades pobres, con el liderazgo y el protagonismo de los jóvenes, y la atención a los niños, para contribuir en la formación de una nación justa, democrática, pluricultural y multicultural, en paz y convivencia armónica con las riquezas naturales que el Creador nos ha dado.',
-		'objetive_text2' 	=> 'Capacitar a los jóvenes, acompañarlos, y brindarles herramientas y nuevos conocimientos.',
-		'objetive_text3' 	=> 'Promover y fortalecer las formas de organización social, ya existentes, y que encontremos y despertemos en las comunidades.',
-		'objetive_text4' 	=> 'Fortalecer la incidencia y la articulación de Funda Epékeina con las redes de otras Fundaciones y ONG, con las académicas (centros de investigación y universidades) y los organismos defensores de los derechos humanos nacionales e internacionales.',
-		'objetive_text5' 	=> 'Colaborar y fortalecer las articulaciones regionales, nacionales e internacionales que los mismos, niños, adolescentes y jóvenes van impulsando.',
-		'action_lines_title'=> 'Líneas de Acción',
-		'action_lines_text1'=> 'Promover la educación y la superación por medio del estudio, el trabajo y el esfuerzo individual y colectivo.',
-		'action_lines_text2'=> 'Promover la participación organizada y solidaria.',
-		'action_lines_text3'=> 'Promocionar los Derechos humanos, libertad de expresión y derechos laborales.',
-		'action_lines_text4'=> 'Promocionar y fortalecer las Organizaciones Sociales',
-		'action_lines_text5'=> 'Cuidar y defender el ambiente y los recursos naturales.',
-		'action_lines_text6'=> 'Promocionar la educación, la salud y la alimentación comunitaria; pensar más en el otro.',
-		'action_lines_text7'=> 'Apoyar la labor de los medios de comunicación alternativos y populares (murales, periódicos, etc.).',
-		'action_lines_text8'=> 'Promocionar el deporte y todas las disciplinas formativas que ayuden a la cualificación integran del joven de las zonas populares. ',
-		'action_lines_text9'=> 'Apoyar los procesos de alfabetización tecnológica en las comunidades.',
-		'action_lines_text10'=> 'Desarrollar talleres itinerantes en las disntintas sedes de la Fundación.',
-		'values_title'		=> 'Valores de Funda Epékeina',
-		'values_text1' 		=> 'Fe en Jesucristo',
-		'values_text2' 		=> 'Honestidad',
-		'values_text3' 		=> 'Trabajo',
-		'values_text4' 		=> 'Perseverancia',
-		'values_text5' 		=> 'Paz',
-		'values_text6' 		=> 'Amor',
-		'values_text7' 		=> 'Compromiso',
-		'values_text8' 		=> 'Excelencia',
-		'values_text9' 		=> 'Respeto',
-		'values_text10'		=> 'Tolerancia',
-		'work_methodology'  => 'Metodología de trabajo',
-		'work_methodology_text'=> 'Se da a través del acompañamiento e inserción, se trata de saber estar presente en las comunidades. Patear el barrio y conocer su gente, sudar el barrio. Lo que implica y significa, estar con Ellos y caminar junto a Ellos, hacerse amigo de los humildes, procurando que las acciones en que participamos sean prioritariamente, iniciativa y necesidad de las comunidades y sus sectores empobrecidos. Así ubicamos nuestro aporte principal en el diseño y desarrollo de estrategias educativas, que puedan fortalecer los núcleos ya existentes de organizaciones y centros de trabajo local, con sus necesidades documentadas, para ofrecer soluciones desde una perspectiva integral y la promoción de vinculaciones eficaces entre las organizaciones competentes de la sociedad civil.',
+		'vision_text'		=> 'Build a democratic and inclusive Venezuela where cohabitation in freedom, with equal opportunities for everyone, and a reduction of poverty indexes are possible. Encourage a plural, caring, peaceful… and fair nation. Promote a dignifying life quality for popular communities and most needed people, as well as stimulate their comprehensive education, empowerment, and productive participation in society.',
+		'strategy_title'    => 'Strategies',
+		'strategy_text1' 	=> 'Join to independent, free from ideologies, and political parties organizations and institutions (universities and Catholic Church), in order to promote social change processes and civil society strengthening, and thus be able to defend and promote human rights in their widest sense, with a strong social impact to awake critic conscience in people facing the dominant system.',
+		'strategy_text2' 	=> 'Create an alliances\' virtuous circle with public and private national and international organizations that allow new actors involvement and adhere wills in search of greater benefits to unattended communities.',
+		'strategy_text3' 	=> 'Consolidate and extend comprehensive and inclusive educational programs and projects addressed to children, teenagers, and mainly young people in which education in socio-cultural, work, entrepreneurship, and sports areas is highlighted.',
+		'objetive_primary'  => 'General Objective',
+		'objetive_specific' => 'Specific Objectives',
+		'objetive_text1'	=> 'Promote community and socio-pastoral alternate initiatives towards the socio-economic and political systems already established within the country, from poor communities\' reality, with young people\'s leadership and prominence, as well as childcare in order to contribute with the construction of a fair, democratic, multicultural, peaceful nation where cohabitation is harmonic with the natural wealth the Creator has given us.',
+		'objeive_title2'	=> 'Prepare',
+		'objetive_text2'	=> ', accompany and bring young people tools and new knowledge.',
+		'objeive_title3'	=> 'Promote',
+		'objetive_text3' 	=> 'and strengthen already existing social organization structures, as well as those that we find and awake in communities.',
+		'objeive_title4'	=> 'Strengthen',
+		'objetive_text4' 	=> 'Funda Epékeina\'s incidence and articulation with other national and international Foundations, NGO\'s, academic organizations – research centers and universities –, and human rights defender organisms',
+		'objeive_title5'	=> 'Collaborate',
+		'objetive_text5' 	=> 'and strengthen regional, national, and international articulations that the same children, teenagers, and young people are encouraging.',
+		'action_lines_title' => 'Lines of action',
+		'action_lines_text1' => 'Promote education and self-improvement by means of studying, working, and making individual and collective efforts.',
+		'action_lines_text2' => 'Promote organized and supportive participation.',
+		'action_lines_text3' => 'Promote Human Rights, freedom of expression, and labor rights.',
+		'action_lines_text4' => 'Promote and strengthen social organizations.',
+		'action_lines_text5' => 'Care for and defend the environment as well as natural resources.',
+		'action_lines_text6' => 'Promote community education, health, and feeding; to think more about the other one.',
+		'action_lines_text7' => 'Support alternate and popular media communication\'s work – murals, newspapers, etc.',
+		'action_lines_text8' => 'Promote sports and all training and education disciplines which help with young people from popular areas\' comprehensive qualification.',
+		'action_lines_text9' => 'Promote technological literacy processes in communities.',
+		'action_lines_text10'=> 'Develop itinerant workshops around the Foundation\'s different locations',
+
+		'values_title' 		=> 'Funda Epékeina\'s Values',
+		'values_text1' 		=> 'Faith in Jesus Christ',
+		'values_text2' 		=> 'Honesty',
+		'values_text3' 		=> 'Work',
+		'values_text4' 		=> 'Perseverance',
+		'values_text5' 		=> 'Peace',
+		'values_text6' 		=> 'Love',
+		'values_text7' 		=> 'Commitment',
+		'values_text8' 		=> 'Excellence',
+		'values_text9' 		=> 'Respect',
+		'values_text10' 	=> 'Tolerance',
+
+		'methodology_title'	=> 'Working Methodology',
+		'methodology_text'	=> 'It is given through accompanying and insertion. It is about being there in communities. Traipse all around the neighborhood and meet its people, sweat the neighborhood, which implies to be with them and walk along with them, become a friend of the humble ones, making sure that the actions in which we take part are mainly community and its impoverished sectors\' initiative and needs. This way, we locate our main contribution towards educational strategies design and development, which can strengthen the already existing organizations and local work centers\' branches, with their needs documented, in order to offer solutions from a comprehensive perspective and promotion of efficient links among civil society\'s competent organizations.',
 
 		'our_organization'	=> 'Nuestro organigrama',
 
 		'history_text'		=> 'En esta sección podras encontrar reportajes, entrevistas y testimoniales de aquellos que han compartido con nosotros.',
-		
+		//que hacemos
+
+		'projects_title1' => 'Programa Infantil',
+		'projects_text1'  => 'Promueve el aprendizaje y la formación en valores de niños y adolescentes mediante el desarrollo de diversas actividades educativas y lúdico-recreativas abordando múltiples temas como cultura y arte, ciencias, religión, y deportes.  Como parte de las jornadas, se les ofrece un desayuno nutritivo   para que tengan la energía necesaria para aprender y jugar.<br>Todo ello se cumple los sábados, de 8:30 am y 12 pm, en nuestras sedes ubicadas en Las Acacias cuyos beneficiarios son del sector Terrazas del Alba (San Agustín del Sur) y La Boyera que atiende  a beneficiarios de varios sectores de los municipios El Hatillo y Baruta.',
+		'projects_title2' => 'Programa Red Joven Venezuela	',
+		'projects_text2'  => 'Promueve iniciativas comunitarias y socio-pastorales alternativas a los sistemas socio económicos y políticos establecidos en el País, desde la realidad de las comunidades pobres, con el liderazgo y el protagonismo de los jóvenes, y la atención a los niños, para contribuir en la formación de una nación justa, democrática, pluricultural y multicultural, en paz y convivencia armónica con las riquezas naturales que el Creador nos ha dado.<br><br><strong>Objetivos</strong><br> <strong>Capacitar</strong> a los jóvenes y adolescentes de zonas populares, acompañándolos, y brindándoles herramientas y nuevos conocimientos para propiciar su participación productiva y su protagonismo en la sociedad venezolana.<br>  <strong>Promover</strong> y fortalecer las iniciativas de organización social ya existentes en las comunidades, así como fomentar nuevas alternativas en ese ámbito.<br><strong>Consolidar</strong> la incidencia y la articulación estratégica de Funda Epékeina con otras organizaciones no gubernamentales, tanto nacionales como internacionales, de diversas áreas, para desarrollar un excelente nivel educativo, académico, investigativo y productivo, y, también, en favor de la defensa de los derechos humanos de los jóvenes venezolanos.',
+		'projects_title3' => 'Programa Epékeina Sacerdotal',
+		'projects_text3'  => 'Contribuye con el suministro mensual de alimentos, medicinas y otros productos requeridos por los sacerdotes ancianos de la casa Sacerdotal de la Archidiócesis de Caracas y las Hermanas Siervas de Jesús que los atienden. Además, brinda acompañamiento mediante visitas mensuales de miembros del programa y de los diversos apostolados de la Iglesia La Anunciación del Señor (La Boyera).',
+		'projects_title4' => 'Campamento Epékeinando',
+		'projects_text4'  => 'Es el plan vacacional de 1 semana que se efectúa cada agosto. Está diseñado para que participen los beneficiarios del programa infantil que hayan cumplido con su asistencia regular y mantengan buena conducta. Se les ofrece alimentación balanceada (desayuno y almuerzo), talleres formativos, paseos recreacionales, materiales didácticos, transporte y uniforme. Se cuenta con un equipo de voluntarios y facilitadores para llevar adelante la programación de cada edición.',
+		'projects_title5' => 'Proyecto “Conservación del paisaje productivo de la comunidad de La Laguna” ',
+		'projects_text5'  => 'Este proyecto, en alianza con el Programa de Naciones Unidas para el Desarrollo (PNUD) y con el apoyo del Programa de Pequeñas Donaciones del Fondo para el Medio Ambiente Mundial y de la Universidad de los Andes (ULA)-CORPOULA, se inició formalmente en febrero 2016 en la Parroquia Canaguá del municipio Arzobispo Chacón del estado Mérida. Desde esa fecha hasta mayo 2017 se trabajó de manera simultánea en los objetivos planteados en sus distintas etapas, integrados en actividades en la “Escuela de Campo para Agricultores La Laguna” (ECA), la cual se fundó tomando a la educación como una estrategia básica para el desarrollo de las comunidades y cumpliendo con el objetivo del proyecto “Desarrollar un plan de capacitación y formación de caficultores”.',
+
 		//support
 		
 		'support_us'		=> 'Apoyenos',
@@ -111,11 +139,19 @@
 		'plan_text5' 		=> 'Patrocinando con dinero, promoción y voluntariado los eventos que realizamos a lo largo del año para celebrar en comunidad y recoger fondos necesarios para continuar la ejecución de nuestras actividades con los beneficiarios de nuestros programas en Las Acacias y en La Boyera.',
 
 		//donations
-
-		'donations'			=> 'Donaciones',
-		'donation_text1'	=> 'Somos una organización venezolana con una razón de Ser: Social, Cultural, Humanitaria, Educativa, Catequético-pastoral, Espiritual y Asistencial, sin fines de lucro. Trabajamos en los sectores de pobreza más extrema, esencialmente, con enseñanza de valores a Niños, Niñas, Adolescentes y Jóvenes, con edades entre 5 y 22 años. Registrada ante el SENIAT desde el 27-11-2010, mediante el número de acreditación: 5217-5650, pudiendo así recibir y, administrar, legalmente, las ayudas provenientes de las empresas y personas particulares que deseen contribuir con el monto del impuesto estipulado para ayudar a las ONGs.',
-		'donation_text2'	=> '¡Haz una donación!',
-		'donation_text3'	=> 'Tú puedes realizar una donación voluntaria por la suma que desees, depositando o transfiriendo a nuestra cuenta corriente en Banesco #0134-0390-20-3901023342 a nombre de Funda Epékeina Rif J-29868492-5<br>Recuerda enviarnos tus datos (nombre completo, cédula de identidad o rif, teléfono, dirección y comprobante de depósito o transferencia) a fundapekeina@gmail.com para hacerte llegar la carta de agradecimiento y en caso de estar interesado en deducciones fiscales, te haremos llegar los documentos correspondientes.<br>Gracias a este aporte estarás contribuyendo a la formación de valores de los niños de Terrazas del Alba al facilitarnos la compra de materiales escolares, alimentos y el pago de su transporte para ejecutar las actividades con ellos.',
+		'donation_quote'	=> 'Epékeina brinda una luz de esperanza a quienes más lo necesitan.<br> Necesitamos de manos que nos apoyen.',
+		'make_a_donation'	=> '¡Haz un donativo!',
+		'donation_data'		=> 'Datos bancarios de',
+		'account'			=> 'Cuenta',	
+		'account_name'		=> 'A nombre de',
+		'donate'			=> 'Registro de donativo',
+		'fullname'			=> 'Nombre y apellido',
+		'accounts'			=> 'Cuenta dónde se realizó la donación',
+		'date'				=> 'Fecha',
+		'amount'			=> 'Monto',
+		'reference_number'	=> 'Número de referencia',
+		'thanks'			=> "Thans for your support!",
+		'back_to_home'		=> 'Back to home',
 
 		//contact
 
@@ -127,13 +163,29 @@
                 Z.P 1040.',
 
         'send_email'		=> 'Envienos un correo',	
-        'contact_input1'    => 'Nombre',
-		'contact_input3'    => 'Asunto',
+        'contact_input1'    => 'Name',
+		'contact_input3'    => 'Subject',
 		'contact_input2'    => 'Email',
-		'contact_input4'	=> 'Escriba aqui su mensaje',
+		'contact_input4'	=> 'Write your message here',
+		'contact_input5'	=> 'Lastname',
+		//subscriptions
+		'subscription_title'	=> 'Suscríbete',
+		'subscription_subtitle'	=> 'Los campos marcados con (*) son obligatorios',
+		'subscription_quote'	=> 'Sí deseas recibir información periódica de nuestras actividades<br>suscríbete a nuestro boletín para mantenerte informado',
+		'subscription_text1'	=> 'Deseo recibir material sobre la programación de futuros eventos de Funda Epékeina',
+		'subscription_text2'	=> 'Al enviar este formulario esta de acuerdo en recibir nuestros boletines',
+		'subscription_success'	=> 'Se ha registrado en nuestro boletín satisfactoriamente.',
+		'subscription_error'	=> 'Error, alguno de los campos falta o es erroneo',
+		//volunteer
+		//volunteer
+		'be_a_volunteer'	=> 'Unete al voluntariado',
+		'volunteer_quote'	=> 'En Epékeina siempre necesitamos una mano amiga.<br>Creemos que la voluntad es el motor para alcanzar las metas.<br>Únete a nuestro voluntariado y haz la diferencia.',
+		'volunteer_quote2'	=> 'Se puede colocar una cita, donde se hable de ayudar al projimo',
+		'volunteer_text5'	=> 'Puedes participar en nuestra fundación como voluntario:<br> Comunícate con nosotros a través del correo electrónico:<br> <a href="mailto:comunicaciones@fundaepekeina.org">comunicaciones@fundaepekeina.org</a> y <a href="mailto:fundaepekeina@gmail.com">fundaepekeina@gmail.com</a>',
 		
 		//footer
 		'donate'			=> 'Donate',
+		'join'				=> 'Únete',
 		
 		'subscribe'			=> 'Suscribe to our newsletter',
 		'worry_not'			=> 'Do not worry, we won\'t use your email for spam',
@@ -152,5 +204,6 @@
 		'close' 			=> 'Close',
 		'send' 				=> 'Send',
 		'change_lang'		=> 'Change Language',
+		'download'			=> 'Download',
 	);
 ?>

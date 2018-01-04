@@ -24,25 +24,37 @@ class HomeController extends BaseController {
 		->with('descriptions')
 		->where('state','=',1)
 		->where('articulos.cat_id','!=',4)
-		->orderBy('created_at','DESC')->take(6)->get();
+		->orderBy('created_at','DESC')->take(8)->get();
 		$active = "inicio";
 		return View::make('home.index')
 		->with('active',$active)
+		->with('campaing',Lang::get('lang.campaing'))
 		->with('title',$title)
+		->with('size','big')
 		->with('article',$article);
 	}
 	public function getAbout()
 	{
 		$title = Lang::get('lang.about_menu')." | Funda Epékeina";
-		$active = "about";
+		$text   = "Aquí se puede colocar algun pensamiento que describa el objetivo de la fundación";
 		return View::make('home.about')
-		->with('active',$active)
+		->with('size','big')
+		->with('citaMenu','cita')
+		->with('text',Lang::get('lang.campaing'))
+		->with('title',$title);
+	}
+	public function getWhatWeDo()
+	{
+		$title = Lang::get('lang.about_menu3')." | Funda Epékeina";
+		return View::make('about.what-we-do')
+		->with('size','big')
+		->with('citaMenu','cita')
+		->with('text',Lang::get('lang.campaing'))
 		->with('title',$title);
 	}
 	public function getHistories()
 	{
 		$title = Lang::get('lang.history_menu')." | Funda Epékeina";
-		$active = "about";
 		$hist = Articulo::where('tipo','=',6)
 		->with('subtitle')
 		->with('imagenes')
@@ -52,14 +64,13 @@ class HomeController extends BaseController {
 		->get();
 		return View::make('about.show')
 		->with('title',$title)
-		->with('active',$active)
+		->with('size','big')
 		->with('hist',$hist);
 	}
 	public function getHistory($slug)
 	{
 		$title = Lang::get('lang.history_menu')." | Funda Epékeina";
-		$active = "about";
-		$hist = Articulo::whereHas('slugs',function($slugs) use ($slug)
+		$article = Articulo::whereHas('slugs',function($slugs) use ($slug)
 		{
 			$slugs->where('text','=',$slug);
 		})
@@ -72,16 +83,20 @@ class HomeController extends BaseController {
 
 		return View::make('about.history')
 		->with('title',$title)
-		->with('active',$active)
-		->with('hist',$hist);
+		->with('size','big')
+		->with('donaMenu','dona')
+		->with('article',$article);
 	}
 	public function getArticleSelf($slug)
 	{
+		$sideCtrl = new SideBarController;
+
 		$lang  = LangController::getActiveLang();
 		//find slug entry
 		$entry = TranslationEntry::where('text','=',$slug)
 		->where('lang_id','=',$lang->id)
 		->first();
+
 		$article = Articulo::with('categorias')
 		->with(array('type' => function($type){
 			$type->with('slugs')
@@ -93,21 +108,33 @@ class HomeController extends BaseController {
 		->with('descriptions')
 		->where('slug','=',$entry->translation_id)
 		->first();
+		
 		$request = Request::instance();
 		$request->setTrustedProxies(array('127.0.0.1')); // only trust proxy headers coming from the IP addresses on the array (change this to suit your needs)
 		$ip = $request->getClientIp();
 		$aux = Like::where('articulo_id','=',$article->id)->where('ip','=',$ip)->get();
 		if (count($aux) > 0) {
-			$fa = 'fa-heart';
+			$fa = 'fa-heart loved';
 		}else
 		{
 			$fa = 'fa-heart-o';
 		}
+
+		$visit = new Visitor;
+		$visit->article_id = $article->id;
+		$visit->ip         = $ip;
+		$visit->save();
+
+		$mostVisited = $sideCtrl::getMostViewed($article->id);
+		$mostLiked   = $sideCtrl::getMostPopulars($article->id);
+
 		$title   = Lang::get('lang.news_menu').": ".$article->titles->first()->text." | Funda Epékeina";
 		$view = View::make('home.articles.article')
 		->with('article',$article)
 		->with('title',$title)
-		->with('fa',$fa);
+		->with('fa',$fa)
+		->with('size','big')
+		->with('donaMenu','existe');	
 		if ($article->type && $article->type->descriptions->first()) {
 			$subtitle = $article->type->descriptions->first()->text;
 		}else
@@ -115,7 +142,9 @@ class HomeController extends BaseController {
 			$subtitle = Lang::get('lang.news_menu');
 		}
 		return $view->with('subtitle',$subtitle)
-		->with('active','about')
+		->with('active','about')  
+		->with('mostVisited',$mostVisited)  
+		->with('mostLiked',$mostLiked)  
 		->with('menu','all');
 	}
 	public function getNews()
@@ -234,45 +263,79 @@ class HomeController extends BaseController {
 		}
 
 	}
-	public function getSearch()
+	public function getSearch($t = null)
 	{
-		$busq = Input::get('busq');
-		$article = Articulo::with('imagenes')
+		$collection = Articulo::with('imagenes')
 		->with('titles')
 		->with('slugs')
 		->with('descriptions')
-		->where('state','=',1)
-		->where(function($query) use ($busq)
+		->where('state','=',1);
+
+		if (Input::has('busq')) {
+			$lang = LangController::getActiveLang();
+			$busq = Input::get('busq');
+			$collection = $collection	
+			->where(function($query) use ($busq, $lang)
+			{
+				$query->whereHas('titles',function($titles) use ($busq, $lang){
+					$titles->where(function($q) use ($busq){
+						$q->where('text','LIKE','%'.$busq)
+						->orWhere('text','LIKE','%'.$busq.'%')
+						->orWhere('text','LIKE',$busq.'%');
+					})
+					->where('lang_id','=',$lang->id);
+				});
+			});
+		}else
 		{
-			$query->whereRaw('LOWER(title)  LIKE "%'.$busq.'%"')
-			->orWhereRaw('LOWER(descripcion) LIKE "%'.$busq.'%"');
-		})
-		->paginate(6);
+			$busq = "";
+		}
+		if (!is_null($t)) {
+			$collection = $collection->whereHas('type',function($type) use ($t){
+				$type->whereHas('slugs',function($slugs) use($t){
+					$slugs->where('text','=',$t);
+				});
+			});
+		}
+		$collection = $collection->orderBy('id','DESC')->paginate(8);
 		$title = "Busqueda por: ".$busq." | Funda Epékeina";
-		$view = View::make('home.articles.busq')
+		return View::make('search.index')
 		->with('title',$title)
-		->with('article',$article);
-		return $view->with('menu','all')
-		->with('active','home')
-		->with('subtitle','Busqueda por: '.$busq)
-		->with('type','que-hacemos')
+		->with('collection',$collection)
+		->with('size','big')
+		->with('subtitle','Busqueda : '.$busq)
 		->with('busq',$busq);
 	}
 	public function getGallery()
 	{
 		$title = "Galería | Funda Epékeina";
-		$gallery = Gallery::with('imagenes')->get();
+		$gallery = Gallery::get();
 		
-		return View::make('home.gallery')
+		return View::make('gallery.index')
 		->with('title',$title)
 		->with('active','galeria')
+		->with('size','big')
 		->with('gallery',$gallery);
+	}
+	public function getGalleryById($id)
+	{
+		$gallery = Gallery::find($id);
+
+		$images = GalleryImage::where('gallery_id','=',$id)->get();
+		$title = Lang::get('lang.gallery_menu')." ".$gallery->name." | Funda Epékeina";
+		return View::make('gallery.show')
+		->with('title',$title)
+		->with('gallery',$gallery)
+		->with('images',$images)
+		->with('size','big');
 	}
 	public function getContact()
 	{
 		$title = "Contactenos | Funda Epékeina";
 		return View::make('home.contact')
-		->with('active','contacto')
+		->with('citaMenu','cita')
+		->with('text',Lang::get('lang.contact_quote'))
+		->with('size','big')
 		->with('title',$title);
 	}
 	public function postContact()
@@ -332,17 +395,22 @@ class HomeController extends BaseController {
 	{
 		$data = Input::all();
 		$rules = array(
-			'email' => 'required|email|unique:suscriptores,email',
+			'name'		=> 'required|min:4|max:100',
+			'lastname'	=> 'required|min:4|max:100',
+			'email' 	=> 'required|email|unique:suscriptores_mailchimp,email',
 		);
 		$validator = Validator::make($data, $rules);
 		if ($validator->fails()) {
-			return Response::json(array(
-				'type' => 'danger',
-				'data' => $validator->getMessageBag()->toArray()
-			));
+			Session::flash('danger',Lang::get('lang.subscription_error'));
+			return Redirect::back()->withErrors($validator)->withInput();
 		}
 		$sus = new Subscriber;
-		$sus->email = $data['email'];
+		$sus->name 		= $data['name'];
+		$sus->lastname  = $data['lastname'];
+		$sus->email 	= $data['email'];
+		if (Input::has('accept')) {
+			$sus->want_more = 1;
+		}
 		if ($sus->save()) {
 			
 			Mail::send('emails.sub', $data, function ($message) use ($data){
@@ -352,18 +420,65 @@ class HomeController extends BaseController {
 			});
 		}
 
-		return Response::json(array(
-			'type' => 'success',
-			'msg'  => 'enviar enviado correctamente.',			
-		));
+		Session::flash('success',Lang::get('lang.subscription_success'));
+		return Redirect::back();
 
 	}
 	public function getDonation()
 	{
+		$accounts = Account::where('deleted','=',0)->get();
 		$title = "Donaciones | Funda Epékeina";
+
 		return View::make('home.donations')
 		->with('title',$title)
+		->with('size','big')
+		->with('citaMenu','cita')
+		->with('accounts',$accounts)
+		->with('campaing',Lang::get('lang.campaing'))
+		->with('text',Lang::get('lang.donation_quote'))
 		->with('active','contacto');
+	}
+	public function postDonation()
+	{
+		$data 	= Input::all();
+		$rules 	= array(
+			'fullname'			=> 'required|min:3|max:100',
+			'account'			=> 'required|exists:accounts,id',
+			'email'				=> 'required|email',
+			'date'				=> 'required|date_format:d-m-Y',
+			'amount'			=> 'required',
+			'reference_number'	=> 'required',
+		);
+		$msg = array();
+		$attr = array(
+			'fullname'			=> Lang::get('lang.fullname'),
+			'account'			=> Lang::get('lang.accounts'),
+			'email'				=> 'email',
+			'date'				=> Lang::get('lang.date'),
+			'amount'			=> Lang::get('lang.amount'),
+			'reference_number'	=> Lang::get('lang.reference_number'),
+		);
+		$validator = Validator::make($data, $rules, $msg, $attr);
+		if ($validator->fails()) {
+			return Redirect::back()->withErrors($validator)->withInput();
+		}
+		$donation = new Donation;
+		$donation->fillData($data);
+		$donation->save();
+		$data['account_name'] = Account::find($donation->account_id)->name;
+
+		$data['title'] = "Nueva donación";
+		Mail::send('emails.new-donation', $data, function($message) use ($data)
+		{
+			$message->to('comunicaciones@fundaepekeina.org')->from('mail@fundaepekeina.org')->subject('Nueva donación');
+		});
+		return Redirect::to('contacto/gracias');
+	}
+	public function thanks()
+	{
+		$title = "Gracias por su apoyo | Funda Epékeina";
+		return View::make('home.thanks')
+		->with('title',$title);
 	}
 	public function getSupport()
 	{
@@ -406,51 +521,27 @@ class HomeController extends BaseController {
 	{
 		return View::make('emails.sub');
 	}
-	public function postDonation()
+	public function getNewSubscription()
 	{
-		$data 	= Input::all();
-		$rules 	= array(
-			'reference_number' 		=> 'required',
-			'transaction_type' 	 	=> 'required',
-			'user_bank' 			=> 'required_if:transaction_type,transferencia',
-			'shop_bank'				=> 'required',
-			'transaction_date'		=> 'required|date|max:'.date('Y-m-d',time()),
-		);
-		$msg = array();
-		$attr = array(
-			'reference_number' 		=> 'numero de referencia',
-			'transaction_type'	 		=> 'tipo de transacción',
-			'user_bank'			 	=> 'banco remitente',
-			'shop_bank'			 	=> 'cuenta',
-			'transaction_date'	 	=> 'fecha de la transacción'
-		);
-		$validator = Validator::make($data, $rules, $msg, $attr);
-		if ($validator->fails()) {
-			return Response::json(array(
-				'type' => 'danger',
-				'data' => $validator->getMessageBag()
-			));
-		}
-		$donation = new Donation;
-		$donation->reference_number = $data['reference_number'];
-		$donation->transaction_type = $data['transaction_type'];
-		if ($data['transaction_type'] == 'transferencia') {
-			$donation->user_bank	= $data['user_bank'];
-		}
-		$donation->account			= $data['shop_bank'];
-		$donation->transaction_date = $data['transaction_date'];
-		$donation->save();
-		$data['title'] = "Nueva donación";
-		Mail::send('emails.new-donation', $data, function($message) use ($data)
-		{
-			$message->to('comunicaciones@fundaepekeina.org')->from('mail@fundaepekeina.org')->subject('Nueva donación');
-		});
-		return Response::json(array(
-			'type' 	=> 'success',
-			'msg'	=> 'Gracias por enviar su donación'
-		));
-	}
+		$title = Lang::get('lang.subscription_title')." | Funda Epékeina";
 
+		return View::make('home.subscribe')
+		->with('citaMenu','cita')
+		->with('text',Lang::get('lang.subscription_quote'))
+		->with('title',$title)
+		->with('size','big');	
+	}
+	public function getVolunteer()
+	{
+		$title = Lang::get('lang.be_a_volunteer')." | Funda Epékeina";
+
+		return View::make('home.volunteer')
+		->with('title',$title)
+		->with('citaMenu','cita')
+		->with('size','big')
+		->with('text',Lang::get('lang.volunteer_quote'));
+	}
+	/*
 	public function prueba()
 	{
 		return Redirect::to('/');
@@ -490,4 +581,5 @@ class HomeController extends BaseController {
 		}
 		return 'listo';
 	}
+	*/
 }

@@ -1,242 +1,132 @@
-@extends('layouts.main')
+@extends('layouts.default')
+
+@section('postcss')
+	<link href="{{ asset('css/owl.carousel.css') }}" rel="stylesheet"> 
+    <link href="{{ asset('css/owl.theme.default.min.css') }}" rel="stylesheet"> 
+@stop
 
 @section('content')
-    <section id="home-slider">
-        <div class="container">
-            <div class="row">
-                <div class="main-slider owl-carousel">
-                    <div class="">
-                        <a href="{{ URL::to('noticias/que-hacemos/18') }}"><img src="{{ asset('images/slides/1.jpg') }}"></a>
-                    </div>
-                    <div class="">
-                        <a href="{{ URL::to('noticias/que-hacemos/19') }}"><img src="{{ asset('images/slides/2.jpg') }}"></a>
-                    </div>
-                    <div class="">
-                        <a href="{{ URL::to('noticias/que-hacemos/187') }}"><img src="{{ asset('images/slides/3.jpg') }}"></a>
-                    </div>
-                    <div class="">
-                        <a href="{{ URL::to('noticias/que-hacemos/21') }}"><img src="{{ asset('images/slides/4.jpg') }}"></a>
-                    </div>
-                    <div>
-                        <a href="{{ URL::to('noticias/que-hacemos/1') }}"><img src="{{ asset('images/slides/campamento.jpg') }}"></a>
-                    </div>
-                    <div>
-                        <a href="{{ URL::to('noticias/sedes/111') }}"><img src="{{ asset('images/slides/escuela_campo.jpg') }}"></a>
-                    </div>
-                    <div>
-                        <a href="{{ URL::to('noticias/ver/218') }}"><img src="{{ asset('images/slides/habiarte.jpg') }}"></a>
-                    </div>
-                    <div>
-                        <img src="{{ asset('images/slides/papagayos.jpg') }}">
-                    </div>
+@include('partials.main-banner')
+<div class="row bg-white pt-3 wow fadeIn" data-wow-duration="500ms" data-wow-delay="600ms">
+	<div class="owl-carousel campaing-carousel">
+		<div class="center-align campaing-content">
+			<img src="{{ asset('images/logo.png') }}" class="allies-logo mr-1">
+			<p>APÓYANOS CON NUESTRA CAMPAÑA.<br> SÍ ESTÁS LISTO</p>
+			<a href="{{ URL::to('contacto/donaciones') }}" class="btn btn-xs bg-red ml-1">
+				{{ Lang::get('lang.donate') }}
+			</a>
+		</div>
+		<div class="center-align campaing-content">
+			<img src="{{ asset('images/logo.png') }}" class="allies-logo mr-1">
+			<p>ÚNETE A NOSOTROS,<br> ES HORA DE ACTUAR</p>
+			<a href="{{ URL::to('contacto/voluntariado') }}" class="btn btn-xs bg-red ml-1">
+				{{ Lang::get('lang.join') }}
+			</a>
+		</div>
+	</div>
+</div>
 
-                </div>
-
-            </div>
-        </div>
-        <div class="preloader"><i class="fa fa-sun-o fa-spin"></i></div>
-    </section>
-    <!--/#home-slider-->
-    <section id="services" class="responsive action" style="margin-top:50px;">
-        <div class="vertical-center">
-             <div class="container">
-                <div class="row">
-                    <div class=" take-tour">
-                        <div class="col-xs-12 wow fadeInLeft" data-wow-duration="500ms" data-wow-delay="300ms">
-                            <h1 class="title">{{ Lang::get('lang.projects') }}</h1>
-                        </div>
+<div class="row bg-turquesa pt-4 pb-4 wow fadeIn" data-wow-duration="500ms" data-wow-delay="900ms">
+	<div class="col s12 pl-0 pr-0 news">
+        @foreach($article as $a)
+			<div class="col s12 m6 l3 mb-2">
+				@include('partials.article')
+			</div>
+		@endforeach
+		<div class="col s12 center-align">
+			<a href="{{ URL::to('noticias/buscar') }}" class="btn bg-red">
+				{{ Lang::get('lang.see_all') }}
+			</a>
+		</div>
+	</div>
+</div>
+<div id="allies"></div>
+<div class="row bg-white pt-4 pb-4 wow fadeIn" data-wow-duration="500ms" data-wow-delay="300ms">
+	<div class="col s12">
+		<div class="valign-wrapper-on-med-and-up">
+			<div class="col s12 m5 mb-2 valign-wrapper">
+				<img src="{{ asset('images/logo.png') }}" class="allies-logo mr-1 hide-on-small-only">
+				<p>ELLOS NOS APOYAN</p>
+				<a href="{{ URL::to('contacto/donaciones') }}" class="btn btn-xs bg-red ml-1">{{ Lang::get('lang.donate') }}</a>
+			</div>
+			<div class="col s12 m7 mb-2">
+				<div class="owl-carousel valign-wrapper">
+					<div class="owl-content center-align valign-wrapper">
+                        <img src="{{ asset('images/allies/pnud.png') }}" class="d-block mx-auto">
                     </div>
-                </div>
-            </div>
-        </div>
-   </section>
-   <section id="">
-        <div class="container">
-            <div class="row">
-
-                <div class="col-xs-12 col-sm-6 text-center padding wow fadeIn" data-wow-duration="1000ms" data-wow-delay="300ms">
-                    <div class="single-service">
-                        <div class="wow scaleIn" data-wow-duration="500ms" data-wow-delay="300ms">
-                            <img src="images/projects/redjoven.png" alt="">
-                        </div>
-                        <h2>Red Joven Venezuela</h2>
-                        <p class="text-justify">{{ Lang::get('lang.rjv_text',array(
-                            "link1" => '<a href="http://redjovenvenezuela.com" target="_blank">'.Lang::get('lang.here').'</a>'
-                        )) }}</p>
+                    <div class="owl-content center-align valign-wrapper">
+                        <img src="{{ asset('images/allies/ulalogo.jpg') }}" class="d-block mx-auto">
                     </div>
-                </div>
-                <div class="col-xs-12 col-sm-6 text-center padding wow fadeIn" data-wow-duration="1000ms" data-wow-delay="900ms">
-                    <div class="single-service">
-                        <div class="wow scaleIn" data-wow-duration="500ms" data-wow-delay="900ms">
-                            <img src="{{ asset('images/projects/laguna.png') }}" alt="">
-                        </div>
-                        <h2>La laguna</h2>
-                        <p class="text-justify">{{ Lang::get('lang.pnud_text') }}.... <a href="{{ URL::to('proyectos/escuela-de-campo-para-agricultores') }}">{{ Lang::get('lang.read_more') }}</a></p>
+                    <div class="owl-content center-align valign-wrapper">
+                        <img src="{{ asset('images/allies/corpoula.jpg') }}" class="d-block mx-auto">
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--/#services-->
-    <section id="" class="responsive action">
-        <div class="vertical-center">
-             <div class="container">
-                <div class="row">
-                    <div class=" take-tour">
-                        <div class="col-xs-12 wow fadeInLeft" data-wow-duration="500ms" data-wow-delay="300ms">
-                            <h1 class="title">{{ Lang::get('lang.last_news') }}</h1>
-                        </div>
+                    <div class="owl-content center-align valign-wrapper">
+                        <img src="{{ asset('images/allies/mision.jpg') }}" class="d-block mx-auto">
                     </div>
-                </div>
-            </div>
-        </div>
-   </section>
-    <!--/#action-->
-    <section>
-        <div class="container">
-            <div class="row">
-                <div class="news-slider owl-carousel formulario-top">
-                @foreach($article as $a)
-                    <div class="single-features post-content">
-                        <div class="col-xs-12 col-md-6 wow fadeInLeft image-container" data-wow-duration="500ms" data-wow-delay="300ms">
-                            <a href="{{ URL::to('noticias/ver/'.$a->slugs->first()->text) }}">
-                                @if(!is_null($a->imagenes->first()))
-                                    <img src="{{ asset('images/news/'.$a->imagenes->first()->image) }}" class="img-responsive" alt="">
-                                @else
-                                    <img src="{{ asset('images/logo.png') }}" class="img-responsive" alt="">
-                                @endif
-                            </a>
-                        </div>
-                        <div class="col-xs-12 col-md-6 wow fadeInRight news-text-index" data-wow-duration="500ms" data-wow-delay="300ms">
-                            <h2>{{ $a->titles->first()->text }}</h2>
-                            <h3 class="post-author"><p class="text-justify no-pointer">{{ substr(strip_tags($a->descriptions->first()->text), 0, 300) }} [...]</p></h3>
-                            <a href="{{ URL::to('noticias/ver/'.$a->slugs->first()->text) }}" class="read-more">{{ Lang::get('lang.read_more') }}</a>
-                        </div>
+                    <div class="owl-content center-align valign-wrapper">
+                        <img src="{{ asset('images/allies/eu.jpg') }}" class="d-block mx-auto">
                     </div>
-                @endforeach
-                </div>
-                <div class="text-center" style="margin-bottom:50px;margin-top:50px;"><a href="{{ URL::to('noticias') }}" class="btn btn-lg btn-info">{{ Lang::get('lang.see_all') }}</a></div>
-            </div>
-        </div>
-    </section>
-     <!--/#features-->
-     <section id="" class="responsive action">
-        <div class="vertical-center">
-             <div class="container">
-                <div class="row">
-                    <div class=" take-tour">
-                        <div class="col-xs-12 wow fadeInLeft" data-wow-duration="500ms" data-wow-delay="300ms">
-                            <h1 class="title">{{ Lang::get('lang.our_allies') }}</h1>
-                        </div>
+                    <div class="owl-content center-align valign-wrapper">
+                        <img src="{{ asset('images/allies/fmam.png') }}" class="d-block mx-auto">
                     </div>
-                </div>
-            </div>
-        </div>
-   </section>
-    <!--/#action-->
-    <section >
-        <div class="container">
-            <div class="row">
-                <div class="allies-slider owl-carousel">
-                    <div class="">
-                        <img src="{{ asset('images/allies/pnud.png') }}">
+                    <div class="owl-content center-align valign-wrapper">
+                        <img src="{{ asset('images/allies/sgp.png') }}" class="d-block mx-auto">
                     </div>
-                    <div class="">
-                        <img src="{{ asset('images/allies/ulalogo.jpg') }}">
+                    <div class="owl-content center-align valign-wrapper">
+                        <a href="{{ URL::to('http://redjovenvenezuela.com') }}">
+                        	<img src="{{ asset('images/allies/redjoven.png') }}" class="d-block mx-auto">
+                        </a>
                     </div>
-                    <div class="">
-                        <img src="{{ asset('images/allies/corpoula.jpg') }}">
+                    <div class="owl-content center-align valign-wrapper">
+                        <img src="{{ asset('images/allies/ecv.jpg') }}" class="d-block mx-auto">
                     </div>
-                    <div class="">
-                        <img src="{{ asset('images/allies/mision.jpg') }}">
+                    <div class="owl-content center-align valign-wrapper">
+                        <img src="{{ asset('images/allies/zerolo.jpg') }}" class="d-block mx-auto">
                     </div>
-                    <div class="">
-                        <img src="{{ asset('images/allies/eu.jpg') }}">
+                    <div class="owl-content center-align valign-wrapper">
+                        <img src="{{ asset('images/allies/ofigrapa.png') }}" class="d-block mx-auto">
                     </div>
-                    <div class="">
-                        <img src="{{ asset('images/allies/fmam.png') }}">
-                    </div>
-                    <div class="">
-                        <img src="{{ asset('images/allies/sgp.png') }}">
-                    </div>
-                    <div class="">
-                        <a href="{{ URL::to('http://uba.edu.ve') }}"><img src="{{ asset('images/allies/uba.png') }}"></a>
-                    </div>
-                    <div class="">
-                        <a href="{{ URL::to('http://redjovenvenezuela.com') }}"><img src="{{ asset('images/allies/redjoven.png') }}" style="max-width:300px;"></a>
-                    </div>
-                    <div class="">
-                        <img src="{{ asset('images/allies/ecv.jpg') }}">
-                    </div>
-                    <div class="">
-                        <img src="{{ asset('images/allies/zerolo.jpg') }}">
-                    </div>
-                    <div class="">
-                        <img src="{{ asset('images/allies/ofigrapa.png') }}">
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 @stop
 
 @section('postscript')
-<script type="text/javascript">
-    $(document).ready(function(){
-        $('.main-slider').owlCarousel({
-            loop: true,
+	<script type="text/javascript" src="{{ asset('js/owl.carousel.min.js') }}"></script>
+	<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$('.campaing-carousel').owlCarousel({
+			loop: true,
             margin: 10,
-            nav:true,
-            navText: [ '<<', '>>' ],
             autoplay: true,
-            autoplayTimeout: 5000,
-            autoplayHoverPause: false,
-            responsive:{
-                0:{
-                    items:1
-                },
-            }
-        });
-        $('.news-slider').owlCarousel({
-            loop: true,
+            autoplayTimeout: 6000,
+            autoplayHoverPause: true,
+            items: 1
+		});
+		$(".owl-carousel").owlCarousel({
             margin: 10,
-            nav:true,
-            navText: [ '<<', '>>' ],
-            autoplay: true,
-            autoplayTimeout: 5000,
-            autoplayHoverPause: false,
-            responsive:{
-                0:{
-                    items:1
-                },
-            }
-        });
-        $('.allies-slider').owlCarousel({
-            loop: true,
-            margin: 10,
-            nav: false,
+            nav: true,
+            navText: ["<i class=\"material-icons\">chevron_left</i>","<i class=\"material-icons\">chevron_right</i>"],
             dots: true,
             loop: true,
-            autoplay: true,
+            autoplay: false,
             autoplayTimeout: 3000,
             autoplayHoverPause: false,
             responsive:{
                 0:{
-                    items:1
-                },
-                650:{
                     items:2
                 },
-                850:
+                768:
                 {
-                    items: 2
+                	items: 3
                 },
-                1200:{
-                    items:4
+                1240:{
+                    items:5
                 }
             }
-        });
-    });
-</script>
+		});
+	});
+	</script>
 @stop

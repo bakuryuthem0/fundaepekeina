@@ -40,9 +40,10 @@
         @foreach($lang as $l)
         <div class="formulario col-xs-12 col-md-6 hidden subtitle-container">
           <label>Subtitulo ({{ $l->names->first()->text }})</label>
-          <input type="text" name="subtitle[{{ $l->id }}]" class="form-control" placeholder="Subtitulo" required value="{{ Input::old('subtitle.'.$l->id) }}">
+          <input type="text" name="subtitle[{{ $l->id }}]" class="form-control" placeholder="Subtitulo" required disabled value="{{ Input::old('subtitle.'.$l->id) }}">
         </div>
         @endforeach
+        @if(1 == 2)
         <div class="formulario col-xs-12 hidden sedes-group">
           <div class="form-group">
               <div class="input-group full-leght">
@@ -58,6 +59,7 @@
               </div><!-- /input-group -->
           </div>
         </div>
+        @endif
         @foreach($lang as $l)
         <div class="formulario col-xs-12">
           <label>Descripción ({{ $l->names->first()->text }})</label>

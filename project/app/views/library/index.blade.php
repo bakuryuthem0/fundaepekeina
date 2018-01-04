@@ -1,165 +1,88 @@
-@extends('layouts.main')
+@extends('layouts.default')
 
+@section('postcss')
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+@stop
 @section('content')
-<section id="page-breadcrumb" class="formulario">
-        <div class="vertical-center sun">
-             <div class="container">
-                <div class="row">
-                    <div class="">
-                        <div class="col-sm-12">
-                            <h1 class="title">
-                                Biblioteca Virtual
-                                <a href="{{ URL::previous() }}" class="back-link pull-right">Volver atras</a>
-                            </h1>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<div class="row">
+    <form method="GET" action="{{ URL::to('biblioteca-virtual?').$paginatorFilter }}">
+        <div class="col s12 pl-0 pr-0">
+            <h1 class="center-align" style="font-size: 24px;">Filtros</h1>
         </div>
-   </section>
-    <!--/#page-breadcrumb-->
-
-    <section id="projects">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12">
-                    <div class="row">
-                        <form method="GET" action="{{ URL::to('biblioteca-virtual?').$paginatorFilter }}">
-                            <div class="col-xs-12 no-padding">
-                                <h1 class="text-center" style="font-size: 24px;">Filtros</h1>
-                                <div class="col-xs-12 col-md-8">
-                                    <input type="text" name="busq" class="form-control" placeholder="Palabras claves" @if(isset($busq)) value="{{ $busq }}" @endif>
-                                </div>
-                                <div class="col-xs-9 col-md-3">
-                                    <select name="type" class="form-control">
-                                        <option value="">Tipo de documento</option>
-                                        <option value="libros" @if(isset($type) && $type == "libros") selected @endif>Libros</option>
-                                        <option value="articulos-de-investigacion" @if(isset($type) && $type == "articulos-de-investigacion") selected @endif>Articulos de investigacion</option>
-                                        <option value="informes" @if(isset($type) && $type == "informes") selected @endif>Informes</option>
-                                        <option value="boletin" @if(isset($type) && $type == "boletin") selected @endif>Boletin</option>
-                                    </select>
-                                </div>
-                                <div class="col-xs-3 col-md-1">
-                                    <button class="btn btn-default">
-                                        <i class="fa fa-search"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
-                        @if(count($files) < 1)
-                        <div class="col-xs-12 formulario"><h2>No se han encontrado resultados para la busqueda.</h2></div>
-                        @else
-                        <hr>
-                        <div class="col-xs-12 formulario"><h1 class="" style="font-size: 24px;">Resultados.</h1></div>
-                        @endif
-                        @foreach($files as $f)
-                        <div class="row book-container">
-                            @if(!is_null($f->portada) && !empty($f->portada))
-                                <div class="col-xs-12 col-md-4">
-                                    <img src="{{ asset('redjoven/biblioteca/images/'.$f->portada) }}" class="img-responsive">
-                                </div>
-                            @endif
-                            <div class="col-xs-12 @if(!is_null($f->portada) && !empty($f->portada)) col-md-8 @endif library-container">
-                                <h2 class="hist-title library">{{ $f->title }}</h2>
-                                @if(!empty($f->description))
-                                    <p class="text-justify">
-                                        {{ $f->description }}
-                                    </p>
-                                @endif
-                                <small>
-                                    <span><i class="fa fa-book"></i> {{ ucfirst(str_replace('-',' ',$f->type)) }}</span>
-
-                                    @if(!empty($f->autor))
-                                        <span><i class="fa fa-pencil"></i> {{ $f->autor }}</span>
-                                    @endif
-                                    @if(!empty($f->publication_date))
-                                        <span><i class="fa fa-calendar"></i> {{ $f->publication_date }}</span>
-                                    @endif
-                                </small>
-                                <a href="{{ URL::to('biblioteca/descargar/'.$f->id) }}" target="_blank" class="pull-right">Descargar</a>
-                            </div>
-                        </div>
-                        <div class="clearfix"></div>
-                        <hr>
-                        @endforeach
-                    </div>
-                </div>
-                <div class="clearfix"></div>
-            <div class="blog-pagination">
-                <nav role="navigation">
-                    <?php  $presenter = new Illuminate\Pagination\BootstrapPresenter($files); ?>
-                    @if ($files->getLastPage() > 1)
-                        <ul class="pagination">
-                        <?php
-                            $beforeAndAfter = 3;
-                            $currentPage = $files->getCurrentPage();
-                            $lastPage = $files->getLastPage();
-                            $start = $currentPage - $beforeAndAfter;
-                            if($start < 1)
-                            {
-                                $pos = $start - 1;
-                                $start = $currentPage - ($beforeAndAfter + $pos);
-                            }
-                            $end = $currentPage + $beforeAndAfter;
-                            if($end > $lastPage)
-                            {
-                                $pos = $end - $lastPage;
-                                $end = $end - $pos;
-                            }
-                            if ($currentPage <= 1)
-                            {
-                                echo '<li class="disabled"><a href="#">&laquo; Primera</a></li>';
-                            }
-                            else
-                            {
-                                $url = $files->getUrl(1);
-                                echo '<li><a class="" href="'.$url.$paginatorFilter.'">&laquo; Primera</a></li>';
-                            }
-                            if (($currentPage-1) < $start) {
-                                echo '<li class="disabled"><a href="#">&laquo;</a></li>';   
-                            }else
-                            {
-                                echo '<li><a href="'.$files->getUrl($currentPage-1).$paginatorFilter.'">&laquo;</a></li>';
-                            }
-                            for($i = $start; $i<=$end;$i++)
-                            {
-                                if ($currentPage == $i) {
-                                    echo '<li class="active"><a href="#">'.$i.'</a></li>';
-                                }else
-                                {
-                                    echo '<li><a href="'.$files->getUrl($i).$paginatorFilter.'">'.$i.'</a></li>';
-                                }
-                            }
-                            if (($currentPage+1) > $end) {
-                                echo '<li class="disabled"><a href="#">&raquo;</a href="#"></li>' ;
-                            }else
-                            {
-                                echo '<li><a href="'.$files->getUrl($currentPage+1).$paginatorFilter.'">&raquo;</a></li>';
-                            }
-                            if ($currentPage >= $lastPage)
-                            {
-                                echo '<li class="disabled"><a href="#">Última &raquo;</a></li>';
-                            }
-                            else
-                            {
-                                $url = $files->getUrl($lastPage);
-                                echo '<li><a class="" href="'.$url.$paginatorFilter.'">Última &raquo;</a></li>';
-                            }
-                        ?>
-                        </ul>
+        <div class="col s12 m8">
+            <input type="text" name="busq" class="form-control" placeholder="Palabras claves" @if(isset($busq)) value="{{ $busq }}" @endif>
+        </div>
+        <div class="col s9 m3">
+            <select name="type" class="form-control">
+                <option value="">Tipo de documento</option>
+                <option value="libros" @if(isset($type) && $type == "libros") selected @endif>Libros</option>
+                <option value="articulos-de-investigacion" @if(isset($type) && $type == "articulos-de-investigacion") selected @endif>Articulos de investigacion</option>
+                <option value="informes" @if(isset($type) && $type == "informes") selected @endif>Informes</option>
+                <option value="boletin" @if(isset($type) && $type == "boletin") selected @endif>Boletin</option>
+            </select>
+        </div>
+        <div class="col s3 m1">
+            <button class="btn bg-red pl-1 pr-1">
+                <i class="fa fa-search"></i>
+            </button>
+        </div>
+    </form>
+</div>
+<div class="row">
+    @if(count($collection) < 1)
+        <div class="col s12 mb-2"><h2>No se han encontrado resultados para la busqueda.</h2></div>
+    @else
+        <div class="col s12 mb-2"><h1 class="" style="font-size: 24px;">Resultados.</h1></div>
+    @endif
+    @foreach($collection as $f)
+        <div class="col s12 m6 l4">
+            <div class="card horizontal valign-wrapper">
+                <div class="card-image img-horizontal valign-wrapper">
+                    @if(!is_null($f->portada) && !empty($f->portada))
+                        <img src="{{ asset('redjoven/biblioteca/images/'.$f->portada) }}">
+                    @else
+                        <img src="http://via.placeholder.com/360x480">
                     @endif
-                </nav>
-            </div>
+                </div>
+                <div class="card-stacked">
+                    <div class="card-content">
+                        <strong><span>{{ $f->title }}</span></strong>
+                        <br>
+                        @if(!empty($f->autor))
+                            <small><i class="fa fa-pencil"></i> {{ $f->autor }}</small>
+                            <br>
+                        @endif
+                        @if(!empty($f->publication_date))
+                            <small><i class="fa fa-calendar"></i> {{ date('d/m/Y',strtotime($f->publication_date)) }}</small>
+                            <br>
+                        @endif
+                        @if(!empty($f->description))
+                            <p class="justify-align">
+                                {{ substr(strip_tags($f->description), 0, 40) }}
+                            </p>
+                            <br>
+                        @endif
+                        <a href="{{ URL::to('biblioteca/descargar/'.$f->id) }}" target="_blank" class="btn bg-red">{{ Lang::get('lang.download') }}</a>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
-    <!--/#projects-->
+    @endforeach    
+</div>
+<div class="row">
+    <div class="col s12">
+        @include('partials.pagination')
+    </div>
+</div>
+                
 @stop
 
 @section('postscript')
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $(".fancybox").fancybox();
-        });
-    </script> 
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function($) {
+        $('.fancybox').fancybox();
+        $('select').material_select();
+    });
+</script>
 @stop

@@ -51,7 +51,7 @@ Log::useFiles(storage_path().'/logs/laravel.log');
 App::error(function(Exception $exception, $code)
 {
 	if ($code == 404) {
-		return View::make('errors.notfound')->with('title','Error, pagina no encontrada')->with('active','error');
+		return View::make('errors.notfound')->with('size','big')->with('title','Error, pagina no encontrada')->with('active','error');
 	}else
 	{
 		Log::error($exception);
