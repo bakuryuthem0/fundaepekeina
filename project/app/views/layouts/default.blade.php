@@ -46,7 +46,7 @@
     <div class="overly">
         <div class="side-menu absolute">
             <ul class="right-align">
-                <li class="row">
+                <li class="row mb-0">
                     <div class="col s9 mt-2">
                         <span class="grey-text text-lighten-3 hide-on-large-only">
                             {{ Lang::get('lang.slide-to-close') }}
@@ -58,7 +58,7 @@
                         </a>
                     </div>
                 </li>
-                <li class="row">
+                <li class="row mb-0">
                     <div class="col s9 mt-2">
                         <a class="grey-text text-lighten-3 waves-effect waves-light" href="{{ URL::to('quienes-somos') }}">
                             {{ Lang::get('lang.about_menu') }}
@@ -80,7 +80,7 @@
                         </div>
                     </div>
                 </li>
-                <li>
+                <li class="mb-0">
                     <div class="row">
                         <div class="col s9 mt-2">
                             <a class="grey-text text-lighten-3 waves-effect waves-light" href="{{ URL::to('noticias/buscar')}}">
@@ -119,7 +119,7 @@
                         </div>
                     </div>
                 </li>
-                <li>
+                <li class="mb-0">
                     <div class="row">
                         <div class="col s9 mt-2">
                             <a class="grey-text text-lighten-3 waves-effect waves-light" href="{{ URL::to('entrevistas/historias-epekeinas') }}">  
@@ -131,7 +131,7 @@
                         </div>
                     </div>
                 </li>
-                <li>
+                <li class="mb-0">
                     <div class="row">
                         <div class="col s9 mt-2">
                             <a class="grey-text text-lighten-3 waves-effect waves-light" href="{{ URL::to('biblioteca-virtual') }}">  
@@ -143,7 +143,7 @@
                         </div>
                     </div>
                 </li>
-                <li>
+                <li class="mb-0">
                     <div class="row">
                         <div class="col s9 mt-2">
                            <a class="grey-text text-lighten-3 waves-effect waves-light" href="{{ URL::to('galeria') }}">
@@ -155,7 +155,7 @@
                         </div>
                     </div>
                 </li>
-                <li>
+                <li class="mb-0">
                     <div class="row">
                         <div class="col s9 mt-2">
                             <a class="grey-text text-lighten-3 waves-effect waves-light" href="{{ URL::to('contacto/donaciones') }}">
@@ -185,10 +185,10 @@
     @if(isset($donaMenu))
     <div class="relative menu-call-to-action hide-on-med-and-down">
         <div class="row mb-0">
-            <div class="col l3 bg-white center-align">
-                <img src="{{ asset('images/logo.png') }}" class="">
+            <div class="col l2 bg-white center-align">
+                <a href="{{ URL::to('/') }}" title="{{Lang::get('lang.home_title')}}"><img src="{{ asset('images/logo.png') }}" class="logo"></a>
             </div>
-            <div class="col l9 bg-image">
+            <div class="col l10 bg-image">
                 <div class="absolute col l4 row mb-0">
                     <div class="col s12 text-white">
                         <h4 class="right-align">{{ isset($campaing)? $campaing : "Promocion y campañas de la fundación" }}</h4>
@@ -204,10 +204,10 @@
     @if(isset($citaMenu))
     <div class="relative menu-call-to-action hide-on-small-only">
         <div class="row mb-0 valign-wrapper">
-            <div class="col l3 bg-white center-align">
-                <a href="{{ URL::to('/') }}" title="Lang::get('lang.home_title')"><img src="{{ asset('images/logo.png') }}" class=""></a>
+            <div class="col l2 bg-white center-align">
+                <a href="{{ URL::to('/') }}" title="{{Lang::get('lang.home_title')}}"><img src="{{ asset('images/logo.png') }}" class="logo"></a>
             </div>
-            <div class="col l9 bg-white">
+            <div class="col l10 bg-white">
                 <div class="col s12">
                     <h4 class="left-align">{{ $text }}</h4>
                 </div>
@@ -219,13 +219,13 @@
         <div class="col s12">
             <div class="nav-wrapper">
                 <a href="{{ URL::to('/') }}" class="waves-effect pl-2 pr-2 left">
-                    <i class="material-icons">home</i>
+                    <i class="material-icons nav-icons">home</i>
                 </a>
                 <a href="{{ URL::to('/') }}" class="brand-logo">
                     <img src="{{ asset('images/logo.png') }}" alt="logo | fundaepekeina.org" class="hide">
                 </a>
                 <a href="#" class="waves-effect btn-menu right d-block">
-                    <i class="material-icons">menu</i>
+                    <i class="material-icons nav-icons">menu</i>
                 </a>
             </div>
         </div>
