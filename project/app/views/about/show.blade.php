@@ -19,9 +19,12 @@
                     </a>
                 </div>
                 <div class="card-content waves-effect waves-block">
-                    <h3 class="truncate text-red">{{ $h->titles->first()->text }}</h3>
-                    <h5 class="text-blue">{{ date('d/m/Y H:i:s',strtotime($h->updated_at)) }}</h5>
-                    <p class="truncate">{{ substr(strip_tags($h->descriptions->first()->text), 0, 100) }}...</p>
+                    <h3>
+                        <span class="card-title truncate">
+                            {{ $h->titles->first()->text }}
+                        </span>
+
+                    </h3>
                     <a href="{{ URL::to('entrevistas/historias-epekeinas/'.$h->slugs->first()->text) }}"><span class="bolder">{{ Lang::get('lang.read_interview') }}</span></a> 
                 </div>
             </div>

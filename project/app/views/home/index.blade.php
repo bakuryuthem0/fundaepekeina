@@ -41,15 +41,15 @@
 	</div>
 </div>
 <div id="allies"></div>
-<div class="row bg-white pt-4 pb-4 wow fadeIn" data-wow-duration="500ms" data-wow-delay="300ms">
+<div class="row bg-white pt-2 pb-0 mb-0 wow fadeIn" data-wow-duration="500ms" data-wow-delay="300ms">
 	<div class="col s12">
 		<div class="valign-wrapper-on-med-and-up">
-			<div class="col s12 m5 mb-2 valign-wrapper">
+			<div class="col s12 m4 mb-2 valign-wrapper">
 				<img src="{{ asset('images/logo.png') }}" class="allies-logo mr-1 hide-on-small-only">
 				<p>ELLOS NOS APOYAN</p>
 				<a href="{{ URL::to('contacto/donaciones') }}" class="btn btn-xs bg-red ml-1">{{ Lang::get('lang.donate') }}</a>
 			</div>
-			<div class="col s12 m7 mb-2">
+			<div class="col s12 m8 mb-2">
 				<div class="owl-carousel valign-wrapper">
 					<div class="owl-content center-align valign-wrapper">
                         <img src="{{ asset('images/allies/pnud.png') }}" class="d-block mx-auto">
@@ -106,7 +106,7 @@
             items: 1
 		});
 		$(".owl-carousel").owlCarousel({
-            margin: 10,
+            margin: 30,
             nav: true,
             navText: ["<i class=\"material-icons\">chevron_left</i>","<i class=\"material-icons\">chevron_right</i>"],
             dots: true,

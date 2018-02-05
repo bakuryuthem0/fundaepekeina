@@ -185,13 +185,13 @@
     @if(isset($donaMenu))
     <div class="relative menu-call-to-action hide-on-med-and-down">
         <div class="row mb-0">
-            <div class="col l3 bg-white center-align">
+            <div class="col l2 bg-white center-align">
                 <img src="{{ asset('images/logo.png') }}" class="">
             </div>
-            <div class="col l9 bg-image">
+            <div class="col l10 bg-image">
                 <div class="absolute col l4 row mb-0">
                     <div class="col s12 text-white">
-                        <h4 class="right-align">{{ isset($campaing)? $campaing : "Promocion y campañas de la fundación" }}</h4>
+                        <h4 class="right-align">{{ isset($campaing)? $campaing : "Promocion y<br> campañas de la fundación" }}</h4>
                     </div>
                     <div class="col s12 right-align">
                         <a href="{{ URL::to('contacto/donaciones') }}" class="btn waves-effect bg-red">{{ Lang::get('lang.donate') }}</a>
@@ -204,10 +204,10 @@
     @if(isset($citaMenu))
     <div class="relative menu-call-to-action hide-on-small-only">
         <div class="row mb-0 valign-wrapper">
-            <div class="col l3 bg-white center-align">
+            <div class="col l2 bg-white center-align">
                 <a href="{{ URL::to('/') }}" title="Lang::get('lang.home_title')"><img src="{{ asset('images/logo.png') }}" class=""></a>
             </div>
-            <div class="col l9 bg-white">
+            <div class="col l10 bg-white">
                 <div class="col s12">
                     <h4 class="left-align">{{ $text }}</h4>
                 </div>

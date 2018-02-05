@@ -14,11 +14,11 @@
 @endif
 <div class="row">
     <div class="col s12">
-        <h1 class="text-red center-align">
+        <h1 class="center-align">
             <strong>{{ $article->titles->first()->text }}</strong>
         </h1>   
         @if(!is_null($article->subtitle))
-        <h2 class="text-blue center-align">
+        <h2 class="center-align">
             <strong>{{ $article->subtitle->subtitulo }}</strong>
         </h2>
         @endif

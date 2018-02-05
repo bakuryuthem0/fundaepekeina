@@ -36,7 +36,7 @@
     @endif
     @foreach($collection as $f)
         <div class="col s12 m6 l4">
-            <div class="card horizontal valign-wrapper">
+            <div class="card horizontal valign-wrapper hoverable no-shadow">
                 <div class="card-image img-horizontal valign-wrapper">
                     @if(!is_null($f->portada) && !empty($f->portada))
                         <img src="{{ asset('redjoven/biblioteca/images/'.$f->portada) }}">
@@ -62,7 +62,7 @@
                             </p>
                             <br>
                         @endif
-                        <a href="{{ URL::to('biblioteca/descargar/'.$f->id) }}" target="_blank" class="btn bg-red">{{ Lang::get('lang.download') }}</a>
+                        <a href="{{ URL::to('biblioteca/descargar/'.$f->id) }}" target="_blank" class="btn bg-red btn-download">{{ Lang::get('lang.download') }}</a>
                     </div>
                 </div>
             </div>

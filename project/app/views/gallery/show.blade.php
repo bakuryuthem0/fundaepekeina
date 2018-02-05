@@ -7,7 +7,7 @@
 @include('partials.main-banner')
 <div class="row">
 	@foreach($images as $g)
-		<div class="col s12 m4">
+		<div class="col s12 m3">
 			<div class="card-panel">
 	              <a href="{{ asset('images/gallery/'.str_replace(' ','-',strtolower($gallery->name)).'/'.$g->image) }}" class="fancybox" data-fancybox="group" title="{{ $gallery->name }}">
 	              	<img src="{{ asset('images/gallery/'.str_replace(' ','-',strtolower($gallery->name)).'/'.$g->image) }}" class="text-center responsive-img" alt="{{ $gallery->name }}">
