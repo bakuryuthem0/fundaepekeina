@@ -46,7 +46,7 @@
     <div class="overly">
         <div class="side-menu absolute">
             <ul class="right-align">
-                <li class="row">
+                <li class="row mb-0">
                     <div class="col s9 mt-2">
                         <span class="grey-text text-lighten-3 hide-on-large-only">
                             {{ Lang::get('lang.slide-to-close') }}
@@ -58,7 +58,7 @@
                         </a>
                     </div>
                 </li>
-                <li class="row">
+                <li class="row mb-0">
                     <div class="col s9 mt-2">
                         <a class="grey-text text-lighten-3 waves-effect waves-light" href="{{ URL::to('quienes-somos') }}">
                             {{ Lang::get('lang.about_menu') }}
@@ -80,8 +80,8 @@
                         </div>
                     </div>
                 </li>
-                <li>
-                    <div class="row">
+                <li class="">
+                    <div class="row mb-0">
                         <div class="col s9 mt-2">
                             <a class="grey-text text-lighten-3 waves-effect waves-light" href="{{ URL::to('noticias/buscar')}}">
                                 {{ Lang::get('lang.news_menu') }}
@@ -119,8 +119,8 @@
                         </div>
                     </div>
                 </li>
-                <li>
-                    <div class="row">
+                <li class="">
+                    <div class="row mb-0">
                         <div class="col s9 mt-2">
                             <a class="grey-text text-lighten-3 waves-effect waves-light" href="{{ URL::to('entrevistas/historias-epekeinas') }}">  
                                 {{ Lang::get('lang.history_menu') }}
@@ -131,8 +131,8 @@
                         </div>
                     </div>
                 </li>
-                <li>
-                    <div class="row">
+                <li class="">
+                    <div class="row mb-0">
                         <div class="col s9 mt-2">
                             <a class="grey-text text-lighten-3 waves-effect waves-light" href="{{ URL::to('biblioteca-virtual') }}">  
                                 {{ Lang::get('lang.library_menu') }}
@@ -143,8 +143,8 @@
                         </div>
                     </div>
                 </li>
-                <li>
-                    <div class="row">
+                <li class="">
+                    <div class="row mb-0">
                         <div class="col s9 mt-2">
                            <a class="grey-text text-lighten-3 waves-effect waves-light" href="{{ URL::to('galeria') }}">
                                 {{ Lang::get('lang.gallery_menu') }}
@@ -155,8 +155,8 @@
                         </div>
                     </div>
                 </li>
-                <li>
-                    <div class="row">
+                <li class="">
+                    <div class="row mb-0">
                         <div class="col s9 mt-2">
                             <a class="grey-text text-lighten-3 waves-effect waves-light" href="{{ URL::to('contacto/donaciones') }}">
                                 {{ Lang::get('lang.donation_menu') }}
@@ -186,9 +186,9 @@
     <div class="relative menu-call-to-action hide-on-med-and-down">
         <div class="row mb-0">
             <div class="col l2 bg-white center-align">
-                <img src="{{ asset('images/logo.png') }}" class="">
+                <a href="{{ URL::to('/') }}" title="{{Lang::get('lang.home_title')}}"><img src="{{ asset('images/logo.png') }}" class="logo"></a>
             </div>
-            <div class="col l10 bg-image">
+            <div class="col l10 bg-image relative">
                 <div class="absolute col l4 row mb-0">
                     <div class="col s12 text-white">
                         <h4 class="right-align">{{ isset($campaing)? $campaing : "Promocion y<br> campañas de la fundación" }}</h4>
@@ -205,7 +205,7 @@
     <div class="relative menu-call-to-action hide-on-small-only">
         <div class="row mb-0 valign-wrapper">
             <div class="col l2 bg-white center-align">
-                <a href="{{ URL::to('/') }}" title="Lang::get('lang.home_title')"><img src="{{ asset('images/logo.png') }}" class=""></a>
+                <a href="{{ URL::to('/') }}" title="{{Lang::get('lang.home_title')}}"><img src="{{ asset('images/logo.png') }}" class="logo"></a>
             </div>
             <div class="col l10 bg-white">
                 <div class="col s12">
@@ -216,17 +216,19 @@
     </div>
     @endif
     <nav class="nav-fixed row mb-0 bg-turquesa sticky">
-        <div class="col s12">
-            <div class="nav-wrapper">
-                <a href="{{ URL::to('/') }}" class="waves-effect pl-2 pr-2 left">
-                    <i class="material-icons">home</i>
-                </a>
-                <a href="{{ URL::to('/') }}" class="brand-logo">
-                    <img src="{{ asset('images/logo.png') }}" alt="logo | fundaepekeina.org" class="hide">
-                </a>
-                <a href="#" class="waves-effect btn-menu right d-block">
-                    <i class="material-icons">menu</i>
-                </a>
+        <div class="row contenedor">
+            <div class="col s12">
+                <div class="nav-wrapper">
+                    <a href="{{ URL::to('/') }}" class="waves-effect pl-2 pr-2 left">
+                        <i class="material-icons nav-icons">home</i>
+                    </a>
+                    <a href="{{ URL::to('/') }}" class="brand-logo">
+                        <img src="{{ asset('images/logo.png') }}" alt="logo | fundaepekeina.org" class="hide">
+                    </a>
+                    <a href="#" class="waves-effect btn-menu right d-block">
+                        <i class="material-icons nav-icons">menu</i>
+                    </a>
+                </div>
             </div>
         </div>
     </nav>
@@ -251,109 +253,111 @@
     <footer class="page-footer bg-turquesa">
         <hr>
         <div class="row">
-            <div class="col-s12">
-                <div class="col s12 l7 pl-0 pr-0">
-                    <div class="col s12 m6 l4">
-                        <ul>
-                            <li class="mt-1">
-                                <a class="grey-text text-lighten-3" href="{{ URL::to('quienes-somos') }}">
-                                    {{ Lang::get('lang.about_menu') }}
-                                </a>
-                            </li>
-                            <li class="mt-1">
-                                <a class="grey-text text-lighten-3" href="{{ URL::to('noticias/buscar')}}">
-                                    {{ Lang::get('lang.news_menu') }}
-                                </a>
-                            </li>
-                            <li class="mt-1">
-                                <a class="grey-text text-lighten-3" href="{{ URL::to('entrevistas/historias-epekeinas') }}">
-                                    {{ Lang::get('lang.history_menu') }}
-                                </a>
-                            </li>
-                            <li class="mt-1">
-                                <a class="grey-text text-lighten-3" href="{{ URL::to('biblioteca-virtual') }}">
-                                    {{ Lang::get('lang.library_menu') }}
-                                </a>
-                            </li>
-                            <li class="mt-1">
-                                <a class="grey-text text-lighten-3" href="{{ URL::to('galeria') }}">
-                                    {{ Lang::get('lang.gallery_menu') }}
-                                </a>
-                            </li>
-                            <li class="mt-1">
-                                <a class="grey-text text-lighten-3" href="{{ URL::to('contacto/donaciones') }}">
-                                    {{ Lang::get('lang.donation_menu') }}
-                                </a>
-                            </li>
-                        </ul>
+            <div class="contenedor">
+                <div class="col-s12">
+                    <div class="col s12 l7 pl-0 pr-0">
+                        <div class="col s12 m6 l4">
+                            <ul>
+                                <li class="mt-1">
+                                    <a class="grey-text text-lighten-3" href="{{ URL::to('quienes-somos') }}">
+                                        {{ Lang::get('lang.about_menu') }}
+                                    </a>
+                                </li>
+                                <li class="mt-1">
+                                    <a class="grey-text text-lighten-3" href="{{ URL::to('noticias/buscar')}}">
+                                        {{ Lang::get('lang.news_menu') }}
+                                    </a>
+                                </li>
+                                <li class="mt-1">
+                                    <a class="grey-text text-lighten-3" href="{{ URL::to('entrevistas/historias-epekeinas') }}">
+                                        {{ Lang::get('lang.history_menu') }}
+                                    </a>
+                                </li>
+                                <li class="mt-1">
+                                    <a class="grey-text text-lighten-3" href="{{ URL::to('biblioteca-virtual') }}">
+                                        {{ Lang::get('lang.library_menu') }}
+                                    </a>
+                                </li>
+                                <li class="mt-1">
+                                    <a class="grey-text text-lighten-3" href="{{ URL::to('galeria') }}">
+                                        {{ Lang::get('lang.gallery_menu') }}
+                                    </a>
+                                </li>
+                                <li class="mt-1">
+                                    <a class="grey-text text-lighten-3" href="{{ URL::to('contacto/donaciones') }}">
+                                        {{ Lang::get('lang.donation_menu') }}
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col s12 m6 l4">
+                            <ul>
+                                <li class="mt-1">
+                                    <a class="grey-text text-lighten-3" href="{{ URL::to('contacto') }}">
+                                        {{ Lang::get('lang.contact_us') }}
+                                    </a>
+                                </li>
+                                <li class="mt-1">
+                                    <a class="grey-text text-lighten-3" href="{{ URL::to('contacto/suscribete') }}">
+                                        {{ Lang::get('lang.subscribe') }}
+                                    </a>
+                                </li>
+                                <li class="mt-1">
+                                    <ul>
+                                        <li class="d-inline ml-1 mr-1">
+                                            <a target="_blank" class="grey-text text-lighten-3" href="https://twitter.com/fundaepekeina">
+                                                <i class="fa fa-twitter fa-2x"></i>
+                                            </a>
+                                        </li>
+                                        <li class="d-inline ml-1 mr-1">
+                                            <a target="_blank" class="grey-text text-lighten-3" href="https://www.facebook.com/funda.epekeina">
+                                                <i class="fa fa-facebook fa-2x"></i>
+                                            </a>
+                                        </li>
+                                        <li class="d-inline ml-1 mr-1">
+                                            <a target="_blank" class="grey-text text-lighten-3" href="https://www.instagram.com/fundaepekeina/">
+                                                <i class="fa fa-instagram fa-2x"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="mt-1">
+                                    <a class="grey-text text-lighten-3" href="#!">
+                                        <strong>@fundaepekeina</strong>
+                                    </a>
+                                </li>
+                                <li class="mt-1">
+                                    <a class="grey-text text-lighten-3" href="{{ URL::to('/') }}">
+                                        <strong>www.fundaepekeina.org</strong>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col s12 l4 hide-on-med-and-down">
+                            <ul>
+                                <li class="mt-1">
+                                    <a class="grey-text text-lighten-3" href="{{ URL::to('inicio') }}#allies">
+                                        {{ Lang::get('lang.our_allies') }}
+                                    </a>
+                                </li>
+                                <li class="mt-1">
+                                    <a class="grey-text text-lighten-3" href="{{ URL::to('contacto/voluntariado') }}">
+                                        {{ Lang::get('lang.voluntariado_title') }}
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="col s12 m6 l4">
-                        <ul>
-                            <li class="mt-1">
-                                <a class="grey-text text-lighten-3" href="{{ URL::to('contacto') }}">
-                                    {{ Lang::get('lang.contact_us') }}
-                                </a>
-                            </li>
-                            <li class="mt-1">
-                                <a class="grey-text text-lighten-3" href="{{ URL::to('contacto/suscribete') }}">
-                                    {{ Lang::get('lang.subscribe') }}
-                                </a>
-                            </li>
-                            <li class="mt-1">
-                                <ul>
-                                    <li class="d-inline ml-1 mr-1">
-                                        <a target="_blank" class="grey-text text-lighten-3" href="https://twitter.com/fundaepekeina">
-                                            <i class="fa fa-twitter fa-2x"></i>
-                                        </a>
-                                    </li>
-                                    <li class="d-inline ml-1 mr-1">
-                                        <a target="_blank" class="grey-text text-lighten-3" href="https://www.facebook.com/funda.epekeina">
-                                            <i class="fa fa-facebook fa-2x"></i>
-                                        </a>
-                                    </li>
-                                    <li class="d-inline ml-1 mr-1">
-                                        <a target="_blank" class="grey-text text-lighten-3" href="https://www.instagram.com/fundaepekeina/">
-                                            <i class="fa fa-instagram fa-2x"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="mt-1">
-                                <a class="grey-text text-lighten-3" href="#!">
-                                    <strong>@fundaepekeina</strong>
-                                </a>
-                            </li>
-                            <li class="mt-1">
-                                <a class="grey-text text-lighten-3" href="{{ URL::to('/') }}">
-                                    <strong>www.fundaepekeina.org</strong>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col s12 l4 hide-on-med-and-down">
-                        <ul>
-                            <li class="mt-1">
-                                <a class="grey-text text-lighten-3" href="{{ URL::to('inicio') }}#allies">
-                                    {{ Lang::get('lang.our_allies') }}
-                                </a>
-                            </li>
-                            <li class="mt-1">
-                                <a class="grey-text text-lighten-3" href="{{ URL::to('contacto/voluntariado') }}">
-                                    {{ Lang::get('lang.voluntariado_title') }}
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col s12 l5 search-field">
-                    <div class="relative">
-                        <form method="GET" action="{{ URL::to('noticias/buscar') }}" class="valign-wrapper">
-                            <input type="text" class="browser-default z-depth-2" name="busq">
-                            <i class="fa fa-search"></i>
-                            <button class="btn waves-effect waves-light pl-1 pr-1 bg-red z-depth-2">
-                                {{ Lang::get('lang.search') }}
-                            </button>
-                        </form>
+                    <div class="col s12 l5 search-field">
+                        <div class="relative">
+                            <form method="GET" action="{{ URL::to('noticias/buscar') }}" class="valign-wrapper">
+                                <input type="text" class="browser-default z-depth-2" name="busq">
+                                <i class="fa fa-search"></i>
+                                <button class="btn waves-effect waves-light pl-1 pr-1 bg-red z-depth-2">
+                                    {{ Lang::get('lang.search') }}
+                                </button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>

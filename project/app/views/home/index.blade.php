@@ -27,7 +27,7 @@
 </div>
 
 <div class="row bg-turquesa pt-4 pb-4 wow fadeIn" data-wow-duration="500ms" data-wow-delay="900ms">
-	<div class="col s12 pl-0 pr-0 news">
+	<div class="contenedor pl-0 pr-0 news">
         @foreach($article as $a)
 			<div class="col s12 m6 l3 mb-2">
 				@include('partials.article')
@@ -42,54 +42,56 @@
 </div>
 <div id="allies"></div>
 <div class="row bg-white pt-2 pb-0 mb-0 wow fadeIn" data-wow-duration="500ms" data-wow-delay="300ms">
-	<div class="col s12">
-		<div class="valign-wrapper-on-med-and-up">
-			<div class="col s12 m4 mb-2 valign-wrapper">
-				<img src="{{ asset('images/logo.png') }}" class="allies-logo mr-1 hide-on-small-only">
-				<p>ELLOS NOS APOYAN</p>
-				<a href="{{ URL::to('contacto/donaciones') }}" class="btn btn-xs bg-red ml-1">{{ Lang::get('lang.donate') }}</a>
-			</div>
-			<div class="col s12 m8 mb-2">
-				<div class="owl-carousel valign-wrapper">
-					<div class="owl-content center-align valign-wrapper">
-                        <img src="{{ asset('images/allies/pnud.png') }}" class="d-block mx-auto">
-                    </div>
-                    <div class="owl-content center-align valign-wrapper">
-                        <img src="{{ asset('images/allies/ulalogo.jpg') }}" class="d-block mx-auto">
-                    </div>
-                    <div class="owl-content center-align valign-wrapper">
-                        <img src="{{ asset('images/allies/corpoula.jpg') }}" class="d-block mx-auto">
-                    </div>
-                    <div class="owl-content center-align valign-wrapper">
-                        <img src="{{ asset('images/allies/mision.jpg') }}" class="d-block mx-auto">
-                    </div>
-                    <div class="owl-content center-align valign-wrapper">
-                        <img src="{{ asset('images/allies/eu.jpg') }}" class="d-block mx-auto">
-                    </div>
-                    <div class="owl-content center-align valign-wrapper">
-                        <img src="{{ asset('images/allies/fmam.png') }}" class="d-block mx-auto">
-                    </div>
-                    <div class="owl-content center-align valign-wrapper">
-                        <img src="{{ asset('images/allies/sgp.png') }}" class="d-block mx-auto">
-                    </div>
-                    <div class="owl-content center-align valign-wrapper">
-                        <a href="{{ URL::to('http://redjovenvenezuela.com') }}">
-                        	<img src="{{ asset('images/allies/redjoven.png') }}" class="d-block mx-auto">
-                        </a>
-                    </div>
-                    <div class="owl-content center-align valign-wrapper">
-                        <img src="{{ asset('images/allies/ecv.jpg') }}" class="d-block mx-auto">
-                    </div>
-                    <div class="owl-content center-align valign-wrapper">
-                        <img src="{{ asset('images/allies/zerolo.jpg') }}" class="d-block mx-auto">
-                    </div>
-                    <div class="owl-content center-align valign-wrapper">
-                        <img src="{{ asset('images/allies/ofigrapa.png') }}" class="d-block mx-auto">
-                    </div>
-				</div>
-			</div>
-		</div>
-	</div>
+    <div class="contenedor">
+    	<div class="col s12">
+    		<div class="valign-wrapper-on-med-and-up">
+    			<div class="col s12 m4 mb-2 valign-wrapper">
+    				<img src="{{ asset('images/logo.png') }}" class="allies-logo mr-1 hide-on-small-only">
+    				<p>ELLOS NOS APOYAN</p>
+    				<a href="{{ URL::to('contacto/donaciones') }}" class="btn btn-xs bg-red ml-1">{{ Lang::get('lang.donate') }}</a>
+    			</div>
+    			<div class="col s12 m8 mb-2">
+    				<div class="owl-carousel valign-wrapper">
+    					<div class="owl-content center-align valign-wrapper">
+                            <img src="{{ asset('images/allies/pnud.png') }}" class="d-block mx-auto">
+                        </div>
+                        <div class="owl-content center-align valign-wrapper">
+                            <img src="{{ asset('images/allies/ulalogo.jpg') }}" class="d-block mx-auto">
+                        </div>
+                        <div class="owl-content center-align valign-wrapper">
+                            <img src="{{ asset('images/allies/corpoula.jpg') }}" class="d-block mx-auto">
+                        </div>
+                        <div class="owl-content center-align valign-wrapper">
+                            <img src="{{ asset('images/allies/mision.jpg') }}" class="d-block mx-auto">
+                        </div>
+                        <div class="owl-content center-align valign-wrapper">
+                            <img src="{{ asset('images/allies/eu.jpg') }}" class="d-block mx-auto">
+                        </div>
+                        <div class="owl-content center-align valign-wrapper">
+                            <img src="{{ asset('images/allies/fmam.png') }}" class="d-block mx-auto">
+                        </div>
+                        <div class="owl-content center-align valign-wrapper">
+                            <img src="{{ asset('images/allies/sgp.png') }}" class="d-block mx-auto">
+                        </div>
+                        <div class="owl-content center-align valign-wrapper">
+                            <a href="{{ URL::to('http://redjovenvenezuela.com') }}">
+                            	<img src="{{ asset('images/allies/redjoven.png') }}" class="d-block mx-auto">
+                            </a>
+                        </div>
+                        <div class="owl-content center-align valign-wrapper">
+                            <img src="{{ asset('images/allies/ecv.jpg') }}" class="d-block mx-auto">
+                        </div>
+                        <div class="owl-content center-align valign-wrapper">
+                            <img src="{{ asset('images/allies/zerolo.jpg') }}" class="d-block mx-auto">
+                        </div>
+                        <div class="owl-content center-align valign-wrapper">
+                            <img src="{{ asset('images/allies/ofigrapa.png') }}" class="d-block mx-auto">
+                        </div>
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+    </div>
 </div>
 @stop
 
@@ -106,10 +108,9 @@
             items: 1
 		});
 		$(".owl-carousel").owlCarousel({
-            margin: 30,
-            nav: true,
-            navText: ["<i class=\"material-icons\">chevron_left</i>","<i class=\"material-icons\">chevron_right</i>"],
-            dots: true,
+            margin: 10,
+            nav: false,
+            dots: false,
             loop: true,
             autoplay: false,
             autoplayTimeout: 3000,

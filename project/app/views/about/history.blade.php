@@ -12,7 +12,7 @@
 @else
 <img src="http://via.placeholder.com/1440x600" class="responsive-img">        
 @endif
-<div class="row">
+<div class="row contenedor">
     <div class="col s12">
         <h1 class="center-align">
             <strong>{{ $article->titles->first()->text }}</strong>

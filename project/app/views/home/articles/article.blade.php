@@ -6,16 +6,18 @@
 @stop
 
 @section('content')
-<div class="col s12 hide-on-large-only wow fadeIn" data-wow-duration="500ms" data-wow-delay="300ms">
-    @if(count($article->imagenes) > 0)
-        @include('partials.articleSlider')
-    @else
-    <div class="">
-        <img src="http://via.placeholder.com/1440x600" class="responsive-img">
+<div class="row contenedor">
+    <div class="col s12 hide-on-large-only wow fadeIn" data-wow-duration="500ms" data-wow-delay="300ms">
+        @if(count($article->imagenes) > 0)
+            @include('partials.articleSlider')
+        @else
+        <div class="">
+            <img src="http://via.placeholder.com/1440x600" class="responsive-img">
+        </div>
+        @endif
     </div>
-    @endif
 </div>
-<div class="row wow fadeIn" data-wow-duration="500ms" data-wow-delay="300ms">
+<div class="row contenedor wow fadeIn" data-wow-duration="500ms" data-wow-delay="300ms">
     <div class="col s12 m8 left pl-0 pr-0">
         <div class="col s12 news mt-4 news-self">
             <div class="hide-on-med-and-down mb-2">

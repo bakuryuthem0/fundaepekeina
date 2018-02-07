@@ -1,3 +1,5 @@
+/*Colocarle  un contenedo al 80%*/
+/*Colocar textos en 2 columnas y titulo en el centro que hacemos y quienes somos*/
 /*sizes*/
 /*maps*/
 /*Colors*/
@@ -43,6 +45,11 @@ img {
 strong {
   font-family: HelveticaNeueBold; }
 
+.contenedor {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto; }
+
 .sticky {
   top: 0;
   z-index: 9996;
@@ -52,10 +59,11 @@ strong {
   -o-position: sticky;
   position: sticky; }
   .sticky.nav-fixed {
-    height: 50px; }
-  .sticky .nav-wrapper a i {
-    height: 50px;
-    line-height: 50px; }
+    height: 54px; }
+  .sticky .nav-wrapper a i.nav-icons {
+    height: 54px;
+    font-size: 37px;
+    line-height: 54px; }
 
 .menu-call-to-action .bg-image {
   height: 130px;
@@ -74,6 +82,11 @@ strong {
   font-family: HelveticaNeueBold; }
 .news .side-title {
   font-size: 15px; }
+.news .card-reveal .card-title {
+  line-height: 1.2; }
+  .news .card-reveal .card-title .close-card {
+    font-size: 18px;
+    color: #959595; }
 .news .card-reveal p {
   font-size: 15px; }
 .news .news-title {
@@ -83,7 +96,7 @@ strong {
       font-size: 24px; } }
   @media (min-width: 1025px) {
     .news .news-title {
-      font-size: 32px; } }
+      font-size: 30px; } }
 .news .news-content * {
   font-size: 12px; }
   @media (min-width: 768px) and (max-width: 1024px) {
@@ -108,14 +121,14 @@ strong {
   border-bottom: 0px solid transparent; }
   @media (min-width: 768px) {
     .news.collection {
-      border-left: 3px solid #00A99D; } }
+      border-left: 2px solid #acacac; } }
   .news.collection .collection-item {
     border-bottom: 0px solid transparent; }
     .news.collection .collection-item:before {
       content: "";
       width: 98%;
       display: block;
-      border-top: 2px solid #00A99D; }
+      border-top: 1px solid #acacac; }
 
 #open {
   top: 0;
@@ -126,7 +139,7 @@ strong {
   position: fixed; }
 
 .page-footer a, .page-footer p, .page-footer button {
-  font-size: 18px; }
+  font-size: 14px; }
 
 .contLoading {
   z-index: 9999;
@@ -419,11 +432,19 @@ input.rounded, select.rounded, textarea.rounded {
   -o-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%); }
 
-.btn-download {
-  font-size: 12px; }
-
 .no-shadow {
   box-shadow: 0px 0px transparent; }
+
+.text-colum-2 {
+  column-count: 2; }
+
+.about-title {
+  font-size: 30px; }
+
+.btn-downloadrelat {
+  padding: 0 1rem;
+  font-size: 14px;
+  line-height: 30px; }
 
 .bg-red {
   background-color: #ED1E79 !important; }

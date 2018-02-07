@@ -6,7 +6,7 @@
         <div class="col s12 pl-0 pr-0">
             <div class="row valign-wrapper bg-turquesa donate-content relative">
                 <div class="col s6">
-                    <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore.</p>
+                    <p class="text-white right-align">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore.</p>
                 </div>
                 <div class="col s6">
                     <img src="http://via.placeholder.com/320x480" class="responsive-img d-block mx-auto">

@@ -5,7 +5,7 @@
 @stop
 @section('content')
 @include('partials.main-banner')
-<div class="row">
+<div class="row contenedor">
 	@foreach($images as $g)
 		<div class="col s12 m3">
 			<div class="card-panel">

@@ -5,16 +5,18 @@
 		<img class="responsive-img mx-auto d-inline-block main-img" src="http://via.placeholder.com/1440x600" alt="Imagen de inicio | fundaepekeina.org">
 	</picture>
 
-	<div class="absolute promotion-container row valign-wrapper mb-0">
-		<div class="col s12 m2">
-			<a href="{{ URL::to('contacto/donaciones') }}" class="btn waves-effect bg-red hide-on-large-only">{{ Lang::get('lang.donate') }}</a>
-			<a href="{{ URL::to('contacto/voluntariado') }}" class="btn waves-effect bg-red hide-on-med-and-down">{{ Lang::get('lang.join') }}</a>
-		</div>
-		<div class="col s12 m8 text-white">
-			<h4 class="center-align">{{ isset($campaing)? $campaing : "Promocion y campañas de la fundación" }}</h4>
-		</div>
-		<div class="col s12 m2 hide-on-med-and-down">
-			<a href="{{ URL::to('contacto/donaciones') }}" class="btn waves-effect bg-red">{{ Lang::get('lang.donate') }}</a>
+	<div class="absolute promotion-container">
+		<div class="contenedor row valign-wrapper mb-0 center-align">
+			<div class="col s12 m2">
+				<a href="{{ URL::to('contacto/donaciones') }}" class="btn waves-effect bg-red hide-on-large-only">{{ Lang::get('lang.donate') }}</a>
+				<a href="{{ URL::to('contacto/voluntariado') }}" class="btn waves-effect bg-red hide-on-med-and-down">{{ Lang::get('lang.join') }}</a>
+			</div>
+			<div class="col s12 m8 text-white">
+				<h4 class="center-align">{{ isset($campaing)? $campaing : "Promocion y campañas de la fundación" }}</h4>
+			</div>
+			<div class="col s12 m2 hide-on-med-and-down">
+				<a href="{{ URL::to('contacto/donaciones') }}" class="btn waves-effect bg-red">{{ Lang::get('lang.donate') }}</a>
+			</div>
 		</div>
 	</div>
 </div>
