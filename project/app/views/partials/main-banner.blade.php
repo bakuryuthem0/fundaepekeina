@@ -2,7 +2,7 @@
 	<picture>
 		<source media="(max-width: 426px)" srcset="http://via.placeholder.com/425x600">
 		<source media="(max-width: 769px)" srcset="http://via.placeholder.com/768x512">
-		<img class="responsive-img mx-auto d-inline-block main-img" src="http://via.placeholder.com/1440x600" alt="Imagen de inicio | fundaepekeina.org">
+		<img class="responsive-img mx-auto d-block main-img" src="http://via.placeholder.com/1440x600" alt="Imagen de inicio | fundaepekeina.org">
 	</picture>
 
 	<div class="absolute promotion-container">
