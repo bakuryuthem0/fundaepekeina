@@ -80,11 +80,33 @@ class HomeController extends BaseController {
 		->with('titles')
 		->with('descriptions')
 		->first();
-
-		return View::make('about.history')
+		$related = Articulo::where('tipo','=',6)
+		->where('id','!=',$article->id)
+		->with('subtitle')
+		->with('imagenes')
+		->with('slugs')
+		->with('titles')
+		->with('descriptions')
+		->take(8)
+		->get();
+		$request = Request::instance();
+		$request->setTrustedProxies(array('127.0.0.1')); // only trust proxy headers coming from the IP addresses on the array (change this to suit your needs)
+		$ip = $request->getClientIp();
+		$aux = Like::where('articulo_id','=',$article->id)->where('ip','=',$ip)->get();
+		if (count($aux) > 0) {
+			$fa = 'fa-heart loved';
+		}else
+		{
+			$fa = 'fa-heart-o';
+		}
+		return View::make('home.articles.article')
 		->with('title',$title)
 		->with('size','big')
 		->with('donaMenu','dona')
+		->with('mostVisited',[])
+		->with('mostLiked',[])
+		->with('fa',$fa)
+		->with('related',$related)
 		->with('article',$article);
 	}
 	public function getArticleSelf($slug)

@@ -47,24 +47,24 @@
         <div class="side-menu absolute">
             <ul class="right-align">
                 <li class="row mb-0">
-                    <div class="col s9 mt-2">
+                    <div class="col s9 mt-1">
                         <span class="grey-text text-lighten-3 hide-on-large-only">
                             {{ Lang::get('lang.slide-to-close') }}
                         </span>
                     </div>
-                    <div class="col s3 collapse center-align mt-2">
+                    <div class="col s3 collapse center-align mt-1">
                         <a class="grey-text text-lighten-3 btn-slide-menu waves-effect waves-light" href="#!">
                             <i class="material-icons animated infinite shake">chevron_right</i>
                         </a>
                     </div>
                 </li>
                 <li class="row mb-0">
-                    <div class="col s9 mt-2">
+                    <div class="col s9 mt-1">
                         <a class="grey-text text-lighten-3 waves-effect waves-light" href="{{ URL::to('quienes-somos') }}">
                             {{ Lang::get('lang.about_menu') }}
                         </a>
                     </div>
-                    <div class="col s3 collapse center-align mt-2">
+                    <div class="col s3 collapse center-align mt-1">
                         <a class="grey-text text-lighten-3 waves-effect waves-light" href="#!"><i class="material-icons">add</i></a>
                     </div>
                     <div class="to-collapse collapsed">
@@ -82,12 +82,12 @@
                 </li>
                 <li class="">
                     <div class="row mb-0">
-                        <div class="col s9 mt-2">
+                        <div class="col s9 mt-1">
                             <a class="grey-text text-lighten-3 waves-effect waves-light" href="{{ URL::to('noticias/buscar')}}">
                                 {{ Lang::get('lang.news_menu') }}
                             </a>
                         </div>
-                        <div class="col s3 collapse center-align mt-2">
+                        <div class="col s3 collapse center-align mt-1">
                             <a class="grey-text text-lighten-3 waves-effect waves-light" href="#!"><i class="material-icons">add</i></a>
                         </div>
                         <div class="to-collapse collapsed">
@@ -121,48 +121,48 @@
                 </li>
                 <li class="">
                     <div class="row mb-0">
-                        <div class="col s9 mt-2">
+                        <div class="col s9 mt-1">
                             <a class="grey-text text-lighten-3 waves-effect waves-light" href="{{ URL::to('entrevistas/historias-epekeinas') }}">  
                                 {{ Lang::get('lang.history_menu') }}
                             </a>
                         </div>
-                        <div class="col s3 center-align mt-2">
+                        <div class="col s3 center-align mt-1">
                             <a class="grey-text text-lighten-3 waves-effect waves-light" href="#!"><i class="material-icons right invisible">add</i></a>
                         </div>
                     </div>
                 </li>
                 <li class="">
-                    <div class="row mb-0">
-                        <div class="col s9 mt-2">
+                    <div class="row mb-0 mt-1">
+                        <div class="col s9 mt-1">
                             <a class="grey-text text-lighten-3 waves-effect waves-light" href="{{ URL::to('biblioteca-virtual') }}">  
                                 {{ Lang::get('lang.library_menu') }}
                             </a>
                         </div>
-                        <div class="col s3 center-align mt-2">
+                        <div class="col s3 center-align mt-1">
                             <a class="grey-text text-lighten-3 waves-effect waves-light" href="#!"><i class="material-icons right invisible">add</i></a>
                         </div>
                     </div>
                 </li>
                 <li class="">
                     <div class="row mb-0">
-                        <div class="col s9 mt-2">
+                        <div class="col s9 mt-1">
                            <a class="grey-text text-lighten-3 waves-effect waves-light" href="{{ URL::to('galeria') }}">
                                 {{ Lang::get('lang.gallery_menu') }}
                             </a>
                         </div>
-                        <div class="col s3 center-align mt-2">
+                        <div class="col s3 center-align mt-1">
                             <a class="grey-text text-lighten-3 waves-effect waves-light" href="#!"><i class="material-icons right invisible">add</i></a>
                         </div>
                     </div>
                 </li>
                 <li class="">
                     <div class="row mb-0">
-                        <div class="col s9 mt-2">
+                        <div class="col s9 mt-1">
                             <a class="grey-text text-lighten-3 waves-effect waves-light" href="{{ URL::to('contacto/donaciones') }}">
                                 {{ Lang::get('lang.donation_menu') }}
                             </a>
                         </div>
-                        <div class="col s3 collapse center-align mt-2">
+                        <div class="col s3 collapse center-align mt-1">
                             <a class="grey-text text-lighten-3 waves-effect waves-light" href="#!"><i class="material-icons">add</i></a>
                         </div>
                         <div class="to-collapse collapsed">
@@ -183,7 +183,7 @@
         </div>
     </div>
     @if(isset($donaMenu))
-    <div class="relative menu-call-to-action hide-on-med-and-down">
+    <div class="relative contenedor menu-call-to-action hide-on-med-and-down">
         <div class="row mb-0">
             <div class="col l2 bg-white center-align">
                 <a href="{{ URL::to('/') }}" title="{{Lang::get('lang.home_title')}}"><img src="{{ asset('images/logo.png') }}" class="logo"></a>
@@ -202,7 +202,7 @@
     </div>
     @endif
     @if(isset($citaMenu))
-    <div class="relative menu-call-to-action hide-on-small-only">
+    <div class="relative contenedor menu-call-to-action hide-on-small-only">
         <div class="row mb-0 valign-wrapper">
             <div class="col l2 bg-white center-align">
                 <a href="{{ URL::to('/') }}" title="{{Lang::get('lang.home_title')}}"><img src="{{ asset('images/logo.png') }}" class="logo"></a>

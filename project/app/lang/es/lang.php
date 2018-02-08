@@ -51,6 +51,9 @@
 		'not_found'			=> 'Pagina no encontrada',
 		'not_found_text'	=> 'La pagina que esta buscando puede que no exista o se haya removido.',
 		//index
+		'carousel-donate'	=> 'APÓYANOS CON NUESTRA CAMPAÑA.<br> SÍ ESTÁS LISTO',
+		'carousel-join'		=> 'ÚNETE A NOSOTROS,<br> ES HORA DE ACTUAR',
+		'carousel_allies'	=> 'ELLOS NOS APOYAN',
 		'projects'			=> 'Proyectos',
 		'rjv_text'			=> 'Nos inspiramos en Venezuela, en la valoración de lo que somos, de nuestra esencia, en el reconocimiento de la venezolanidad. Nosotros creemos en la gente, apostamos por la gente; por ese principio de vida, de salvación, de fuerza y esperanza activa, construye, propone y se mueve para superar obstáculos. <strong>Visitanos :link1</strong>',
 		'pnud_text'			=> 'Proyecto que tiene como objetivo desarrollar un plan de capacitación y formación de caficultores, a través del diseño de un pensum por especialistas de la  universidad de los Andes para los suelos y cultivos propios de la zona de Canaguá en el Estado Mérida ',
@@ -154,7 +157,7 @@
 		'thanks'			=> "¡Gracias por tu apoyo!",
 		'back_to_home'		=> 'Regresal al inicio',
 		//contact
-		'contact_quote'		=> 'Sí deseas comunicarte con nosotros,<br>puedes hacerlo a traves de nuestos puntos de contacto',
+		'contact_quote'		=> 'Sí deseas comunicarte con nosotros,<br>puedes hacerlo a través de nuestos puntos de contacto',
 		'contact'			=> 'Contáctanos',
 		'phone'				=> 'Telefono',
 		'address_title'		=> 'Dirección',

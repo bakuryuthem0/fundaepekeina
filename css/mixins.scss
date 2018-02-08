@@ -62,7 +62,7 @@
 			.m#{$name}-#{$i}
 			{
 				
-				margin-#{$direction}: $minPx*$i/2;
+				margin-#{$direction}: $minPx*$i/2 !important;
 			}
 			.p#{$name}-#{$i}
 			{

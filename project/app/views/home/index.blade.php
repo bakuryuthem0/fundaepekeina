@@ -11,14 +11,14 @@
 	<div class="owl-carousel campaing-carousel">
 		<div class="center-align campaing-content">
 			<img src="{{ asset('images/logo.png') }}" class="allies-logo mr-1">
-			<p>APÓYANOS CON NUESTRA CAMPAÑA.<br> SÍ ESTÁS LISTO</p>
+			<p>{{ Lang::get("lang.carousel-donate") }}</p>
 			<a href="{{ URL::to('contacto/donaciones') }}" class="btn btn-xs bg-red ml-1">
 				{{ Lang::get('lang.donate') }}
 			</a>
 		</div>
 		<div class="center-align campaing-content">
 			<img src="{{ asset('images/logo.png') }}" class="allies-logo mr-1">
-			<p>ÚNETE A NOSOTROS,<br> ES HORA DE ACTUAR</p>
+			<p>{{ Lang::get('lang.carousel-join') }}</p>
 			<a href="{{ URL::to('contacto/voluntariado') }}" class="btn btn-xs bg-red ml-1">
 				{{ Lang::get('lang.join') }}
 			</a>
@@ -47,7 +47,7 @@
     		<div class="valign-wrapper-on-med-and-up">
     			<div class="col s12 m4 mb-2 valign-wrapper">
     				<img src="{{ asset('images/logo.png') }}" class="allies-logo mr-1 hide-on-small-only">
-    				<p>ELLOS NOS APOYAN</p>
+    				<p>{{ Lang::get('lang.carousel_allies') }}</p>
     				<a href="{{ URL::to('contacto/donaciones') }}" class="btn btn-xs bg-red ml-1">{{ Lang::get('lang.donate') }}</a>
     			</div>
     			<div class="col s12 m8 mb-2">

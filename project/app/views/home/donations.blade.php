@@ -39,7 +39,7 @@
         </div>
     </div>
     <div class="mt-4 mb-4"></div>
-    <div class="row">
+    <div class="row contenedor">
         <div class="col s12">
             <strong>{{ Lang::get('lang.donation_data') }} Epékeina</strong>
         </div>
@@ -64,7 +64,7 @@
     </div>
     <div class="mt-4 mb-4"></div>
     <form method="POST" action="{{ URL::to('contacto/donaciones/enviar') }}">
-    <div class="row">
+    <div class="row contenedor">
         <div class="col s12 m6 input-field">
             <input type="text" required name="fullname" value="{{ Input::old('fullname') }}" class="rounded" >
             <label class="rounded">{{ Lang::get('lang.fullname') }}</label>
@@ -79,7 +79,7 @@
             <label class="rounded"></label>
         </div>
     </div>
-    <div class="row">
+    <div class="row contenedor">
             <div class="col s12 m6 input-field mb-2">
                 <input type="email" required name="email" value="{{ Input::old('email') }}" class="rounded" >
                 <label class="rounded">E-mail</label>

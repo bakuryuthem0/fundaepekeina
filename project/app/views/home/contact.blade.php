@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="mt-4 mb-4"></div>
-    <div class="row  wow fadeIn" data-wow-duration="500ms" data-wow-delay="300ms">
+    <div class="row contenedor wow fadeIn" data-wow-duration="500ms" data-wow-delay="300ms">
         <div class="col s12 m6 mt-2">
             <h2 class="mt-0">{{ Lang::get('lang.contact') }}</h2>
             <p>E-mail: <a href="mailto:fundaepekeina@gmail.com">fundaepekeina@gmail.com</a></p> 
