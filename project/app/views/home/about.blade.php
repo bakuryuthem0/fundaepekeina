@@ -75,7 +75,11 @@
 <div class="row contenedor wow fadeIn" data-wow-duration="500ms" data-wow-delay="300ms" >
     <div class="col s12">
         <h2 class="center-align about-title">{{ Lang::get('lang.our_organization') }}</h2>
-        <img src="{{ asset('images/organigrama.png') }}" class="responsive-img">
+        <picture>
+            <source  media="(min-width:1024px)" srcset="{{ asset('images/organigrama_pc.jpg') }}">
+            <source  media="(min-width:426px) and (max-width:1023px)" srcset="{{ asset('images/organigrama_tablet.jpg') }}">
+            <img src="{{ asset('images/organigrama_phone.jpg') }}" class="responsive-img">
+        </picture>
     </div>
 </div>
 @stop
