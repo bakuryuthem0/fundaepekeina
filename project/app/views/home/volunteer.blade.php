@@ -21,8 +21,8 @@
             consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
             cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
             proident, sunt in culpa qui officia deserunt mollit anim id est laborum.">
-                <img src="http://lorempixel.com/g/380/520/people/1" class="responsive-img">
-                <img src="http://lorempixel.com/380/520/people/1" class="responsive-img alt">
+                <img src="{{ asset('images/volunteers/volunteer1.jpg') }}" class="responsive-img">
+                <img src="{{ asset('images/volunteers/volunteer1.jpg') }}" class="responsive-img alt">
             </div>
             <div class="col s12 m3 pl-0 pr-0 relative center-align voluntario" data-text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -30,8 +30,8 @@
             consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
             cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
             proident, sunt in culpa qui officia deserunt mollit anim id est laborum.">
-                <img src="http://lorempixel.com/g/380/520/people/2" class="responsive-img">
-                <img src="http://lorempixel.com/380/520/people/2" class="responsive-img alt">
+                <img src="{{ asset('images/volunteers/volunteer2.jpg') }}" class="responsive-img">
+                <img src="{{ asset('images/volunteers/volunteer2.jpg') }}" class="responsive-img alt">
             </div>
             <div class="col s12 m3 pl-0 pr-0 relative center-align voluntario" data-text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -39,8 +39,8 @@
             consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
             cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
             proident, sunt in culpa qui officia deserunt mollit anim id est laborum.">
-                <img src="http://lorempixel.com/g/380/520/people/3" class="responsive-img">
-                <img src="http://lorempixel.com/380/520/people/3" class="responsive-img alt">
+                <img src="{{ asset('images/volunteers/volunteer3.jpg') }}" class="responsive-img">
+                <img src="{{ asset('images/volunteers/volunteer3.jpg') }}" class="responsive-img alt">
             </div>
             <div class="col s12 m3 pl-0 pr-0 relative center-align voluntario" data-text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -48,8 +48,8 @@
             consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
             cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
             proident, sunt in culpa qui officia deserunt mollit anim id est laborum.">
-                <img src="http://lorempixel.com/g/380/520/people/4" class="responsive-img">
-                <img src="http://lorempixel.com/380/520/people/4" class="responsive-img alt">
+                <img src="{{ asset('images/volunteers/volunteer4.jpg') }}" class="responsive-img">
+                <img src="{{ asset('images/volunteers/volunteer4.jpg') }}" class="responsive-img alt">
             </div>
             <div class="voluntario-text justify-align pl-4 pt-4 pr-4 pb-4 text-white">
             </div>
