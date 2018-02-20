@@ -28,7 +28,7 @@
 			</span>
 		</h3>
 		<p class="justify-align mt-0">{{ substr(strip_tags($a->descriptions->first()->text), 0, 80) }} [...]</p>
-		<a href="{{ URL::to('noticias/ver/'.$a->slugs->first()->text) }}" class="read-more">
+		<a href="{{ URL::to('noticias/ver/'.$a->slugs->first()->text) }}" class="text-darkgray read-more">
 			<strong>{{ Lang::get('lang.read_more') }}</strong>
 		</a>
 	</div>

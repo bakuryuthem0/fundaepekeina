@@ -62,7 +62,7 @@
                             </p>
                             <br>
                         @endif
-                        <a href="{{ URL::to('biblioteca/descargar/'.$f->id) }}" target="_blank" class="btn bg-red btn-download">{{ Lang::get('lang.download') }}</a>
+                        <a href="{{ URL::to('biblioteca/descargar/'.$f->id) }}" target="_blank" class="btn bg-red btn-download mt-2">{{ Lang::get('lang.download') }}</a>
                     </div>
                 </div>
             </div>

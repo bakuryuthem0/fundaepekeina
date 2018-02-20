@@ -9,7 +9,7 @@
                     <p class="text-white right-align">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore.</p>
                 </div>
                 <div class="col s6">
-                    <img src="http://via.placeholder.com/320x480" class="responsive-img d-block mx-auto">
+                    <img src="{{ asset('images/volunteers/donation1.jpg') }}" class="responsive-img d-block mx-auto">
                 </div>
             </div>
         </div>
@@ -19,7 +19,7 @@
         <div class="col s12 pl-0 pr-0">
             <div class="row valign-wrapper">
                 <div class="col s6">
-                    <img src="http://via.placeholder.com/320x480" class="responsive-img d-block mx-auto">
+                    <img src="{{ asset('images/volunteers/donation2.jpg') }}" class="responsive-img d-block mx-auto">
                 </div>
                 <div class="col s6">
                     <p class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore.</p>
@@ -55,9 +55,9 @@
     <div class="mt-4 mb-4"></div>
     <div class="row">
         <div class="col s12"><hr></div>
-        <div class="col s12 center-align valign-wrapper">
-            <img src="{{ asset('images/logo.png') }}" class="d-inline-block ml-auto">
-            <h3 class="d-inline-block mr-auto">
+        <div class="col s12 center-align valign-wrapper mt-4">
+            <img src="{{ asset('images/logo.png') }}" class="d-inline-block ml-auto mr-2">
+            <h3 class="d-inline-block mr-auto ml-2">
                 {{ Lang::get('lang.make_a_donation') }}
             </h3>
         </div>

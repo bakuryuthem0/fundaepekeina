@@ -256,9 +256,9 @@
             <div class="contenedor">
                 <div class="col-s12">
                     <div class="col s12 l7 pl-0 pr-0">
-                        <div class="col s12 m6 l4">
-                            <ul>
-                                <li class="mt-1">
+                        <div class="col s12 m6 l4 pt-2">
+                            <ul class="mt-0">
+                                <li class="">
                                     <a class="grey-text text-lighten-3" href="{{ URL::to('quienes-somos') }}">
                                         {{ Lang::get('lang.about_menu') }}
                                     </a>
@@ -290,9 +290,9 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="col s12 m6 l4">
-                            <ul>
-                                <li class="mt-1">
+                        <div class="col s12 m6 l4 pt-2">
+                            <ul class="mt-0">
+                                <li class="">
                                     <a class="grey-text text-lighten-3" href="{{ URL::to('contacto') }}">
                                         {{ Lang::get('lang.contact_us') }}
                                     </a>
@@ -333,9 +333,9 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="col s12 l4 hide-on-med-and-down">
-                            <ul>
-                                <li class="mt-1">
+                        <div class="col s12 l4 hide-on-med-and-down pt-2">
+                            <ul class="mt-0">
+                                <li class="">
                                     <a class="grey-text text-lighten-3" href="{{ URL::to('inicio') }}#allies">
                                         {{ Lang::get('lang.our_allies') }}
                                     </a>
@@ -348,7 +348,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col s12 l5 search-field">
+                    <div class="col s12 l5 search-field pt-2">
                         <div class="relative">
                             <form method="GET" action="{{ URL::to('noticias/buscar') }}" class="valign-wrapper">
                                 <input type="text" class="browser-default z-depth-2" name="busq">

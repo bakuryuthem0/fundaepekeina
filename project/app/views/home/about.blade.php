@@ -1,5 +1,7 @@
 @extends('layouts.default')
-
+@section('postcss')
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+@stop
 @section('content')
 <div class="row contenedor wow fadeIn" data-wow-duration="500ms" data-wow-delay="300ms">
     <div class="col s12">
@@ -75,11 +77,22 @@
 <div class="row contenedor wow fadeIn" data-wow-duration="500ms" data-wow-delay="300ms" >
     <div class="col s12">
         <h2 class="center-align about-title">{{ Lang::get('lang.our_organization') }}</h2>
-        <picture>
-            <source  media="(min-width:1024px)" srcset="{{ asset('images/organigrama_pc.jpg') }}">
-            <source  media="(min-width:426px) and (max-width:1023px)" srcset="{{ asset('images/organigrama_tablet.jpg') }}">
-            <img src="{{ asset('images/organigrama_phone.jpg') }}" class="responsive-img">
-        </picture>
+        <a href="{{ asset('images/organigrama_pc.jpg') }}" class="fancybox">
+            <picture>
+                <source  media="(min-width:1024px)" srcset="{{ asset('images/organigrama_pc.jpg') }}">
+                <source  media="(min-width:426px) and (max-width:1023px)" srcset="{{ asset('images/organigrama_tablet.jpg') }}">
+                <img src="{{ asset('images/organigrama_phone.jpg') }}" class="responsive-img organigrama">
+            </picture>
+        </a>
     </div>
 </div>
+@stop
+@section('postscript')
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js"></script>
+
+<script type="text/javascript">
+    jQuery(document).ready(function($) {
+        $('.fancybox').fancybox();
+    });
+</script>
 @stop

@@ -488,6 +488,12 @@ input.rounded, select.rounded, textarea.rounded {
 .text-green {
   color: #a6ce39 !important; }
 
+.bg-darkgray {
+  background-color: #333333 !important; }
+
+.text-darkgray {
+  color: #333333 !important; }
+
 .d-block {
   display: block !important; }
 
