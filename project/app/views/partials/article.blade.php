@@ -15,7 +15,7 @@
 			</span>
 
 		</h3>
-		<a href="{{ URL::to('noticias/ver/'.$a->slugs->first()->text) }}" class="read-more left">
+		<a href="{{ URL::to('noticias/ver/'.$a->slugs->first()->text) }}" class="read-more left text-darkgray">
 			{{ Lang::get('lang.read_more') }}
 		</a>
 		<i class="material-icons right activator">more_vert</i>

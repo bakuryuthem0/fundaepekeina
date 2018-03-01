@@ -4,7 +4,7 @@
 @include('partials.main-banner')
 <div class="row contenedor">
     <div class="col s12">
-        <h4 class="center-align"> {{ Lang::get('lang.history_text') }}</h4>
+        <h4 class="center-align line-height-medium-titles"> {{ Lang::get('lang.history_text') }}</h4>
     </div>
 </div>
 <div class="row contenedor">

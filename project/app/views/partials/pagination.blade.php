@@ -33,51 +33,51 @@
 			//Si es la primera página mostramos el enlace desactivado
 			if ($currentPage <= 1)
 			{
-				echo '<li class="disabled"><a href="#!"><i class="material-icons">first_page</i></a></li>';
+				echo '<li class="disabled"><a class="text-white" href="#!"><i class="material-icons">first_page</i></a></li>';
 				//en otro caso obtenemos la url y mostramos en forma de link
 			}
 			else
 			{
 				$url = $collection->getUrl(1);
-				echo '<li><a href="'.$url.'&busq='.$busq.'"><i class="material-icons">first_page</i></a></li>';
+				echo '<li><a class="text-white" href="'.$url.'&busq='.$busq.'"><i class="material-icons">first_page</i></a></li>';
 			}
 			//Para ir a la anterior
 			if (($currentPage-1) < $start) {
-		    	echo '<li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>';
+		    	echo '<li class="disabled"><a class="text-white" href="#!"><i class="material-icons">chevron_left</i></a></li>';
 		    }else
 		    {
-		  		echo '<li class="waves-effect"><a href="'.$collection->getUrl($currentPage-1).'&busq='.$busq.'"><i class="material-icons">chevron_left</i></a></li>';
+		  		echo '<li class="waves-effect"><a class="text-white" href="'.$collection->getUrl($currentPage-1).'&busq='.$busq.'"><i class="material-icons">chevron_left</i></a></li>';
 		    }
 		   
 			//Rango de enlaces desde el principio al final, 3 delante y 3 detrás
 			for($i = $start; $i<=$end;$i++)
 			{
 				if ($currentPage == $i) {
-					echo '<li class="active"><a href="#">'.$i.'</a></li>';
+					echo '<li class="active"><a class="text-white" href="#">'.$i.'</a></li>';
 				}else
 				{
-					echo '<li class="waves-effect"><a href="'.$collection->getUrl($i).'&busq='.$busq.'">'.$i.'</a></li>';
+					echo '<li class="waves-effect"><a class="text-white" href="'.$collection->getUrl($i).'&busq='.$busq.'">'.$i.'</a></li>';
 				}
 			}
 		       
 			//Para ir a la siguiente
 			if (($currentPage+1) > $end) {
-				echo '<li class="disabled"><a href="#!"><i class="material-icons">chevron_right</i></a></li>';
+				echo '<li class="disabled"><a class="text-white" href="#!"><i class="material-icons">chevron_right</i></a></li>';
 			}else
 			{
-				echo '<li class="waves-effect"><a href="'.$collection->getUrl($currentPage+1).'&busq='.$busq.'"><i class="material-icons">chevron_right</i></a></li>';
+				echo '<li class="waves-effect"><a class="text-white" href="'.$collection->getUrl($currentPage+1).'&busq='.$busq.'"><i class="material-icons">chevron_right</i></a></li>';
 			}
 
 			////Si es la última página mostramos desactivado
 			if ($currentPage >= $lastPage)
 			{
-				echo '<li class="disabled"><a href="#" ><i class="material-icons">last_page</i></a></li>';
+				echo '<li class="disabled"><a class="text-white" href="#" ><i class="material-icons">last_page</i></a></li>';
 				//en otro caso obtenemos la url y mostramos en forma de link
 			}
 			else
 			{
 				$url = $collection->getUrl($lastPage);
-				echo '<li class="waves-effect"><a href="'.$url.'&busq='.$busq.'"><i class="material-icons">last_page</i></a></li>';
+				echo '<li class="waves-effect"><a class="text-white" href="'.$url.'&busq='.$busq.'"><i class="material-icons">last_page</i></a></li>';
 			}
 			?>
 		@endif

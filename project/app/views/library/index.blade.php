@@ -39,9 +39,9 @@
             <div class="card horizontal valign-wrapper hoverable no-shadow">
                 <div class="card-image img-horizontal valign-wrapper">
                     @if(!is_null($f->portada) && !empty($f->portada))
-                        <img src="{{ asset('redjoven/biblioteca/images/'.$f->portada) }}">
+                        <a href="{{ asset('redjoven/biblioteca/images/'.$f->portada) }}" class="fancybox" data-caption="{{ $f->description }}"><img src="{{ asset('redjoven/biblioteca/images/'.$f->portada) }}"></a>
                     @else
-                        <img src="http://via.placeholder.com/360x480">
+                        <a href="http://via.placeholder.com/360x480" class="fancybox" data-caption="{{ $f->description }}"><img src="http://via.placeholder.com/360x480"></a>
                     @endif
                 </div>
                 <div class="card-stacked">
@@ -73,8 +73,7 @@
     <div class="col s12">
         @include('partials.pagination')
     </div>
-</div>
-                
+</div>           
 @stop
 
 @section('postscript')

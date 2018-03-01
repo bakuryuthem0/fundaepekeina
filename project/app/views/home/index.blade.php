@@ -26,7 +26,7 @@
 	</div>
 </div>
 
-<div class="row bg-turquesa pt-4 pb-4 wow fadeIn" data-wow-duration="500ms" data-wow-delay="900ms">
+<div class="row bg-turquesa pt-4 pb-4 mb-1 wow fadeIn" data-wow-duration="500ms" data-wow-delay="900ms">
 	<div class="contenedor pl-0 pr-0 news">
         @foreach($article as $a)
 			<div class="col s12 m6 l3 mb-2">
@@ -41,7 +41,7 @@
 	</div>
 </div>
 <div id="allies"></div>
-<div class="row bg-white pt-2 pb-0 mb-0 wow fadeIn" data-wow-duration="500ms" data-wow-delay="300ms">
+<div class="row bg-white pt-2 pb-2 mb-0 wow fadeIn" data-wow-duration="500ms" data-wow-delay="300ms">
     <div class="contenedor">
     	<div class="col s12">
     		<div class="valign-wrapper-on-med-and-up">
@@ -108,7 +108,7 @@
             items: 1
 		});
 		$(".owl-carousel").owlCarousel({
-            margin: 10,
+            margin: 30,
             nav: false,
             dots: false,
             loop: true,

@@ -2,13 +2,13 @@
 
 @section('content')
     <div class="mt-4 mb-4"></div>
-    <div class="row wow fadeIn" data-wow-duration="500ms" data-wow-delay="300ms">
+    <div class="row wow fadeIn bg-turquesa" data-wow-duration="500ms" data-wow-delay="300ms">
         <div class="col s12 pl-0 pr-0">
-            <div class="row valign-wrapper bg-turquesa donate-content relative">
-                <div class="col s6">
-                    <p class="text-white right-align">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore.</p>
+            <div class="row mb-0 contenedor valign-wrapper">
+                <div class="col s8">
+                    <p class="text-white right-align carpicho-de-marian mtop">"Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore.Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore".<br><strong>Pepito Perez</strong></p>
                 </div>
-                <div class="col s6">
+                <div class="col s4">
                     <img src="{{ asset('images/volunteers/donation1.jpg') }}" class="responsive-img d-block mx-auto">
                 </div>
             </div>
@@ -17,12 +17,12 @@
     <div class="mt-4 mb-4"></div>
     <div class="row wow fadeIn" data-wow-duration="500ms" data-wow-delay="300ms">
         <div class="col s12 pl-0 pr-0">
-            <div class="row valign-wrapper">
-                <div class="col s6">
+            <div class="row contenedor valign-wrapper">
+                <div class="col s4 bg-red pt-4 pb-4">
                     <img src="{{ asset('images/volunteers/donation2.jpg') }}" class="responsive-img d-block mx-auto">
                 </div>
-                <div class="col s6">
-                    <p class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore.</p>
+                <div class="col s8 carpicho-de-marian pl-4">
+                    <p class="">"Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore.Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore".<br><strong>Pepito Perez</strong></p>
                 </div>
             </div>
         </div>

@@ -14,8 +14,8 @@
 			</div>
 		</div>
 	</div>
-	<div class="wow fadeIn" data-wow-duration="500ms" data-wow-delay="300ms">
-		<div class="row contenedor">
+	<div class="wow fadeIn bg-turquesa" style="margin-top:-1px;margin-bottom:-1px;" data-wow-duration="500ms" data-wow-delay="300ms">
+		<div class="row contenedor mb-0">
 			<div class="col s12">
 				 @include('partials.pagination')
 			</div>

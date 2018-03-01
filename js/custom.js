@@ -113,11 +113,16 @@ jQuery(document).ready(function($) {
 		var $next = $(this).siblings('.to-collapse');
 		$next.toggleClass('collapsed');
 	});
-	$('.voluntario').on('click', function(event) {
-		$('.voluntario-text').html($(this).data('text')).fadeOut('fast').fadeIn('fast');
+	$(document).on('click', '.voluntario', function(event) {
+		event.stopPropagation();
+		$('.voluntario-text.active').removeClass('active')
+		$('.alt.active').removeClass('active')
+		$(this).find('.alt').addClass('active');
+		$(this).find('.voluntario-text').html($(this).data('text')).addClass('active');
 	});
-	$('.voluntario-text').on('click', function(event) {
-		$(this).fadeOut('fast');
+	$('.voluntario .voluntario-text.active').on('click', function(event) {
+		$(this).removeClass('active');
+		console.log($(this))
 	});
 	$('.love').on('click', function(event) {
 		if (!$(this).hasClass('loved')) {

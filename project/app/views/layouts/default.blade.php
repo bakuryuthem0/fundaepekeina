@@ -209,7 +209,7 @@
             </div>
             <div class="col l10 bg-white">
                 <div class="col s12">
-                    <h4 class="left-align">{{ $text }}</h4>
+                    <h4 class="left-align line-height-medium-titles">{{ $text }}</h4>
                 </div>
             </div>
         </div>
@@ -225,7 +225,7 @@
                     <a href="{{ URL::to('/') }}" class="brand-logo">
                         <img src="{{ asset('images/logo.png') }}" alt="logo | fundaepekeina.org" class="hide">
                     </a>
-                    <a href="#" class="waves-effect btn-menu right d-block">
+                    <a href="#!" class="waves-effect btn-menu right d-block">
                         <i class="material-icons nav-icons">menu</i>
                     </a>
                 </div>
@@ -235,18 +235,21 @@
     <div class="lang-overly valign-wrapper center-align @if(Session::has('lang')) is-hidden @endif">
         <div class="row valign-bottom">
             <div class="col s12 center-align mb-2">
-                <img src="{{ asset('images/logo.png') }}" alt="logo | fundaepekeina.org">
+                <img src="{{ asset('images/logo.png') }}" alt="logo | fundaepekeina.org" class="logo">
             </div>
-            <div class="col s6 center-align">
+            <div class="col s3"></div>
+            <div class="col s3 center-align">
                 <a @if(!Session::has('lang')) href="#!" class="current-lang no-lang" @elseif(Session::get('lang') == "es") href="#!" class="current-lang" value="es" @else href="{{ URL::to('cambiar-lenguaje/es') }}" @endif>
                     <img src="{{ asset('images/spain.png') }}" alt="Seleccion de idioma español | fundaepekeina.org" class="lang-icon">
                 </a>
             </div>
-            <div class="col s6 center-align">
+            <div class="col s3 center-align">
                 <a @if(Session::has('lang') && Session::get('lang') == "en") href="#!" class="current-lang" @else href="{{ URL::to('cambiar-lenguaje/en') }}" @endif>
                     <img src="{{ asset('images/usa.png') }}" alt="Seleccion de idioma ingles | fundaepekeina.org" class="lang-icon">
                 </a>
             </div>
+            <div class="col s3"></div>
+
         </div>
     </div>
     @yield('content')
