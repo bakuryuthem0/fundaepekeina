@@ -12,6 +12,9 @@
     </div>
     @endif
     <form method="POST" action="{{ URL::to('generar-boletin/enviar') }}">
+      <div class="col-sm-12 formulario">
+        <input type="text" name="name" class="form-control">
+      </div>
   		<div class="col-xs-12 formulario">
         <div class="table-responsive">
           <table id="example1" class="table table-bordered table-striped">
@@ -51,14 +54,3 @@
 </div>
 @stop
 
-@section('postscript')
-  {{ HTML::style('plugins/datatables/dataTables.bootstrap.css') }}
-  {{ HTML::script('plugins/datatables/jquery.dataTables.min.js') }}
-  {{ HTML::script('plugins/datatables/dataTables.bootstrap.min.js') }}
-  <script>
-    $(function () {
-     
-    });
-  </script>
-
-@stop

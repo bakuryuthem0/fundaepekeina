@@ -4,6 +4,23 @@ class BoletinController extends BaseController {
 	public function getBoletinAdmin()
 	{
 		$data = Input::all();
+		$rules = [
+			'name' => 'required',
+			'art'  => 'required|min:1'
+		];
+		$msg  = [];
+		$attr = [
+			'name'	=> 'Nombre del boletin',
+			'art'	=> 'Noticias',
+		];
+		$validator = Validator::make($data, $rules, $msg, $attr);
+		if ($validator->fails()) {
+			return Redirect::back()->withErrors($validator)->withInput();
+		}
+		$article = Articulo::with('imagenes')
+		->with('slugs')
+		->with('titles');
+
 		$principal = "";
 		if (Input::has('principal')) {
 			$principal = Articulo::with('imagenes')
@@ -14,38 +31,25 @@ class BoletinController extends BaseController {
 				$type->with('slugs');
 			}))
 			->find($data['principal']);
+			$article = $article->where('id','!=',$principal->id);
 		}
-		$article = Articulo::with('imagenes')
-		->with('slugs')
-		->with('titles')
-		->with('descriptions')
-		->with(array('type' => function($type){
-			$type->with('slugs');
-		}));
-		foreach($data['art'] as $a)
-		{
-			$article = $article->orWhere('id','=',$a);
-		}
-		$article = $article->orderBy('id','DESC')->get();
+		$article = $article
+		->where(function($query) use ($data){
+			foreach($data['art'] as $a)
+			{
+				if(Input::has('principal') && $data['principal'] != $a)
+				{
+					$query = $query->orWhere('id','=',$a);
+				}
+			}
+			
+		})->orderBy('id','DESC')->get();
 
-		$colors  = array('yellow','green','pink','blue');
-		$hist = Articulo::where('tipo','=',6)
-		->orderBy('id','DESC')
-		->with(array('subtitle'=>function($subtitle){
-			$subtitle->with('titles');
-		}))
-		->with(array('type' => function($type){
-			$type->with('slugs');
-		}))
-		->with('imagenes')
-		->with('slugs')
-		->with('titles')
-		->with('descriptions')
-		->first();		
-		$library = LibraryFile::where('slug','=',str_replace(' ','-',strtolower("Boletin ".date('d-m-Y H:m:s'))))->first();
+		$boletinSlug = str_replace(' ','-',strtolower("boletin ".date('d-m-Y H:m:s')."-".$data['name']));
+		$library = LibraryFile::where('slug','=',$boletinSlug)->first();
 		if (empty($library)) {
 			$library 					= new LibraryFile;
-			$library->title 			= "Boletin ".date('d-m-Y H:m:s');
+			$library->title 			= "Boletin ".date('d-m-Y H:m:s')." ".$data['name'];
 			$library->slug              = str_replace(' ','-',strtolower($library->title));
 			$library->autor 		    = "fundaepekeina.org";
 		}
@@ -68,11 +72,10 @@ class BoletinController extends BaseController {
 		$library->save();
 
 		$outputName = $library->file;
-		$html    = View::make('emails.boletin-pdf')->with('article',$article)->with('principal',$principal)->with('colors',$colors)->with('hist',$hist);		
+		$html    = View::make('emails.boletin-pdf')->with('article',$article)->with('principal',$principal)->with('name',$data['name']);		
 		$pdfPath = BUDGETS_DIR.'/'.$outputName;
 		File::put($pdfPath, PDF::load($html, 'A4', 'portrait')->output());
-		
-		$boletin = View::make('emails.boletin')->with('article',$article)->with('principal',$principal)->with('colors',$colors)->with('hist',$hist);		
+		$boletin = View::make('emails.boletin')->with('article',$article)->with('principal',$principal)->with('name',$data['name']);		
 		return View::make('admin.generate')
 		->with('title','Generar Boletin')
 		->with('html',$boletin);

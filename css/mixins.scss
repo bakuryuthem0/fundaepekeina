@@ -84,3 +84,27 @@
 		margin-right: auto !important;
 	}
 }
+@mixin textAligmentResponsive(){
+	$sizes : (
+		"s" : 0,
+		"m" : 601,
+		"l" : 1024
+	);
+	$orientation : (
+		left 	 : left,
+		center : center,
+		right  : right
+	);
+	@each $o, $p in $orientation
+	{
+		@each $size, $val in $sizes
+		{
+			@media(min-width: $val*1px){
+				.#{$o}-align-#{$size}
+				{
+					text-align: $o;
+				}	
+			}	
+		} 
+	}
+}

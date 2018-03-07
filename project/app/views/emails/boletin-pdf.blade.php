@@ -1,158 +1,651 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Boletin</title>
-  <style type="text/css">
-  html, body {
-    font-size: 16px; 
-    font-family: 'Roboto';
-  }
-  .bg-blue {
-    background-color: #25aae2; }
-
-  .text-blue {
-    color: #25aae2; }
-
-  .bg-yellow {
-    background-color: #ffca08; }
-
-  .text-yellow {
-    color: #ffca08; }
-
-  .bg-green {
-    background-color: #a6ce39; }
-
-  .text-green {
-    color: #a6ce39; }
-
-  .bg-pink {
-    background-color: #ed008c; }
-
-  .text-pink {
-    color: #ed008c; }
-  .news {
-    padding: 20px; }
-  .news .boletin-title
-  {
-    color: white;
-  }
-  .img-boletin {
-    width: 300px; 
-  }
-  .padding-1
-  {
-    padding: 1em;
-  }
-  .banner
-  {
-    width: 600px;
-    display: inline-block;
-    max-width: 100%;
-  }
-  </style>
-</head>
-<body>
-<div class="container">
-  <div class="row text-center">
-    <center><img src="{{ asset('images/boletin/btn_cabeza.jpg') }}" class="banner"></center>
-  </div>
-  <div class="row">
-    <?php $j = 0; ?>
-    <div class="row news bg-blue">
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+  <head>
+    <title>
+    
+    </title>
+    <!--[if !mso]><!-- -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--<![endif]-->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type="text/css">
+    #outlook a { padding:0; }
+    .ReadMsgBody { width:100%; }
+    .ExternalClass { width:100%; }
+    .ExternalClass * { line-height:100%; }
+    body { margin:0;padding:0;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%; }
+    table, td { mso-table-lspace:0pt;mso-table-rspace:0pt; }
+    img { border:0;height:auto;line-height:100%; outline:none;text-decoration:none;-ms-interpolation-mode:bicubic; }
+    p { display:block;margin:13px 0; }
+    </style>
+    <!--[if !mso]><!-->
+    <style type="text/css">
+    @media only screen and (max-width:480px) {
+    @-ms-viewport { width:320px; }
+    @viewport { width:320px; }
+    }
+    </style>
+    <!--<![endif]-->
+    <!--[if mso]>
+    <xml>
+    <o:OfficeDocumentSettings>
+    <o:AllowPNG/>
+    <o:PixelsPerInch>96</o:PixelsPerInch>
+    </o:OfficeDocumentSettings>
+    </xml>
+    <![endif]-->
+    <!--[if lte mso 11]>
+    <style type="text/css">
+    .outlook-group-fix { width:100% !important; }
+    </style>
+    <![endif]-->
+    
+    <!--[if !mso]><!-->
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700" rel="stylesheet" type="text/css">
+    <style type="text/css">
+    @import url(https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700);
+    </style>
+    <!--<![endif]-->
+    
+    
+    <style type="text/css">
+    @media only screen and (min-width:480px) {
+    .mj-column-per-100 { width:100% !important; }
+    .mj-column-per-50 { width:50% !important; }
+    .mj-column-px-300 { width:300px !important; }
+    .mj-column-px-600 { width:600px !important; }
+    }
+    </style>
+    
+    
+    <style type="text/css">
+    
+    
+    </style>
+    
+  </head>
+  <body>
+    
+    
+    <div
+      
+      >
+      <!-- header -->
+      
+      
+            
+            
+            <div  style="Margin:0px auto;max-width:600px;">
+              
+              <table
+                align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:100%;"
+                >
+                <tbody>
+                  <tr>
+                    <td
+                      style="direction:ltr;font-size:0px;padding:20px 0;padding-left:0px;padding-right:0px;text-align:center;vertical-align:top;"
+                      >
+                      
+                            
+                            <div
+                              class="mj-column-per-100 outlook-group-fix" style="font-size:13px;text-align:left;direction:ltr;display:inline-block;vertical-align:bottom;width:100%;"
+                              >
+                              
+                              <table
+                                border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:bottom;" width="100%"
+                                >
+                                
+                                <tr>
+                                  <td
+                                    align="center" style="font-size:0px;padding:10px 25px;word-break:break-word;"
+                                    >
+                                    
+                                    <table
+                                      align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style=""
+                                      >
+                                      <tbody>
+                                        <tr>
+                                          <td  style="width:550px;">
+                                            
+                                            <img
+                                            height="auto" src="http://via.placeholder.com/600x200" style="border:0;display:block;outline:none;text-decoration:none;width:100%;" width="550"
+                                            />
+                                            
+                                          </td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                    
+                                  </td>
+                                </tr>
+                                
+                              </table>
+                              
+                            </div>
+                            
+                            
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              
+            </div>
+            
+            
+            
+            
+            <div  style="Margin:0px auto;max-width:600px;">
+              
+              <table
+                align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:100%;"
+                >
+                <tbody>
+                  <tr>
+                    <td
+                      style="direction:ltr;font-size:0px;padding:20px 0;text-align:center;vertical-align:top;"
+                      >
+                      
+                            
+                            <div
+                              class="mj-column-per-50 outlook-group-fix" style="font-size:13px;text-align:left;direction:ltr;display:inline-block;vertical-align:bottom;width:100%;"
+                              >
+                              
+                              <table
+                                border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:bottom;" width="100%"
+                                >
+                                
+                                <tr>
+                                  <td
+                                    align="left" style="font-size:0px;padding:10px 25px;word-break:break-word;"
+                                    >
+                                    
+                                    <div
+                                      style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:1;text-align:left;color:#000000;"
+                                      >
+                                      <h1>Noticias Epékeina</h1>
+                                    </div>
+                                    
+                                  </td>
+                                </tr>
+                                
+                              </table>
+                              
+                            </div>
+                            
+                          
+                            
+                            <div
+                              class="mj-column-per-50 outlook-group-fix" style="font-size:13px;text-align:left;direction:ltr;display:inline-block;vertical-align:bottom;width:100%;"
+                              >
+                              
+                              <table
+                                border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:bottom;" width="100%"
+                                >
+                                
+                                <tr>
+                                  <td
+                                    align="right" style="font-size:0px;padding:10px 25px;word-break:break-word;"
+                                    >
+                                    
+                                    <div
+                                      style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:1;text-align:right;color:#000000;"
+                                      >
+                                      <h1>{{ $name }}</h1>
+                                    </div>
+                                    
+                                  </td>
+                                </tr>
+                                
+                              </table>
+                              
+                            </div>
+                            
+                            
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              
+            </div>
+            
+            
+      
+      <!-- content -->
       @if(!empty($principal))
-      <div class="col-xs-12 text-center">
-        @if(!count($principal->imagenes) > 0)
-        <center><img src="{{ asset('images/news/'.$principal->imagenes->first()->image) }}" class="img-boletin"></center>
-        @else
-        
-          <center><img src="{{ asset('images/logo.png') }}" class="" alt="{{ $article->first()->title }}"></center>
-        @endif
-      </div>
-      <div class="col-xs-12">
-        <h2 class="boletin-title">{{ $principal->titles->first()->text }}</h2>
-        <p class="text-justify">{{ substr(strip_tags($principal->descriptions->first()->text), 0, 300) }} [...]</p>
-        <a target="_blank" href="{{ URL::to('noticias/ver/'.$principal->type->slugs->first()->text.'/'.$principal->slugs->first()->text) }}" class="btn btn-default btn-xs pull-right">Leer más</a>
-      </div>
-      <div class="clearfix"></div>
+      
+            
+            
+            <div  style="Margin:0px auto;max-width:600px;">
+              
+              <table
+                align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:100%;"
+                >
+                <tbody>
+                  <tr>
+                    <td
+                      style="direction:ltr;font-size:0px;padding:20px 0;text-align:center;vertical-align:top;"
+                      >
+                      
+                            
+                            <div
+                              class="mj-column-per-100 outlook-group-fix" style="font-size:13px;text-align:left;direction:ltr;display:inline-block;vertical-align:bottom;width:100%;"
+                              >
+                              
+                              <table
+                                border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:bottom;" width="100%"
+                                >
+                                
+                                <tr>
+                                  <td
+                                    align="center" style="font-size:0px;padding:10px 25px;word-break:break-word;"
+                                    >
+                                    
+                                    <table
+                                      align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style=""
+                                      >
+                                      <tbody>
+                                        <tr>
+                                          <td  style="width:550px;">
+                                            @if(count($principal->imagenes) > 0)
+                                            <img
+                                            height="auto" src="{{ asset('images/news/'.$principal->imagenes->first()->image) }}" style="border:0;display:block;outline:none;text-decoration:none;width:100%;" width="550"
+                                            />
+                                            @else
+                                            <img
+                                            height="auto" src="http://via.placeholder.com/600x200" style="border:0;display:block;outline:none;text-decoration:none;width:100%;" width="550"
+                                            />
+                                            @endif
+                                          </td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                    
+                                  </td>
+                                </tr>
+                                
+                                <tr>
+                                  <td
+                                    align="left" style="font-size:0px;padding:10px 25px;word-break:break-word;"
+                                    >
+                                    
+                                    <div
+                                      style="font-family:Helvetica Neue;font-size:26px;line-height:1;text-align:left;color:#000000;"
+                                      >
+                                      {{ $principal->titles->first()->text }}
+                                    </div>
+                                    
+                                  </td>
+                                </tr>
+                                
+                                <tr>
+                                  <td
+                                    align="left" style="font-size:0px;padding:10px 25px;word-break:break-word;"
+                                    >
+                                    
+                                    <div
+                                      style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:16px;line-height:1;text-align:left;color:#000000;"
+                                      >
+                                      <a href="{{ URL::to('noticias/ver/'.$principal->slugs->first()->text) }}" style="color:#333;text-decoration:none;">Leer mas</a>
+                                    </div>
+                                    
+                                  </td>
+                                </tr>
+                                
+                                <tr>
+                                  <td
+                                    style="font-size:0px;padding:10px 25px;padding-top:40;padding-right:0px;padding-bottom:0px;padding-left:0px;word-break:break-word;"
+                                    >
+                                    
+                                    <p
+                                      style="border-top:solid 1px #333;font-size:1;margin:0px auto;width:100%;"
+                                      >
+                                    </p>
+                                    
+                                    
+                                    
+                                  </td>
+                                </tr>
+                                
+                              </table>
+                              
+                            </div>
+                            
+                            
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              
+            </div>
+            
+            
       @endif
+
+      @foreach($article as $a)
+      
+                
+                
+                <div  style="Margin:0px auto;max-width:600px;">
+                  
+                  <table
+                    align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:100%;"
+                    >
+                    <tbody>
+                      <tr>
+                        <td
+                          style="direction:ltr;font-size:0px;padding:20px 0;text-align:center;vertical-align:top;"
+                          >
+                          
+                                
+                                <div
+                                  class="mj-column-per-100 outlook-group-fix" style="font-size:13px;text-align:left;direction:ltr;display:inline-block;vertical-align:bottom;width:100%;"
+                                  >
+                                  
+                                  <table
+                                    border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:bottom;" width="100%"
+                                    >
+                                    
+                                    <tr>
+                                      <td
+                                        align="center" style="font-size:0px;padding:10px 25px;word-break:break-word;"
+                                        >
+                                        
+                                        <table
+                                          align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style=""
+                                          >
+                                          <tbody>
+                                            <tr>
+                                              <td  style="width:550px;">
+                                                @if(count($a->imagenes) > 0)
+                                                <img
+                                                height="auto" src="{{ asset('images/news/'.$a->imagenes->first()->image) }}" style="border:0;display:block;outline:none;text-decoration:none;width:100%;" width="550"
+                                                />
+                                                @else
+                                                <img
+                                                height="auto" src="http://via.placeholder.com/600x200" style="border:0;display:block;outline:none;text-decoration:none;width:100%;" width="550"
+                                                />
+                                                @endif
+                                              </td>
+                                            </tr>
+                                          </tbody>
+                                        </table>
+                                        
+                                      </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                      <td
+                                        align="left" style="font-size:0px;padding:10px 25px;word-break:break-word;"
+                                        >
+                                        
+                                        <div
+                                          style="font-family:Helvetica Neue;font-size:26px;line-height:1;text-align:left;color:#000000;"
+                                          >
+                                          {{ $a->titles->first()->text }}
+                                        </div>
+                                        
+                                      </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                      <td
+                                        align="left" style="font-size:0px;padding:10px 25px;word-break:break-word;"
+                                        >
+                                        
+                                        <div
+                                          style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:16px;line-height:1;text-align:left;color:#000000;"
+                                          >
+                                          <a href="{{ URL::to('noticias/ver/'.$a->slugs->first()->text) }}" style="color:#333;text-decoration:none;">Leer mas</a>
+                                        </div>
+                                        
+                                      </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                      <td
+                                        style="font-size:0px;padding:10px 25px;padding-top:40;padding-right:0px;padding-bottom:0px;padding-left:0px;word-break:break-word;"
+                                        >
+                                        
+                                        <p
+                                          style="border-top:solid 1px #333;font-size:1;margin:0px auto;width:100%;"
+                                          >
+                                        </p>
+                                        
+                                       
+                                        
+                                        
+                                      </td>
+                                    </tr>
+                                    
+                                  </table>
+                                  
+                                </div>
+                                
+                                
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  
+                </div>
+                
+                
+                
+      @endforeach
+     
+      <!-- footer -->
+      
+      
+            
+            
+            <div  style="background:#00A99D;background-color:#00A99D;Margin:0px auto;max-width:600px;">
+              
+              <table
+                align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:#00A99D;background-color:#00A99D;width:100%;"
+                >
+                <tbody>
+                  <tr>
+                    <td
+                      style="direction:ltr;font-size:0px;padding:20px 0;padding-left:10px;padding-right:10px;text-align:center;vertical-align:top;"
+                      >
+                 
+                            
+                            <div
+                              class="mj-column-per-50 outlook-group-fix" style="font-size:13px;text-align:left;direction:ltr;display:inline-block;vertical-align:bottom;width:100%;"
+                              >
+                              
+                              <table
+                                border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:bottom;" width="100%"
+                                >
+                                
+                                <tr>
+                                  <td
+                                    align="center" style="font-size:0px;padding:10px 25px;word-break:break-word;"
+                                    >
+                                    
+                                    
+
+                                          <table
+                                            align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="float:none;display:inline-table;"
+                                            >
+                                            
+                                            <tr
+                                              
+                                              >
+                                              <td  style="padding:4px;">
+                                                <table
+                                                  border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:#3b5998;border-radius:3px;width:20px;"
+                                                  >
+                                                  <tr>
+                                                    <td  style="font-size:0;height:20px;vertical-align:middle;width:20px;">
+                                                      <a  href="https://www.facebook.com/sharer/sharer.php?u=https://facebook.com/funda.epekeina">
+                                                        <img
+                                                        height="20" src="https://www.mailjet.com/images/theme/v1/icons/ico-social/facebook.png" style="border-radius:3px;" width="20"
+                                                        />
+                                                      </a>
+                                                    </td>
+                                                  </tr>
+                                                </table>
+                                                
+                                              </td>
+                                            </tr>
+                                            
+                                          </table>
+                                          
+                                          <table
+                                            align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="float:none;display:inline-table;"
+                                            >
+                                            
+                                            <tr
+                                              
+                                              >
+                                              <td  style="padding:4px;">
+                                                <table
+                                                  border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:#3f729b;border-radius:3px;width:20px;"
+                                                  >
+                                                  <tr>
+                                                    <td  style="font-size:0;height:20px;vertical-align:middle;width:20px;">
+                                                      <a  href="https://instagram.com/fundaepekeina">
+                                                        <img
+                                                        height="20" src="https://www.mailjet.com/images/theme/v1/icons/ico-social/instagram.png" style="border-radius:3px;" width="20"
+                                                        />
+                                                      </a>
+                                                    </td>
+                                                  </tr>
+                                                </table>
+                                                
+                                              </td>
+                                            </tr>
+                                            
+                                          </table>
+                                          
+                                          <table
+                                            align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="float:none;display:inline-table;"
+                                            >
+                                            
+                                            <tr
+                                              
+                                              >
+                                              <td  style="padding:4px;">
+                                                <table
+                                                  border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:#55acee;border-radius:3px;width:20px;"
+                                                  >
+                                                  <tr>
+                                                    <td  style="font-size:0;height:20px;vertical-align:middle;width:20px;">
+                                                      <a  href="https://twitter.com/home?status=https://twitter.com/fundaepekeina">
+                                                        <img
+                                                        height="20" src="https://www.mailjet.com/images/theme/v1/icons/ico-social/twitter.png" style="border-radius:3px;" width="20"
+                                                        />
+                                                      </a>
+                                                    </td>
+                                                  </tr>
+                                                </table>
+                                                
+                                              </td>
+                                            </tr>
+                                            
+                                          </table>
+                                    
+                                    
+                                  </td>
+                                </tr>
+                                
+                              </table>
+                              
+                            </div>
+
+                            
+                            <div
+                              class="mj-column-per-50 outlook-group-fix" style="font-size:13px;text-align:left;direction:ltr;display:inline-block;vertical-align:bottom;width:100%;"
+                              >
+                              
+                              <table
+                                border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:bottom;" width="100%"
+                                >
+                                
+                                <tr>
+                                  <td
+                                    align="center" style="font-size:0px;padding:10px 25px;word-break:break-word;"
+                                    >
+                                    
+                                    <div
+                                      style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:1;text-align:center;color:#FFFFFF;"
+                                      >
+                                      fundaepekeina.org
+                                    </div>
+                                    
+                                  </td>
+                                </tr>
+                                
+                              </table>
+                              
+                            </div>
+                            
+                            
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              
+            </div>
+            
+            
+            
+            
+            <div  style="background:#00A99D;background-color:#00A99D;Margin:0px auto;max-width:600px;">
+              
+              <table
+                align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:#00A99D;background-color:#00A99D;width:100%;"
+                >
+                <tbody>
+                  <tr>
+                    <td
+                      style="direction:ltr;font-size:0px;padding:20px 0;padding-left:10px;padding-right:10px;text-align:center;vertical-align:top;"
+                      >
+
+                            
+                            <div
+                              class="mj-column-per-100 outlook-group-fix" style="font-size:13px;text-align:left;direction:ltr;display:inline-block;vertical-align:bottom;width:100%;"
+                              >
+                              
+                              <table
+                                border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:bottom;" width="100%"
+                                >
+                                
+                                <tr>
+                                  <td
+                                    align="center" style="font-size:0px;padding:10px 25px;word-break:break-word;"
+                                    >
+                                    
+                                    <div
+                                      style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:1;text-align:center;color:#FFFFFF;"
+                                      >
+                                       Sent by fundaepekeina.org <br>
+                                      Funda Epékeina <br>
+                                      Todos los derechos reservados | fundaepekeina 2018
+                                    </div>
+                                    
+                                  </td>
+                                </tr>
+                                
+                              </table>
+                              
+                            </div>
+                            
+                            
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              
+            </div>
+            
+            
+      
+      
     </div>
-    @foreach($article as $a)
-    <div class="row news bg-{{ $colors[$j] }}">
-      @if(!empty($principal))
-      @if($a->slugs->first()->text != $principal->id)
-      <div class="col-xs-12 text-center">
-        @if(count($a->imagenes) > 0)
-        <center><img src="{{ asset('images/news/'.$a->imagenes->first()->image) }}" class="img-boletin" alt="{{ $a->titles->first()->text }}"></center>
-        @else
-        <center><img src="{{ asset('images/logo.png') }}" class="" alt="{{ $a->titles->first()->text }}"></center>
-        @endif
-      </div>
-      <div class="col-xs-12">
-        <h2 class="boletin-title">{{ $a->titles->first()->text }}</h2>
-        <p class="text-justify">{{ substr(strip_tags($a->descriptions->first()->text), 0, 300) }} [...]</p>
-        <a target="_blank" href="{{ URL::to('noticias/ver/'.$a->type->slugs->first()->text.'/'.$a->slugs->first()->text) }}" class="btn btn-default btn-xs pull-right">Leer más</a>
-        <div class="clearfix"></div>
-      </div>
-      @endif
-      @else
-      <div class="col-xs-12 text-center">
-        @if(count($a->imagenes) > 0)
-        <center><img src="{{ asset('images/news/'.$a->imagenes->first()->image) }}" class="img-boletin" alt="{{ $a->titles->first()->text }}"></center>
-        @else
-        <center><img src="{{ asset('images/logo.png') }}" class="" alt="{{ $a->titles->first()->text }}"></center>
-        @endif
-      </div>
-      <div class="col-xs-12">
-        <h2 class="boletin-title">{{ $a->titles->first()->text }}</h2>
-        <p class="text-justify">{{ substr(strip_tags($a->descriptions->first()->text), 0, 300) }} [...]</p>
-        <a target="_blank" href="{{ URL::to('noticias/ver/'.$a->slugs->first()->text) }}" class="btn btn-default btn-xs pull-right">Leer más</a>
-        <div class="clearfix"></div>
-      </div>
-      @endif
-      <?php $j++; ?>
-      @if($j == 4)
-      <?php $j=0; ?>
-      @endif
-    </div>
-    @endforeach
-    <div class="row">
-      <div class="col-xs-12">
-        @if(count($hist->imagenes) > 0)
-        <center><img src="{{ asset('images/news/'.$hist->imagenes->first()->image) }}" class="img-boletin" alt="{{ $hist->titles->first()->text }}"></center>
-        @endif
-      </div>
-      <div class="col-xs-12">
-        <h2 class="text-blue">Historias Epékeinas</h2>
-        <div class="bg-green padding-1">
-          <h2 class="boletin-title">
-          {{ $hist->titles->first()->text }}
-          @if(!is_null($hist->subtitle))
-          {{ $hist->subtitle->titles->first()->text }}
-          @endif
-          </h2>
-        </div>
-        <hr>
-        <div class="text-justify">
-          {{ substr(strip_tags($hist->descriptions->first()->text), 0, 1600) }}[...]
-          <br>
-          <a href="{{ URL::to('quienes-somos/historias-epekeinas/'.$hist->slugs->first()->text) }}" class="pull-right">Leer más</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-xs-12 text-center">
-    <h3>&copy; Derechos Reservados Funda Epékeina 2016.</h3>
-  </div>
-</div>
-<div class="container center-block">
-  <div class="bg-square bg-blue"></div>
-  <div class="bg-square bg-yellow"></div>
-  <div class="bg-square bg-green"></div>
-  <div class="bg-square bg-pink"></div>
-</div>
-<div class="clearfix"></div>
-</div>
-</body>
+    
+  </body>
 </html>
+                            
