@@ -478,7 +478,7 @@
                                                   border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:#3b5998;border-radius:3px;width:20px;"
                                                   >
                                                   <tr>
-                                                    <td  style="font-size:0;height:20px;vertical-align:middle;width:20px;">
+                                                    <td  style="height:20px;vertical-align:middle;width:20px;">
                                                       <a  href="https://www.facebook.com/sharer/sharer.php?u=https://facebook.com/funda.epekeina">
                                                         <img
                                                         height="20" src="https://www.mailjet.com/images/theme/v1/icons/ico-social/facebook.png" style="border-radius:3px;" width="20"
@@ -505,7 +505,7 @@
                                                   border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:#3f729b;border-radius:3px;width:20px;"
                                                   >
                                                   <tr>
-                                                    <td  style="font-size:0;height:20px;vertical-align:middle;width:20px;">
+                                                    <td  style="height:20px;vertical-align:middle;width:20px;">
                                                       <a  href="https://instagram.com/fundaepekeina">
                                                         <img
                                                         height="20" src="https://www.mailjet.com/images/theme/v1/icons/ico-social/instagram.png" style="border-radius:3px;" width="20"
@@ -532,7 +532,7 @@
                                                   border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:#55acee;border-radius:3px;width:20px;"
                                                   >
                                                   <tr>
-                                                    <td  style="font-size:0;height:20px;vertical-align:middle;width:20px;">
+                                                    <td  style="height:20px;vertical-align:middle;width:20px;">
                                                       <a  href="https://twitter.com/home?status=https://twitter.com/fundaepekeina">
                                                         <img
                                                         height="20" src="https://www.mailjet.com/images/theme/v1/icons/ico-social/twitter.png" style="border-radius:3px;" width="20"
