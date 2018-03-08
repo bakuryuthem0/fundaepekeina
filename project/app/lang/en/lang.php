@@ -174,21 +174,21 @@
 		//subscriptions
 		'subscription_title'	=> 'Suscribe',
 		'subscription_subtitle'	=> 'The fields marked with a (*) are required',
-		'subscription_quote'	=> 'Sí deseas recibir información periódica de nuestras actividades<br>suscríbete a nuestro boletín para mantenerte informado',
-		'subscription_text1'	=> 'Deseo recibir material sobre la programación de futuros eventos de Funda Epékeina',
-		'subscription_text2'	=> 'Al enviar este formulario esta de acuerdo en recibir nuestros boletines',
-		'subscription_success'	=> 'Se ha registrado en nuestro boletín satisfactoriamente.',
-		'subscription_error'	=> 'Error, alguno de los campos falta o es erroneo',
+		'subscription_quote'	=> 'If you want to get the latest news about our activities<br> Subscribe to our newsletter to keep you informed.',
+		'subscription_text1'	=> 'I wish to receive information about future events about Funda Epékeina',
+		'subscription_text2'	=> 'Sending this form you will accept to subscribe to our newsletter',
+		'subscription_success'	=> 'You have been registered successfully.',
+		'subscription_error'	=> 'Ups, some fields are missing or are invalid',
 		//volunteer
 		//volunteer
-		'be_a_volunteer'	=> 'Unete al voluntariado',
+		'be_a_volunteer'	=> 'Join the volunteers',
 		'volunteer_quote'	=> 'En Epékeina siempre necesitamos una mano amiga.<br>Creemos que la voluntad es el motor para alcanzar las metas.<br>Únete a nuestro voluntariado y haz la diferencia.',
 		'volunteer_quote2'	=> 'Se puede colocar una cita, donde se hable de ayudar al projimo',
 		'volunteer_text5'	=> 'Puedes participar en nuestra fundación como voluntario:<br> Comunícate con nosotros a través del correo electrónico:<br> <a href="mailto:comunicaciones@fundaepekeina.org">comunicaciones@fundaepekeina.org</a> y <a href="mailto:fundaepekeina@gmail.com">fundaepekeina@gmail.com</a>',
 		
 		//footer
 		'donate'			=> 'Donate',
-		'join'				=> 'Únete',
+		'join'				=> 'Join us',
 		
 		'subscribe'			=> 'Suscribe to our newsletter',
 		'worry_not'			=> 'Do not worry, we won\'t use your email for spam',
