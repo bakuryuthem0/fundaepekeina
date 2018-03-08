@@ -143,10 +143,14 @@ class HomeController extends BaseController {
 			$type->with('slugs')
 			->with('descriptions');	
 		}))
-		->with('titles')
 		->with('imagenes')
 		->where('state','=',1)
-		->with('descriptions')
+		->with(['titles' => function($title) use($lang){
+			$title->where('lang_id','=',$lang->id)
+		}])
+		->with(['descriptions' => function($desc) use($lang){
+			$desc->where('lang_id','=',$lang->id)
+		}])
 		->where('slug','=',$entry->translation_id)
 		->first();
 		
