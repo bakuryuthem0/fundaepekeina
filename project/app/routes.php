@@ -136,7 +136,7 @@ Route::get('test-boletin','BoletinController@getTest');
 
 Route::get('cambiar-lenguaje/{lang}',function($lang)
 {
-	Session::set('lang', $lang);
+	Session::put('lang', $lang);
 	if (Request::ajax()) {
 		return Response::json(array(
 			'type' => 'success'
