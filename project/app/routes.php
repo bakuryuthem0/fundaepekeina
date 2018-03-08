@@ -58,6 +58,7 @@ Route::get('agregar-love','HomeController@getLike');
 Route::group(array('before' => 'auth'),function() 
 {
 
+	Route::post('administrador/enviar-campaña','AdminController@postCampaing');
 	Route::get('generar-boletin','BoletinController@selectNews');
 	Route::post('generar-boletin/enviar','BoletinController@getBoletinAdmin');
 	Route::get('generar-boletin-html','BoletinController@getBoletin');

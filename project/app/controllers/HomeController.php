@@ -37,7 +37,7 @@ class HomeController extends BaseController {
 		$active = "inicio";
 		return View::make('home.index')
 		->with('active',$active)
-		->with('campaing',Lang::get('lang.campaing'))
+		->with('campaing',LangController::getCampaing()->titles->first()->text)
 		->with('title',$title)
 		->with('size','big')
 		->with('article',$article);
@@ -74,6 +74,7 @@ class HomeController extends BaseController {
 		return View::make('about.show')
 		->with('title',$title)
 		->with('size','big')
+		->with('campaing',LangController::getCampaing()->titles->first()->text)
 		->with('hist',$hist);
 	}
 	public function getHistory($slug)
@@ -488,7 +489,7 @@ class HomeController extends BaseController {
 		->with('size','big')
 		->with('citaMenu','cita')
 		->with('accounts',$accounts)
-		->with('campaing',Lang::get('lang.campaing'))
+		->with('campaing',LangController::getCampaing()->titles->first()->text)
 		->with('text',Lang::get('lang.donation_quote'))
 		->with('active','contacto');
 	}

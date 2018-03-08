@@ -14,6 +14,19 @@
 		{
 			return Language::where('is_default','=',1)->first()->code;
 		}
+		public static function getCampaing($code = null)
+		{
+			if ($code == null) {
+				$lang = LangController::getActiveLang();
+			}else
+			{
+				$lang = Language::where('code','=',$code)->first();
+			}
+			return Campaing::with(['titles' => function($titles) use ($lang){
+				$titles->where('lang_id','=',$lang->id);
+			}])
+			->first();
+		}
 		public static function newTranslation()
 		{
 			$translation = new Translation;

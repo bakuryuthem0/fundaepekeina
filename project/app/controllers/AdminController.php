@@ -1,7 +1,24 @@
 <?php
 
 class AdminController extends BaseController {
-
+	public function postCampaing()
+	{
+		$langs = Language::get();
+		$campaing = Campaing::first();
+		$data = Input::all();
+		if ($campaing) {
+			LangController::mdfEntry($langs, $data, 'title');
+			Session::flash('success','Se ha guardado el satisfactoriamente.');
+			return Redirect::back();
+		}
+		$campaing = new Campaing;
+		$translation      = LangController::newTranslation();
+		LangController::newEntry($langs, $translation,$data, 'title');
+		$campaing->title  = $translation;
+		$campaing->save();
+		Session::flash('success','Se ha guardado el satisfactoriamente.');
+			return Redirect::back();
+	}
 	public function upload_image($file, $ruta)
 	{
 		$extension = File::extension($file->getClientOriginalName());
@@ -56,9 +73,13 @@ class AdminController extends BaseController {
 	}
 	public function getIndex()
 	{
+		$campaingEs = LangController::getCampaing("es");
+		$campaingEn = LangController::getCampaing("en");
 		$title = "Inicio | Administrador Funda Epékeina";
 		return View::make('admin.index')
-		->with('title',$title);
+		->with('title',$title)
+		->with('campaingEs',$campaingEs)
+		->with('campaingEn',$campaingEn);
 	}
 	function getChangePass()
 	{

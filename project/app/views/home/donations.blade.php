@@ -6,7 +6,7 @@
         <div class="col s12 pl-0 pr-0">
             <div class="row mb-0 contenedor valign-wrapper">
                 <div class="col s8">
-                    <p class="text-white right-align carpicho-de-marian mtop">"Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore.Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore".<br><strong>Voluntario</strong></p>
+                    <p class="text-white right-align carpicho-de-marian mtop">"Funda Epékeina es para mí amor, paz y alegría".<br><strong>Verónica</strong></p>
                 </div>
                 <div class="col s4">
                     <img src="{{ asset('images/volunteers/donation1.jpg') }}" class="responsive-img d-block mx-auto">
@@ -22,7 +22,7 @@
                     <img src="{{ asset('images/volunteers/donation2.jpg') }}" class="responsive-img d-block mx-auto">
                 </div>
                 <div class="col s8 carpicho-de-marian pl-4">
-                    <p class="">"Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore.Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore".<br><strong>Pepito Perez</strong></p>
+                    <p class="">"Funda Epékeina para mi es alegría. Una cura para los malos momentos;nada más con ver la entrada te sientes feliz, olvidas todo y empiezas de nuevo".<br><strong>Jhosberg</strong></p>
                 </div>
             </div>
         </div>
