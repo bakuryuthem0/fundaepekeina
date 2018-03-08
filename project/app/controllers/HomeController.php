@@ -146,12 +146,12 @@ class HomeController extends BaseController {
 		->with('imagenes')
 		->where('state','=',1)
 		->with(['titles' => function($title) use($lang){
-			$title->where('lang_id','=',$lang->id)
+			$title->where('lang_id','=',$lang->id);
 		}])
 		->with(['descriptions' => function($desc) use($lang){
 			$desc->where('lang_id','=',$lang->id)
 		}])
-		->where('slug','=',$entry->translation_id)
+		->where('slug','=',$entry->translation_id);
 		->first();
 		
 		$request = Request::instance();
