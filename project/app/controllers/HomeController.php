@@ -17,6 +17,7 @@ class HomeController extends BaseController {
 
 	public function getIndex()
 	{
+		$lang = LangController::getActiveLang();
 		$title = Lang::get('lang.home_title');
 		$article = Articulo::with('imagenes')
 		->with('slugs')
@@ -24,6 +25,14 @@ class HomeController extends BaseController {
 		->with('descriptions')
 		->where('state','=',1)
 		->where('articulos.cat_id','!=',4)
+		->whereHas('titles',function($titles) use ($lang){
+			$titles->where('lang_id','=',$lang->id)
+			->whereRaw('LENGTH(text) > 0');
+		})
+		->whereHas('descriptions',function($desc) use ($lang){
+			$desc->where('lang_id','=',$lang->id)
+			->whereRaw('LENGTH(text) > 0');
+		})
 		->orderBy('created_at','DESC')->take(8)->get();
 		$active = "inicio";
 		return View::make('home.index')
@@ -69,6 +78,8 @@ class HomeController extends BaseController {
 	}
 	public function getHistory($slug)
 	{
+		$lang = LangController::getActiveLang();
+
 		$title = Lang::get('lang.history_menu')." | Funda Epékeina";
 		$article = Articulo::whereHas('slugs',function($slugs) use ($slug)
 		{
@@ -79,6 +90,14 @@ class HomeController extends BaseController {
 		->with('slugs')
 		->with('titles')
 		->with('descriptions')
+		->whereHas('titles',function($titles) use ($lang){
+			$titles->where('lang_id','=',$lang->id)
+			->whereRaw('LENGTH(text) > 0');
+		})
+		->whereHas('descriptions',function($desc) use ($lang){
+			$desc->where('lang_id','=',$lang->id)
+			->whereRaw('LENGTH(text) > 0');
+		})
 		->first();
 		$related = Articulo::where('tipo','=',6)
 		->where('id','!=',$article->id)
@@ -287,11 +306,20 @@ class HomeController extends BaseController {
 	}
 	public function getSearch($t = null)
 	{
+		$lang = LangController::getActiveLang();
 		$collection = Articulo::with('imagenes')
 		->with('titles')
 		->with('slugs')
 		->with('descriptions')
-		->where('state','=',1);
+		->where('state','=',1)
+		->whereHas('titles',function($titles) use ($lang){
+			$titles->where('lang_id','=',$lang->id)
+			->whereRaw('LENGTH(text) > 0');
+		})
+		->whereHas('descriptions',function($desc) use ($lang){
+			$desc->where('lang_id','=',$lang->id)
+			->whereRaw('LENGTH(text) > 0');
+		});
 
 		if (Input::has('busq')) {
 			$lang = LangController::getActiveLang();
