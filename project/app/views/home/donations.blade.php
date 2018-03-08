@@ -6,7 +6,7 @@
         <div class="col s12 pl-0 pr-0">
             <div class="row mb-0 contenedor valign-wrapper">
                 <div class="col s8">
-                    <p class="text-white right-align carpicho-de-marian mtop">"Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore.Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore".<br><strong>Pepito Perez</strong></p>
+                    <p class="text-white right-align carpicho-de-marian mtop">"Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore.Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore".<br><strong>Voluntario</strong></p>
                 </div>
                 <div class="col s4">
                     <img src="{{ asset('images/volunteers/donation1.jpg') }}" class="responsive-img d-block mx-auto">
