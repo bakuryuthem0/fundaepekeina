@@ -149,9 +149,9 @@ class HomeController extends BaseController {
 			$title->where('lang_id','=',$lang->id);
 		}])
 		->with(['descriptions' => function($desc) use($lang){
-			$desc->where('lang_id','=',$lang->id)
+			$desc->where('lang_id','=',$lang->id);
 		}])
-		->where('slug','=',$entry->translation_id);
+		->where('slug','=',$entry->translation_id)
 		->first();
 		
 		$request = Request::instance();
