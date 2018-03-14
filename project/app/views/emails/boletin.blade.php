@@ -120,10 +120,10 @@
                                       >
                                       <tbody>
                                         <tr>
-                                          <td  style="width:550px;">
-                                            
+                                          <td  style="width:550px;display:flex;justify-content:center;flex-direction:column;">
+                                            <img src="{{ "images/logo.png" }}" style="width:33.33%;box-sizing:display:inline-block;" width="100">
                                             <img
-                                            height="auto" src="{{ asset('images/main_banner_small.jpg') }}" style="border:0;display:block;outline:none;text-decoration:none;width:100%;" width="550"
+                                            height="auto" src="{{ asset('images/main_banner_small.jpg') }}" style="border:0;display:block;outline:none;text-decoration:none;width:33.33%;box-sizing:display:inline-block;" width="450"
                                             />
                                             
                                           </td>
