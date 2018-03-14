@@ -235,7 +235,7 @@
     <div class="lang-overly valign-wrapper center-align @if(Session::has('lang')) is-hidden @endif">
         <div class="row valign-bottom">
             <div class="col s12 center-align mb-2">
-                <img src="{{ asset('images/logo.png') }}" alt="logo | fundaepekeina.org" class="logo">
+                <img src="{{ asset('images/logo_lang.png') }}" alt="logo | fundaepekeina.org" class="logo">
             </div>
             <div class="col s3"></div>
             <div class="col s3 center-align">

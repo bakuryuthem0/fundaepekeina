@@ -123,7 +123,7 @@
                                           <td  style="width:550px;">
                                             
                                             <img
-                                            height="auto" src="http://via.placeholder.com/600x200" style="border:0;display:block;outline:none;text-decoration:none;width:100%;" width="550"
+                                            height="auto" src="{{ asset('images/main_banner_small.jpg') }}" style="border:0;display:block;outline:none;text-decoration:none;width:100%;" width="550"
                                             />
                                             
                                           </td>
@@ -356,7 +356,7 @@
                                     <div
                                       style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:16px;line-height:1;text-align:left;color:#000000;"
                                       >
-                                      <a href="{{ URL::to('noticias/ver/'.$principal->slugs->first()->text) }}" style="color:#333;text-decoration:none;">Leer mas</a>
+                                      <a href="{{ URL::to('noticias/ver/'.$principal->slugs->first()->text) }}" style="color:#333;text-decoration:none;">Leer más</a>
                                     </div>
                                     
                                   </td>
@@ -503,7 +503,7 @@
                                           <div
                                             style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:16px;line-height:1;text-align:left;color:#000000;"
                                             >
-                                            <a href="{{ URL::to('noticias/ver/'.$a->slugs->first()->text) }}" style="color:#333;text-decoration:none;">Leer mas</a>
+                                            <a href="{{ URL::to('noticias/ver/'.$a->slugs->first()->text) }}" style="color:#333;text-decoration:none;">Leer más</a>
                                           </div>
                                           
                                         </td>
@@ -653,7 +653,7 @@
                                         <div
                                           style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:16px;line-height:1;text-align:left;color:#000000;"
                                           >
-                                          <a href="{{ URL::to('noticias/ver/'.$article[$i]->slugs->first()->text) }}" style="color:#333;text-decoration:none;">Leer mas</a>
+                                          <a href="{{ URL::to('noticias/ver/'.$article[$i]->slugs->first()->text) }}" style="color:#333;text-decoration:none;">Leer más</a>
                                         </div>
                                         
                                       </td>
@@ -729,7 +729,7 @@
                                         <div
                                           style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:16px;line-height:1;text-align:left;color:#000000;"
                                           >
-                                          <a href="{{ URL::to('noticias/ver/'.$article[$i+1]->slugs->first()->text) }}" style="color:#333;text-decoration:none;">Leer mas</a>
+                                          <a href="{{ URL::to('noticias/ver/'.$article[$i+1]->slugs->first()->text) }}" style="color:#333;text-decoration:none;">Leer más</a>
                                         </div>
                                         
                                       </td>
