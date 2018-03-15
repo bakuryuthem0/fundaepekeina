@@ -184,9 +184,9 @@
     </div>
     @if(isset($donaMenu))
     <div class="relative contenedor menu-call-to-action hide-on-med-and-down">
-        <div class="row mb-0">
+        <div class="row mb-0 valign-wrapper">
             <div class="col l2 bg-white center-align">
-                <a href="{{ URL::to('/') }}" title="{{Lang::get('lang.home_title')}}"><img src="{{ asset('images/logo.png') }}" class="logo"></a>
+                <a href="{{ URL::to('/') }}" title="{{Lang::get('lang.home_title')}}"><img src="{{ asset('images/logo.png') }}" class="responsive-img"></a>
             </div>
             <div class="col l10 bg-image relative">
                 <div class="absolute col l4 row mb-0">
@@ -205,7 +205,7 @@
     <div class="relative contenedor menu-call-to-action hide-on-small-only">
         <div class="row mb-0 valign-wrapper">
             <div class="col l2 bg-white center-align">
-                <a href="{{ URL::to('/') }}" title="{{Lang::get('lang.home_title')}}"><img src="{{ asset('images/logo.png') }}" class="logo"></a>
+                <a href="{{ URL::to('/') }}" title="{{Lang::get('lang.home_title')}}"><img src="{{ asset('images/logo.png') }}" class="responsive-img"></a>
             </div>
             <div class="col l10 bg-white">
                 <div class="col s12">
