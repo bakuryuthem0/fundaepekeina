@@ -322,6 +322,11 @@
                                                 <i class="fa fa-instagram fa-2x"></i>
                                             </a>
                                         </li>
+                                        <li class="d-inline ml-1 mr-1">
+                                            <a target="_blank" class="grey-text text-lighten-3" href="https://www.youtube.com/channel/UCIKDvtJy2m5jCD-cWdC25TA">
+                                                <i class="fa fa-youtube fa-2x"></i>
+                                            </a>
+                                        </li>
                                     </ul>
                                 </li>
                                 <li class="mt-1">
