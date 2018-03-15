@@ -101,19 +101,18 @@ class HomeController extends BaseController {
 			->whereRaw('LENGTH(text) > 0');
 		})
 		->first();
-		$related = [];
-		if (count($article) > 0) {
-			$related = Articulo::where('tipo','=',6)
-			->where('id','!=',$article->id)
-			->with('subtitle')
-			->with('imagenes')
-			->with('slugs')
-			->with('titles')
-			->with('descriptions')
-			->take(8)
-			->get();
-			
+		if (count($article) < 1) {
+			return Response::make("Not Found", 404);
 		}
+		$related = Articulo::where('tipo','=',6)
+		->where('id','!=',$article->id)
+		->with('subtitle')
+		->with('imagenes')
+		->with('slugs')
+		->with('titles')
+		->with('descriptions')
+		->take(8)
+		->get();
 		$request = Request::instance();
 		$request->setTrustedProxies(array('127.0.0.1')); // only trust proxy headers coming from the IP addresses on the array (change this to suit your needs)
 		$ip = $request->getClientIp();
