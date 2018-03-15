@@ -102,7 +102,7 @@ class HomeController extends BaseController {
 		})
 		->first();
 		if (count($article) < 1) {
-			return Response::make("Not Found", 404);
+			App::abort(404);
 		}
 		$related = Articulo::where('tipo','=',6)
 		->where('id','!=',$article->id)
