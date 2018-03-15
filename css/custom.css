@@ -70,6 +70,8 @@ strong {
     font-size: 37px;
     line-height: 54px; }
 
+.menu-call-to-action .logo {
+  width: 150px; }
 .menu-call-to-action .bg-image {
   height: 130px;
   background-size: cover;
