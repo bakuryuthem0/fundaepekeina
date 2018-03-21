@@ -41,7 +41,7 @@
     <div class="mt-4 mb-4"></div>
     <div class="row contenedor">
         <div class="col s12">
-            <strong>{{ Lang::get('lang.donation_data') }} Epékeina</strong>
+            <strong>{{ Lang::get('lang.donation_data') }} Funda Epékeina</strong>
         </div>
         @foreach($accounts as $a)
         <div class="col s12 m6">
@@ -56,7 +56,7 @@
     <div class="row">
         <div class="col s12"><hr></div>
         <div class="col s12 center-align valign-wrapper mt-4">
-            <img src="{{ asset('images/logo.png') }}" class="d-inline-block ml-auto mr-2">
+            <img src="{{ asset('images/logo.png') }}" class="d-inline-block ml-auto mr-2 responsive-img" style="max-width:150px;">
             <h3 class="d-inline-block mr-auto ml-2">
                 {{ Lang::get('lang.make_a_donation') }}
             </h3>

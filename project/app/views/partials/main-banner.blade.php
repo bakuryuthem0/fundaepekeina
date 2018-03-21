@@ -1,7 +1,7 @@
 <div class="relative wow fadeIn" data-wow-duration="500ms" data-wow-delay="300ms">
 	<picture>
-		<source media="(max-width: 426px)" srcset="{{ asset('images/main_banner.jpg') }}">
-		<source media="(max-width: 769px)" srcset="{{ asset('images/main_banner.jpg') }}">
+		<source media="(max-width: 426px)" srcset="{{ asset('images/main_banner_phone.jpg') }}">
+		<source media="(max-width: 769px)" srcset="{{ asset('images/main_banner_tablet.jpg') }}">
 		<img class="responsive-img mx-auto d-block main-img" src="{{ asset('images/main_banner.jpg') }}" alt="Imagen de inicio | fundaepekeina.org">
 	</picture>
 

@@ -7,13 +7,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 </head>
 <body>
-	<div class="row valign-wrapper center-align" style="height:100vh;background-color: #ddd;">
+	<div class="row valign-wrapper center-align" style="height:100vh;">
 		<div class="col s12 ">
-			<img src="{{ asset('images/logo.png') }}">
-
-			<h1>{{ Lang::get('lang.thanks') }}</h1>
-
-			<br><br>
+			<img src="{{ asset('images/gif-thanks.gif') }}" class="responsive-img">
 			<h3><a href="{{ URL::to('/') }}">{{ Lang::get('lang.back_to_home') }}</a></h3>
 		</div>
 	</div>

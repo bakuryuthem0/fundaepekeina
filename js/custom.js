@@ -115,10 +115,15 @@ jQuery(document).ready(function($) {
 	});
 	$(document).on('click', '.voluntario', function(event) {
 		event.stopPropagation();
-		$('.voluntario-text.active').removeClass('active')
 		$('.alt.active').removeClass('active')
 		$(this).find('.alt').addClass('active');
-		$(this).find('.voluntario-text').html($(this).data('text')).addClass('active');
+		$('.voluntario-text.active').removeClass('active')
+		if ($(window).width() < 991) {
+			$(this).find('.voluntario-text').html($(this).data('text')).addClass('active');
+		}else
+		{
+			$('.voluntario-text.on-big').html($(this).data('text')).addClass('active');
+		}
 	});
 	$('.voluntario .voluntario-text.active').on('click', function(event) {
 		$(this).removeClass('active');
