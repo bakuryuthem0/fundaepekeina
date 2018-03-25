@@ -557,7 +557,7 @@ class AdminController extends BaseController {
 		$gal = Gallery::find($gal_id);
 		if (count($gal) > 0) {
 			$data = Input::all();
-			$ruta = "images/gallery/".$gal->name;
+			$ruta = "images/gallery/".str_replace(' ', '-', strtolower($gal->name));
 			foreach ($data['files'] as $f) {
 				$img_gal = new GalleryImage;
 				$img_gal->gallery_id = $gal->id;
