@@ -87,6 +87,9 @@
                         <div class="owl-content center-align valign-wrapper">
                             <img src="{{ asset('images/allies/ofigrapa.png') }}" class="d-block mx-auto">
                         </div>
+                        <div class="owl-content center-align valign-wrapper">
+                            <img src="{{ asset('images/allies/foro-hatillano.jpg') }}" class="d-block mx-auto">
+                        </div>
     				</div>
     			</div>
     		</div>
