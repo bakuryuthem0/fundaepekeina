@@ -46,7 +46,7 @@
 		'library_menu'		=> 'Biblioteca Virtual',
 		'gallery_menu'		=> 'Galeria',
 		'donation_menu'		=> '¿Qué puedes hacer tú?',
-		'contact_us'		=> 'Contáctenos',
+		'contact_us'		=> 'Contáctanos',
 		'donation'			=> 'Donaciones',
 		'not_found'			=> 'Pagina no encontrada',
 		'not_found_text'	=> 'La pagina que esta buscando puede que no exista o se haya removido.',
@@ -157,7 +157,7 @@
 		'thanks'			=> "¡Gracias por tu apoyo!",
 		'back_to_home'		=> 'Regresal al inicio',
 		//contact
-		'contact_quote'		=> 'Sí deseas comunicarte con nosotros,<br>puedes hacerlo a través de nuestos puntos de contacto',
+		'contact_quote'		=> 'Sí deseas comunicarte con nosotros,<br>puedes hacerlo a través de nuestros puntos de contacto',
 		'contact'			=> 'Contáctanos',
 		'phone'				=> 'Telefono',
 		'address_title'		=> 'Dirección',
