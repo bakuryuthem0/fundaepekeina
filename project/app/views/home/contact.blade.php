@@ -6,6 +6,7 @@
         <div class="col s12 m6 mt-2">
             <h2 class="mt-0">{{ Lang::get('lang.contact') }}</h2>
             <p>E-mail: <a href="mailto:fundaepekeina@gmail.com">fundaepekeina@gmail.com</a></p> 
+            <p>        <a href="mailto:fundaepekeina@gmail.com">comunicaciones@fundaepekeina.com</a></p> 
             <p>{{ Lang::get('lang.phone') }}: +58 0212-3077281<br> </p>
             <ul>
                 <li class="d-inline ml-1 mr-1">
