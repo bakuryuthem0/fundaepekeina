@@ -374,7 +374,8 @@ class HomeController extends BaseController {
 		->with('title',$title)
 		->with('active','galeria')
 		->with('size','big')
-		->with('gallery',$gallery);
+		->with('gallery',$gallery)
+		->with('campaing',LangController::getCampaing()->titles->first()->text);
 	}
 	public function getGalleryById($id)
 	{
@@ -386,7 +387,8 @@ class HomeController extends BaseController {
 		->with('title',$title)
 		->with('gallery',$gallery)
 		->with('images',$images)
-		->with('size','big');
+		->with('size','big')
+		->with('campaing',LangController::getCampaing()->titles->first()->text);
 	}
 	public function getContact()
 	{
