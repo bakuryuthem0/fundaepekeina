@@ -2,7 +2,7 @@
 	<picture>
 		<source media="(max-width: 426px)" srcset="{{ asset('images/main_banner_phone.jpg') }}">
 		<source media="(max-width: 769px)" srcset="{{ asset('images/main_banner_tablet.jpg') }}">
-		<img class="responsive-img mx-auto d-block main-img" src="{{ asset('images/main_banner.jpg') }}" alt="Imagen de inicio | fundaepekeina.org">
+		<img class="responsive-img mx-auto d-block main-img" src="{{ asset('images/main_banner.jpg') }}" alt="Imagen de inicio | fundaepekeina.com">
 	</picture>
 
 	<div class="absolute promotion-container">

@@ -6,15 +6,15 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>Boletin | Fundaepekeina</title>
-    <link href="http://fundaepekeina.org/html/css/bootstrap.min.css" rel="stylesheet">
-    <link href="http://fundaepekeina.org/html/css/font-awesome.min.css" rel="stylesheet"> 
-    <link href="http://fundaepekeina.org/html/css/main.css" rel="stylesheet">
-    <link href="http://fundaepekeina.org/html/css/responsive.css" rel="stylesheet">
-    <link href="http://fundaepekeina.org/css/custom.css" rel="stylesheet">
+    <link href="http://fundaepekeina.com/html/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://fundaepekeina.com/html/css/font-awesome.min.css" rel="stylesheet"> 
+    <link href="http://fundaepekeina.com/html/css/main.css" rel="stylesheet">
+    <link href="http://fundaepekeina.com/html/css/responsive.css" rel="stylesheet">
+    <link href="http://fundaepekeina.com/css/custom.css" rel="stylesheet">
     <style type="text/css">
         @font-face{
            font-family: 'TypoGraphica';
-           src: url('http://fundaepekeina.org/fonts/TypoGraphica.otf');
+           src: url('http://fundaepekeina.com/fonts/TypoGraphica.otf');
         }
         html *
         {
@@ -34,11 +34,11 @@
         <script src="js/html5shiv.js"></script>
         <script src="js/respond.min.js"></script>
     <![endif]-->       
-    <link rel="shortcut icon" href="http://fundaepekeina.org/images/ico/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://fundaepekeina.org/images/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://fundaepekeina.org/images/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://fundaepekeina.org/images/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="http://fundaepekeina.org/images/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="http://fundaepekeina.com/images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://fundaepekeina.com/images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://fundaepekeina.com/images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://fundaepekeina.com/images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="http://fundaepekeina.com/images/ico/apple-touch-icon-57-precomposed.png">
     <style type="text/css">
         .img-text-right, .img-text-left
         {
@@ -91,12 +91,12 @@
      <section id="">        
          <div class="container">
             <div class="row" style="margin-bottom: 50px">
-                <img src="http://fundaepekeina.org/images/slides/boletin_banner.jpg" class="img-responsive center-block">
+                <img src="http://fundaepekeina.com/images/slides/boletin_banner.jpg" class="img-responsive center-block">
             </div>
             <div class="row">
                 <div class="col-xs-12 col-md-6">
                     <p class="text-justify">
-                        <img src="http://fundaepekeina.org/images/info/nuestros.jpg" class="img-responsive">
+                        <img src="http://fundaepekeina.com/images/info/nuestros.jpg" class="img-responsive">
                         Contar la historia de Funda Epékeina es como relatar la vida de una persona: nacer, descubrir lo incierto, dar los primeros pasos, caer y levantarse, aprender a hablar, vivir alegrías, superar obstáculos y asumir las transformaciones propias del crecimiento. Y eso ha sido este recorrido de nuestros primeros 7 años: un constante desarrollo que se refleja en beneficiarios, voluntarios y directiva.
                         <br>    
                         <br>
@@ -124,10 +124,10 @@
                     </p>
                 </div>
                 <div class="col-xs-12" style="margin-bottom: 40px;">
-                    <img src="http://fundaepekeina.org/images/info/Boletin_FEB-con-gracia-de-Dios.jpg" class="img-responsive">
+                    <img src="http://fundaepekeina.com/images/info/Boletin_FEB-con-gracia-de-Dios.jpg" class="img-responsive">
                 </div>
                 <div class="col-xs-12 col-md-6">
-                    <img src="http://fundaepekeina.org/images/info/historia.jpg" class="img-responsive">
+                    <img src="http://fundaepekeina.com/images/info/historia.jpg" class="img-responsive">
                     <h1 class="veronica">
                         <span class="text-pink"><strong>Verónica Macedo,</strong></span>
                     </h1>   
@@ -150,7 +150,7 @@
                 </div>
                 <div class="col-xs-12 col-md-6">
                     <p class="text-justify">
-                        <img src="http://fundaepekeina.org/images/news/1486566347.jpg" class="img-responsive center-block img-text-right">
+                        <img src="http://fundaepekeina.com/images/news/1486566347.jpg" class="img-responsive center-block img-text-right">
                         Las anécdotas que vivió en su paso por Funda Epékeina son muchas. Sin embargo, con entusiasmo destacó aquella mañana en la que se encontraban descansando de una actividad física. “Estaba sentada recostada a una pared, rodeada por todos los niños”, pero una de las consentidas, Karyerit de nueve añitos, quien estaba un poco lejos, pero muy pendiente de su “mamá” -como le llamaba-, se acercó, y de forma habilidosa rasgó con ayuda de un huequito toda la parte trasera de la camisa de Verónica. Con muchas risas contó que “lo hizo por celos y tuve que regresar medio descubierta a casa”. 
 
                         Emociona escucharla hablar de cada momento vivido y en específico, de sus estrategias de acción: abrazos, cariños, besos, escuchar, aconsejar y el hacerlos sentir importantes. Su lema de vida es aportar un granito de arena para los más necesitados. Por ello, considera que ofrecer esperanzas a quien no las tiene o no las conoce, es lo más gratificante. Funda Epékeina es para Verónica crecimiento personal y espiritual, o bien como lo definió, “llegar donde uno no cree que puede llegar”. 

@@ -431,7 +431,7 @@ class HomeController extends BaseController {
 
 		Mail::send('emails.envia', $datos, function($message) use ($data)
 		{
-			$message->to('comunicaciones@fundaepekeina.org')->from($data['email'])->subject($data['subject']);
+			$message->to('comunicaciones@fundaepekeina.com')->from($data['email'])->subject($data['subject']);
 		});
 
 		return Response::json(array(
@@ -473,8 +473,8 @@ class HomeController extends BaseController {
 		if ($sus->save()) {
 			
 			Mail::send('emails.sub', $data, function ($message) use ($data){
-			    $message->subject('Correo de suscripción a fundaepekeina.org');
-			    $message->from('noreply@fundaepekeina.org');
+			    $message->subject('Correo de suscripción a fundaepekeina.com');
+			    $message->from('noreply@fundaepekeina.com');
 			    $message->to($data['email']);
 			});
 		}
@@ -529,7 +529,7 @@ class HomeController extends BaseController {
 		$data['title'] = "Nueva donación";
 		Mail::send('emails.new-donation', $data, function($message) use ($data)
 		{
-			$message->to('comunicaciones@fundaepekeina.org')->from('mail@fundaepekeina.org')->subject('Nueva donación');
+			$message->to('comunicaciones@fundaepekeina.com')->from('mail@fundaepekeina.com')->subject('Nueva donación');
 		});
 		return Redirect::to('contacto/gracias');
 	}

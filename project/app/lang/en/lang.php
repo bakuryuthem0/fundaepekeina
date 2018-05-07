@@ -184,7 +184,7 @@
 		'be_a_volunteer'	=> 'Join the volunteers',
 		'volunteer_quote'	=> 'En Epékeina siempre necesitamos una mano amiga.<br>Creemos que la voluntad es el motor para alcanzar las metas.<br>Únete a nuestro voluntariado y haz la diferencia.',
 		'volunteer_quote2'	=> 'Se puede colocar una cita, donde se hable de ayudar al projimo',
-		'volunteer_text5'	=> 'Puedes participar en nuestra fundación como voluntario:<br> Comunícate con nosotros a través del correo electrónico:<br> <a href="mailto:comunicaciones@fundaepekeina.org">comunicaciones@fundaepekeina.org</a> y <a href="mailto:fundaepekeina@gmail.com">fundaepekeina@gmail.com</a>',
+		'volunteer_text5'	=> 'Puedes participar en nuestra fundación como voluntario:<br> Comunícate con nosotros a través del correo electrónico:<br> <a href="mailto:comunicaciones@fundaepekeina.com">comunicaciones@fundaepekeina.com</a> y <a href="mailto:fundaepekeina@gmail.com">fundaepekeina@gmail.com</a>',
 		
 		//footer
 		'donate'			=> 'Donate',

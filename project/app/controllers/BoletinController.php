@@ -51,7 +51,7 @@ class BoletinController extends BaseController {
 			$library 					= new LibraryFile;
 			$library->title 			= "Boletin ".date('d-m-Y H:m:s')." ".$data['name'];
 			$library->slug              = str_replace(' ','-',strtolower($library->title));
-			$library->autor 		    = "fundaepekeina.org";
+			$library->autor 		    = "fundaepekeina.com";
 		}
 		$library->type 				= 'boletin';
 		$library->publication_date  = date('d-m-Y H:m:s',time());
@@ -82,7 +82,7 @@ class BoletinController extends BaseController {
 	}
 	public function selectNews()
 	{
-		$title = "Crear Boletin | fundaepekeina.org";
+		$title = "Crear Boletin | fundaepekeina.com";
 		$article = Articulo::with('imagenes')
 		->with('slugs')
 		->with('titles')

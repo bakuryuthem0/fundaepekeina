@@ -986,7 +986,7 @@
                                     <div
                                       style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:1;text-align:center;color:#FFFFFF;"
                                       >
-                                      fundaepekeina.org
+                                      fundaepekeina.com
                                     </div>
                                     
                                   </td>
@@ -1060,7 +1060,7 @@
                                     <div
                                       style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:1;text-align:center;color:#FFFFFF;"
                                       >
-                                       Sent by fundaepekeina.org <br>
+                                       Sent by fundaepekeina.com <br>
                                       Funda Epékeina <br>
                                       Todos los derechos reservados | fundaepekeina 2018
                                     </div>

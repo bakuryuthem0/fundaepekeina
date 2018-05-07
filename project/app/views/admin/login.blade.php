@@ -5,7 +5,7 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 text-center">
-      <h2 class="light-text"><b>Sistema de administracion de <strong>fundaepekeina.org</strong></b></h2>
+      <h2 class="light-text"><b>Sistema de administracion de <strong>fundaepekeina.com</strong></b></h2>
     </div><!-- /.login-logo -->
     <div class="col-xs-12 col-md-6 bg-light box login-box">
       <div class="box-header">

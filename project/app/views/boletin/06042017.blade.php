@@ -6,11 +6,11 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>Boletin | Fundaepekeina</title>
-    <link href="http://fundaepekeina.org/html/css/bootstrap.min.css" rel="stylesheet">
-    <link href="http://fundaepekeina.org/html/css/font-awesome.min.css" rel="stylesheet"> 
-    <link href="http://fundaepekeina.org/html/css/main.css" rel="stylesheet">
-    <link href="http://fundaepekeina.org/html/css/responsive.css" rel="stylesheet">
-    <link href="http://fundaepekeina.org/css/custom.css" rel="stylesheet">
+    <link href="http://fundaepekeina.com/html/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://fundaepekeina.com/html/css/font-awesome.min.css" rel="stylesheet"> 
+    <link href="http://fundaepekeina.com/html/css/main.css" rel="stylesheet">
+    <link href="http://fundaepekeina.com/html/css/responsive.css" rel="stylesheet">
+    <link href="http://fundaepekeina.com/css/custom.css" rel="stylesheet">
     <style type="text/css">
         .img-boletin
         {
@@ -31,17 +31,17 @@
 
 <body>
     <!--<div class="logo-image" style="margin-bottom: 50px;">                                
-       <a href="index.html"><img class="img-responsive" src="http://fundaepekeina.org/images/logo.png" alt=""> </a> 
+       <a href="index.html"><img class="img-responsive" src="http://fundaepekeina.com/images/logo.png" alt=""> </a> 
     </div>-->
      <section id="" class="boletin">        
          <div class="">
             <div class="row" style="margin-bottom: 50px">
-                <img src="http://fundaepekeina.org/images/boletin/btn_cabeza.jpg" class="img-responsive center-block">
+                <img src="http://fundaepekeina.com/images/boletin/btn_cabeza.jpg" class="img-responsive center-block">
             </div>
             <div class="row">
                 <div class="col-xs-12 col-md-9 fixedheight">
                                                             <div class="col-xs-12 bg bg-blue formulario">
-                                                    <img src="http://fundaepekeina.org/images/news/1491511840.jpg" class="img-responsive center-block img-boletin">
+                                                    <img src="http://fundaepekeina.com/images/news/1491511840.jpg" class="img-responsive center-block img-boletin">
                                                 <div class="content">
                             <h2 class="boletin-title">Monseñor Alfonzo Vaz, ser de vital espíritu y jovialidad</h2>
                             <p class="text-justify">Conocer
@@ -50,13 +50,13 @@ singular experiencia. Mucho más cuando se trata de escucharlo en una
 conversación personal. Resulta &nbsp;una
 vivencia enriquecedora. Su edad biológica es un hecho, pero lo que predomina es
 la vitalida [...]</p>
-                            <a target="_blank" href="http://fundaepekeina.org/noticias/268" class="btn btn-default btn-xs pull-right">Leer más</a>
+                            <a target="_blank" href="http://fundaepekeina.com/noticias/268" class="btn btn-default btn-xs pull-right">Leer más</a>
                             <div class="clearfix"></div>
                         </div>
                     </div>
                                         <div class="row">
                                                                                                                                                                             <div class="col-xs-12 col-md-6 bg bg-yellow formulario fixedHeight">
-                                                                                    <img src="http://fundaepekeina.org/images/news/1491507660.jpg" class="img-responsive center-block img-boletin" alt="Visita inspiradora en Las Acacias">
+                                                                                    <img src="http://fundaepekeina.com/images/news/1491507660.jpg" class="img-responsive center-block img-boletin" alt="Visita inspiradora en Las Acacias">
                                                                                 <div class="content">
                                             <h2 class="boletin-title">Visita inspiradora en Las Acacias</h2>
                                             <p class="text-justify">En una
@@ -67,13 +67,13 @@ desarrollo.
 
 Brirkellia
 creció en Paracotos en unas cir [...]</p>
-                                            <a target="_blank" href="http://fundaepekeina.org/noticias/272" class="btn btn-default btn-xs pull-right">Leer más</a>
+                                            <a target="_blank" href="http://fundaepekeina.com/noticias/272" class="btn btn-default btn-xs pull-right">Leer más</a>
                                             <div class="clearfix"></div>
 
                                         </div>
                                     </div>
                                                                                                                                                                                                                                                             <div class="col-xs-12 col-md-6 bg bg-green formulario fixedHeight">
-                                                                                    <img src="http://fundaepekeina.org/images/news/1491512166.jpg" class="img-responsive center-block img-boletin" alt="Pienso, imagino y creo">
+                                                                                    <img src="http://fundaepekeina.com/images/news/1491512166.jpg" class="img-responsive center-block img-boletin" alt="Pienso, imagino y creo">
                                                                                 <div class="content">
                                             <h2 class="boletin-title">Pienso, imagino y creo</h2>
                                             <p class="text-justify">Las
@@ -81,13 +81,13 @@ iniciativas para estimular el pensamiento, la imaginación y la creatividad de
 nuestros beneficiarios son constantes en nuestras jornadas en La Boyera. Este
 mes de marzo tuvo un acento en ese contexto a través de diversas actividades.
 Una muy especial a destacar fue el taller creativo “Pi [...]</p>
-                                            <a target="_blank" href="http://fundaepekeina.org/noticias/271" class="btn btn-default btn-xs pull-right">Leer más</a>
+                                            <a target="_blank" href="http://fundaepekeina.com/noticias/271" class="btn btn-default btn-xs pull-right">Leer más</a>
                                             <div class="clearfix"></div>
 
                                         </div>
                                     </div>
                                                                                                                                                                                                                                                             <div class="col-xs-12 col-md-6 bg bg-pink formulario fixedHeight">
-                                                                                    <img src="http://fundaepekeina.org/images/news/1491511890.jpg" class="img-responsive center-block img-boletin" alt="Viveros de Escuela de Campo La Laguna se desarrollan con éxito">
+                                                                                    <img src="http://fundaepekeina.com/images/news/1491511890.jpg" class="img-responsive center-block img-boletin" alt="Viveros de Escuela de Campo La Laguna se desarrollan con éxito">
                                                                                 <div class="content">
                                             <h2 class="boletin-title">Viveros de Escuela de Campo La Laguna se desarrollan con éxito</h2>
                                             <p class="text-justify">Los viveros denominados
@@ -96,13 +96,13 @@ parte del programa de formación y producción de café de sombra perteneciente 
 Escuela de Campo La Laguna, reflejan significativos avances que apuntan a la
 pronta cosecha del producto.
  [...]</p>
-                                            <a target="_blank" href="http://fundaepekeina.org/noticias/270" class="btn btn-default btn-xs pull-right">Leer más</a>
+                                            <a target="_blank" href="http://fundaepekeina.com/noticias/270" class="btn btn-default btn-xs pull-right">Leer más</a>
                                             <div class="clearfix"></div>
 
                                         </div>
                                     </div>
                                                                                                                                                                                                                                                             <div class="col-xs-12 col-md-6 bg bg-blue formulario fixedHeight">
-                                                                                    <img src="http://fundaepekeina.org/images/news/1491507317.jpg" class="img-responsive center-block img-boletin" alt="Red Joven Venezuela se prepara para el I Encuentro Nacional">
+                                                                                    <img src="http://fundaepekeina.com/images/news/1491507317.jpg" class="img-responsive center-block img-boletin" alt="Red Joven Venezuela se prepara para el I Encuentro Nacional">
                                                                                 <div class="content">
                                             <h2 class="boletin-title">Red Joven Venezuela se prepara para el I Encuentro Nacional</h2>
                                             <p class="text-justify">El
@@ -112,7 +112,7 @@ abril en la población de San Juan de Los Morros, estado Guárico.
 
 El
 equipo de la dirección nacional ha planificado una serie de  [...]</p>
-                                            <a target="_blank" href="http://fundaepekeina.org/noticias/269" class="btn btn-default btn-xs pull-right">Leer más</a>
+                                            <a target="_blank" href="http://fundaepekeina.com/noticias/269" class="btn btn-default btn-xs pull-right">Leer más</a>
                                             <div class="clearfix"></div>
 
                                         </div>
@@ -120,13 +120,13 @@ equipo de la dirección nacional ha planificado una serie de  [...]</p>
                                                                                                                                                     </div>
                 </div>
                 <div class="col-xs-12 col-md-3">
-                    <a href="http://fundaepekeina.org/contacto/donaciones"><img src="http://fundaepekeina.org/images/boletin/btn_dona.jpg" class="img-responsive" style="width:100%;"></a>
+                    <a href="http://fundaepekeina.com/contacto/donaciones"><img src="http://fundaepekeina.com/images/boletin/btn_dona.jpg" class="img-responsive" style="width:100%;"></a>
                     <div class="social-container">
                         <h3>Siguenos en:</h3>
                         <hr>
                         <ul>
                             <li><a href="https://twitter.com/fundaepekeina"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="http://fundaepekeina.org"><i class="fa fa-instagram"></i></a></li>
+                            <li><a href="http://fundaepekeina.com"><i class="fa fa-instagram"></i></a></li>
                             <li><a href="https://www.facebook.com/funda.epekeina"><i class="fa fa-facebook"></i></a></li>
                             <li><a href="https://www.youtube.com/user/fundaepekeina"><i class="fa fa-youtube-play"></i></a></li>
                         </ul>
@@ -134,7 +134,7 @@ equipo de la dirección nacional ha planificado una serie de  [...]</p>
                     <br>
                     <h2 class="text-blue">Historias Epékeinas</h2>
                     <br>
-                    <img src="http://fundaepekeina.org/images/news/1491505014.jpg" class="img-responsive" alt="Miguel Martínez crece y multiplica su bondad de la mano de Funda Epékeina ">
+                    <img src="http://fundaepekeina.com/images/news/1491505014.jpg" class="img-responsive" alt="Miguel Martínez crece y multiplica su bondad de la mano de Funda Epékeina ">
                     <div class="bg-green">
                         <h2 class="hist-title">Miguel Martínez crece y multiplica su bondad de la mano de Funda Epékeina </h2>
                     </div>
@@ -172,7 +172,7 @@ Arturo. – Eso me ha servido para tomar lo positivo de las situaciones difícil
 y seguir adelante-, dijo.
 [...]
                         <br>
-                        <a href="http://fundaepekeina.org/quienes-somos/historias-epekeinas/262" class="pull-right">Leer más</a>
+                        <a href="http://fundaepekeina.com/quienes-somos/historias-epekeinas/262" class="pull-right">Leer más</a>
                     </div>
                 </div>
             </div>
