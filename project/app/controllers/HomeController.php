@@ -49,7 +49,7 @@ class HomeController extends BaseController {
 		return View::make('home.about')
 		->with('size','big')
 		->with('citaMenu','cita')
-		->with('text',Lang::get('lang.campaing'))
+		->with('text',LangController::getCampaing()->titles->first()->text)
 		->with('title',$title);
 	}
 	public function getWhatWeDo()
